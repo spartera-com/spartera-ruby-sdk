@@ -31,3 +31,8 @@ Thumbs.db
 
 # Bundler
 /.bundle/
+
+# Ruby version managers
+.rvmrc
+.ruby-version
+.ruby-gemset

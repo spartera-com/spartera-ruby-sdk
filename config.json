@@ -1,10 +1,13 @@
 {
     "gemName": "spartera_api_sdk",
-    "gemVersion": "1.0.69",
+    "gemVersion": "1.0.72",
     "gemDescription": "Official SDK for Spartera API - Interface to manage companies' accounts and process insights remotely",
     "gemAuthor": "Tony D",
     "gemAuthorEmail": "tony@spartera.com",
     "gemHomepage": "https://github.com/spartera-com/spartera-ruby-sdk",
     "moduleName": "SparteraApiSdk",
-    "gemLicense": "Apache-2.0"
+    "gemLicense": "Apache-2.0",
+    "generateSourceCodeOnly": false,
+    "skipFormModel": false,
+    "hideGenerationTimestamp": true
 }
