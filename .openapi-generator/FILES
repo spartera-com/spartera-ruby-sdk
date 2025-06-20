@@ -28,6 +28,7 @@ docs/InlineObject.md
 docs/InlineObject1.md
 docs/InlineObject2.md
 docs/InlineObject3.md
+docs/StorageEnginesApi.md
 docs/User.md
 docs/UsersApi.md
 git_push.sh
@@ -40,6 +41,7 @@ lib/spartera_api_sdk/api/cloud_providers_api.rb
 lib/spartera_api_sdk/api/companies_api.rb
 lib/spartera_api_sdk/api/connections_api.rb
 lib/spartera_api_sdk/api/favorites_api.rb
+lib/spartera_api_sdk/api/storage_engines_api.rb
 lib/spartera_api_sdk/api/users_api.rb
 lib/spartera_api_sdk/api_client.rb
 lib/spartera_api_sdk/api_error.rb
@@ -68,6 +70,7 @@ spec/api/cloud_providers_api_spec.rb
 spec/api/companies_api_spec.rb
 spec/api/connections_api_spec.rb
 spec/api/favorites_api_spec.rb
+spec/api/storage_engines_api_spec.rb
 spec/api/users_api_spec.rb
 spec/models/alert_spec.rb
 spec/models/apikey_spec.rb

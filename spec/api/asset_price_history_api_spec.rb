@@ -84,7 +84,7 @@ describe 'AssetPriceHistoryApi' do
   end
 
   # unit tests for companies_company_id_assets_asset_id_prices_calculate_credits_post
-  # Calculate the credit equivalent for a given USD price without saving
+  # POST /companies/{company_id}/assets/{asset_id}/prices/calculate_credits
   # @param company_id 
   # @param asset_id 
   # @param [Hash] opts the optional parameters
@@ -96,7 +96,7 @@ describe 'AssetPriceHistoryApi' do
   end
 
   # unit tests for companies_company_id_assets_asset_id_prices_discount_post
-  # Apply a discount to the active price for an asset
+  # POST /companies/{company_id}/assets/{asset_id}/prices/discount
   # @param company_id 
   # @param asset_id 
   # @param [Hash] opts the optional parameters

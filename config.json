@@ -1,6 +1,6 @@
 {
     "gemName": "spartera_api_sdk",
-    "gemVersion": "1.0.62",
+    "gemVersion": "1.0.68",
     "gemDescription": "Official SDK for Spartera API - Interface to manage companies' accounts and process insights remotely",
     "gemAuthor": "Tony D",
     "gemAuthorEmail": "tony@spartera.com",

@@ -67,7 +67,7 @@ module SparteraApiSdk
       return_type = opts[:debug_return_type] || 'Object'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['bearerAuth']
+      auth_names = opts[:debug_auth_names] || ['ApiKeyAuth']
 
       new_options = opts.merge(
         :operation => :"AssetPriceHistoryApi.companies_company_id_assets_asset_id_prices_active_get",
@@ -140,7 +140,7 @@ module SparteraApiSdk
       return_type = opts[:debug_return_type] || 'Object'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['bearerAuth']
+      auth_names = opts[:debug_auth_names] || ['ApiKeyAuth']
 
       new_options = opts.merge(
         :operation => :"AssetPriceHistoryApi.companies_company_id_assets_asset_id_prices_aph_id_delete",
@@ -213,7 +213,7 @@ module SparteraApiSdk
       return_type = opts[:debug_return_type] || 'Object'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['bearerAuth']
+      auth_names = opts[:debug_auth_names] || ['ApiKeyAuth']
 
       new_options = opts.merge(
         :operation => :"AssetPriceHistoryApi.companies_company_id_assets_asset_id_prices_aph_id_get",
@@ -286,7 +286,7 @@ module SparteraApiSdk
       return_type = opts[:debug_return_type] || 'Object'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['bearerAuth']
+      auth_names = opts[:debug_auth_names] || ['ApiKeyAuth']
 
       new_options = opts.merge(
         :operation => :"AssetPriceHistoryApi.companies_company_id_assets_asset_id_prices_aph_id_patch",
@@ -305,7 +305,7 @@ module SparteraApiSdk
       return data, status_code, headers
     end
 
-    # Calculate the credit equivalent for a given USD price without saving
+    # POST /companies/{company_id}/assets/{asset_id}/prices/calculate_credits
     # @param company_id [String] 
     # @param asset_id [String] 
     # @param [Hash] opts the optional parameters
@@ -315,7 +315,7 @@ module SparteraApiSdk
       data
     end
 
-    # Calculate the credit equivalent for a given USD price without saving
+    # POST /companies/{company_id}/assets/{asset_id}/prices/calculate_credits
     # @param company_id [String] 
     # @param asset_id [String] 
     # @param [Hash] opts the optional parameters
@@ -353,7 +353,7 @@ module SparteraApiSdk
       return_type = opts[:debug_return_type] || 'Object'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['bearerAuth']
+      auth_names = opts[:debug_auth_names] || ['ApiKeyAuth']
 
       new_options = opts.merge(
         :operation => :"AssetPriceHistoryApi.companies_company_id_assets_asset_id_prices_calculate_credits_post",
@@ -372,7 +372,7 @@ module SparteraApiSdk
       return data, status_code, headers
     end
 
-    # Apply a discount to the active price for an asset
+    # POST /companies/{company_id}/assets/{asset_id}/prices/discount
     # @param company_id [String] 
     # @param asset_id [String] 
     # @param [Hash] opts the optional parameters
@@ -382,7 +382,7 @@ module SparteraApiSdk
       data
     end
 
-    # Apply a discount to the active price for an asset
+    # POST /companies/{company_id}/assets/{asset_id}/prices/discount
     # @param company_id [String] 
     # @param asset_id [String] 
     # @param [Hash] opts the optional parameters
@@ -420,7 +420,7 @@ module SparteraApiSdk
       return_type = opts[:debug_return_type] || 'Object'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['bearerAuth']
+      auth_names = opts[:debug_auth_names] || ['ApiKeyAuth']
 
       new_options = opts.merge(
         :operation => :"AssetPriceHistoryApi.companies_company_id_assets_asset_id_prices_discount_post",
@@ -487,7 +487,7 @@ module SparteraApiSdk
       return_type = opts[:debug_return_type] || 'Object'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['bearerAuth']
+      auth_names = opts[:debug_auth_names] || ['ApiKeyAuth']
 
       new_options = opts.merge(
         :operation => :"AssetPriceHistoryApi.companies_company_id_assets_asset_id_prices_get",
@@ -554,7 +554,7 @@ module SparteraApiSdk
       return_type = opts[:debug_return_type] || 'Object'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['bearerAuth']
+      auth_names = opts[:debug_auth_names] || ['ApiKeyAuth']
 
       new_options = opts.merge(
         :operation => :"AssetPriceHistoryApi.companies_company_id_assets_asset_id_prices_post",

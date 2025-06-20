@@ -73,7 +73,7 @@ module SparteraApiSdk
       return_type = opts[:debug_return_type] || 'Object'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['bearerAuth']
+      auth_names = opts[:debug_auth_names] || ['ApiKeyAuth']
 
       new_options = opts.merge(
         :operation => :"FavoritesApi.companies_company_id_users_user_id_favorites_category_category_get",
@@ -92,7 +92,7 @@ module SparteraApiSdk
       return data, status_code, headers
     end
 
-    # Check if the specified user has favorited a specific asset     Returns the favorite record if it exists, or empty result if not     Useful for UI to show/hide favorite button states
+    # Check if the specified user has favorited a specific asset
     # @param company_id [String] 
     # @param user_id [String] 
     # @param asset_id [String] 
@@ -103,7 +103,7 @@ module SparteraApiSdk
       data
     end
 
-    # Check if the specified user has favorited a specific asset     Returns the favorite record if it exists, or empty result if not     Useful for UI to show/hide favorite button states
+    # Check if the specified user has favorited a specific asset
     # @param company_id [String] 
     # @param user_id [String] 
     # @param asset_id [String] 
@@ -146,7 +146,7 @@ module SparteraApiSdk
       return_type = opts[:debug_return_type] || 'Object'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['bearerAuth']
+      auth_names = opts[:debug_auth_names] || ['ApiKeyAuth']
 
       new_options = opts.merge(
         :operation => :"FavoritesApi.companies_company_id_users_user_id_favorites_check_asset_id_get",
@@ -219,7 +219,7 @@ module SparteraApiSdk
       return_type = opts[:debug_return_type] || 'Object'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['bearerAuth']
+      auth_names = opts[:debug_auth_names] || ['ApiKeyAuth']
 
       new_options = opts.merge(
         :operation => :"FavoritesApi.companies_company_id_users_user_id_favorites_favorite_id_delete",
@@ -292,7 +292,7 @@ module SparteraApiSdk
       return_type = opts[:debug_return_type] || 'Object'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['bearerAuth']
+      auth_names = opts[:debug_auth_names] || ['ApiKeyAuth']
 
       new_options = opts.merge(
         :operation => :"FavoritesApi.companies_company_id_users_user_id_favorites_favorite_id_get",
@@ -311,7 +311,7 @@ module SparteraApiSdk
       return data, status_code, headers
     end
 
-    # Update an existing favorite by ID     Can update notes, category, priority
+    # Update an existing favorite by ID
     # @param company_id [String] 
     # @param user_id [String] 
     # @param favorite_id [String] 
@@ -323,7 +323,7 @@ module SparteraApiSdk
       data
     end
 
-    # Update an existing favorite by ID     Can update notes, category, priority
+    # Update an existing favorite by ID
     # @param company_id [String] 
     # @param user_id [String] 
     # @param favorite_id [String] 
@@ -376,7 +376,7 @@ module SparteraApiSdk
       return_type = opts[:debug_return_type] || 'Object'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['bearerAuth']
+      auth_names = opts[:debug_auth_names] || ['ApiKeyAuth']
 
       new_options = opts.merge(
         :operation => :"FavoritesApi.companies_company_id_users_user_id_favorites_favorite_id_patch",
@@ -395,7 +395,7 @@ module SparteraApiSdk
       return data, status_code, headers
     end
 
-    # Get a list of all favorites for a specific user     Query params:     - category: filter by category     - sort: sort field (priority, date_created, etc.)     - order: sort direction (asc, desc)
+    # Get a list of all favorites for a specific user
     # @param company_id [String] 
     # @param user_id [String] 
     # @param [Hash] opts the optional parameters
@@ -405,7 +405,7 @@ module SparteraApiSdk
       data
     end
 
-    # Get a list of all favorites for a specific user     Query params:     - category: filter by category     - sort: sort field (priority, date_created, etc.)     - order: sort direction (asc, desc)
+    # Get a list of all favorites for a specific user
     # @param company_id [String] 
     # @param user_id [String] 
     # @param [Hash] opts the optional parameters
@@ -443,7 +443,7 @@ module SparteraApiSdk
       return_type = opts[:debug_return_type] || 'Object'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['bearerAuth']
+      auth_names = opts[:debug_auth_names] || ['ApiKeyAuth']
 
       new_options = opts.merge(
         :operation => :"FavoritesApi.companies_company_id_users_user_id_favorites_get",
@@ -521,7 +521,7 @@ module SparteraApiSdk
       return_type = opts[:debug_return_type] || 'Object'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['bearerAuth']
+      auth_names = opts[:debug_auth_names] || ['ApiKeyAuth']
 
       new_options = opts.merge(
         :operation => :"FavoritesApi.companies_company_id_users_user_id_favorites_post",
@@ -588,7 +588,7 @@ module SparteraApiSdk
       return_type = opts[:debug_return_type] || 'Object'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['bearerAuth']
+      auth_names = opts[:debug_auth_names] || ['ApiKeyAuth']
 
       new_options = opts.merge(
         :operation => :"FavoritesApi.companies_company_id_users_user_id_favorites_uncategorized_get",

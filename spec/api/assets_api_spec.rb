@@ -33,9 +33,9 @@ describe 'AssetsApi' do
   end
 
   # unit tests for analyze_company_handle_assets_asset_slug_get
-  # Process assets route that handles both owned and purchased assets.             Minimal route function that passes all logic to crudder.process_asset              Args:                 asset_path: The path after /analyze/ containing asset information                 company_handle: The subdomain from Flask&#39;s routing (if available)
-  # @param company_handle 
+  # Process (analyze) an asset. Attempt to process an analytic on a backend warehouse/AI model.
   # @param asset_slug 
+  # @param company_handle 
   # @param [Hash] opts the optional parameters
   # @return [Object]
   describe 'analyze_company_handle_assets_asset_slug_get test' do
@@ -81,7 +81,7 @@ describe 'AssetsApi' do
   end
 
   # unit tests for companies_company_id_assets_asset_id_infoschema_save_get
-  # Get the information schema for a specific asset and save it to the asset&#39;s asset_schema field
+  # Retrieve and save an asset&#39;s information schema
   # @param company_id 
   # @param asset_id 
   # @param [Hash] opts the optional parameters
@@ -112,33 +112,6 @@ describe 'AssetsApi' do
   # @param [Hash] opts the optional parameters
   # @return [Object]
   describe 'companies_company_id_assets_asset_id_predicted_price_get test' do
-    it 'should work' do
-      # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
-    end
-  end
-
-  # unit tests for companies_company_id_assets_asset_id_recommendations_explain_get
-  # Get detailed explanation of how asset recommendations are calculated for debugging purposes.
-  # @param company_id 
-  # @param asset_id 
-  # @param [Hash] opts the optional parameters
-  # @return [Object]
-  describe 'companies_company_id_assets_asset_id_recommendations_explain_get test' do
-    it 'should work' do
-      # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
-    end
-  end
-
-  # unit tests for companies_company_id_assets_asset_id_recommendations_get
-  # Get asset recommendations for a specific asset using heuristic waterfall matching     Returns list of similar assets based on industry, company, connection, tags, etc.      Query Parameters:     - limit: Number of recommendations to return (default: 12, max: 50)     - min_score: Minimum similarity score threshold (default: 0.1)     - include_details: Include component similarity scores (default: false)
-  # @param company_id 
-  # @param asset_id 
-  # @param [Hash] opts the optional parameters
-  # @option opts [String] :limit 
-  # @option opts [String] :min_score 
-  # @option opts [String] :include_details 
-  # @return [Object]
-  describe 'companies_company_id_assets_asset_id_recommendations_get test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
     end
@@ -186,29 +159,6 @@ describe 'AssetsApi' do
   # @param [Hash] opts the optional parameters
   # @return [Object]
   describe 'companies_company_id_assets_post test' do
-    it 'should work' do
-      # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
-    end
-  end
-
-  # unit tests for companies_company_id_assets_recommendations_bulk_post
-  # Get recommendations for multiple assets in a single request. Useful for pre-loading recommendations.
-  # @param company_id 
-  # @param asset 
-  # @param [Hash] opts the optional parameters
-  # @return [Object]
-  describe 'companies_company_id_assets_recommendations_bulk_post test' do
-    it 'should work' do
-      # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
-    end
-  end
-
-  # unit tests for companies_company_id_assets_recommendations_health_get
-  # Health check for the recommendations system with sample data and performance metrics.
-  # @param company_id 
-  # @param [Hash] opts the optional parameters
-  # @return [Object]
-  describe 'companies_company_id_assets_recommendations_health_get test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
     end

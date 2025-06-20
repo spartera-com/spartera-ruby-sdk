@@ -73,7 +73,7 @@ module SparteraApiSdk
       return_type = opts[:debug_return_type] || 'Object'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['bearerAuth']
+      auth_names = opts[:debug_auth_names] || ['ApiKeyAuth']
 
       new_options = opts.merge(
         :operation => :"AlertsApi.companies_company_id_users_user_id_alerts_alert_id_delete",
@@ -146,7 +146,7 @@ module SparteraApiSdk
       return_type = opts[:debug_return_type] || 'Object'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['bearerAuth']
+      auth_names = opts[:debug_auth_names] || ['ApiKeyAuth']
 
       new_options = opts.merge(
         :operation => :"AlertsApi.companies_company_id_users_user_id_alerts_alert_id_get",
@@ -230,7 +230,7 @@ module SparteraApiSdk
       return_type = opts[:debug_return_type] || 'Object'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['bearerAuth']
+      auth_names = opts[:debug_auth_names] || ['ApiKeyAuth']
 
       new_options = opts.merge(
         :operation => :"AlertsApi.companies_company_id_users_user_id_alerts_alert_id_patch",
@@ -249,7 +249,7 @@ module SparteraApiSdk
       return data, status_code, headers
     end
 
-    # Get all alerts for a specific asset (from all users)     This would typically be restricted to asset owners or admins
+    # Get all alerts for a specific asset
     # @param company_id [String] 
     # @param user_id [String] 
     # @param asset_id [String] 
@@ -260,7 +260,7 @@ module SparteraApiSdk
       data
     end
 
-    # Get all alerts for a specific asset (from all users)     This would typically be restricted to asset owners or admins
+    # Get all alerts for a specific asset
     # @param company_id [String] 
     # @param user_id [String] 
     # @param asset_id [String] 
@@ -303,7 +303,7 @@ module SparteraApiSdk
       return_type = opts[:debug_return_type] || 'Object'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['bearerAuth']
+      auth_names = opts[:debug_auth_names] || ['ApiKeyAuth']
 
       new_options = opts.merge(
         :operation => :"AlertsApi.companies_company_id_users_user_id_alerts_asset_asset_id_all_get",
@@ -322,7 +322,7 @@ module SparteraApiSdk
       return data, status_code, headers
     end
 
-    # Get all alerts for a specific asset by the specified user     Useful for checking if user already has an alert set up for an asset
+    # Get all alerts for a specific asset (by user)
     # @param company_id [String] 
     # @param user_id [String] 
     # @param asset_id [String] 
@@ -333,7 +333,7 @@ module SparteraApiSdk
       data
     end
 
-    # Get all alerts for a specific asset by the specified user     Useful for checking if user already has an alert set up for an asset
+    # Get all alerts for a specific asset (by user)
     # @param company_id [String] 
     # @param user_id [String] 
     # @param asset_id [String] 
@@ -376,7 +376,7 @@ module SparteraApiSdk
       return_type = opts[:debug_return_type] || 'Object'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['bearerAuth']
+      auth_names = opts[:debug_auth_names] || ['ApiKeyAuth']
 
       new_options = opts.merge(
         :operation => :"AlertsApi.companies_company_id_users_user_id_alerts_asset_asset_id_get",
@@ -443,7 +443,7 @@ module SparteraApiSdk
       return_type = opts[:debug_return_type] || 'Object'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['bearerAuth']
+      auth_names = opts[:debug_auth_names] || ['ApiKeyAuth']
 
       new_options = opts.merge(
         :operation => :"AlertsApi.companies_company_id_users_user_id_alerts_get",
@@ -521,7 +521,7 @@ module SparteraApiSdk
       return_type = opts[:debug_return_type] || 'Object'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['bearerAuth']
+      auth_names = opts[:debug_auth_names] || ['ApiKeyAuth']
 
       new_options = opts.merge(
         :operation => :"AlertsApi.companies_company_id_users_user_id_alerts_post",

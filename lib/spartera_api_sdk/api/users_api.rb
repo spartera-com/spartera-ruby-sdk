@@ -19,7 +19,7 @@ module SparteraApiSdk
     def initialize(api_client = ApiClient.default)
       @api_client = api_client
     end
-    # Get a list of all users for a particular company
+    # Get a list of all users in a company
     # @param company_id [String] 
     # @param [Hash] opts the optional parameters
     # @return [Object]
@@ -28,7 +28,7 @@ module SparteraApiSdk
       data
     end
 
-    # Get a list of all users for a particular company
+    # Get a list of all users in a company
     # @param company_id [String] 
     # @param [Hash] opts the optional parameters
     # @return [Array<(Object, Integer, Hash)>] Object data, response status code and response headers
@@ -61,7 +61,7 @@ module SparteraApiSdk
       return_type = opts[:debug_return_type] || 'Object'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['bearerAuth']
+      auth_names = opts[:debug_auth_names] || ['ApiKeyAuth']
 
       new_options = opts.merge(
         :operation => :"UsersApi.companies_company_id_users_get",
@@ -133,7 +133,7 @@ module SparteraApiSdk
       return_type = opts[:debug_return_type] || 'Object'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['bearerAuth']
+      auth_names = opts[:debug_auth_names] || ['ApiKeyAuth']
 
       new_options = opts.merge(
         :operation => :"UsersApi.companies_company_id_users_post",
@@ -200,7 +200,7 @@ module SparteraApiSdk
       return_type = opts[:debug_return_type] || 'Object'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['bearerAuth']
+      auth_names = opts[:debug_auth_names] || ['ApiKeyAuth']
 
       new_options = opts.merge(
         :operation => :"UsersApi.companies_company_id_users_user_id_delete",
@@ -267,7 +267,7 @@ module SparteraApiSdk
       return_type = opts[:debug_return_type] || 'Object'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['bearerAuth']
+      auth_names = opts[:debug_auth_names] || ['ApiKeyAuth']
 
       new_options = opts.merge(
         :operation => :"UsersApi.companies_company_id_users_user_id_get",
@@ -345,7 +345,7 @@ module SparteraApiSdk
       return_type = opts[:debug_return_type] || 'Object'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['bearerAuth']
+      auth_names = opts[:debug_auth_names] || ['ApiKeyAuth']
 
       new_options = opts.merge(
         :operation => :"UsersApi.companies_company_id_users_user_id_patch",

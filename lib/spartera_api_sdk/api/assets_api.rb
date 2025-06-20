@@ -19,35 +19,35 @@ module SparteraApiSdk
     def initialize(api_client = ApiClient.default)
       @api_client = api_client
     end
-    # Process assets route that handles both owned and purchased assets.             Minimal route function that passes all logic to crudder.process_asset              Args:                 asset_path: The path after /analyze/ containing asset information                 company_handle: The subdomain from Flask's routing (if available)
-    # @param company_handle [String] 
+    # Process (analyze) an asset. Attempt to process an analytic on a backend warehouse/AI model.
     # @param asset_slug [String] 
+    # @param company_handle [String] 
     # @param [Hash] opts the optional parameters
     # @return [Object]
-    def analyze_company_handle_assets_asset_slug_get(company_handle, asset_slug, opts = {})
-      data, _status_code, _headers = analyze_company_handle_assets_asset_slug_get_with_http_info(company_handle, asset_slug, opts)
+    def analyze_company_handle_assets_asset_slug_get(asset_slug, company_handle, opts = {})
+      data, _status_code, _headers = analyze_company_handle_assets_asset_slug_get_with_http_info(asset_slug, company_handle, opts)
       data
     end
 
-    # Process assets route that handles both owned and purchased assets.             Minimal route function that passes all logic to crudder.process_asset              Args:                 asset_path: The path after /analyze/ containing asset information                 company_handle: The subdomain from Flask&#39;s routing (if available)
-    # @param company_handle [String] 
+    # Process (analyze) an asset. Attempt to process an analytic on a backend warehouse/AI model.
     # @param asset_slug [String] 
+    # @param company_handle [String] 
     # @param [Hash] opts the optional parameters
     # @return [Array<(Object, Integer, Hash)>] Object data, response status code and response headers
-    def analyze_company_handle_assets_asset_slug_get_with_http_info(company_handle, asset_slug, opts = {})
+    def analyze_company_handle_assets_asset_slug_get_with_http_info(asset_slug, company_handle, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: AssetsApi.analyze_company_handle_assets_asset_slug_get ...'
-      end
-      # verify the required parameter 'company_handle' is set
-      if @api_client.config.client_side_validation && company_handle.nil?
-        fail ArgumentError, "Missing the required parameter 'company_handle' when calling AssetsApi.analyze_company_handle_assets_asset_slug_get"
       end
       # verify the required parameter 'asset_slug' is set
       if @api_client.config.client_side_validation && asset_slug.nil?
         fail ArgumentError, "Missing the required parameter 'asset_slug' when calling AssetsApi.analyze_company_handle_assets_asset_slug_get"
       end
+      # verify the required parameter 'company_handle' is set
+      if @api_client.config.client_side_validation && company_handle.nil?
+        fail ArgumentError, "Missing the required parameter 'company_handle' when calling AssetsApi.analyze_company_handle_assets_asset_slug_get"
+      end
       # resource path
-      local_var_path = '/analyze/{company_handle}/assets/{asset_slug}'.sub('{' + 'company_handle' + '}', CGI.escape(company_handle.to_s)).sub('{' + 'asset_slug' + '}', CGI.escape(asset_slug.to_s))
+      local_var_path = '/analyze/{company_handle}/assets/{asset_slug}'.sub('{' + 'asset_slug' + '}', CGI.escape(asset_slug.to_s)).sub('{' + 'company_handle' + '}', CGI.escape(company_handle.to_s))
 
       # query parameters
       query_params = opts[:query_params] || {}
@@ -67,7 +67,7 @@ module SparteraApiSdk
       return_type = opts[:debug_return_type] || 'Object'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['bearerAuth']
+      auth_names = opts[:debug_auth_names] || ['ApiKeyAuth']
 
       new_options = opts.merge(
         :operation => :"AssetsApi.analyze_company_handle_assets_asset_slug_get",
@@ -134,7 +134,7 @@ module SparteraApiSdk
       return_type = opts[:debug_return_type] || 'Object'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['bearerAuth']
+      auth_names = opts[:debug_auth_names] || ['ApiKeyAuth']
 
       new_options = opts.merge(
         :operation => :"AssetsApi.companies_company_id_assets_asset_id_delete",
@@ -201,7 +201,7 @@ module SparteraApiSdk
       return_type = opts[:debug_return_type] || 'Object'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['bearerAuth']
+      auth_names = opts[:debug_auth_names] || ['ApiKeyAuth']
 
       new_options = opts.merge(
         :operation => :"AssetsApi.companies_company_id_assets_asset_id_get",
@@ -268,7 +268,7 @@ module SparteraApiSdk
       return_type = opts[:debug_return_type] || 'Object'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['bearerAuth']
+      auth_names = opts[:debug_auth_names] || ['ApiKeyAuth']
 
       new_options = opts.merge(
         :operation => :"AssetsApi.companies_company_id_assets_asset_id_infoschema_get",
@@ -287,7 +287,7 @@ module SparteraApiSdk
       return data, status_code, headers
     end
 
-    # Get the information schema for a specific asset and save it to the asset's asset_schema field
+    # Retrieve and save an asset's information schema
     # @param company_id [String] 
     # @param asset_id [String] 
     # @param [Hash] opts the optional parameters
@@ -297,7 +297,7 @@ module SparteraApiSdk
       data
     end
 
-    # Get the information schema for a specific asset and save it to the asset&#39;s asset_schema field
+    # Retrieve and save an asset&#39;s information schema
     # @param company_id [String] 
     # @param asset_id [String] 
     # @param [Hash] opts the optional parameters
@@ -335,7 +335,7 @@ module SparteraApiSdk
       return_type = opts[:debug_return_type] || 'Object'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['bearerAuth']
+      auth_names = opts[:debug_auth_names] || ['ApiKeyAuth']
 
       new_options = opts.merge(
         :operation => :"AssetsApi.companies_company_id_assets_asset_id_infoschema_save_get",
@@ -413,7 +413,7 @@ module SparteraApiSdk
       return_type = opts[:debug_return_type] || 'Object'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['bearerAuth']
+      auth_names = opts[:debug_auth_names] || ['ApiKeyAuth']
 
       new_options = opts.merge(
         :operation => :"AssetsApi.companies_company_id_assets_asset_id_patch",
@@ -480,7 +480,7 @@ module SparteraApiSdk
       return_type = opts[:debug_return_type] || 'Object'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['bearerAuth']
+      auth_names = opts[:debug_auth_names] || ['ApiKeyAuth']
 
       new_options = opts.merge(
         :operation => :"AssetsApi.companies_company_id_assets_asset_id_predicted_price_get",
@@ -495,149 +495,6 @@ module SparteraApiSdk
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: AssetsApi#companies_company_id_assets_asset_id_predicted_price_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
-      end
-      return data, status_code, headers
-    end
-
-    # Get detailed explanation of how asset recommendations are calculated for debugging purposes.
-    # @param company_id [String] 
-    # @param asset_id [String] 
-    # @param [Hash] opts the optional parameters
-    # @return [Object]
-    def companies_company_id_assets_asset_id_recommendations_explain_get(company_id, asset_id, opts = {})
-      data, _status_code, _headers = companies_company_id_assets_asset_id_recommendations_explain_get_with_http_info(company_id, asset_id, opts)
-      data
-    end
-
-    # Get detailed explanation of how asset recommendations are calculated for debugging purposes.
-    # @param company_id [String] 
-    # @param asset_id [String] 
-    # @param [Hash] opts the optional parameters
-    # @return [Array<(Object, Integer, Hash)>] Object data, response status code and response headers
-    def companies_company_id_assets_asset_id_recommendations_explain_get_with_http_info(company_id, asset_id, opts = {})
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: AssetsApi.companies_company_id_assets_asset_id_recommendations_explain_get ...'
-      end
-      # verify the required parameter 'company_id' is set
-      if @api_client.config.client_side_validation && company_id.nil?
-        fail ArgumentError, "Missing the required parameter 'company_id' when calling AssetsApi.companies_company_id_assets_asset_id_recommendations_explain_get"
-      end
-      # verify the required parameter 'asset_id' is set
-      if @api_client.config.client_side_validation && asset_id.nil?
-        fail ArgumentError, "Missing the required parameter 'asset_id' when calling AssetsApi.companies_company_id_assets_asset_id_recommendations_explain_get"
-      end
-      # resource path
-      local_var_path = '/companies/{company_id}/assets/{asset_id}/recommendations/explain'.sub('{' + 'company_id' + '}', CGI.escape(company_id.to_s)).sub('{' + 'asset_id' + '}', CGI.escape(asset_id.to_s))
-
-      # query parameters
-      query_params = opts[:query_params] || {}
-
-      # header parameters
-      header_params = opts[:header_params] || {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
-
-      # form parameters
-      form_params = opts[:form_params] || {}
-
-      # http body (model)
-      post_body = opts[:debug_body]
-
-      # return_type
-      return_type = opts[:debug_return_type] || 'Object'
-
-      # auth_names
-      auth_names = opts[:debug_auth_names] || ['bearerAuth']
-
-      new_options = opts.merge(
-        :operation => :"AssetsApi.companies_company_id_assets_asset_id_recommendations_explain_get",
-        :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => return_type
-      )
-
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: AssetsApi#companies_company_id_assets_asset_id_recommendations_explain_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
-      end
-      return data, status_code, headers
-    end
-
-    # Get asset recommendations for a specific asset using heuristic waterfall matching     Returns list of similar assets based on industry, company, connection, tags, etc.      Query Parameters:     - limit: Number of recommendations to return (default: 12, max: 50)     - min_score: Minimum similarity score threshold (default: 0.1)     - include_details: Include component similarity scores (default: false)
-    # @param company_id [String] 
-    # @param asset_id [String] 
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :limit 
-    # @option opts [String] :min_score 
-    # @option opts [String] :include_details 
-    # @return [Object]
-    def companies_company_id_assets_asset_id_recommendations_get(company_id, asset_id, opts = {})
-      data, _status_code, _headers = companies_company_id_assets_asset_id_recommendations_get_with_http_info(company_id, asset_id, opts)
-      data
-    end
-
-    # Get asset recommendations for a specific asset using heuristic waterfall matching     Returns list of similar assets based on industry, company, connection, tags, etc.      Query Parameters:     - limit: Number of recommendations to return (default: 12, max: 50)     - min_score: Minimum similarity score threshold (default: 0.1)     - include_details: Include component similarity scores (default: false)
-    # @param company_id [String] 
-    # @param asset_id [String] 
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :limit 
-    # @option opts [String] :min_score 
-    # @option opts [String] :include_details 
-    # @return [Array<(Object, Integer, Hash)>] Object data, response status code and response headers
-    def companies_company_id_assets_asset_id_recommendations_get_with_http_info(company_id, asset_id, opts = {})
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: AssetsApi.companies_company_id_assets_asset_id_recommendations_get ...'
-      end
-      # verify the required parameter 'company_id' is set
-      if @api_client.config.client_side_validation && company_id.nil?
-        fail ArgumentError, "Missing the required parameter 'company_id' when calling AssetsApi.companies_company_id_assets_asset_id_recommendations_get"
-      end
-      # verify the required parameter 'asset_id' is set
-      if @api_client.config.client_side_validation && asset_id.nil?
-        fail ArgumentError, "Missing the required parameter 'asset_id' when calling AssetsApi.companies_company_id_assets_asset_id_recommendations_get"
-      end
-      # resource path
-      local_var_path = '/companies/{company_id}/assets/{asset_id}/recommendations'.sub('{' + 'company_id' + '}', CGI.escape(company_id.to_s)).sub('{' + 'asset_id' + '}', CGI.escape(asset_id.to_s))
-
-      # query parameters
-      query_params = opts[:query_params] || {}
-      query_params[:'limit'] = opts[:'limit'] if !opts[:'limit'].nil?
-      query_params[:'min_score'] = opts[:'min_score'] if !opts[:'min_score'].nil?
-      query_params[:'include_details'] = opts[:'include_details'] if !opts[:'include_details'].nil?
-
-      # header parameters
-      header_params = opts[:header_params] || {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
-
-      # form parameters
-      form_params = opts[:form_params] || {}
-
-      # http body (model)
-      post_body = opts[:debug_body]
-
-      # return_type
-      return_type = opts[:debug_return_type] || 'Object'
-
-      # auth_names
-      auth_names = opts[:debug_auth_names] || ['bearerAuth']
-
-      new_options = opts.merge(
-        :operation => :"AssetsApi.companies_company_id_assets_asset_id_recommendations_get",
-        :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => return_type
-      )
-
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: AssetsApi#companies_company_id_assets_asset_id_recommendations_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -690,7 +547,7 @@ module SparteraApiSdk
       return_type = opts[:debug_return_type] || 'Object'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['bearerAuth']
+      auth_names = opts[:debug_auth_names] || ['ApiKeyAuth']
 
       new_options = opts.merge(
         :operation => :"AssetsApi.companies_company_id_assets_asset_id_statistics_get",
@@ -757,7 +614,7 @@ module SparteraApiSdk
       return_type = opts[:debug_return_type] || 'Object'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['bearerAuth']
+      auth_names = opts[:debug_auth_names] || ['ApiKeyAuth']
 
       new_options = opts.merge(
         :operation => :"AssetsApi.companies_company_id_assets_asset_id_test_get",
@@ -818,7 +675,7 @@ module SparteraApiSdk
       return_type = opts[:debug_return_type] || 'Object'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['bearerAuth']
+      auth_names = opts[:debug_auth_names] || ['ApiKeyAuth']
 
       new_options = opts.merge(
         :operation => :"AssetsApi.companies_company_id_assets_get",
@@ -890,7 +747,7 @@ module SparteraApiSdk
       return_type = opts[:debug_return_type] || 'Object'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['bearerAuth']
+      auth_names = opts[:debug_auth_names] || ['ApiKeyAuth']
 
       new_options = opts.merge(
         :operation => :"AssetsApi.companies_company_id_assets_post",
@@ -905,139 +762,6 @@ module SparteraApiSdk
       data, status_code, headers = @api_client.call_api(:POST, local_var_path, new_options)
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: AssetsApi#companies_company_id_assets_post\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
-      end
-      return data, status_code, headers
-    end
-
-    # Get recommendations for multiple assets in a single request. Useful for pre-loading recommendations.
-    # @param company_id [String] 
-    # @param asset [Asset] 
-    # @param [Hash] opts the optional parameters
-    # @return [Object]
-    def companies_company_id_assets_recommendations_bulk_post(company_id, asset, opts = {})
-      data, _status_code, _headers = companies_company_id_assets_recommendations_bulk_post_with_http_info(company_id, asset, opts)
-      data
-    end
-
-    # Get recommendations for multiple assets in a single request. Useful for pre-loading recommendations.
-    # @param company_id [String] 
-    # @param asset [Asset] 
-    # @param [Hash] opts the optional parameters
-    # @return [Array<(Object, Integer, Hash)>] Object data, response status code and response headers
-    def companies_company_id_assets_recommendations_bulk_post_with_http_info(company_id, asset, opts = {})
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: AssetsApi.companies_company_id_assets_recommendations_bulk_post ...'
-      end
-      # verify the required parameter 'company_id' is set
-      if @api_client.config.client_side_validation && company_id.nil?
-        fail ArgumentError, "Missing the required parameter 'company_id' when calling AssetsApi.companies_company_id_assets_recommendations_bulk_post"
-      end
-      # verify the required parameter 'asset' is set
-      if @api_client.config.client_side_validation && asset.nil?
-        fail ArgumentError, "Missing the required parameter 'asset' when calling AssetsApi.companies_company_id_assets_recommendations_bulk_post"
-      end
-      # resource path
-      local_var_path = '/companies/{company_id}/assets/recommendations/bulk'.sub('{' + 'company_id' + '}', CGI.escape(company_id.to_s))
-
-      # query parameters
-      query_params = opts[:query_params] || {}
-
-      # header parameters
-      header_params = opts[:header_params] || {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
-      # HTTP header 'Content-Type'
-      content_type = @api_client.select_header_content_type(['application/json'])
-      if !content_type.nil?
-          header_params['Content-Type'] = content_type
-      end
-
-      # form parameters
-      form_params = opts[:form_params] || {}
-
-      # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(asset)
-
-      # return_type
-      return_type = opts[:debug_return_type] || 'Object'
-
-      # auth_names
-      auth_names = opts[:debug_auth_names] || ['bearerAuth']
-
-      new_options = opts.merge(
-        :operation => :"AssetsApi.companies_company_id_assets_recommendations_bulk_post",
-        :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => return_type
-      )
-
-      data, status_code, headers = @api_client.call_api(:POST, local_var_path, new_options)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: AssetsApi#companies_company_id_assets_recommendations_bulk_post\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
-      end
-      return data, status_code, headers
-    end
-
-    # Health check for the recommendations system with sample data and performance metrics.
-    # @param company_id [String] 
-    # @param [Hash] opts the optional parameters
-    # @return [Object]
-    def companies_company_id_assets_recommendations_health_get(company_id, opts = {})
-      data, _status_code, _headers = companies_company_id_assets_recommendations_health_get_with_http_info(company_id, opts)
-      data
-    end
-
-    # Health check for the recommendations system with sample data and performance metrics.
-    # @param company_id [String] 
-    # @param [Hash] opts the optional parameters
-    # @return [Array<(Object, Integer, Hash)>] Object data, response status code and response headers
-    def companies_company_id_assets_recommendations_health_get_with_http_info(company_id, opts = {})
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: AssetsApi.companies_company_id_assets_recommendations_health_get ...'
-      end
-      # verify the required parameter 'company_id' is set
-      if @api_client.config.client_side_validation && company_id.nil?
-        fail ArgumentError, "Missing the required parameter 'company_id' when calling AssetsApi.companies_company_id_assets_recommendations_health_get"
-      end
-      # resource path
-      local_var_path = '/companies/{company_id}/assets/recommendations/health'.sub('{' + 'company_id' + '}', CGI.escape(company_id.to_s))
-
-      # query parameters
-      query_params = opts[:query_params] || {}
-
-      # header parameters
-      header_params = opts[:header_params] || {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
-
-      # form parameters
-      form_params = opts[:form_params] || {}
-
-      # http body (model)
-      post_body = opts[:debug_body]
-
-      # return_type
-      return_type = opts[:debug_return_type] || 'Object'
-
-      # auth_names
-      auth_names = opts[:debug_auth_names] || ['bearerAuth']
-
-      new_options = opts.merge(
-        :operation => :"AssetsApi.companies_company_id_assets_recommendations_health_get",
-        :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => return_type
-      )
-
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: AssetsApi#companies_company_id_assets_recommendations_health_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -1084,7 +808,7 @@ module SparteraApiSdk
       return_type = opts[:debug_return_type] || 'Object'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['bearerAuth']
+      auth_names = opts[:debug_auth_names] || ['ApiKeyAuth']
 
       new_options = opts.merge(
         :operation => :"AssetsApi.companies_company_id_assets_statistics_get",

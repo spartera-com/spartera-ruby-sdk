@@ -13,29 +13,41 @@ Generator version: 7.13.0
 require 'cgi'
 
 module SparteraApiSdk
-  class CloudProvidersApi
+  class StorageEnginesApi
     attr_accessor :api_client
 
     def initialize(api_client = ApiClient.default)
       @api_client = api_client
     end
-    # Get a list of all cloud providers
+    # Get single storage engine by ID
+    # @param provider_id [String] 
+    # @param engine_id [String] 
     # @param [Hash] opts the optional parameters
     # @return [Object]
-    def cloud_providers_get(opts = {})
-      data, _status_code, _headers = cloud_providers_get_with_http_info(opts)
+    def cloud_providers_provider_id_storage_engines_engine_id_get(provider_id, engine_id, opts = {})
+      data, _status_code, _headers = cloud_providers_provider_id_storage_engines_engine_id_get_with_http_info(provider_id, engine_id, opts)
       data
     end
 
-    # Get a list of all cloud providers
+    # Get single storage engine by ID
+    # @param provider_id [String] 
+    # @param engine_id [String] 
     # @param [Hash] opts the optional parameters
     # @return [Array<(Object, Integer, Hash)>] Object data, response status code and response headers
-    def cloud_providers_get_with_http_info(opts = {})
+    def cloud_providers_provider_id_storage_engines_engine_id_get_with_http_info(provider_id, engine_id, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: CloudProvidersApi.cloud_providers_get ...'
+        @api_client.config.logger.debug 'Calling API: StorageEnginesApi.cloud_providers_provider_id_storage_engines_engine_id_get ...'
+      end
+      # verify the required parameter 'provider_id' is set
+      if @api_client.config.client_side_validation && provider_id.nil?
+        fail ArgumentError, "Missing the required parameter 'provider_id' when calling StorageEnginesApi.cloud_providers_provider_id_storage_engines_engine_id_get"
+      end
+      # verify the required parameter 'engine_id' is set
+      if @api_client.config.client_side_validation && engine_id.nil?
+        fail ArgumentError, "Missing the required parameter 'engine_id' when calling StorageEnginesApi.cloud_providers_provider_id_storage_engines_engine_id_get"
       end
       # resource path
-      local_var_path = '/cloud-providers'
+      local_var_path = '/cloud-providers/{provider_id}/storage-engines/{engine_id}'.sub('{' + 'provider_id' + '}', CGI.escape(provider_id.to_s)).sub('{' + 'engine_id' + '}', CGI.escape(engine_id.to_s))
 
       # query parameters
       query_params = opts[:query_params] || {}
@@ -58,7 +70,7 @@ module SparteraApiSdk
       auth_names = opts[:debug_auth_names] || ['ApiKeyAuth']
 
       new_options = opts.merge(
-        :operation => :"CloudProvidersApi.cloud_providers_get",
+        :operation => :"StorageEnginesApi.cloud_providers_provider_id_storage_engines_engine_id_get",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -69,34 +81,34 @@ module SparteraApiSdk
 
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: CloudProvidersApi#cloud_providers_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: StorageEnginesApi#cloud_providers_provider_id_storage_engines_engine_id_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
 
-    # Get single cloud provider by ID
+    # Get a list of all storage engines
     # @param provider_id [String] 
     # @param [Hash] opts the optional parameters
     # @return [Object]
-    def cloud_providers_provider_id_get(provider_id, opts = {})
-      data, _status_code, _headers = cloud_providers_provider_id_get_with_http_info(provider_id, opts)
+    def cloud_providers_provider_id_storage_engines_get(provider_id, opts = {})
+      data, _status_code, _headers = cloud_providers_provider_id_storage_engines_get_with_http_info(provider_id, opts)
       data
     end
 
-    # Get single cloud provider by ID
+    # Get a list of all storage engines
     # @param provider_id [String] 
     # @param [Hash] opts the optional parameters
     # @return [Array<(Object, Integer, Hash)>] Object data, response status code and response headers
-    def cloud_providers_provider_id_get_with_http_info(provider_id, opts = {})
+    def cloud_providers_provider_id_storage_engines_get_with_http_info(provider_id, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: CloudProvidersApi.cloud_providers_provider_id_get ...'
+        @api_client.config.logger.debug 'Calling API: StorageEnginesApi.cloud_providers_provider_id_storage_engines_get ...'
       end
       # verify the required parameter 'provider_id' is set
       if @api_client.config.client_side_validation && provider_id.nil?
-        fail ArgumentError, "Missing the required parameter 'provider_id' when calling CloudProvidersApi.cloud_providers_provider_id_get"
+        fail ArgumentError, "Missing the required parameter 'provider_id' when calling StorageEnginesApi.cloud_providers_provider_id_storage_engines_get"
       end
       # resource path
-      local_var_path = '/cloud-providers/{provider_id}'.sub('{' + 'provider_id' + '}', CGI.escape(provider_id.to_s))
+      local_var_path = '/cloud-providers/{provider_id}/storage-engines'.sub('{' + 'provider_id' + '}', CGI.escape(provider_id.to_s))
 
       # query parameters
       query_params = opts[:query_params] || {}
@@ -119,7 +131,7 @@ module SparteraApiSdk
       auth_names = opts[:debug_auth_names] || ['ApiKeyAuth']
 
       new_options = opts.merge(
-        :operation => :"CloudProvidersApi.cloud_providers_provider_id_get",
+        :operation => :"StorageEnginesApi.cloud_providers_provider_id_storage_engines_get",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -130,7 +142,7 @@ module SparteraApiSdk
 
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: CloudProvidersApi#cloud_providers_provider_id_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: StorageEnginesApi#cloud_providers_provider_id_storage_engines_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end

@@ -67,7 +67,7 @@ module SparteraApiSdk
       return_type = opts[:debug_return_type] || 'Object'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['bearerAuth']
+      auth_names = opts[:debug_auth_names] || ['ApiKeyAuth']
 
       new_options = opts.merge(
         :operation => :"ConnectionsApi.companies_company_id_connections_connection_id_delete",
@@ -134,7 +134,7 @@ module SparteraApiSdk
       return_type = opts[:debug_return_type] || 'Object'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['bearerAuth']
+      auth_names = opts[:debug_auth_names] || ['ApiKeyAuth']
 
       new_options = opts.merge(
         :operation => :"ConnectionsApi.companies_company_id_connections_connection_id_get",
@@ -201,7 +201,7 @@ module SparteraApiSdk
       return_type = opts[:debug_return_type] || 'Object'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['bearerAuth']
+      auth_names = opts[:debug_auth_names] || ['ApiKeyAuth']
 
       new_options = opts.merge(
         :operation => :"ConnectionsApi.companies_company_id_connections_connection_id_infoschema_get",
@@ -279,7 +279,7 @@ module SparteraApiSdk
       return_type = opts[:debug_return_type] || 'Object'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['bearerAuth']
+      auth_names = opts[:debug_auth_names] || ['ApiKeyAuth']
 
       new_options = opts.merge(
         :operation => :"ConnectionsApi.companies_company_id_connections_connection_id_patch",
@@ -298,7 +298,7 @@ module SparteraApiSdk
       return data, status_code, headers
     end
 
-    # Verify the specified connection to ensure it is functioning correctly
+    # Test the specified connection
     # @param company_id [String] 
     # @param connection_id [String] 
     # @param [Hash] opts the optional parameters
@@ -308,7 +308,7 @@ module SparteraApiSdk
       data
     end
 
-    # Verify the specified connection to ensure it is functioning correctly
+    # Test the specified connection
     # @param company_id [String] 
     # @param connection_id [String] 
     # @param [Hash] opts the optional parameters
@@ -346,7 +346,7 @@ module SparteraApiSdk
       return_type = opts[:debug_return_type] || 'Object'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['bearerAuth']
+      auth_names = opts[:debug_auth_names] || ['ApiKeyAuth']
 
       new_options = opts.merge(
         :operation => :"ConnectionsApi.companies_company_id_connections_connection_id_test_get",
@@ -407,7 +407,7 @@ module SparteraApiSdk
       return_type = opts[:debug_return_type] || 'Object'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['bearerAuth']
+      auth_names = opts[:debug_auth_names] || ['ApiKeyAuth']
 
       new_options = opts.merge(
         :operation => :"ConnectionsApi.companies_company_id_connections_get",
@@ -479,7 +479,7 @@ module SparteraApiSdk
       return_type = opts[:debug_return_type] || 'Object'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['bearerAuth']
+      auth_names = opts[:debug_auth_names] || ['ApiKeyAuth']
 
       new_options = opts.merge(
         :operation => :"ConnectionsApi.companies_company_id_connections_post",

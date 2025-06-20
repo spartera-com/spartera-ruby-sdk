@@ -33,7 +33,7 @@ describe 'UsersApi' do
   end
 
   # unit tests for companies_company_id_users_get
-  # Get a list of all users for a particular company
+  # Get a list of all users in a company
   # @param company_id 
   # @param [Hash] opts the optional parameters
   # @return [Object]

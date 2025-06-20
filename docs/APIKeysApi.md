@@ -24,8 +24,10 @@ require 'time'
 require 'spartera_api_sdk'
 # setup authorization
 SparteraApiSdk.configure do |config|
-  # Configure Bearer authorization (JWT): bearerAuth
-  config.access_token = 'YOUR_BEARER_TOKEN'
+  # Configure API key authorization: ApiKeyAuth
+  config.api_key['x-api-key'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
 api_instance = SparteraApiSdk::APIKeysApi.new
@@ -72,7 +74,7 @@ end
 
 ### Authorization
 
-[bearerAuth](../README.md#bearerAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -93,8 +95,10 @@ require 'time'
 require 'spartera_api_sdk'
 # setup authorization
 SparteraApiSdk.configure do |config|
-  # Configure Bearer authorization (JWT): bearerAuth
-  config.access_token = 'YOUR_BEARER_TOKEN'
+  # Configure API key authorization: ApiKeyAuth
+  config.api_key['x-api-key'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
 api_instance = SparteraApiSdk::APIKeysApi.new
@@ -141,7 +145,7 @@ end
 
 ### Authorization
 
-[bearerAuth](../README.md#bearerAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -162,8 +166,10 @@ require 'time'
 require 'spartera_api_sdk'
 # setup authorization
 SparteraApiSdk.configure do |config|
-  # Configure Bearer authorization (JWT): bearerAuth
-  config.access_token = 'YOUR_BEARER_TOKEN'
+  # Configure API key authorization: ApiKeyAuth
+  config.api_key['x-api-key'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
 api_instance = SparteraApiSdk::APIKeysApi.new
@@ -208,7 +214,7 @@ end
 
 ### Authorization
 
-[bearerAuth](../README.md#bearerAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -229,8 +235,10 @@ require 'time'
 require 'spartera_api_sdk'
 # setup authorization
 SparteraApiSdk.configure do |config|
-  # Configure Bearer authorization (JWT): bearerAuth
-  config.access_token = 'YOUR_BEARER_TOKEN'
+  # Configure API key authorization: ApiKeyAuth
+  config.api_key['x-api-key'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
 api_instance = SparteraApiSdk::APIKeysApi.new
@@ -275,7 +283,7 @@ end
 
 ### Authorization
 
-[bearerAuth](../README.md#bearerAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -296,8 +304,10 @@ require 'time'
 require 'spartera_api_sdk'
 # setup authorization
 SparteraApiSdk.configure do |config|
-  # Configure Bearer authorization (JWT): bearerAuth
-  config.access_token = 'YOUR_BEARER_TOKEN'
+  # Configure API key authorization: ApiKeyAuth
+  config.api_key['x-api-key'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
 api_instance = SparteraApiSdk::APIKeysApi.new
@@ -344,7 +354,7 @@ end
 
 ### Authorization
 
-[bearerAuth](../README.md#bearerAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 

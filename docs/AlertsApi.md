@@ -7,8 +7,8 @@ All URIs are relative to *https://api.spartera.com*
 | [**companies_company_id_users_user_id_alerts_alert_id_delete**](AlertsApi.md#companies_company_id_users_user_id_alerts_alert_id_delete) | **DELETE** /companies/{company_id}/users/{user_id}/alerts/{alert_id} | Delete single alert by ID |
 | [**companies_company_id_users_user_id_alerts_alert_id_get**](AlertsApi.md#companies_company_id_users_user_id_alerts_alert_id_get) | **GET** /companies/{company_id}/users/{user_id}/alerts/{alert_id} | Get single alert by ID |
 | [**companies_company_id_users_user_id_alerts_alert_id_patch**](AlertsApi.md#companies_company_id_users_user_id_alerts_alert_id_patch) | **PATCH** /companies/{company_id}/users/{user_id}/alerts/{alert_id} | Update an existing alert by ID |
-| [**companies_company_id_users_user_id_alerts_asset_asset_id_all_get**](AlertsApi.md#companies_company_id_users_user_id_alerts_asset_asset_id_all_get) | **GET** /companies/{company_id}/users/{user_id}/alerts/asset/{asset_id}/all | Get all alerts for a specific asset (from all users)     This would typically be restricted to asset owners or admins |
-| [**companies_company_id_users_user_id_alerts_asset_asset_id_get**](AlertsApi.md#companies_company_id_users_user_id_alerts_asset_asset_id_get) | **GET** /companies/{company_id}/users/{user_id}/alerts/asset/{asset_id} | Get all alerts for a specific asset by the specified user     Useful for checking if user already has an alert set up for an asset |
+| [**companies_company_id_users_user_id_alerts_asset_asset_id_all_get**](AlertsApi.md#companies_company_id_users_user_id_alerts_asset_asset_id_all_get) | **GET** /companies/{company_id}/users/{user_id}/alerts/asset/{asset_id}/all | Get all alerts for a specific asset |
+| [**companies_company_id_users_user_id_alerts_asset_asset_id_get**](AlertsApi.md#companies_company_id_users_user_id_alerts_asset_asset_id_get) | **GET** /companies/{company_id}/users/{user_id}/alerts/asset/{asset_id} | Get all alerts for a specific asset (by user) |
 | [**companies_company_id_users_user_id_alerts_get**](AlertsApi.md#companies_company_id_users_user_id_alerts_get) | **GET** /companies/{company_id}/users/{user_id}/alerts | Get a list of all alerts for a specific user |
 | [**companies_company_id_users_user_id_alerts_post**](AlertsApi.md#companies_company_id_users_user_id_alerts_post) | **POST** /companies/{company_id}/users/{user_id}/alerts | POST /companies/{company_id}/users/{user_id}/alerts |
 
@@ -26,8 +26,10 @@ require 'time'
 require 'spartera_api_sdk'
 # setup authorization
 SparteraApiSdk.configure do |config|
-  # Configure Bearer authorization (JWT): bearerAuth
-  config.access_token = 'YOUR_BEARER_TOKEN'
+  # Configure API key authorization: ApiKeyAuth
+  config.api_key['x-api-key'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
 api_instance = SparteraApiSdk::AlertsApi.new
@@ -76,7 +78,7 @@ end
 
 ### Authorization
 
-[bearerAuth](../README.md#bearerAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -97,8 +99,10 @@ require 'time'
 require 'spartera_api_sdk'
 # setup authorization
 SparteraApiSdk.configure do |config|
-  # Configure Bearer authorization (JWT): bearerAuth
-  config.access_token = 'YOUR_BEARER_TOKEN'
+  # Configure API key authorization: ApiKeyAuth
+  config.api_key['x-api-key'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
 api_instance = SparteraApiSdk::AlertsApi.new
@@ -147,7 +151,7 @@ end
 
 ### Authorization
 
-[bearerAuth](../README.md#bearerAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -168,8 +172,10 @@ require 'time'
 require 'spartera_api_sdk'
 # setup authorization
 SparteraApiSdk.configure do |config|
-  # Configure Bearer authorization (JWT): bearerAuth
-  config.access_token = 'YOUR_BEARER_TOKEN'
+  # Configure API key authorization: ApiKeyAuth
+  config.api_key['x-api-key'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
 api_instance = SparteraApiSdk::AlertsApi.new
@@ -220,7 +226,7 @@ end
 
 ### Authorization
 
-[bearerAuth](../README.md#bearerAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -232,7 +238,7 @@ end
 
 > Object companies_company_id_users_user_id_alerts_asset_asset_id_all_get(company_id, user_id, asset_id)
 
-Get all alerts for a specific asset (from all users)     This would typically be restricted to asset owners or admins
+Get all alerts for a specific asset
 
 ### Examples
 
@@ -241,8 +247,10 @@ require 'time'
 require 'spartera_api_sdk'
 # setup authorization
 SparteraApiSdk.configure do |config|
-  # Configure Bearer authorization (JWT): bearerAuth
-  config.access_token = 'YOUR_BEARER_TOKEN'
+  # Configure API key authorization: ApiKeyAuth
+  config.api_key['x-api-key'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
 api_instance = SparteraApiSdk::AlertsApi.new
@@ -251,7 +259,7 @@ user_id = 'user_id_example' # String |
 asset_id = 'asset_id_example' # String | 
 
 begin
-  # Get all alerts for a specific asset (from all users)     This would typically be restricted to asset owners or admins
+  # Get all alerts for a specific asset
   result = api_instance.companies_company_id_users_user_id_alerts_asset_asset_id_all_get(company_id, user_id, asset_id)
   p result
 rescue SparteraApiSdk::ApiError => e
@@ -267,7 +275,7 @@ This returns an Array which contains the response data, status code and headers.
 
 ```ruby
 begin
-  # Get all alerts for a specific asset (from all users)     This would typically be restricted to asset owners or admins
+  # Get all alerts for a specific asset
   data, status_code, headers = api_instance.companies_company_id_users_user_id_alerts_asset_asset_id_all_get_with_http_info(company_id, user_id, asset_id)
   p status_code # => 2xx
   p headers # => { ... }
@@ -291,7 +299,7 @@ end
 
 ### Authorization
 
-[bearerAuth](../README.md#bearerAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -303,7 +311,7 @@ end
 
 > Object companies_company_id_users_user_id_alerts_asset_asset_id_get(company_id, user_id, asset_id)
 
-Get all alerts for a specific asset by the specified user     Useful for checking if user already has an alert set up for an asset
+Get all alerts for a specific asset (by user)
 
 ### Examples
 
@@ -312,8 +320,10 @@ require 'time'
 require 'spartera_api_sdk'
 # setup authorization
 SparteraApiSdk.configure do |config|
-  # Configure Bearer authorization (JWT): bearerAuth
-  config.access_token = 'YOUR_BEARER_TOKEN'
+  # Configure API key authorization: ApiKeyAuth
+  config.api_key['x-api-key'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
 api_instance = SparteraApiSdk::AlertsApi.new
@@ -322,7 +332,7 @@ user_id = 'user_id_example' # String |
 asset_id = 'asset_id_example' # String | 
 
 begin
-  # Get all alerts for a specific asset by the specified user     Useful for checking if user already has an alert set up for an asset
+  # Get all alerts for a specific asset (by user)
   result = api_instance.companies_company_id_users_user_id_alerts_asset_asset_id_get(company_id, user_id, asset_id)
   p result
 rescue SparteraApiSdk::ApiError => e
@@ -338,7 +348,7 @@ This returns an Array which contains the response data, status code and headers.
 
 ```ruby
 begin
-  # Get all alerts for a specific asset by the specified user     Useful for checking if user already has an alert set up for an asset
+  # Get all alerts for a specific asset (by user)
   data, status_code, headers = api_instance.companies_company_id_users_user_id_alerts_asset_asset_id_get_with_http_info(company_id, user_id, asset_id)
   p status_code # => 2xx
   p headers # => { ... }
@@ -362,7 +372,7 @@ end
 
 ### Authorization
 
-[bearerAuth](../README.md#bearerAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -383,8 +393,10 @@ require 'time'
 require 'spartera_api_sdk'
 # setup authorization
 SparteraApiSdk.configure do |config|
-  # Configure Bearer authorization (JWT): bearerAuth
-  config.access_token = 'YOUR_BEARER_TOKEN'
+  # Configure API key authorization: ApiKeyAuth
+  config.api_key['x-api-key'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
 api_instance = SparteraApiSdk::AlertsApi.new
@@ -431,7 +443,7 @@ end
 
 ### Authorization
 
-[bearerAuth](../README.md#bearerAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -452,8 +464,10 @@ require 'time'
 require 'spartera_api_sdk'
 # setup authorization
 SparteraApiSdk.configure do |config|
-  # Configure Bearer authorization (JWT): bearerAuth
-  config.access_token = 'YOUR_BEARER_TOKEN'
+  # Configure API key authorization: ApiKeyAuth
+  config.api_key['x-api-key'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
 api_instance = SparteraApiSdk::AlertsApi.new
@@ -502,7 +516,7 @@ end
 
 ### Authorization
 
-[bearerAuth](../README.md#bearerAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 

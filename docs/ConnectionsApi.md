@@ -8,7 +8,7 @@ All URIs are relative to *https://api.spartera.com*
 | [**companies_company_id_connections_connection_id_get**](ConnectionsApi.md#companies_company_id_connections_connection_id_get) | **GET** /companies/{company_id}/connections/{connection_id} | Get single connection by ID |
 | [**companies_company_id_connections_connection_id_infoschema_get**](ConnectionsApi.md#companies_company_id_connections_connection_id_infoschema_get) | **GET** /companies/{company_id}/connections/{connection_id}/infoschema | Retrieve the information schema for the specified connection |
 | [**companies_company_id_connections_connection_id_patch**](ConnectionsApi.md#companies_company_id_connections_connection_id_patch) | **PATCH** /companies/{company_id}/connections/{connection_id} | Update an existing connection by ID |
-| [**companies_company_id_connections_connection_id_test_get**](ConnectionsApi.md#companies_company_id_connections_connection_id_test_get) | **GET** /companies/{company_id}/connections/{connection_id}/test | Verify the specified connection to ensure it is functioning correctly |
+| [**companies_company_id_connections_connection_id_test_get**](ConnectionsApi.md#companies_company_id_connections_connection_id_test_get) | **GET** /companies/{company_id}/connections/{connection_id}/test | Test the specified connection |
 | [**companies_company_id_connections_get**](ConnectionsApi.md#companies_company_id_connections_get) | **GET** /companies/{company_id}/connections | Get all connections for a specific company |
 | [**companies_company_id_connections_post**](ConnectionsApi.md#companies_company_id_connections_post) | **POST** /companies/{company_id}/connections | Create a new connection by ID |
 
@@ -26,8 +26,10 @@ require 'time'
 require 'spartera_api_sdk'
 # setup authorization
 SparteraApiSdk.configure do |config|
-  # Configure Bearer authorization (JWT): bearerAuth
-  config.access_token = 'YOUR_BEARER_TOKEN'
+  # Configure API key authorization: ApiKeyAuth
+  config.api_key['x-api-key'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
 api_instance = SparteraApiSdk::ConnectionsApi.new
@@ -74,7 +76,7 @@ end
 
 ### Authorization
 
-[bearerAuth](../README.md#bearerAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -95,8 +97,10 @@ require 'time'
 require 'spartera_api_sdk'
 # setup authorization
 SparteraApiSdk.configure do |config|
-  # Configure Bearer authorization (JWT): bearerAuth
-  config.access_token = 'YOUR_BEARER_TOKEN'
+  # Configure API key authorization: ApiKeyAuth
+  config.api_key['x-api-key'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
 api_instance = SparteraApiSdk::ConnectionsApi.new
@@ -143,7 +147,7 @@ end
 
 ### Authorization
 
-[bearerAuth](../README.md#bearerAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -164,8 +168,10 @@ require 'time'
 require 'spartera_api_sdk'
 # setup authorization
 SparteraApiSdk.configure do |config|
-  # Configure Bearer authorization (JWT): bearerAuth
-  config.access_token = 'YOUR_BEARER_TOKEN'
+  # Configure API key authorization: ApiKeyAuth
+  config.api_key['x-api-key'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
 api_instance = SparteraApiSdk::ConnectionsApi.new
@@ -212,7 +218,7 @@ end
 
 ### Authorization
 
-[bearerAuth](../README.md#bearerAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -233,8 +239,10 @@ require 'time'
 require 'spartera_api_sdk'
 # setup authorization
 SparteraApiSdk.configure do |config|
-  # Configure Bearer authorization (JWT): bearerAuth
-  config.access_token = 'YOUR_BEARER_TOKEN'
+  # Configure API key authorization: ApiKeyAuth
+  config.api_key['x-api-key'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
 api_instance = SparteraApiSdk::ConnectionsApi.new
@@ -283,7 +291,7 @@ end
 
 ### Authorization
 
-[bearerAuth](../README.md#bearerAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -295,7 +303,7 @@ end
 
 > Object companies_company_id_connections_connection_id_test_get(company_id, connection_id)
 
-Verify the specified connection to ensure it is functioning correctly
+Test the specified connection
 
 ### Examples
 
@@ -304,8 +312,10 @@ require 'time'
 require 'spartera_api_sdk'
 # setup authorization
 SparteraApiSdk.configure do |config|
-  # Configure Bearer authorization (JWT): bearerAuth
-  config.access_token = 'YOUR_BEARER_TOKEN'
+  # Configure API key authorization: ApiKeyAuth
+  config.api_key['x-api-key'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
 api_instance = SparteraApiSdk::ConnectionsApi.new
@@ -313,7 +323,7 @@ company_id = 'company_id_example' # String |
 connection_id = 'connection_id_example' # String | 
 
 begin
-  # Verify the specified connection to ensure it is functioning correctly
+  # Test the specified connection
   result = api_instance.companies_company_id_connections_connection_id_test_get(company_id, connection_id)
   p result
 rescue SparteraApiSdk::ApiError => e
@@ -329,7 +339,7 @@ This returns an Array which contains the response data, status code and headers.
 
 ```ruby
 begin
-  # Verify the specified connection to ensure it is functioning correctly
+  # Test the specified connection
   data, status_code, headers = api_instance.companies_company_id_connections_connection_id_test_get_with_http_info(company_id, connection_id)
   p status_code # => 2xx
   p headers # => { ... }
@@ -352,7 +362,7 @@ end
 
 ### Authorization
 
-[bearerAuth](../README.md#bearerAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -373,8 +383,10 @@ require 'time'
 require 'spartera_api_sdk'
 # setup authorization
 SparteraApiSdk.configure do |config|
-  # Configure Bearer authorization (JWT): bearerAuth
-  config.access_token = 'YOUR_BEARER_TOKEN'
+  # Configure API key authorization: ApiKeyAuth
+  config.api_key['x-api-key'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
 api_instance = SparteraApiSdk::ConnectionsApi.new
@@ -419,7 +431,7 @@ end
 
 ### Authorization
 
-[bearerAuth](../README.md#bearerAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -440,8 +452,10 @@ require 'time'
 require 'spartera_api_sdk'
 # setup authorization
 SparteraApiSdk.configure do |config|
-  # Configure Bearer authorization (JWT): bearerAuth
-  config.access_token = 'YOUR_BEARER_TOKEN'
+  # Configure API key authorization: ApiKeyAuth
+  config.api_key['x-api-key'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
 api_instance = SparteraApiSdk::ConnectionsApi.new
@@ -488,7 +502,7 @@ end
 
 ### Authorization
 
-[bearerAuth](../README.md#bearerAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 

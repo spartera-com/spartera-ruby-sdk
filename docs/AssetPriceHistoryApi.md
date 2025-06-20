@@ -8,8 +8,8 @@ All URIs are relative to *https://api.spartera.com*
 | [**companies_company_id_assets_asset_id_prices_aph_id_delete**](AssetPriceHistoryApi.md#companies_company_id_assets_asset_id_prices_aph_id_delete) | **DELETE** /companies/{company_id}/assets/{asset_id}/prices/{aph_id} | Delete single price history record by ID |
 | [**companies_company_id_assets_asset_id_prices_aph_id_get**](AssetPriceHistoryApi.md#companies_company_id_assets_asset_id_prices_aph_id_get) | **GET** /companies/{company_id}/assets/{asset_id}/prices/{aph_id} | Get single price history record by ID |
 | [**companies_company_id_assets_asset_id_prices_aph_id_patch**](AssetPriceHistoryApi.md#companies_company_id_assets_asset_id_prices_aph_id_patch) | **PATCH** /companies/{company_id}/assets/{asset_id}/prices/{aph_id} | Update an existing price history record by ID |
-| [**companies_company_id_assets_asset_id_prices_calculate_credits_post**](AssetPriceHistoryApi.md#companies_company_id_assets_asset_id_prices_calculate_credits_post) | **POST** /companies/{company_id}/assets/{asset_id}/prices/calculate_credits | Calculate the credit equivalent for a given USD price without saving |
-| [**companies_company_id_assets_asset_id_prices_discount_post**](AssetPriceHistoryApi.md#companies_company_id_assets_asset_id_prices_discount_post) | **POST** /companies/{company_id}/assets/{asset_id}/prices/discount | Apply a discount to the active price for an asset |
+| [**companies_company_id_assets_asset_id_prices_calculate_credits_post**](AssetPriceHistoryApi.md#companies_company_id_assets_asset_id_prices_calculate_credits_post) | **POST** /companies/{company_id}/assets/{asset_id}/prices/calculate_credits | POST /companies/{company_id}/assets/{asset_id}/prices/calculate_credits |
+| [**companies_company_id_assets_asset_id_prices_discount_post**](AssetPriceHistoryApi.md#companies_company_id_assets_asset_id_prices_discount_post) | **POST** /companies/{company_id}/assets/{asset_id}/prices/discount | POST /companies/{company_id}/assets/{asset_id}/prices/discount |
 | [**companies_company_id_assets_asset_id_prices_get**](AssetPriceHistoryApi.md#companies_company_id_assets_asset_id_prices_get) | **GET** /companies/{company_id}/assets/{asset_id}/prices | Get all price history records for a specific asset |
 | [**companies_company_id_assets_asset_id_prices_post**](AssetPriceHistoryApi.md#companies_company_id_assets_asset_id_prices_post) | **POST** /companies/{company_id}/assets/{asset_id}/prices | Create a new price history record for an asset |
 
@@ -27,8 +27,10 @@ require 'time'
 require 'spartera_api_sdk'
 # setup authorization
 SparteraApiSdk.configure do |config|
-  # Configure Bearer authorization (JWT): bearerAuth
-  config.access_token = 'YOUR_BEARER_TOKEN'
+  # Configure API key authorization: ApiKeyAuth
+  config.api_key['x-api-key'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
 api_instance = SparteraApiSdk::AssetPriceHistoryApi.new
@@ -75,7 +77,7 @@ end
 
 ### Authorization
 
-[bearerAuth](../README.md#bearerAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -96,8 +98,10 @@ require 'time'
 require 'spartera_api_sdk'
 # setup authorization
 SparteraApiSdk.configure do |config|
-  # Configure Bearer authorization (JWT): bearerAuth
-  config.access_token = 'YOUR_BEARER_TOKEN'
+  # Configure API key authorization: ApiKeyAuth
+  config.api_key['x-api-key'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
 api_instance = SparteraApiSdk::AssetPriceHistoryApi.new
@@ -146,7 +150,7 @@ end
 
 ### Authorization
 
-[bearerAuth](../README.md#bearerAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -167,8 +171,10 @@ require 'time'
 require 'spartera_api_sdk'
 # setup authorization
 SparteraApiSdk.configure do |config|
-  # Configure Bearer authorization (JWT): bearerAuth
-  config.access_token = 'YOUR_BEARER_TOKEN'
+  # Configure API key authorization: ApiKeyAuth
+  config.api_key['x-api-key'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
 api_instance = SparteraApiSdk::AssetPriceHistoryApi.new
@@ -217,7 +223,7 @@ end
 
 ### Authorization
 
-[bearerAuth](../README.md#bearerAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -238,8 +244,10 @@ require 'time'
 require 'spartera_api_sdk'
 # setup authorization
 SparteraApiSdk.configure do |config|
-  # Configure Bearer authorization (JWT): bearerAuth
-  config.access_token = 'YOUR_BEARER_TOKEN'
+  # Configure API key authorization: ApiKeyAuth
+  config.api_key['x-api-key'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
 api_instance = SparteraApiSdk::AssetPriceHistoryApi.new
@@ -288,7 +296,7 @@ end
 
 ### Authorization
 
-[bearerAuth](../README.md#bearerAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -300,7 +308,7 @@ end
 
 > Object companies_company_id_assets_asset_id_prices_calculate_credits_post(company_id, asset_id)
 
-Calculate the credit equivalent for a given USD price without saving
+POST /companies/{company_id}/assets/{asset_id}/prices/calculate_credits
 
 ### Examples
 
@@ -309,8 +317,10 @@ require 'time'
 require 'spartera_api_sdk'
 # setup authorization
 SparteraApiSdk.configure do |config|
-  # Configure Bearer authorization (JWT): bearerAuth
-  config.access_token = 'YOUR_BEARER_TOKEN'
+  # Configure API key authorization: ApiKeyAuth
+  config.api_key['x-api-key'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
 api_instance = SparteraApiSdk::AssetPriceHistoryApi.new
@@ -318,7 +328,7 @@ company_id = 'company_id_example' # String |
 asset_id = 'asset_id_example' # String | 
 
 begin
-  # Calculate the credit equivalent for a given USD price without saving
+  # POST /companies/{company_id}/assets/{asset_id}/prices/calculate_credits
   result = api_instance.companies_company_id_assets_asset_id_prices_calculate_credits_post(company_id, asset_id)
   p result
 rescue SparteraApiSdk::ApiError => e
@@ -334,7 +344,7 @@ This returns an Array which contains the response data, status code and headers.
 
 ```ruby
 begin
-  # Calculate the credit equivalent for a given USD price without saving
+  # POST /companies/{company_id}/assets/{asset_id}/prices/calculate_credits
   data, status_code, headers = api_instance.companies_company_id_assets_asset_id_prices_calculate_credits_post_with_http_info(company_id, asset_id)
   p status_code # => 2xx
   p headers # => { ... }
@@ -357,7 +367,7 @@ end
 
 ### Authorization
 
-[bearerAuth](../README.md#bearerAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -369,7 +379,7 @@ end
 
 > Object companies_company_id_assets_asset_id_prices_discount_post(company_id, asset_id)
 
-Apply a discount to the active price for an asset
+POST /companies/{company_id}/assets/{asset_id}/prices/discount
 
 ### Examples
 
@@ -378,8 +388,10 @@ require 'time'
 require 'spartera_api_sdk'
 # setup authorization
 SparteraApiSdk.configure do |config|
-  # Configure Bearer authorization (JWT): bearerAuth
-  config.access_token = 'YOUR_BEARER_TOKEN'
+  # Configure API key authorization: ApiKeyAuth
+  config.api_key['x-api-key'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
 api_instance = SparteraApiSdk::AssetPriceHistoryApi.new
@@ -387,7 +399,7 @@ company_id = 'company_id_example' # String |
 asset_id = 'asset_id_example' # String | 
 
 begin
-  # Apply a discount to the active price for an asset
+  # POST /companies/{company_id}/assets/{asset_id}/prices/discount
   result = api_instance.companies_company_id_assets_asset_id_prices_discount_post(company_id, asset_id)
   p result
 rescue SparteraApiSdk::ApiError => e
@@ -403,7 +415,7 @@ This returns an Array which contains the response data, status code and headers.
 
 ```ruby
 begin
-  # Apply a discount to the active price for an asset
+  # POST /companies/{company_id}/assets/{asset_id}/prices/discount
   data, status_code, headers = api_instance.companies_company_id_assets_asset_id_prices_discount_post_with_http_info(company_id, asset_id)
   p status_code # => 2xx
   p headers # => { ... }
@@ -426,7 +438,7 @@ end
 
 ### Authorization
 
-[bearerAuth](../README.md#bearerAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -447,8 +459,10 @@ require 'time'
 require 'spartera_api_sdk'
 # setup authorization
 SparteraApiSdk.configure do |config|
-  # Configure Bearer authorization (JWT): bearerAuth
-  config.access_token = 'YOUR_BEARER_TOKEN'
+  # Configure API key authorization: ApiKeyAuth
+  config.api_key['x-api-key'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
 api_instance = SparteraApiSdk::AssetPriceHistoryApi.new
@@ -495,7 +509,7 @@ end
 
 ### Authorization
 
-[bearerAuth](../README.md#bearerAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -516,8 +530,10 @@ require 'time'
 require 'spartera_api_sdk'
 # setup authorization
 SparteraApiSdk.configure do |config|
-  # Configure Bearer authorization (JWT): bearerAuth
-  config.access_token = 'YOUR_BEARER_TOKEN'
+  # Configure API key authorization: ApiKeyAuth
+  config.api_key['x-api-key'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
 api_instance = SparteraApiSdk::AssetPriceHistoryApi.new
@@ -564,7 +580,7 @@ end
 
 ### Authorization
 
-[bearerAuth](../README.md#bearerAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 

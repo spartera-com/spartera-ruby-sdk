@@ -5,11 +5,11 @@ All URIs are relative to *https://api.spartera.com*
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
 | [**companies_company_id_users_user_id_favorites_category_category_get**](FavoritesApi.md#companies_company_id_users_user_id_favorites_category_category_get) | **GET** /companies/{company_id}/users/{user_id}/favorites/category/{category} | Get all favorites for the specified user in a specific category |
-| [**companies_company_id_users_user_id_favorites_check_asset_id_get**](FavoritesApi.md#companies_company_id_users_user_id_favorites_check_asset_id_get) | **GET** /companies/{company_id}/users/{user_id}/favorites/check/{asset_id} | Check if the specified user has favorited a specific asset     Returns the favorite record if it exists, or empty result if not     Useful for UI to show/hide favorite button states |
+| [**companies_company_id_users_user_id_favorites_check_asset_id_get**](FavoritesApi.md#companies_company_id_users_user_id_favorites_check_asset_id_get) | **GET** /companies/{company_id}/users/{user_id}/favorites/check/{asset_id} | Check if the specified user has favorited a specific asset |
 | [**companies_company_id_users_user_id_favorites_favorite_id_delete**](FavoritesApi.md#companies_company_id_users_user_id_favorites_favorite_id_delete) | **DELETE** /companies/{company_id}/users/{user_id}/favorites/{favorite_id} | Delete single favorite by ID (unfavorite an asset) |
 | [**companies_company_id_users_user_id_favorites_favorite_id_get**](FavoritesApi.md#companies_company_id_users_user_id_favorites_favorite_id_get) | **GET** /companies/{company_id}/users/{user_id}/favorites/{favorite_id} | Get single favorite by ID |
-| [**companies_company_id_users_user_id_favorites_favorite_id_patch**](FavoritesApi.md#companies_company_id_users_user_id_favorites_favorite_id_patch) | **PATCH** /companies/{company_id}/users/{user_id}/favorites/{favorite_id} | Update an existing favorite by ID     Can update notes, category, priority |
-| [**companies_company_id_users_user_id_favorites_get**](FavoritesApi.md#companies_company_id_users_user_id_favorites_get) | **GET** /companies/{company_id}/users/{user_id}/favorites | Get a list of all favorites for a specific user     Query params:     - category: filter by category     - sort: sort field (priority, date_created, etc.)     - order: sort direction (asc, desc) |
+| [**companies_company_id_users_user_id_favorites_favorite_id_patch**](FavoritesApi.md#companies_company_id_users_user_id_favorites_favorite_id_patch) | **PATCH** /companies/{company_id}/users/{user_id}/favorites/{favorite_id} | Update an existing favorite by ID |
+| [**companies_company_id_users_user_id_favorites_get**](FavoritesApi.md#companies_company_id_users_user_id_favorites_get) | **GET** /companies/{company_id}/users/{user_id}/favorites | Get a list of all favorites for a specific user |
 | [**companies_company_id_users_user_id_favorites_post**](FavoritesApi.md#companies_company_id_users_user_id_favorites_post) | **POST** /companies/{company_id}/users/{user_id}/favorites | POST /companies/{company_id}/users/{user_id}/favorites |
 | [**companies_company_id_users_user_id_favorites_uncategorized_get**](FavoritesApi.md#companies_company_id_users_user_id_favorites_uncategorized_get) | **GET** /companies/{company_id}/users/{user_id}/favorites/uncategorized | Get all favorites for the specified user that don&#39;t have a category |
 
@@ -27,8 +27,10 @@ require 'time'
 require 'spartera_api_sdk'
 # setup authorization
 SparteraApiSdk.configure do |config|
-  # Configure Bearer authorization (JWT): bearerAuth
-  config.access_token = 'YOUR_BEARER_TOKEN'
+  # Configure API key authorization: ApiKeyAuth
+  config.api_key['x-api-key'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
 api_instance = SparteraApiSdk::FavoritesApi.new
@@ -77,7 +79,7 @@ end
 
 ### Authorization
 
-[bearerAuth](../README.md#bearerAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -89,7 +91,7 @@ end
 
 > Object companies_company_id_users_user_id_favorites_check_asset_id_get(company_id, user_id, asset_id)
 
-Check if the specified user has favorited a specific asset     Returns the favorite record if it exists, or empty result if not     Useful for UI to show/hide favorite button states
+Check if the specified user has favorited a specific asset
 
 ### Examples
 
@@ -98,8 +100,10 @@ require 'time'
 require 'spartera_api_sdk'
 # setup authorization
 SparteraApiSdk.configure do |config|
-  # Configure Bearer authorization (JWT): bearerAuth
-  config.access_token = 'YOUR_BEARER_TOKEN'
+  # Configure API key authorization: ApiKeyAuth
+  config.api_key['x-api-key'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
 api_instance = SparteraApiSdk::FavoritesApi.new
@@ -108,7 +112,7 @@ user_id = 'user_id_example' # String |
 asset_id = 'asset_id_example' # String | 
 
 begin
-  # Check if the specified user has favorited a specific asset     Returns the favorite record if it exists, or empty result if not     Useful for UI to show/hide favorite button states
+  # Check if the specified user has favorited a specific asset
   result = api_instance.companies_company_id_users_user_id_favorites_check_asset_id_get(company_id, user_id, asset_id)
   p result
 rescue SparteraApiSdk::ApiError => e
@@ -124,7 +128,7 @@ This returns an Array which contains the response data, status code and headers.
 
 ```ruby
 begin
-  # Check if the specified user has favorited a specific asset     Returns the favorite record if it exists, or empty result if not     Useful for UI to show/hide favorite button states
+  # Check if the specified user has favorited a specific asset
   data, status_code, headers = api_instance.companies_company_id_users_user_id_favorites_check_asset_id_get_with_http_info(company_id, user_id, asset_id)
   p status_code # => 2xx
   p headers # => { ... }
@@ -148,7 +152,7 @@ end
 
 ### Authorization
 
-[bearerAuth](../README.md#bearerAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -169,8 +173,10 @@ require 'time'
 require 'spartera_api_sdk'
 # setup authorization
 SparteraApiSdk.configure do |config|
-  # Configure Bearer authorization (JWT): bearerAuth
-  config.access_token = 'YOUR_BEARER_TOKEN'
+  # Configure API key authorization: ApiKeyAuth
+  config.api_key['x-api-key'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
 api_instance = SparteraApiSdk::FavoritesApi.new
@@ -219,7 +225,7 @@ end
 
 ### Authorization
 
-[bearerAuth](../README.md#bearerAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -240,8 +246,10 @@ require 'time'
 require 'spartera_api_sdk'
 # setup authorization
 SparteraApiSdk.configure do |config|
-  # Configure Bearer authorization (JWT): bearerAuth
-  config.access_token = 'YOUR_BEARER_TOKEN'
+  # Configure API key authorization: ApiKeyAuth
+  config.api_key['x-api-key'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
 api_instance = SparteraApiSdk::FavoritesApi.new
@@ -290,7 +298,7 @@ end
 
 ### Authorization
 
-[bearerAuth](../README.md#bearerAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -302,7 +310,7 @@ end
 
 > Object companies_company_id_users_user_id_favorites_favorite_id_patch(company_id, user_id, favorite_id, favorite)
 
-Update an existing favorite by ID     Can update notes, category, priority
+Update an existing favorite by ID
 
 ### Examples
 
@@ -311,8 +319,10 @@ require 'time'
 require 'spartera_api_sdk'
 # setup authorization
 SparteraApiSdk.configure do |config|
-  # Configure Bearer authorization (JWT): bearerAuth
-  config.access_token = 'YOUR_BEARER_TOKEN'
+  # Configure API key authorization: ApiKeyAuth
+  config.api_key['x-api-key'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
 api_instance = SparteraApiSdk::FavoritesApi.new
@@ -322,7 +332,7 @@ favorite_id = 'favorite_id_example' # String |
 favorite = SparteraApiSdk::Favorite.new({asset_id: 'asset_id_example', company_id: 'company_id_example', priority: 'priority_example'}) # Favorite | 
 
 begin
-  # Update an existing favorite by ID     Can update notes, category, priority
+  # Update an existing favorite by ID
   result = api_instance.companies_company_id_users_user_id_favorites_favorite_id_patch(company_id, user_id, favorite_id, favorite)
   p result
 rescue SparteraApiSdk::ApiError => e
@@ -338,7 +348,7 @@ This returns an Array which contains the response data, status code and headers.
 
 ```ruby
 begin
-  # Update an existing favorite by ID     Can update notes, category, priority
+  # Update an existing favorite by ID
   data, status_code, headers = api_instance.companies_company_id_users_user_id_favorites_favorite_id_patch_with_http_info(company_id, user_id, favorite_id, favorite)
   p status_code # => 2xx
   p headers # => { ... }
@@ -363,7 +373,7 @@ end
 
 ### Authorization
 
-[bearerAuth](../README.md#bearerAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -375,7 +385,7 @@ end
 
 > Object companies_company_id_users_user_id_favorites_get(company_id, user_id)
 
-Get a list of all favorites for a specific user     Query params:     - category: filter by category     - sort: sort field (priority, date_created, etc.)     - order: sort direction (asc, desc)
+Get a list of all favorites for a specific user
 
 ### Examples
 
@@ -384,8 +394,10 @@ require 'time'
 require 'spartera_api_sdk'
 # setup authorization
 SparteraApiSdk.configure do |config|
-  # Configure Bearer authorization (JWT): bearerAuth
-  config.access_token = 'YOUR_BEARER_TOKEN'
+  # Configure API key authorization: ApiKeyAuth
+  config.api_key['x-api-key'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
 api_instance = SparteraApiSdk::FavoritesApi.new
@@ -393,7 +405,7 @@ company_id = 'company_id_example' # String |
 user_id = 'user_id_example' # String | 
 
 begin
-  # Get a list of all favorites for a specific user     Query params:     - category: filter by category     - sort: sort field (priority, date_created, etc.)     - order: sort direction (asc, desc)
+  # Get a list of all favorites for a specific user
   result = api_instance.companies_company_id_users_user_id_favorites_get(company_id, user_id)
   p result
 rescue SparteraApiSdk::ApiError => e
@@ -409,7 +421,7 @@ This returns an Array which contains the response data, status code and headers.
 
 ```ruby
 begin
-  # Get a list of all favorites for a specific user     Query params:     - category: filter by category     - sort: sort field (priority, date_created, etc.)     - order: sort direction (asc, desc)
+  # Get a list of all favorites for a specific user
   data, status_code, headers = api_instance.companies_company_id_users_user_id_favorites_get_with_http_info(company_id, user_id)
   p status_code # => 2xx
   p headers # => { ... }
@@ -432,7 +444,7 @@ end
 
 ### Authorization
 
-[bearerAuth](../README.md#bearerAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -453,8 +465,10 @@ require 'time'
 require 'spartera_api_sdk'
 # setup authorization
 SparteraApiSdk.configure do |config|
-  # Configure Bearer authorization (JWT): bearerAuth
-  config.access_token = 'YOUR_BEARER_TOKEN'
+  # Configure API key authorization: ApiKeyAuth
+  config.api_key['x-api-key'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
 api_instance = SparteraApiSdk::FavoritesApi.new
@@ -503,7 +517,7 @@ end
 
 ### Authorization
 
-[bearerAuth](../README.md#bearerAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -524,8 +538,10 @@ require 'time'
 require 'spartera_api_sdk'
 # setup authorization
 SparteraApiSdk.configure do |config|
-  # Configure Bearer authorization (JWT): bearerAuth
-  config.access_token = 'YOUR_BEARER_TOKEN'
+  # Configure API key authorization: ApiKeyAuth
+  config.api_key['x-api-key'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
 api_instance = SparteraApiSdk::FavoritesApi.new
@@ -572,7 +588,7 @@ end
 
 ### Authorization
 
-[bearerAuth](../README.md#bearerAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 

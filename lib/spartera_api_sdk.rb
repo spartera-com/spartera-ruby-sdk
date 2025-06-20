@@ -41,6 +41,7 @@ require 'spartera_api_sdk/api/cloud_providers_api'
 require 'spartera_api_sdk/api/companies_api'
 require 'spartera_api_sdk/api/connections_api'
 require 'spartera_api_sdk/api/favorites_api'
+require 'spartera_api_sdk/api/storage_engines_api'
 require 'spartera_api_sdk/api/users_api'
 
 module SparteraApiSdk

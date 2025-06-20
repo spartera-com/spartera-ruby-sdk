@@ -244,20 +244,12 @@ module SparteraApiSdk
     # Returns Auth Settings hash for api client.
     def auth_settings
       {
-        'bearerAuth' =>
-          {
-            type: 'bearer',
-            in: 'header',
-            format: 'JWT',
-            key: 'Authorization',
-            value: "Bearer #{access_token_with_refresh}"
-          },
         'ApiKeyAuth' =>
           {
             type: 'api_key',
             in: 'header',
-            key: 'X-API-Key',
-            value: api_key_with_prefix('X-API-Key')
+            key: 'x-api-key',
+            value: api_key_with_prefix('x-api-key')
           },
       }
     end
