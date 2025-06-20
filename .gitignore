@@ -1,0 +1,33 @@
+# Dependencies
+/vendor/
+Gemfile.lock
+
+# Built gems
+*.gem
+*.rbc
+
+# Documentation
+/doc/
+/.yardoc/
+
+# Testing
+/coverage/
+/spec/reports/
+/tmp/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Environment variables
+.env
+.env.local
+
+# Bundler
+/.bundle/
