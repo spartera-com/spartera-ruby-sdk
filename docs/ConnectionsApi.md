@@ -15,7 +15,7 @@ All URIs are relative to *https://api.spartera.com*
 
 ## companies_company_id_connections_connection_id_delete
 
-> Object companies_company_id_connections_connection_id_delete(company_id, connection_id)
+> <CompaniesCompanyIdConnectionsConnectionIdDelete200Response> companies_company_id_connections_connection_id_delete(company_id, connection_id)
 
 Delete single connection by ID
 
@@ -49,7 +49,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(Object, Integer, Hash)> companies_company_id_connections_connection_id_delete_with_http_info(company_id, connection_id)
+> <Array(<CompaniesCompanyIdConnectionsConnectionIdDelete200Response>, Integer, Hash)> companies_company_id_connections_connection_id_delete_with_http_info(company_id, connection_id)
 
 ```ruby
 begin
@@ -57,7 +57,7 @@ begin
   data, status_code, headers = api_instance.companies_company_id_connections_connection_id_delete_with_http_info(company_id, connection_id)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => Object
+  p data # => <CompaniesCompanyIdConnectionsConnectionIdDelete200Response>
 rescue SparteraApiSdk::ApiError => e
   puts "Error when calling ConnectionsApi->companies_company_id_connections_connection_id_delete_with_http_info: #{e}"
 end
@@ -72,7 +72,7 @@ end
 
 ### Return type
 
-**Object**
+[**CompaniesCompanyIdConnectionsConnectionIdDelete200Response**](CompaniesCompanyIdConnectionsConnectionIdDelete200Response.md)
 
 ### Authorization
 
@@ -86,7 +86,7 @@ end
 
 ## companies_company_id_connections_connection_id_get
 
-> Object companies_company_id_connections_connection_id_get(company_id, connection_id)
+> <CompaniesCompanyIdConnectionsConnectionIdGet200Response> companies_company_id_connections_connection_id_get(company_id, connection_id)
 
 Get single connection by ID
 
@@ -120,7 +120,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(Object, Integer, Hash)> companies_company_id_connections_connection_id_get_with_http_info(company_id, connection_id)
+> <Array(<CompaniesCompanyIdConnectionsConnectionIdGet200Response>, Integer, Hash)> companies_company_id_connections_connection_id_get_with_http_info(company_id, connection_id)
 
 ```ruby
 begin
@@ -128,7 +128,7 @@ begin
   data, status_code, headers = api_instance.companies_company_id_connections_connection_id_get_with_http_info(company_id, connection_id)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => Object
+  p data # => <CompaniesCompanyIdConnectionsConnectionIdGet200Response>
 rescue SparteraApiSdk::ApiError => e
   puts "Error when calling ConnectionsApi->companies_company_id_connections_connection_id_get_with_http_info: #{e}"
 end
@@ -143,7 +143,7 @@ end
 
 ### Return type
 
-**Object**
+[**CompaniesCompanyIdConnectionsConnectionIdGet200Response**](CompaniesCompanyIdConnectionsConnectionIdGet200Response.md)
 
 ### Authorization
 
@@ -157,7 +157,7 @@ end
 
 ## companies_company_id_connections_connection_id_infoschema_get
 
-> Object companies_company_id_connections_connection_id_infoschema_get(company_id, connection_id)
+> <CompaniesCompanyIdConnectionsGet200Response> companies_company_id_connections_connection_id_infoschema_get(company_id, connection_id)
 
 Retrieve the information schema for the specified connection
 
@@ -191,7 +191,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(Object, Integer, Hash)> companies_company_id_connections_connection_id_infoschema_get_with_http_info(company_id, connection_id)
+> <Array(<CompaniesCompanyIdConnectionsGet200Response>, Integer, Hash)> companies_company_id_connections_connection_id_infoschema_get_with_http_info(company_id, connection_id)
 
 ```ruby
 begin
@@ -199,7 +199,7 @@ begin
   data, status_code, headers = api_instance.companies_company_id_connections_connection_id_infoschema_get_with_http_info(company_id, connection_id)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => Object
+  p data # => <CompaniesCompanyIdConnectionsGet200Response>
 rescue SparteraApiSdk::ApiError => e
   puts "Error when calling ConnectionsApi->companies_company_id_connections_connection_id_infoschema_get_with_http_info: #{e}"
 end
@@ -214,7 +214,7 @@ end
 
 ### Return type
 
-**Object**
+[**CompaniesCompanyIdConnectionsGet200Response**](CompaniesCompanyIdConnectionsGet200Response.md)
 
 ### Authorization
 
@@ -228,7 +228,7 @@ end
 
 ## companies_company_id_connections_connection_id_patch
 
-> Object companies_company_id_connections_connection_id_patch(company_id, connection_id, connection)
+> <CompaniesCompanyIdConnectionsConnectionIdPatch200Response> companies_company_id_connections_connection_id_patch(company_id, connection_id, connection)
 
 Update an existing connection by ID
 
@@ -263,7 +263,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(Object, Integer, Hash)> companies_company_id_connections_connection_id_patch_with_http_info(company_id, connection_id, connection)
+> <Array(<CompaniesCompanyIdConnectionsConnectionIdPatch200Response>, Integer, Hash)> companies_company_id_connections_connection_id_patch_with_http_info(company_id, connection_id, connection)
 
 ```ruby
 begin
@@ -271,7 +271,7 @@ begin
   data, status_code, headers = api_instance.companies_company_id_connections_connection_id_patch_with_http_info(company_id, connection_id, connection)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => Object
+  p data # => <CompaniesCompanyIdConnectionsConnectionIdPatch200Response>
 rescue SparteraApiSdk::ApiError => e
   puts "Error when calling ConnectionsApi->companies_company_id_connections_connection_id_patch_with_http_info: #{e}"
 end
@@ -287,7 +287,7 @@ end
 
 ### Return type
 
-**Object**
+[**CompaniesCompanyIdConnectionsConnectionIdPatch200Response**](CompaniesCompanyIdConnectionsConnectionIdPatch200Response.md)
 
 ### Authorization
 
@@ -301,7 +301,7 @@ end
 
 ## companies_company_id_connections_connection_id_test_get
 
-> Object companies_company_id_connections_connection_id_test_get(company_id, connection_id)
+> <CompaniesCompanyIdConnectionsGet200Response> companies_company_id_connections_connection_id_test_get(company_id, connection_id)
 
 Test the specified connection
 
@@ -335,7 +335,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(Object, Integer, Hash)> companies_company_id_connections_connection_id_test_get_with_http_info(company_id, connection_id)
+> <Array(<CompaniesCompanyIdConnectionsGet200Response>, Integer, Hash)> companies_company_id_connections_connection_id_test_get_with_http_info(company_id, connection_id)
 
 ```ruby
 begin
@@ -343,7 +343,7 @@ begin
   data, status_code, headers = api_instance.companies_company_id_connections_connection_id_test_get_with_http_info(company_id, connection_id)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => Object
+  p data # => <CompaniesCompanyIdConnectionsGet200Response>
 rescue SparteraApiSdk::ApiError => e
   puts "Error when calling ConnectionsApi->companies_company_id_connections_connection_id_test_get_with_http_info: #{e}"
 end
@@ -358,7 +358,7 @@ end
 
 ### Return type
 
-**Object**
+[**CompaniesCompanyIdConnectionsGet200Response**](CompaniesCompanyIdConnectionsGet200Response.md)
 
 ### Authorization
 
@@ -372,7 +372,7 @@ end
 
 ## companies_company_id_connections_get
 
-> Object companies_company_id_connections_get(company_id)
+> <CompaniesCompanyIdConnectionsGet200Response> companies_company_id_connections_get(company_id)
 
 Get all connections for a specific company
 
@@ -405,7 +405,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(Object, Integer, Hash)> companies_company_id_connections_get_with_http_info(company_id)
+> <Array(<CompaniesCompanyIdConnectionsGet200Response>, Integer, Hash)> companies_company_id_connections_get_with_http_info(company_id)
 
 ```ruby
 begin
@@ -413,7 +413,7 @@ begin
   data, status_code, headers = api_instance.companies_company_id_connections_get_with_http_info(company_id)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => Object
+  p data # => <CompaniesCompanyIdConnectionsGet200Response>
 rescue SparteraApiSdk::ApiError => e
   puts "Error when calling ConnectionsApi->companies_company_id_connections_get_with_http_info: #{e}"
 end
@@ -427,7 +427,7 @@ end
 
 ### Return type
 
-**Object**
+[**CompaniesCompanyIdConnectionsGet200Response**](CompaniesCompanyIdConnectionsGet200Response.md)
 
 ### Authorization
 
@@ -441,7 +441,7 @@ end
 
 ## companies_company_id_connections_post
 
-> Object companies_company_id_connections_post(company_id, connection)
+> <CompaniesCompanyIdConnectionsPost200Response> companies_company_id_connections_post(company_id, connection)
 
 Create a new connection by ID
 
@@ -475,7 +475,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(Object, Integer, Hash)> companies_company_id_connections_post_with_http_info(company_id, connection)
+> <Array(<CompaniesCompanyIdConnectionsPost200Response>, Integer, Hash)> companies_company_id_connections_post_with_http_info(company_id, connection)
 
 ```ruby
 begin
@@ -483,7 +483,7 @@ begin
   data, status_code, headers = api_instance.companies_company_id_connections_post_with_http_info(company_id, connection)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => Object
+  p data # => <CompaniesCompanyIdConnectionsPost200Response>
 rescue SparteraApiSdk::ApiError => e
   puts "Error when calling ConnectionsApi->companies_company_id_connections_post_with_http_info: #{e}"
 end
@@ -498,7 +498,7 @@ end
 
 ### Return type
 
-**Object**
+[**CompaniesCompanyIdConnectionsPost200Response**](CompaniesCompanyIdConnectionsPost200Response.md)
 
 ### Authorization
 

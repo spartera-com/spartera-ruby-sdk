@@ -22,7 +22,7 @@ module SparteraApiSdk
     # Get asset performance analytics     Query params: start_date, end_date, limit, sort_by, include
     # @param company_id [String] 
     # @param [Hash] opts the optional parameters
-    # @return [Object]
+    # @return [CompaniesCompanyIdApiKeysGet200Response]
     def companies_company_id_analytics_assets_get(company_id, opts = {})
       data, _status_code, _headers = companies_company_id_analytics_assets_get_with_http_info(company_id, opts)
       data
@@ -31,7 +31,7 @@ module SparteraApiSdk
     # Get asset performance analytics     Query params: start_date, end_date, limit, sort_by, include
     # @param company_id [String] 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(Object, Integer, Hash)>] Object data, response status code and response headers
+    # @return [Array<(CompaniesCompanyIdApiKeysGet200Response, Integer, Hash)>] CompaniesCompanyIdApiKeysGet200Response data, response status code and response headers
     def companies_company_id_analytics_assets_get_with_http_info(company_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: CompaniesApi.companies_company_id_analytics_assets_get ...'
@@ -58,7 +58,7 @@ module SparteraApiSdk
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'Object'
+      return_type = opts[:debug_return_type] || 'CompaniesCompanyIdApiKeysGet200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['ApiKeyAuth']
@@ -83,7 +83,7 @@ module SparteraApiSdk
     # Get customer analytics including growth and segmentation     Query params: start_date, end_date, group_by, segment_by
     # @param company_id [String] 
     # @param [Hash] opts the optional parameters
-    # @return [Object]
+    # @return [CompaniesCompanyIdApiKeysGet200Response]
     def companies_company_id_analytics_customers_get(company_id, opts = {})
       data, _status_code, _headers = companies_company_id_analytics_customers_get_with_http_info(company_id, opts)
       data
@@ -92,7 +92,7 @@ module SparteraApiSdk
     # Get customer analytics including growth and segmentation     Query params: start_date, end_date, group_by, segment_by
     # @param company_id [String] 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(Object, Integer, Hash)>] Object data, response status code and response headers
+    # @return [Array<(CompaniesCompanyIdApiKeysGet200Response, Integer, Hash)>] CompaniesCompanyIdApiKeysGet200Response data, response status code and response headers
     def companies_company_id_analytics_customers_get_with_http_info(company_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: CompaniesApi.companies_company_id_analytics_customers_get ...'
@@ -119,7 +119,7 @@ module SparteraApiSdk
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'Object'
+      return_type = opts[:debug_return_type] || 'CompaniesCompanyIdApiKeysGet200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['ApiKeyAuth']
@@ -144,7 +144,7 @@ module SparteraApiSdk
     # Get comprehensive dashboard analytics for seller dashboard     Includes all metrics needed for dashboard charts in one call     Query params: start_date, end_date, period (day/week/month/quarter)
     # @param company_id [String] 
     # @param [Hash] opts the optional parameters
-    # @return [Object]
+    # @return [CompaniesCompanyIdApiKeysGet200Response]
     def companies_company_id_analytics_dashboard_get(company_id, opts = {})
       data, _status_code, _headers = companies_company_id_analytics_dashboard_get_with_http_info(company_id, opts)
       data
@@ -153,7 +153,7 @@ module SparteraApiSdk
     # Get comprehensive dashboard analytics for seller dashboard     Includes all metrics needed for dashboard charts in one call     Query params: start_date, end_date, period (day/week/month/quarter)
     # @param company_id [String] 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(Object, Integer, Hash)>] Object data, response status code and response headers
+    # @return [Array<(CompaniesCompanyIdApiKeysGet200Response, Integer, Hash)>] CompaniesCompanyIdApiKeysGet200Response data, response status code and response headers
     def companies_company_id_analytics_dashboard_get_with_http_info(company_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: CompaniesApi.companies_company_id_analytics_dashboard_get ...'
@@ -180,7 +180,7 @@ module SparteraApiSdk
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'Object'
+      return_type = opts[:debug_return_type] || 'CompaniesCompanyIdApiKeysGet200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['ApiKeyAuth']
@@ -205,7 +205,7 @@ module SparteraApiSdk
     # Get sales over time analytics     Query params: start_date, end_date, group_by (day/week/month/quarter), metrics
     # @param company_id [String] 
     # @param [Hash] opts the optional parameters
-    # @return [Object]
+    # @return [CompaniesCompanyIdApiKeysGet200Response]
     def companies_company_id_analytics_sales_get(company_id, opts = {})
       data, _status_code, _headers = companies_company_id_analytics_sales_get_with_http_info(company_id, opts)
       data
@@ -214,7 +214,7 @@ module SparteraApiSdk
     # Get sales over time analytics     Query params: start_date, end_date, group_by (day/week/month/quarter), metrics
     # @param company_id [String] 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(Object, Integer, Hash)>] Object data, response status code and response headers
+    # @return [Array<(CompaniesCompanyIdApiKeysGet200Response, Integer, Hash)>] CompaniesCompanyIdApiKeysGet200Response data, response status code and response headers
     def companies_company_id_analytics_sales_get_with_http_info(company_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: CompaniesApi.companies_company_id_analytics_sales_get ...'
@@ -241,7 +241,7 @@ module SparteraApiSdk
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'Object'
+      return_type = opts[:debug_return_type] || 'CompaniesCompanyIdApiKeysGet200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['ApiKeyAuth']
@@ -266,7 +266,7 @@ module SparteraApiSdk
     # Get details of the requestor's own company
     # @param company_id [String] 
     # @param [Hash] opts the optional parameters
-    # @return [Object]
+    # @return [CompaniesCompanyIdApiKeysGet200Response]
     def companies_company_id_get(company_id, opts = {})
       data, _status_code, _headers = companies_company_id_get_with_http_info(company_id, opts)
       data
@@ -275,7 +275,7 @@ module SparteraApiSdk
     # Get details of the requestor&#39;s own company
     # @param company_id [String] 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(Object, Integer, Hash)>] Object data, response status code and response headers
+    # @return [Array<(CompaniesCompanyIdApiKeysGet200Response, Integer, Hash)>] CompaniesCompanyIdApiKeysGet200Response data, response status code and response headers
     def companies_company_id_get_with_http_info(company_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: CompaniesApi.companies_company_id_get ...'
@@ -302,7 +302,7 @@ module SparteraApiSdk
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'Object'
+      return_type = opts[:debug_return_type] || 'CompaniesCompanyIdApiKeysGet200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['ApiKeyAuth']
@@ -327,7 +327,7 @@ module SparteraApiSdk
     # Get all objects (connections, assets) of a single company
     # @param company_id [String] 
     # @param [Hash] opts the optional parameters
-    # @return [Object]
+    # @return [CompaniesCompanyIdApiKeysGet200Response]
     def companies_company_id_objects_get(company_id, opts = {})
       data, _status_code, _headers = companies_company_id_objects_get_with_http_info(company_id, opts)
       data
@@ -336,7 +336,7 @@ module SparteraApiSdk
     # Get all objects (connections, assets) of a single company
     # @param company_id [String] 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(Object, Integer, Hash)>] Object data, response status code and response headers
+    # @return [Array<(CompaniesCompanyIdApiKeysGet200Response, Integer, Hash)>] CompaniesCompanyIdApiKeysGet200Response data, response status code and response headers
     def companies_company_id_objects_get_with_http_info(company_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: CompaniesApi.companies_company_id_objects_get ...'
@@ -363,7 +363,7 @@ module SparteraApiSdk
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'Object'
+      return_type = opts[:debug_return_type] || 'CompaniesCompanyIdApiKeysGet200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['ApiKeyAuth']
@@ -388,7 +388,7 @@ module SparteraApiSdk
     # Update an existing company by ID
     # @param company_id [String] 
     # @param [Hash] opts the optional parameters
-    # @return [Object]
+    # @return [CompaniesCompanyIdApiKeysGet200Response]
     def companies_company_id_patch(company_id, opts = {})
       data, _status_code, _headers = companies_company_id_patch_with_http_info(company_id, opts)
       data
@@ -397,7 +397,7 @@ module SparteraApiSdk
     # Update an existing company by ID
     # @param company_id [String] 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(Object, Integer, Hash)>] Object data, response status code and response headers
+    # @return [Array<(CompaniesCompanyIdApiKeysGet200Response, Integer, Hash)>] CompaniesCompanyIdApiKeysGet200Response data, response status code and response headers
     def companies_company_id_patch_with_http_info(company_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: CompaniesApi.companies_company_id_patch ...'
@@ -424,7 +424,7 @@ module SparteraApiSdk
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'Object'
+      return_type = opts[:debug_return_type] || 'CompaniesCompanyIdApiKeysGet200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['ApiKeyAuth']
@@ -449,7 +449,7 @@ module SparteraApiSdk
     # Get the total number of requests allocated in the company's current subscription plan.
     # @param company_id [String] 
     # @param [Hash] opts the optional parameters
-    # @return [Object]
+    # @return [CompaniesCompanyIdApiKeysGet200Response]
     def companies_company_id_requests_plan_get(company_id, opts = {})
       data, _status_code, _headers = companies_company_id_requests_plan_get_with_http_info(company_id, opts)
       data
@@ -458,7 +458,7 @@ module SparteraApiSdk
     # Get the total number of requests allocated in the company&#39;s current subscription plan.
     # @param company_id [String] 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(Object, Integer, Hash)>] Object data, response status code and response headers
+    # @return [Array<(CompaniesCompanyIdApiKeysGet200Response, Integer, Hash)>] CompaniesCompanyIdApiKeysGet200Response data, response status code and response headers
     def companies_company_id_requests_plan_get_with_http_info(company_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: CompaniesApi.companies_company_id_requests_plan_get ...'
@@ -485,7 +485,7 @@ module SparteraApiSdk
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'Object'
+      return_type = opts[:debug_return_type] || 'CompaniesCompanyIdApiKeysGet200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['ApiKeyAuth']
@@ -510,7 +510,7 @@ module SparteraApiSdk
     # Get company request usage data for a specific month. Returns JSON metrics by default or CSV logs when download parameter is included.
     # @param company_id [String] 
     # @param [Hash] opts the optional parameters
-    # @return [Object]
+    # @return [CompaniesCompanyIdApiKeysGet200Response]
     def companies_company_id_requests_usage_get(company_id, opts = {})
       data, _status_code, _headers = companies_company_id_requests_usage_get_with_http_info(company_id, opts)
       data
@@ -519,7 +519,7 @@ module SparteraApiSdk
     # Get company request usage data for a specific month. Returns JSON metrics by default or CSV logs when download parameter is included.
     # @param company_id [String] 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(Object, Integer, Hash)>] Object data, response status code and response headers
+    # @return [Array<(CompaniesCompanyIdApiKeysGet200Response, Integer, Hash)>] CompaniesCompanyIdApiKeysGet200Response data, response status code and response headers
     def companies_company_id_requests_usage_get_with_http_info(company_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: CompaniesApi.companies_company_id_requests_usage_get ...'
@@ -546,7 +546,7 @@ module SparteraApiSdk
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'Object'
+      return_type = opts[:debug_return_type] || 'CompaniesCompanyIdApiKeysGet200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['ApiKeyAuth']

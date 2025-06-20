@@ -21,7 +21,7 @@ module SparteraApiSdk
     end
     # Get a list of all cloud providers
     # @param [Hash] opts the optional parameters
-    # @return [Object]
+    # @return [CompaniesCompanyIdApiKeysGet200Response]
     def cloud_providers_get(opts = {})
       data, _status_code, _headers = cloud_providers_get_with_http_info(opts)
       data
@@ -29,7 +29,7 @@ module SparteraApiSdk
 
     # Get a list of all cloud providers
     # @param [Hash] opts the optional parameters
-    # @return [Array<(Object, Integer, Hash)>] Object data, response status code and response headers
+    # @return [Array<(CompaniesCompanyIdApiKeysGet200Response, Integer, Hash)>] CompaniesCompanyIdApiKeysGet200Response data, response status code and response headers
     def cloud_providers_get_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: CloudProvidersApi.cloud_providers_get ...'
@@ -52,7 +52,7 @@ module SparteraApiSdk
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'Object'
+      return_type = opts[:debug_return_type] || 'CompaniesCompanyIdApiKeysGet200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['ApiKeyAuth']
@@ -77,7 +77,7 @@ module SparteraApiSdk
     # Get single cloud provider by ID
     # @param provider_id [String] 
     # @param [Hash] opts the optional parameters
-    # @return [Object]
+    # @return [CompaniesCompanyIdApiKeysGet200Response]
     def cloud_providers_provider_id_get(provider_id, opts = {})
       data, _status_code, _headers = cloud_providers_provider_id_get_with_http_info(provider_id, opts)
       data
@@ -86,7 +86,7 @@ module SparteraApiSdk
     # Get single cloud provider by ID
     # @param provider_id [String] 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(Object, Integer, Hash)>] Object data, response status code and response headers
+    # @return [Array<(CompaniesCompanyIdApiKeysGet200Response, Integer, Hash)>] CompaniesCompanyIdApiKeysGet200Response data, response status code and response headers
     def cloud_providers_provider_id_get_with_http_info(provider_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: CloudProvidersApi.cloud_providers_provider_id_get ...'
@@ -113,7 +113,7 @@ module SparteraApiSdk
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'Object'
+      return_type = opts[:debug_return_type] || 'CompaniesCompanyIdApiKeysGet200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['ApiKeyAuth']

@@ -37,7 +37,7 @@ describe 'StorageEnginesApi' do
   # @param provider_id 
   # @param engine_id 
   # @param [Hash] opts the optional parameters
-  # @return [Object]
+  # @return [CompaniesCompanyIdApiKeysGet200Response]
   describe 'cloud_providers_provider_id_storage_engines_engine_id_get test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -48,7 +48,7 @@ describe 'StorageEnginesApi' do
   # Get a list of all storage engines
   # @param provider_id 
   # @param [Hash] opts the optional parameters
-  # @return [Object]
+  # @return [CompaniesCompanyIdApiKeysGet200Response]
   describe 'cloud_providers_provider_id_storage_engines_get test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/

@@ -38,7 +38,7 @@ describe 'AlertsApi' do
   # @param user_id 
   # @param alert_id 
   # @param [Hash] opts the optional parameters
-  # @return [Object]
+  # @return [CompaniesCompanyIdUsersUserIdAlertsAlertIdDelete200Response]
   describe 'companies_company_id_users_user_id_alerts_alert_id_delete test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -51,7 +51,7 @@ describe 'AlertsApi' do
   # @param user_id 
   # @param alert_id 
   # @param [Hash] opts the optional parameters
-  # @return [Object]
+  # @return [CompaniesCompanyIdUsersUserIdAlertsAlertIdGet200Response]
   describe 'companies_company_id_users_user_id_alerts_alert_id_get test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -65,7 +65,7 @@ describe 'AlertsApi' do
   # @param alert_id 
   # @param alert 
   # @param [Hash] opts the optional parameters
-  # @return [Object]
+  # @return [CompaniesCompanyIdUsersUserIdAlertsAlertIdPatch200Response]
   describe 'companies_company_id_users_user_id_alerts_alert_id_patch test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -78,7 +78,7 @@ describe 'AlertsApi' do
   # @param user_id 
   # @param asset_id 
   # @param [Hash] opts the optional parameters
-  # @return [Object]
+  # @return [CompaniesCompanyIdUsersUserIdAlertsGet200Response]
   describe 'companies_company_id_users_user_id_alerts_asset_asset_id_all_get test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -91,7 +91,7 @@ describe 'AlertsApi' do
   # @param user_id 
   # @param asset_id 
   # @param [Hash] opts the optional parameters
-  # @return [Object]
+  # @return [CompaniesCompanyIdUsersUserIdAlertsAlertIdGet200Response]
   describe 'companies_company_id_users_user_id_alerts_asset_asset_id_get test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -103,7 +103,7 @@ describe 'AlertsApi' do
   # @param company_id 
   # @param user_id 
   # @param [Hash] opts the optional parameters
-  # @return [Object]
+  # @return [CompaniesCompanyIdUsersUserIdAlertsGet200Response]
   describe 'companies_company_id_users_user_id_alerts_get test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -116,7 +116,7 @@ describe 'AlertsApi' do
   # @param user_id 
   # @param alert 
   # @param [Hash] opts the optional parameters
-  # @return [Object]
+  # @return [CompaniesCompanyIdUsersUserIdAlertsPost200Response]
   describe 'companies_company_id_users_user_id_alerts_post test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/

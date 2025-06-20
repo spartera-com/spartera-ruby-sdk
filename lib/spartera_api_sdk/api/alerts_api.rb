@@ -24,7 +24,7 @@ module SparteraApiSdk
     # @param user_id [String] 
     # @param alert_id [String] 
     # @param [Hash] opts the optional parameters
-    # @return [Object]
+    # @return [CompaniesCompanyIdUsersUserIdAlertsAlertIdDelete200Response]
     def companies_company_id_users_user_id_alerts_alert_id_delete(company_id, user_id, alert_id, opts = {})
       data, _status_code, _headers = companies_company_id_users_user_id_alerts_alert_id_delete_with_http_info(company_id, user_id, alert_id, opts)
       data
@@ -35,7 +35,7 @@ module SparteraApiSdk
     # @param user_id [String] 
     # @param alert_id [String] 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(Object, Integer, Hash)>] Object data, response status code and response headers
+    # @return [Array<(CompaniesCompanyIdUsersUserIdAlertsAlertIdDelete200Response, Integer, Hash)>] CompaniesCompanyIdUsersUserIdAlertsAlertIdDelete200Response data, response status code and response headers
     def companies_company_id_users_user_id_alerts_alert_id_delete_with_http_info(company_id, user_id, alert_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: AlertsApi.companies_company_id_users_user_id_alerts_alert_id_delete ...'
@@ -70,7 +70,7 @@ module SparteraApiSdk
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'Object'
+      return_type = opts[:debug_return_type] || 'CompaniesCompanyIdUsersUserIdAlertsAlertIdDelete200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['ApiKeyAuth']
@@ -97,7 +97,7 @@ module SparteraApiSdk
     # @param user_id [String] 
     # @param alert_id [String] 
     # @param [Hash] opts the optional parameters
-    # @return [Object]
+    # @return [CompaniesCompanyIdUsersUserIdAlertsAlertIdGet200Response]
     def companies_company_id_users_user_id_alerts_alert_id_get(company_id, user_id, alert_id, opts = {})
       data, _status_code, _headers = companies_company_id_users_user_id_alerts_alert_id_get_with_http_info(company_id, user_id, alert_id, opts)
       data
@@ -108,7 +108,7 @@ module SparteraApiSdk
     # @param user_id [String] 
     # @param alert_id [String] 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(Object, Integer, Hash)>] Object data, response status code and response headers
+    # @return [Array<(CompaniesCompanyIdUsersUserIdAlertsAlertIdGet200Response, Integer, Hash)>] CompaniesCompanyIdUsersUserIdAlertsAlertIdGet200Response data, response status code and response headers
     def companies_company_id_users_user_id_alerts_alert_id_get_with_http_info(company_id, user_id, alert_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: AlertsApi.companies_company_id_users_user_id_alerts_alert_id_get ...'
@@ -143,7 +143,7 @@ module SparteraApiSdk
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'Object'
+      return_type = opts[:debug_return_type] || 'CompaniesCompanyIdUsersUserIdAlertsAlertIdGet200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['ApiKeyAuth']
@@ -171,7 +171,7 @@ module SparteraApiSdk
     # @param alert_id [String] 
     # @param alert [Alert] 
     # @param [Hash] opts the optional parameters
-    # @return [Object]
+    # @return [CompaniesCompanyIdUsersUserIdAlertsAlertIdPatch200Response]
     def companies_company_id_users_user_id_alerts_alert_id_patch(company_id, user_id, alert_id, alert, opts = {})
       data, _status_code, _headers = companies_company_id_users_user_id_alerts_alert_id_patch_with_http_info(company_id, user_id, alert_id, alert, opts)
       data
@@ -183,7 +183,7 @@ module SparteraApiSdk
     # @param alert_id [String] 
     # @param alert [Alert] 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(Object, Integer, Hash)>] Object data, response status code and response headers
+    # @return [Array<(CompaniesCompanyIdUsersUserIdAlertsAlertIdPatch200Response, Integer, Hash)>] CompaniesCompanyIdUsersUserIdAlertsAlertIdPatch200Response data, response status code and response headers
     def companies_company_id_users_user_id_alerts_alert_id_patch_with_http_info(company_id, user_id, alert_id, alert, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: AlertsApi.companies_company_id_users_user_id_alerts_alert_id_patch ...'
@@ -227,7 +227,7 @@ module SparteraApiSdk
       post_body = opts[:debug_body] || @api_client.object_to_http_body(alert)
 
       # return_type
-      return_type = opts[:debug_return_type] || 'Object'
+      return_type = opts[:debug_return_type] || 'CompaniesCompanyIdUsersUserIdAlertsAlertIdPatch200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['ApiKeyAuth']
@@ -254,7 +254,7 @@ module SparteraApiSdk
     # @param user_id [String] 
     # @param asset_id [String] 
     # @param [Hash] opts the optional parameters
-    # @return [Object]
+    # @return [CompaniesCompanyIdUsersUserIdAlertsGet200Response]
     def companies_company_id_users_user_id_alerts_asset_asset_id_all_get(company_id, user_id, asset_id, opts = {})
       data, _status_code, _headers = companies_company_id_users_user_id_alerts_asset_asset_id_all_get_with_http_info(company_id, user_id, asset_id, opts)
       data
@@ -265,7 +265,7 @@ module SparteraApiSdk
     # @param user_id [String] 
     # @param asset_id [String] 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(Object, Integer, Hash)>] Object data, response status code and response headers
+    # @return [Array<(CompaniesCompanyIdUsersUserIdAlertsGet200Response, Integer, Hash)>] CompaniesCompanyIdUsersUserIdAlertsGet200Response data, response status code and response headers
     def companies_company_id_users_user_id_alerts_asset_asset_id_all_get_with_http_info(company_id, user_id, asset_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: AlertsApi.companies_company_id_users_user_id_alerts_asset_asset_id_all_get ...'
@@ -300,7 +300,7 @@ module SparteraApiSdk
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'Object'
+      return_type = opts[:debug_return_type] || 'CompaniesCompanyIdUsersUserIdAlertsGet200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['ApiKeyAuth']
@@ -327,7 +327,7 @@ module SparteraApiSdk
     # @param user_id [String] 
     # @param asset_id [String] 
     # @param [Hash] opts the optional parameters
-    # @return [Object]
+    # @return [CompaniesCompanyIdUsersUserIdAlertsAlertIdGet200Response]
     def companies_company_id_users_user_id_alerts_asset_asset_id_get(company_id, user_id, asset_id, opts = {})
       data, _status_code, _headers = companies_company_id_users_user_id_alerts_asset_asset_id_get_with_http_info(company_id, user_id, asset_id, opts)
       data
@@ -338,7 +338,7 @@ module SparteraApiSdk
     # @param user_id [String] 
     # @param asset_id [String] 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(Object, Integer, Hash)>] Object data, response status code and response headers
+    # @return [Array<(CompaniesCompanyIdUsersUserIdAlertsAlertIdGet200Response, Integer, Hash)>] CompaniesCompanyIdUsersUserIdAlertsAlertIdGet200Response data, response status code and response headers
     def companies_company_id_users_user_id_alerts_asset_asset_id_get_with_http_info(company_id, user_id, asset_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: AlertsApi.companies_company_id_users_user_id_alerts_asset_asset_id_get ...'
@@ -373,7 +373,7 @@ module SparteraApiSdk
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'Object'
+      return_type = opts[:debug_return_type] || 'CompaniesCompanyIdUsersUserIdAlertsAlertIdGet200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['ApiKeyAuth']
@@ -399,7 +399,7 @@ module SparteraApiSdk
     # @param company_id [String] 
     # @param user_id [String] 
     # @param [Hash] opts the optional parameters
-    # @return [Object]
+    # @return [CompaniesCompanyIdUsersUserIdAlertsGet200Response]
     def companies_company_id_users_user_id_alerts_get(company_id, user_id, opts = {})
       data, _status_code, _headers = companies_company_id_users_user_id_alerts_get_with_http_info(company_id, user_id, opts)
       data
@@ -409,7 +409,7 @@ module SparteraApiSdk
     # @param company_id [String] 
     # @param user_id [String] 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(Object, Integer, Hash)>] Object data, response status code and response headers
+    # @return [Array<(CompaniesCompanyIdUsersUserIdAlertsGet200Response, Integer, Hash)>] CompaniesCompanyIdUsersUserIdAlertsGet200Response data, response status code and response headers
     def companies_company_id_users_user_id_alerts_get_with_http_info(company_id, user_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: AlertsApi.companies_company_id_users_user_id_alerts_get ...'
@@ -440,7 +440,7 @@ module SparteraApiSdk
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'Object'
+      return_type = opts[:debug_return_type] || 'CompaniesCompanyIdUsersUserIdAlertsGet200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['ApiKeyAuth']
@@ -467,7 +467,7 @@ module SparteraApiSdk
     # @param user_id [String] 
     # @param alert [Alert] 
     # @param [Hash] opts the optional parameters
-    # @return [Object]
+    # @return [CompaniesCompanyIdUsersUserIdAlertsPost200Response]
     def companies_company_id_users_user_id_alerts_post(company_id, user_id, alert, opts = {})
       data, _status_code, _headers = companies_company_id_users_user_id_alerts_post_with_http_info(company_id, user_id, alert, opts)
       data
@@ -478,7 +478,7 @@ module SparteraApiSdk
     # @param user_id [String] 
     # @param alert [Alert] 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(Object, Integer, Hash)>] Object data, response status code and response headers
+    # @return [Array<(CompaniesCompanyIdUsersUserIdAlertsPost200Response, Integer, Hash)>] CompaniesCompanyIdUsersUserIdAlertsPost200Response data, response status code and response headers
     def companies_company_id_users_user_id_alerts_post_with_http_info(company_id, user_id, alert, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: AlertsApi.companies_company_id_users_user_id_alerts_post ...'
@@ -518,7 +518,7 @@ module SparteraApiSdk
       post_body = opts[:debug_body] || @api_client.object_to_http_body(alert)
 
       # return_type
-      return_type = opts[:debug_return_type] || 'Object'
+      return_type = opts[:debug_return_type] || 'CompaniesCompanyIdUsersUserIdAlertsPost200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['ApiKeyAuth']

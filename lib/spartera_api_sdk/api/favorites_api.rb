@@ -24,7 +24,7 @@ module SparteraApiSdk
     # @param user_id [String] 
     # @param category [String] 
     # @param [Hash] opts the optional parameters
-    # @return [Object]
+    # @return [CompaniesCompanyIdUsersUserIdFavoritesFavoriteIdGet200Response]
     def companies_company_id_users_user_id_favorites_category_category_get(company_id, user_id, category, opts = {})
       data, _status_code, _headers = companies_company_id_users_user_id_favorites_category_category_get_with_http_info(company_id, user_id, category, opts)
       data
@@ -35,7 +35,7 @@ module SparteraApiSdk
     # @param user_id [String] 
     # @param category [String] 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(Object, Integer, Hash)>] Object data, response status code and response headers
+    # @return [Array<(CompaniesCompanyIdUsersUserIdFavoritesFavoriteIdGet200Response, Integer, Hash)>] CompaniesCompanyIdUsersUserIdFavoritesFavoriteIdGet200Response data, response status code and response headers
     def companies_company_id_users_user_id_favorites_category_category_get_with_http_info(company_id, user_id, category, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: FavoritesApi.companies_company_id_users_user_id_favorites_category_category_get ...'
@@ -70,7 +70,7 @@ module SparteraApiSdk
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'Object'
+      return_type = opts[:debug_return_type] || 'CompaniesCompanyIdUsersUserIdFavoritesFavoriteIdGet200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['ApiKeyAuth']
@@ -97,7 +97,7 @@ module SparteraApiSdk
     # @param user_id [String] 
     # @param asset_id [String] 
     # @param [Hash] opts the optional parameters
-    # @return [Object]
+    # @return [CompaniesCompanyIdUsersUserIdFavoritesFavoriteIdGet200Response]
     def companies_company_id_users_user_id_favorites_check_asset_id_get(company_id, user_id, asset_id, opts = {})
       data, _status_code, _headers = companies_company_id_users_user_id_favorites_check_asset_id_get_with_http_info(company_id, user_id, asset_id, opts)
       data
@@ -108,7 +108,7 @@ module SparteraApiSdk
     # @param user_id [String] 
     # @param asset_id [String] 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(Object, Integer, Hash)>] Object data, response status code and response headers
+    # @return [Array<(CompaniesCompanyIdUsersUserIdFavoritesFavoriteIdGet200Response, Integer, Hash)>] CompaniesCompanyIdUsersUserIdFavoritesFavoriteIdGet200Response data, response status code and response headers
     def companies_company_id_users_user_id_favorites_check_asset_id_get_with_http_info(company_id, user_id, asset_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: FavoritesApi.companies_company_id_users_user_id_favorites_check_asset_id_get ...'
@@ -143,7 +143,7 @@ module SparteraApiSdk
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'Object'
+      return_type = opts[:debug_return_type] || 'CompaniesCompanyIdUsersUserIdFavoritesFavoriteIdGet200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['ApiKeyAuth']
@@ -170,7 +170,7 @@ module SparteraApiSdk
     # @param user_id [String] 
     # @param favorite_id [String] 
     # @param [Hash] opts the optional parameters
-    # @return [Object]
+    # @return [CompaniesCompanyIdUsersUserIdFavoritesFavoriteIdDelete200Response]
     def companies_company_id_users_user_id_favorites_favorite_id_delete(company_id, user_id, favorite_id, opts = {})
       data, _status_code, _headers = companies_company_id_users_user_id_favorites_favorite_id_delete_with_http_info(company_id, user_id, favorite_id, opts)
       data
@@ -181,7 +181,7 @@ module SparteraApiSdk
     # @param user_id [String] 
     # @param favorite_id [String] 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(Object, Integer, Hash)>] Object data, response status code and response headers
+    # @return [Array<(CompaniesCompanyIdUsersUserIdFavoritesFavoriteIdDelete200Response, Integer, Hash)>] CompaniesCompanyIdUsersUserIdFavoritesFavoriteIdDelete200Response data, response status code and response headers
     def companies_company_id_users_user_id_favorites_favorite_id_delete_with_http_info(company_id, user_id, favorite_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: FavoritesApi.companies_company_id_users_user_id_favorites_favorite_id_delete ...'
@@ -216,7 +216,7 @@ module SparteraApiSdk
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'Object'
+      return_type = opts[:debug_return_type] || 'CompaniesCompanyIdUsersUserIdFavoritesFavoriteIdDelete200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['ApiKeyAuth']
@@ -243,7 +243,7 @@ module SparteraApiSdk
     # @param user_id [String] 
     # @param favorite_id [String] 
     # @param [Hash] opts the optional parameters
-    # @return [Object]
+    # @return [CompaniesCompanyIdUsersUserIdFavoritesFavoriteIdGet200Response]
     def companies_company_id_users_user_id_favorites_favorite_id_get(company_id, user_id, favorite_id, opts = {})
       data, _status_code, _headers = companies_company_id_users_user_id_favorites_favorite_id_get_with_http_info(company_id, user_id, favorite_id, opts)
       data
@@ -254,7 +254,7 @@ module SparteraApiSdk
     # @param user_id [String] 
     # @param favorite_id [String] 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(Object, Integer, Hash)>] Object data, response status code and response headers
+    # @return [Array<(CompaniesCompanyIdUsersUserIdFavoritesFavoriteIdGet200Response, Integer, Hash)>] CompaniesCompanyIdUsersUserIdFavoritesFavoriteIdGet200Response data, response status code and response headers
     def companies_company_id_users_user_id_favorites_favorite_id_get_with_http_info(company_id, user_id, favorite_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: FavoritesApi.companies_company_id_users_user_id_favorites_favorite_id_get ...'
@@ -289,7 +289,7 @@ module SparteraApiSdk
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'Object'
+      return_type = opts[:debug_return_type] || 'CompaniesCompanyIdUsersUserIdFavoritesFavoriteIdGet200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['ApiKeyAuth']
@@ -317,7 +317,7 @@ module SparteraApiSdk
     # @param favorite_id [String] 
     # @param favorite [Favorite] 
     # @param [Hash] opts the optional parameters
-    # @return [Object]
+    # @return [CompaniesCompanyIdUsersUserIdFavoritesFavoriteIdPatch200Response]
     def companies_company_id_users_user_id_favorites_favorite_id_patch(company_id, user_id, favorite_id, favorite, opts = {})
       data, _status_code, _headers = companies_company_id_users_user_id_favorites_favorite_id_patch_with_http_info(company_id, user_id, favorite_id, favorite, opts)
       data
@@ -329,7 +329,7 @@ module SparteraApiSdk
     # @param favorite_id [String] 
     # @param favorite [Favorite] 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(Object, Integer, Hash)>] Object data, response status code and response headers
+    # @return [Array<(CompaniesCompanyIdUsersUserIdFavoritesFavoriteIdPatch200Response, Integer, Hash)>] CompaniesCompanyIdUsersUserIdFavoritesFavoriteIdPatch200Response data, response status code and response headers
     def companies_company_id_users_user_id_favorites_favorite_id_patch_with_http_info(company_id, user_id, favorite_id, favorite, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: FavoritesApi.companies_company_id_users_user_id_favorites_favorite_id_patch ...'
@@ -373,7 +373,7 @@ module SparteraApiSdk
       post_body = opts[:debug_body] || @api_client.object_to_http_body(favorite)
 
       # return_type
-      return_type = opts[:debug_return_type] || 'Object'
+      return_type = opts[:debug_return_type] || 'CompaniesCompanyIdUsersUserIdFavoritesFavoriteIdPatch200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['ApiKeyAuth']
@@ -399,7 +399,7 @@ module SparteraApiSdk
     # @param company_id [String] 
     # @param user_id [String] 
     # @param [Hash] opts the optional parameters
-    # @return [Object]
+    # @return [CompaniesCompanyIdUsersUserIdFavoritesGet200Response]
     def companies_company_id_users_user_id_favorites_get(company_id, user_id, opts = {})
       data, _status_code, _headers = companies_company_id_users_user_id_favorites_get_with_http_info(company_id, user_id, opts)
       data
@@ -409,7 +409,7 @@ module SparteraApiSdk
     # @param company_id [String] 
     # @param user_id [String] 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(Object, Integer, Hash)>] Object data, response status code and response headers
+    # @return [Array<(CompaniesCompanyIdUsersUserIdFavoritesGet200Response, Integer, Hash)>] CompaniesCompanyIdUsersUserIdFavoritesGet200Response data, response status code and response headers
     def companies_company_id_users_user_id_favorites_get_with_http_info(company_id, user_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: FavoritesApi.companies_company_id_users_user_id_favorites_get ...'
@@ -440,7 +440,7 @@ module SparteraApiSdk
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'Object'
+      return_type = opts[:debug_return_type] || 'CompaniesCompanyIdUsersUserIdFavoritesGet200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['ApiKeyAuth']
@@ -467,7 +467,7 @@ module SparteraApiSdk
     # @param user_id [String] 
     # @param favorite [Favorite] 
     # @param [Hash] opts the optional parameters
-    # @return [Object]
+    # @return [CompaniesCompanyIdUsersUserIdFavoritesPost200Response]
     def companies_company_id_users_user_id_favorites_post(company_id, user_id, favorite, opts = {})
       data, _status_code, _headers = companies_company_id_users_user_id_favorites_post_with_http_info(company_id, user_id, favorite, opts)
       data
@@ -478,7 +478,7 @@ module SparteraApiSdk
     # @param user_id [String] 
     # @param favorite [Favorite] 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(Object, Integer, Hash)>] Object data, response status code and response headers
+    # @return [Array<(CompaniesCompanyIdUsersUserIdFavoritesPost200Response, Integer, Hash)>] CompaniesCompanyIdUsersUserIdFavoritesPost200Response data, response status code and response headers
     def companies_company_id_users_user_id_favorites_post_with_http_info(company_id, user_id, favorite, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: FavoritesApi.companies_company_id_users_user_id_favorites_post ...'
@@ -518,7 +518,7 @@ module SparteraApiSdk
       post_body = opts[:debug_body] || @api_client.object_to_http_body(favorite)
 
       # return_type
-      return_type = opts[:debug_return_type] || 'Object'
+      return_type = opts[:debug_return_type] || 'CompaniesCompanyIdUsersUserIdFavoritesPost200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['ApiKeyAuth']
@@ -544,7 +544,7 @@ module SparteraApiSdk
     # @param company_id [String] 
     # @param user_id [String] 
     # @param [Hash] opts the optional parameters
-    # @return [Object]
+    # @return [CompaniesCompanyIdUsersUserIdFavoritesGet200Response]
     def companies_company_id_users_user_id_favorites_uncategorized_get(company_id, user_id, opts = {})
       data, _status_code, _headers = companies_company_id_users_user_id_favorites_uncategorized_get_with_http_info(company_id, user_id, opts)
       data
@@ -554,7 +554,7 @@ module SparteraApiSdk
     # @param company_id [String] 
     # @param user_id [String] 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(Object, Integer, Hash)>] Object data, response status code and response headers
+    # @return [Array<(CompaniesCompanyIdUsersUserIdFavoritesGet200Response, Integer, Hash)>] CompaniesCompanyIdUsersUserIdFavoritesGet200Response data, response status code and response headers
     def companies_company_id_users_user_id_favorites_uncategorized_get_with_http_info(company_id, user_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: FavoritesApi.companies_company_id_users_user_id_favorites_uncategorized_get ...'
@@ -585,7 +585,7 @@ module SparteraApiSdk
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'Object'
+      return_type = opts[:debug_return_type] || 'CompaniesCompanyIdUsersUserIdFavoritesGet200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['ApiKeyAuth']

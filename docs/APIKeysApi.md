@@ -13,7 +13,7 @@ All URIs are relative to *https://api.spartera.com*
 
 ## companies_company_id_api_keys_api_key_id_get
 
-> Object companies_company_id_api_keys_api_key_id_get(company_id, api_key_id)
+> <CompaniesCompanyIdApiKeysGet200Response> companies_company_id_api_keys_api_key_id_get(company_id, api_key_id)
 
 Get single API key by ID
 
@@ -47,7 +47,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(Object, Integer, Hash)> companies_company_id_api_keys_api_key_id_get_with_http_info(company_id, api_key_id)
+> <Array(<CompaniesCompanyIdApiKeysGet200Response>, Integer, Hash)> companies_company_id_api_keys_api_key_id_get_with_http_info(company_id, api_key_id)
 
 ```ruby
 begin
@@ -55,7 +55,7 @@ begin
   data, status_code, headers = api_instance.companies_company_id_api_keys_api_key_id_get_with_http_info(company_id, api_key_id)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => Object
+  p data # => <CompaniesCompanyIdApiKeysGet200Response>
 rescue SparteraApiSdk::ApiError => e
   puts "Error when calling APIKeysApi->companies_company_id_api_keys_api_key_id_get_with_http_info: #{e}"
 end
@@ -70,7 +70,7 @@ end
 
 ### Return type
 
-**Object**
+[**CompaniesCompanyIdApiKeysGet200Response**](CompaniesCompanyIdApiKeysGet200Response.md)
 
 ### Authorization
 
@@ -84,7 +84,7 @@ end
 
 ## companies_company_id_api_keys_api_key_id_patch
 
-> Object companies_company_id_api_keys_api_key_id_patch(company_id, api_key_id)
+> <CompaniesCompanyIdApiKeysGet200Response> companies_company_id_api_keys_api_key_id_patch(company_id, api_key_id)
 
 Update an existing API key by ID
 
@@ -118,7 +118,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(Object, Integer, Hash)> companies_company_id_api_keys_api_key_id_patch_with_http_info(company_id, api_key_id)
+> <Array(<CompaniesCompanyIdApiKeysGet200Response>, Integer, Hash)> companies_company_id_api_keys_api_key_id_patch_with_http_info(company_id, api_key_id)
 
 ```ruby
 begin
@@ -126,7 +126,7 @@ begin
   data, status_code, headers = api_instance.companies_company_id_api_keys_api_key_id_patch_with_http_info(company_id, api_key_id)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => Object
+  p data # => <CompaniesCompanyIdApiKeysGet200Response>
 rescue SparteraApiSdk::ApiError => e
   puts "Error when calling APIKeysApi->companies_company_id_api_keys_api_key_id_patch_with_http_info: #{e}"
 end
@@ -141,7 +141,7 @@ end
 
 ### Return type
 
-**Object**
+[**CompaniesCompanyIdApiKeysGet200Response**](CompaniesCompanyIdApiKeysGet200Response.md)
 
 ### Authorization
 
@@ -155,7 +155,7 @@ end
 
 ## companies_company_id_api_keys_get
 
-> Object companies_company_id_api_keys_get(company_id)
+> <CompaniesCompanyIdApiKeysGet200Response> companies_company_id_api_keys_get(company_id)
 
 Get all API keys
 
@@ -188,7 +188,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(Object, Integer, Hash)> companies_company_id_api_keys_get_with_http_info(company_id)
+> <Array(<CompaniesCompanyIdApiKeysGet200Response>, Integer, Hash)> companies_company_id_api_keys_get_with_http_info(company_id)
 
 ```ruby
 begin
@@ -196,7 +196,7 @@ begin
   data, status_code, headers = api_instance.companies_company_id_api_keys_get_with_http_info(company_id)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => Object
+  p data # => <CompaniesCompanyIdApiKeysGet200Response>
 rescue SparteraApiSdk::ApiError => e
   puts "Error when calling APIKeysApi->companies_company_id_api_keys_get_with_http_info: #{e}"
 end
@@ -210,7 +210,7 @@ end
 
 ### Return type
 
-**Object**
+[**CompaniesCompanyIdApiKeysGet200Response**](CompaniesCompanyIdApiKeysGet200Response.md)
 
 ### Authorization
 
@@ -224,7 +224,7 @@ end
 
 ## companies_company_id_api_keys_post
 
-> Object companies_company_id_api_keys_post(company_id)
+> <CompaniesCompanyIdApiKeysGet200Response> companies_company_id_api_keys_post(company_id)
 
 Create single API key
 
@@ -257,7 +257,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(Object, Integer, Hash)> companies_company_id_api_keys_post_with_http_info(company_id)
+> <Array(<CompaniesCompanyIdApiKeysGet200Response>, Integer, Hash)> companies_company_id_api_keys_post_with_http_info(company_id)
 
 ```ruby
 begin
@@ -265,7 +265,7 @@ begin
   data, status_code, headers = api_instance.companies_company_id_api_keys_post_with_http_info(company_id)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => Object
+  p data # => <CompaniesCompanyIdApiKeysGet200Response>
 rescue SparteraApiSdk::ApiError => e
   puts "Error when calling APIKeysApi->companies_company_id_api_keys_post_with_http_info: #{e}"
 end
@@ -279,7 +279,7 @@ end
 
 ### Return type
 
-**Object**
+[**CompaniesCompanyIdApiKeysGet200Response**](CompaniesCompanyIdApiKeysGet200Response.md)
 
 ### Authorization
 
@@ -293,7 +293,7 @@ end
 
 ## companies_company_id_api_keys_token_delete
 
-> Object companies_company_id_api_keys_token_delete(company_id, token)
+> <CompaniesCompanyIdApiKeysGet200Response> companies_company_id_api_keys_token_delete(company_id, token)
 
 Delete single API key by token
 
@@ -327,7 +327,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(Object, Integer, Hash)> companies_company_id_api_keys_token_delete_with_http_info(company_id, token)
+> <Array(<CompaniesCompanyIdApiKeysGet200Response>, Integer, Hash)> companies_company_id_api_keys_token_delete_with_http_info(company_id, token)
 
 ```ruby
 begin
@@ -335,7 +335,7 @@ begin
   data, status_code, headers = api_instance.companies_company_id_api_keys_token_delete_with_http_info(company_id, token)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => Object
+  p data # => <CompaniesCompanyIdApiKeysGet200Response>
 rescue SparteraApiSdk::ApiError => e
   puts "Error when calling APIKeysApi->companies_company_id_api_keys_token_delete_with_http_info: #{e}"
 end
@@ -350,7 +350,7 @@ end
 
 ### Return type
 
-**Object**
+[**CompaniesCompanyIdApiKeysGet200Response**](CompaniesCompanyIdApiKeysGet200Response.md)
 
 ### Authorization
 

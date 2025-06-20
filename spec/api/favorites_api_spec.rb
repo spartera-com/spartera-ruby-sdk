@@ -38,7 +38,7 @@ describe 'FavoritesApi' do
   # @param user_id 
   # @param category 
   # @param [Hash] opts the optional parameters
-  # @return [Object]
+  # @return [CompaniesCompanyIdUsersUserIdFavoritesFavoriteIdGet200Response]
   describe 'companies_company_id_users_user_id_favorites_category_category_get test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -51,7 +51,7 @@ describe 'FavoritesApi' do
   # @param user_id 
   # @param asset_id 
   # @param [Hash] opts the optional parameters
-  # @return [Object]
+  # @return [CompaniesCompanyIdUsersUserIdFavoritesFavoriteIdGet200Response]
   describe 'companies_company_id_users_user_id_favorites_check_asset_id_get test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -64,7 +64,7 @@ describe 'FavoritesApi' do
   # @param user_id 
   # @param favorite_id 
   # @param [Hash] opts the optional parameters
-  # @return [Object]
+  # @return [CompaniesCompanyIdUsersUserIdFavoritesFavoriteIdDelete200Response]
   describe 'companies_company_id_users_user_id_favorites_favorite_id_delete test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -77,7 +77,7 @@ describe 'FavoritesApi' do
   # @param user_id 
   # @param favorite_id 
   # @param [Hash] opts the optional parameters
-  # @return [Object]
+  # @return [CompaniesCompanyIdUsersUserIdFavoritesFavoriteIdGet200Response]
   describe 'companies_company_id_users_user_id_favorites_favorite_id_get test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -91,7 +91,7 @@ describe 'FavoritesApi' do
   # @param favorite_id 
   # @param favorite 
   # @param [Hash] opts the optional parameters
-  # @return [Object]
+  # @return [CompaniesCompanyIdUsersUserIdFavoritesFavoriteIdPatch200Response]
   describe 'companies_company_id_users_user_id_favorites_favorite_id_patch test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -103,7 +103,7 @@ describe 'FavoritesApi' do
   # @param company_id 
   # @param user_id 
   # @param [Hash] opts the optional parameters
-  # @return [Object]
+  # @return [CompaniesCompanyIdUsersUserIdFavoritesGet200Response]
   describe 'companies_company_id_users_user_id_favorites_get test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -116,7 +116,7 @@ describe 'FavoritesApi' do
   # @param user_id 
   # @param favorite 
   # @param [Hash] opts the optional parameters
-  # @return [Object]
+  # @return [CompaniesCompanyIdUsersUserIdFavoritesPost200Response]
   describe 'companies_company_id_users_user_id_favorites_post test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -128,7 +128,7 @@ describe 'FavoritesApi' do
   # @param company_id 
   # @param user_id 
   # @param [Hash] opts the optional parameters
-  # @return [Object]
+  # @return [CompaniesCompanyIdUsersUserIdFavoritesGet200Response]
   describe 'companies_company_id_users_user_id_favorites_uncategorized_get test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/

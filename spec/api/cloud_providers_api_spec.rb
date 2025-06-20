@@ -35,7 +35,7 @@ describe 'CloudProvidersApi' do
   # unit tests for cloud_providers_get
   # Get a list of all cloud providers
   # @param [Hash] opts the optional parameters
-  # @return [Object]
+  # @return [CompaniesCompanyIdApiKeysGet200Response]
   describe 'cloud_providers_get test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -46,7 +46,7 @@ describe 'CloudProvidersApi' do
   # Get single cloud provider by ID
   # @param provider_id 
   # @param [Hash] opts the optional parameters
-  # @return [Object]
+  # @return [CompaniesCompanyIdApiKeysGet200Response]
   describe 'cloud_providers_provider_id_get test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/

@@ -34,10 +34,10 @@ describe 'AssetsApi' do
 
   # unit tests for analyze_company_handle_assets_asset_slug_get
   # Process (analyze) an asset. Attempt to process an analytic on a backend warehouse/AI model.
-  # @param asset_slug 
   # @param company_handle 
+  # @param asset_slug 
   # @param [Hash] opts the optional parameters
-  # @return [Object]
+  # @return [CompaniesCompanyIdAssetsAssetIdGet200Response]
   describe 'analyze_company_handle_assets_asset_slug_get test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -49,7 +49,7 @@ describe 'AssetsApi' do
   # @param company_id 
   # @param asset_id 
   # @param [Hash] opts the optional parameters
-  # @return [Object]
+  # @return [CompaniesCompanyIdAssetsAssetIdDelete200Response]
   describe 'companies_company_id_assets_asset_id_delete test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -61,7 +61,7 @@ describe 'AssetsApi' do
   # @param company_id 
   # @param asset_id 
   # @param [Hash] opts the optional parameters
-  # @return [Object]
+  # @return [CompaniesCompanyIdAssetsAssetIdGet200Response]
   describe 'companies_company_id_assets_asset_id_get test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -73,7 +73,7 @@ describe 'AssetsApi' do
   # @param company_id 
   # @param asset_id 
   # @param [Hash] opts the optional parameters
-  # @return [Object]
+  # @return [CompaniesCompanyIdAssetsGet200Response]
   describe 'companies_company_id_assets_asset_id_infoschema_get test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -85,7 +85,7 @@ describe 'AssetsApi' do
   # @param company_id 
   # @param asset_id 
   # @param [Hash] opts the optional parameters
-  # @return [Object]
+  # @return [CompaniesCompanyIdAssetsGet200Response]
   describe 'companies_company_id_assets_asset_id_infoschema_save_get test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -98,7 +98,7 @@ describe 'AssetsApi' do
   # @param asset_id 
   # @param asset 
   # @param [Hash] opts the optional parameters
-  # @return [Object]
+  # @return [CompaniesCompanyIdAssetsAssetIdPatch200Response]
   describe 'companies_company_id_assets_asset_id_patch test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -110,7 +110,7 @@ describe 'AssetsApi' do
   # @param company_id 
   # @param asset_id 
   # @param [Hash] opts the optional parameters
-  # @return [Object]
+  # @return [CompaniesCompanyIdAssetsGet200Response]
   describe 'companies_company_id_assets_asset_id_predicted_price_get test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -122,7 +122,7 @@ describe 'AssetsApi' do
   # @param company_id 
   # @param asset_id 
   # @param [Hash] opts the optional parameters
-  # @return [Object]
+  # @return [CompaniesCompanyIdAssetsGet200Response]
   describe 'companies_company_id_assets_asset_id_statistics_get test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -134,7 +134,7 @@ describe 'AssetsApi' do
   # @param company_id 
   # @param asset_id 
   # @param [Hash] opts the optional parameters
-  # @return [Object]
+  # @return [CompaniesCompanyIdAssetsGet200Response]
   describe 'companies_company_id_assets_asset_id_test_get test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -145,7 +145,7 @@ describe 'AssetsApi' do
   # Get all assets for a specific company
   # @param company_id 
   # @param [Hash] opts the optional parameters
-  # @return [Object]
+  # @return [CompaniesCompanyIdAssetsGet200Response]
   describe 'companies_company_id_assets_get test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -157,7 +157,7 @@ describe 'AssetsApi' do
   # @param company_id 
   # @param asset 
   # @param [Hash] opts the optional parameters
-  # @return [Object]
+  # @return [CompaniesCompanyIdAssetsPost200Response]
   describe 'companies_company_id_assets_post test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -168,7 +168,7 @@ describe 'AssetsApi' do
   # Get statistics for all assets the user has access to
   # @param company_id 
   # @param [Hash] opts the optional parameters
-  # @return [Object]
+  # @return [CompaniesCompanyIdAssetsGet200Response]
   describe 'companies_company_id_assets_statistics_get test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/

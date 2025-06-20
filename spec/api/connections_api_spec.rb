@@ -37,7 +37,7 @@ describe 'ConnectionsApi' do
   # @param company_id 
   # @param connection_id 
   # @param [Hash] opts the optional parameters
-  # @return [Object]
+  # @return [CompaniesCompanyIdConnectionsConnectionIdDelete200Response]
   describe 'companies_company_id_connections_connection_id_delete test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -49,7 +49,7 @@ describe 'ConnectionsApi' do
   # @param company_id 
   # @param connection_id 
   # @param [Hash] opts the optional parameters
-  # @return [Object]
+  # @return [CompaniesCompanyIdConnectionsConnectionIdGet200Response]
   describe 'companies_company_id_connections_connection_id_get test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -61,7 +61,7 @@ describe 'ConnectionsApi' do
   # @param company_id 
   # @param connection_id 
   # @param [Hash] opts the optional parameters
-  # @return [Object]
+  # @return [CompaniesCompanyIdConnectionsGet200Response]
   describe 'companies_company_id_connections_connection_id_infoschema_get test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -74,7 +74,7 @@ describe 'ConnectionsApi' do
   # @param connection_id 
   # @param connection 
   # @param [Hash] opts the optional parameters
-  # @return [Object]
+  # @return [CompaniesCompanyIdConnectionsConnectionIdPatch200Response]
   describe 'companies_company_id_connections_connection_id_patch test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -86,7 +86,7 @@ describe 'ConnectionsApi' do
   # @param company_id 
   # @param connection_id 
   # @param [Hash] opts the optional parameters
-  # @return [Object]
+  # @return [CompaniesCompanyIdConnectionsGet200Response]
   describe 'companies_company_id_connections_connection_id_test_get test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -97,7 +97,7 @@ describe 'ConnectionsApi' do
   # Get all connections for a specific company
   # @param company_id 
   # @param [Hash] opts the optional parameters
-  # @return [Object]
+  # @return [CompaniesCompanyIdConnectionsGet200Response]
   describe 'companies_company_id_connections_get test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -109,7 +109,7 @@ describe 'ConnectionsApi' do
   # @param company_id 
   # @param connection 
   # @param [Hash] opts the optional parameters
-  # @return [Object]
+  # @return [CompaniesCompanyIdConnectionsPost200Response]
   describe 'companies_company_id_connections_post test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/

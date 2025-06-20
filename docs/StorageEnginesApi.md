@@ -10,7 +10,7 @@ All URIs are relative to *https://api.spartera.com*
 
 ## cloud_providers_provider_id_storage_engines_engine_id_get
 
-> Object cloud_providers_provider_id_storage_engines_engine_id_get(provider_id, engine_id)
+> <CompaniesCompanyIdApiKeysGet200Response> cloud_providers_provider_id_storage_engines_engine_id_get(provider_id, engine_id)
 
 Get single storage engine by ID
 
@@ -44,7 +44,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(Object, Integer, Hash)> cloud_providers_provider_id_storage_engines_engine_id_get_with_http_info(provider_id, engine_id)
+> <Array(<CompaniesCompanyIdApiKeysGet200Response>, Integer, Hash)> cloud_providers_provider_id_storage_engines_engine_id_get_with_http_info(provider_id, engine_id)
 
 ```ruby
 begin
@@ -52,7 +52,7 @@ begin
   data, status_code, headers = api_instance.cloud_providers_provider_id_storage_engines_engine_id_get_with_http_info(provider_id, engine_id)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => Object
+  p data # => <CompaniesCompanyIdApiKeysGet200Response>
 rescue SparteraApiSdk::ApiError => e
   puts "Error when calling StorageEnginesApi->cloud_providers_provider_id_storage_engines_engine_id_get_with_http_info: #{e}"
 end
@@ -67,7 +67,7 @@ end
 
 ### Return type
 
-**Object**
+[**CompaniesCompanyIdApiKeysGet200Response**](CompaniesCompanyIdApiKeysGet200Response.md)
 
 ### Authorization
 
@@ -81,7 +81,7 @@ end
 
 ## cloud_providers_provider_id_storage_engines_get
 
-> Object cloud_providers_provider_id_storage_engines_get(provider_id)
+> <CompaniesCompanyIdApiKeysGet200Response> cloud_providers_provider_id_storage_engines_get(provider_id)
 
 Get a list of all storage engines
 
@@ -114,7 +114,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(Object, Integer, Hash)> cloud_providers_provider_id_storage_engines_get_with_http_info(provider_id)
+> <Array(<CompaniesCompanyIdApiKeysGet200Response>, Integer, Hash)> cloud_providers_provider_id_storage_engines_get_with_http_info(provider_id)
 
 ```ruby
 begin
@@ -122,7 +122,7 @@ begin
   data, status_code, headers = api_instance.cloud_providers_provider_id_storage_engines_get_with_http_info(provider_id)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => Object
+  p data # => <CompaniesCompanyIdApiKeysGet200Response>
 rescue SparteraApiSdk::ApiError => e
   puts "Error when calling StorageEnginesApi->cloud_providers_provider_id_storage_engines_get_with_http_info: #{e}"
 end
@@ -136,7 +136,7 @@ end
 
 ### Return type
 
-**Object**
+[**CompaniesCompanyIdApiKeysGet200Response**](CompaniesCompanyIdApiKeysGet200Response.md)
 
 ### Authorization
 

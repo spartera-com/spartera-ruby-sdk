@@ -15,7 +15,7 @@ All URIs are relative to *https://api.spartera.com*
 
 ## companies_company_id_users_user_id_alerts_alert_id_delete
 
-> Object companies_company_id_users_user_id_alerts_alert_id_delete(company_id, user_id, alert_id)
+> <CompaniesCompanyIdUsersUserIdAlertsAlertIdDelete200Response> companies_company_id_users_user_id_alerts_alert_id_delete(company_id, user_id, alert_id)
 
 Delete single alert by ID
 
@@ -50,7 +50,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(Object, Integer, Hash)> companies_company_id_users_user_id_alerts_alert_id_delete_with_http_info(company_id, user_id, alert_id)
+> <Array(<CompaniesCompanyIdUsersUserIdAlertsAlertIdDelete200Response>, Integer, Hash)> companies_company_id_users_user_id_alerts_alert_id_delete_with_http_info(company_id, user_id, alert_id)
 
 ```ruby
 begin
@@ -58,7 +58,7 @@ begin
   data, status_code, headers = api_instance.companies_company_id_users_user_id_alerts_alert_id_delete_with_http_info(company_id, user_id, alert_id)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => Object
+  p data # => <CompaniesCompanyIdUsersUserIdAlertsAlertIdDelete200Response>
 rescue SparteraApiSdk::ApiError => e
   puts "Error when calling AlertsApi->companies_company_id_users_user_id_alerts_alert_id_delete_with_http_info: #{e}"
 end
@@ -74,7 +74,7 @@ end
 
 ### Return type
 
-**Object**
+[**CompaniesCompanyIdUsersUserIdAlertsAlertIdDelete200Response**](CompaniesCompanyIdUsersUserIdAlertsAlertIdDelete200Response.md)
 
 ### Authorization
 
@@ -88,7 +88,7 @@ end
 
 ## companies_company_id_users_user_id_alerts_alert_id_get
 
-> Object companies_company_id_users_user_id_alerts_alert_id_get(company_id, user_id, alert_id)
+> <CompaniesCompanyIdUsersUserIdAlertsAlertIdGet200Response> companies_company_id_users_user_id_alerts_alert_id_get(company_id, user_id, alert_id)
 
 Get single alert by ID
 
@@ -123,7 +123,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(Object, Integer, Hash)> companies_company_id_users_user_id_alerts_alert_id_get_with_http_info(company_id, user_id, alert_id)
+> <Array(<CompaniesCompanyIdUsersUserIdAlertsAlertIdGet200Response>, Integer, Hash)> companies_company_id_users_user_id_alerts_alert_id_get_with_http_info(company_id, user_id, alert_id)
 
 ```ruby
 begin
@@ -131,7 +131,7 @@ begin
   data, status_code, headers = api_instance.companies_company_id_users_user_id_alerts_alert_id_get_with_http_info(company_id, user_id, alert_id)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => Object
+  p data # => <CompaniesCompanyIdUsersUserIdAlertsAlertIdGet200Response>
 rescue SparteraApiSdk::ApiError => e
   puts "Error when calling AlertsApi->companies_company_id_users_user_id_alerts_alert_id_get_with_http_info: #{e}"
 end
@@ -147,7 +147,7 @@ end
 
 ### Return type
 
-**Object**
+[**CompaniesCompanyIdUsersUserIdAlertsAlertIdGet200Response**](CompaniesCompanyIdUsersUserIdAlertsAlertIdGet200Response.md)
 
 ### Authorization
 
@@ -161,7 +161,7 @@ end
 
 ## companies_company_id_users_user_id_alerts_alert_id_patch
 
-> Object companies_company_id_users_user_id_alerts_alert_id_patch(company_id, user_id, alert_id, alert)
+> <CompaniesCompanyIdUsersUserIdAlertsAlertIdPatch200Response> companies_company_id_users_user_id_alerts_alert_id_patch(company_id, user_id, alert_id, alert)
 
 Update an existing alert by ID
 
@@ -197,7 +197,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(Object, Integer, Hash)> companies_company_id_users_user_id_alerts_alert_id_patch_with_http_info(company_id, user_id, alert_id, alert)
+> <Array(<CompaniesCompanyIdUsersUserIdAlertsAlertIdPatch200Response>, Integer, Hash)> companies_company_id_users_user_id_alerts_alert_id_patch_with_http_info(company_id, user_id, alert_id, alert)
 
 ```ruby
 begin
@@ -205,7 +205,7 @@ begin
   data, status_code, headers = api_instance.companies_company_id_users_user_id_alerts_alert_id_patch_with_http_info(company_id, user_id, alert_id, alert)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => Object
+  p data # => <CompaniesCompanyIdUsersUserIdAlertsAlertIdPatch200Response>
 rescue SparteraApiSdk::ApiError => e
   puts "Error when calling AlertsApi->companies_company_id_users_user_id_alerts_alert_id_patch_with_http_info: #{e}"
 end
@@ -222,7 +222,7 @@ end
 
 ### Return type
 
-**Object**
+[**CompaniesCompanyIdUsersUserIdAlertsAlertIdPatch200Response**](CompaniesCompanyIdUsersUserIdAlertsAlertIdPatch200Response.md)
 
 ### Authorization
 
@@ -236,7 +236,7 @@ end
 
 ## companies_company_id_users_user_id_alerts_asset_asset_id_all_get
 
-> Object companies_company_id_users_user_id_alerts_asset_asset_id_all_get(company_id, user_id, asset_id)
+> <CompaniesCompanyIdUsersUserIdAlertsGet200Response> companies_company_id_users_user_id_alerts_asset_asset_id_all_get(company_id, user_id, asset_id)
 
 Get all alerts for a specific asset
 
@@ -271,7 +271,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(Object, Integer, Hash)> companies_company_id_users_user_id_alerts_asset_asset_id_all_get_with_http_info(company_id, user_id, asset_id)
+> <Array(<CompaniesCompanyIdUsersUserIdAlertsGet200Response>, Integer, Hash)> companies_company_id_users_user_id_alerts_asset_asset_id_all_get_with_http_info(company_id, user_id, asset_id)
 
 ```ruby
 begin
@@ -279,7 +279,7 @@ begin
   data, status_code, headers = api_instance.companies_company_id_users_user_id_alerts_asset_asset_id_all_get_with_http_info(company_id, user_id, asset_id)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => Object
+  p data # => <CompaniesCompanyIdUsersUserIdAlertsGet200Response>
 rescue SparteraApiSdk::ApiError => e
   puts "Error when calling AlertsApi->companies_company_id_users_user_id_alerts_asset_asset_id_all_get_with_http_info: #{e}"
 end
@@ -295,7 +295,7 @@ end
 
 ### Return type
 
-**Object**
+[**CompaniesCompanyIdUsersUserIdAlertsGet200Response**](CompaniesCompanyIdUsersUserIdAlertsGet200Response.md)
 
 ### Authorization
 
@@ -309,7 +309,7 @@ end
 
 ## companies_company_id_users_user_id_alerts_asset_asset_id_get
 
-> Object companies_company_id_users_user_id_alerts_asset_asset_id_get(company_id, user_id, asset_id)
+> <CompaniesCompanyIdUsersUserIdAlertsAlertIdGet200Response> companies_company_id_users_user_id_alerts_asset_asset_id_get(company_id, user_id, asset_id)
 
 Get all alerts for a specific asset (by user)
 
@@ -344,7 +344,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(Object, Integer, Hash)> companies_company_id_users_user_id_alerts_asset_asset_id_get_with_http_info(company_id, user_id, asset_id)
+> <Array(<CompaniesCompanyIdUsersUserIdAlertsAlertIdGet200Response>, Integer, Hash)> companies_company_id_users_user_id_alerts_asset_asset_id_get_with_http_info(company_id, user_id, asset_id)
 
 ```ruby
 begin
@@ -352,7 +352,7 @@ begin
   data, status_code, headers = api_instance.companies_company_id_users_user_id_alerts_asset_asset_id_get_with_http_info(company_id, user_id, asset_id)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => Object
+  p data # => <CompaniesCompanyIdUsersUserIdAlertsAlertIdGet200Response>
 rescue SparteraApiSdk::ApiError => e
   puts "Error when calling AlertsApi->companies_company_id_users_user_id_alerts_asset_asset_id_get_with_http_info: #{e}"
 end
@@ -368,7 +368,7 @@ end
 
 ### Return type
 
-**Object**
+[**CompaniesCompanyIdUsersUserIdAlertsAlertIdGet200Response**](CompaniesCompanyIdUsersUserIdAlertsAlertIdGet200Response.md)
 
 ### Authorization
 
@@ -382,7 +382,7 @@ end
 
 ## companies_company_id_users_user_id_alerts_get
 
-> Object companies_company_id_users_user_id_alerts_get(company_id, user_id)
+> <CompaniesCompanyIdUsersUserIdAlertsGet200Response> companies_company_id_users_user_id_alerts_get(company_id, user_id)
 
 Get a list of all alerts for a specific user
 
@@ -416,7 +416,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(Object, Integer, Hash)> companies_company_id_users_user_id_alerts_get_with_http_info(company_id, user_id)
+> <Array(<CompaniesCompanyIdUsersUserIdAlertsGet200Response>, Integer, Hash)> companies_company_id_users_user_id_alerts_get_with_http_info(company_id, user_id)
 
 ```ruby
 begin
@@ -424,7 +424,7 @@ begin
   data, status_code, headers = api_instance.companies_company_id_users_user_id_alerts_get_with_http_info(company_id, user_id)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => Object
+  p data # => <CompaniesCompanyIdUsersUserIdAlertsGet200Response>
 rescue SparteraApiSdk::ApiError => e
   puts "Error when calling AlertsApi->companies_company_id_users_user_id_alerts_get_with_http_info: #{e}"
 end
@@ -439,7 +439,7 @@ end
 
 ### Return type
 
-**Object**
+[**CompaniesCompanyIdUsersUserIdAlertsGet200Response**](CompaniesCompanyIdUsersUserIdAlertsGet200Response.md)
 
 ### Authorization
 
@@ -453,7 +453,7 @@ end
 
 ## companies_company_id_users_user_id_alerts_post
 
-> Object companies_company_id_users_user_id_alerts_post(company_id, user_id, alert)
+> <CompaniesCompanyIdUsersUserIdAlertsPost200Response> companies_company_id_users_user_id_alerts_post(company_id, user_id, alert)
 
 POST /companies/{company_id}/users/{user_id}/alerts
 
@@ -488,7 +488,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(Object, Integer, Hash)> companies_company_id_users_user_id_alerts_post_with_http_info(company_id, user_id, alert)
+> <Array(<CompaniesCompanyIdUsersUserIdAlertsPost200Response>, Integer, Hash)> companies_company_id_users_user_id_alerts_post_with_http_info(company_id, user_id, alert)
 
 ```ruby
 begin
@@ -496,7 +496,7 @@ begin
   data, status_code, headers = api_instance.companies_company_id_users_user_id_alerts_post_with_http_info(company_id, user_id, alert)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => Object
+  p data # => <CompaniesCompanyIdUsersUserIdAlertsPost200Response>
 rescue SparteraApiSdk::ApiError => e
   puts "Error when calling AlertsApi->companies_company_id_users_user_id_alerts_post_with_http_info: #{e}"
 end
@@ -512,7 +512,7 @@ end
 
 ### Return type
 
-**Object**
+[**CompaniesCompanyIdUsersUserIdAlertsPost200Response**](CompaniesCompanyIdUsersUserIdAlertsPost200Response.md)
 
 ### Authorization
 

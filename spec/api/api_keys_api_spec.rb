@@ -37,7 +37,7 @@ describe 'APIKeysApi' do
   # @param company_id 
   # @param api_key_id 
   # @param [Hash] opts the optional parameters
-  # @return [Object]
+  # @return [CompaniesCompanyIdApiKeysGet200Response]
   describe 'companies_company_id_api_keys_api_key_id_get test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -49,7 +49,7 @@ describe 'APIKeysApi' do
   # @param company_id 
   # @param api_key_id 
   # @param [Hash] opts the optional parameters
-  # @return [Object]
+  # @return [CompaniesCompanyIdApiKeysGet200Response]
   describe 'companies_company_id_api_keys_api_key_id_patch test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -60,7 +60,7 @@ describe 'APIKeysApi' do
   # Get all API keys
   # @param company_id 
   # @param [Hash] opts the optional parameters
-  # @return [Object]
+  # @return [CompaniesCompanyIdApiKeysGet200Response]
   describe 'companies_company_id_api_keys_get test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -71,7 +71,7 @@ describe 'APIKeysApi' do
   # Create single API key
   # @param company_id 
   # @param [Hash] opts the optional parameters
-  # @return [Object]
+  # @return [CompaniesCompanyIdApiKeysGet200Response]
   describe 'companies_company_id_api_keys_post test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -83,7 +83,7 @@ describe 'APIKeysApi' do
   # @param company_id 
   # @param token 
   # @param [Hash] opts the optional parameters
-  # @return [Object]
+  # @return [CompaniesCompanyIdApiKeysGet200Response]
   describe 'companies_company_id_api_keys_token_delete test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/

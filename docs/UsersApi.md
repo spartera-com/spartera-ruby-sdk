@@ -9,11 +9,12 @@ All URIs are relative to *https://api.spartera.com*
 | [**companies_company_id_users_user_id_delete**](UsersApi.md#companies_company_id_users_user_id_delete) | **DELETE** /companies/{company_id}/users/{user_id} | Delete single user by ID |
 | [**companies_company_id_users_user_id_get**](UsersApi.md#companies_company_id_users_user_id_get) | **GET** /companies/{company_id}/users/{user_id} | Get single user by ID |
 | [**companies_company_id_users_user_id_patch**](UsersApi.md#companies_company_id_users_user_id_patch) | **PATCH** /companies/{company_id}/users/{user_id} | Update an existing user by ID |
+| [**me_get**](UsersApi.md#me_get) | **GET** /me | Get current authenticated user&#39;s profile information.              Returns:                 JSON response with user profile data from database |
 
 
 ## companies_company_id_users_get
 
-> Object companies_company_id_users_get(company_id)
+> <CompaniesCompanyIdUsersGet200Response> companies_company_id_users_get(company_id)
 
 Get a list of all users in a company
 
@@ -46,7 +47,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(Object, Integer, Hash)> companies_company_id_users_get_with_http_info(company_id)
+> <Array(<CompaniesCompanyIdUsersGet200Response>, Integer, Hash)> companies_company_id_users_get_with_http_info(company_id)
 
 ```ruby
 begin
@@ -54,7 +55,7 @@ begin
   data, status_code, headers = api_instance.companies_company_id_users_get_with_http_info(company_id)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => Object
+  p data # => <CompaniesCompanyIdUsersGet200Response>
 rescue SparteraApiSdk::ApiError => e
   puts "Error when calling UsersApi->companies_company_id_users_get_with_http_info: #{e}"
 end
@@ -68,7 +69,7 @@ end
 
 ### Return type
 
-**Object**
+[**CompaniesCompanyIdUsersGet200Response**](CompaniesCompanyIdUsersGet200Response.md)
 
 ### Authorization
 
@@ -82,7 +83,7 @@ end
 
 ## companies_company_id_users_post
 
-> Object companies_company_id_users_post(company_id, user)
+> <CompaniesCompanyIdUsersPost200Response> companies_company_id_users_post(company_id, user)
 
 Create a new user
 
@@ -116,7 +117,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(Object, Integer, Hash)> companies_company_id_users_post_with_http_info(company_id, user)
+> <Array(<CompaniesCompanyIdUsersPost200Response>, Integer, Hash)> companies_company_id_users_post_with_http_info(company_id, user)
 
 ```ruby
 begin
@@ -124,7 +125,7 @@ begin
   data, status_code, headers = api_instance.companies_company_id_users_post_with_http_info(company_id, user)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => Object
+  p data # => <CompaniesCompanyIdUsersPost200Response>
 rescue SparteraApiSdk::ApiError => e
   puts "Error when calling UsersApi->companies_company_id_users_post_with_http_info: #{e}"
 end
@@ -139,7 +140,7 @@ end
 
 ### Return type
 
-**Object**
+[**CompaniesCompanyIdUsersPost200Response**](CompaniesCompanyIdUsersPost200Response.md)
 
 ### Authorization
 
@@ -153,7 +154,7 @@ end
 
 ## companies_company_id_users_user_id_delete
 
-> Object companies_company_id_users_user_id_delete(company_id, user_id)
+> <CompaniesCompanyIdUsersUserIdDelete200Response> companies_company_id_users_user_id_delete(company_id, user_id)
 
 Delete single user by ID
 
@@ -187,7 +188,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(Object, Integer, Hash)> companies_company_id_users_user_id_delete_with_http_info(company_id, user_id)
+> <Array(<CompaniesCompanyIdUsersUserIdDelete200Response>, Integer, Hash)> companies_company_id_users_user_id_delete_with_http_info(company_id, user_id)
 
 ```ruby
 begin
@@ -195,7 +196,7 @@ begin
   data, status_code, headers = api_instance.companies_company_id_users_user_id_delete_with_http_info(company_id, user_id)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => Object
+  p data # => <CompaniesCompanyIdUsersUserIdDelete200Response>
 rescue SparteraApiSdk::ApiError => e
   puts "Error when calling UsersApi->companies_company_id_users_user_id_delete_with_http_info: #{e}"
 end
@@ -210,7 +211,7 @@ end
 
 ### Return type
 
-**Object**
+[**CompaniesCompanyIdUsersUserIdDelete200Response**](CompaniesCompanyIdUsersUserIdDelete200Response.md)
 
 ### Authorization
 
@@ -224,7 +225,7 @@ end
 
 ## companies_company_id_users_user_id_get
 
-> Object companies_company_id_users_user_id_get(company_id, user_id)
+> <CompaniesCompanyIdUsersUserIdGet200Response> companies_company_id_users_user_id_get(company_id, user_id)
 
 Get single user by ID
 
@@ -258,7 +259,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(Object, Integer, Hash)> companies_company_id_users_user_id_get_with_http_info(company_id, user_id)
+> <Array(<CompaniesCompanyIdUsersUserIdGet200Response>, Integer, Hash)> companies_company_id_users_user_id_get_with_http_info(company_id, user_id)
 
 ```ruby
 begin
@@ -266,7 +267,7 @@ begin
   data, status_code, headers = api_instance.companies_company_id_users_user_id_get_with_http_info(company_id, user_id)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => Object
+  p data # => <CompaniesCompanyIdUsersUserIdGet200Response>
 rescue SparteraApiSdk::ApiError => e
   puts "Error when calling UsersApi->companies_company_id_users_user_id_get_with_http_info: #{e}"
 end
@@ -281,7 +282,7 @@ end
 
 ### Return type
 
-**Object**
+[**CompaniesCompanyIdUsersUserIdGet200Response**](CompaniesCompanyIdUsersUserIdGet200Response.md)
 
 ### Authorization
 
@@ -295,7 +296,7 @@ end
 
 ## companies_company_id_users_user_id_patch
 
-> Object companies_company_id_users_user_id_patch(company_id, user_id, user)
+> <CompaniesCompanyIdUsersUserIdPatch200Response> companies_company_id_users_user_id_patch(company_id, user_id, user)
 
 Update an existing user by ID
 
@@ -330,7 +331,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(Object, Integer, Hash)> companies_company_id_users_user_id_patch_with_http_info(company_id, user_id, user)
+> <Array(<CompaniesCompanyIdUsersUserIdPatch200Response>, Integer, Hash)> companies_company_id_users_user_id_patch_with_http_info(company_id, user_id, user)
 
 ```ruby
 begin
@@ -338,7 +339,7 @@ begin
   data, status_code, headers = api_instance.companies_company_id_users_user_id_patch_with_http_info(company_id, user_id, user)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => Object
+  p data # => <CompaniesCompanyIdUsersUserIdPatch200Response>
 rescue SparteraApiSdk::ApiError => e
   puts "Error when calling UsersApi->companies_company_id_users_user_id_patch_with_http_info: #{e}"
 end
@@ -354,7 +355,7 @@ end
 
 ### Return type
 
-**Object**
+[**CompaniesCompanyIdUsersUserIdPatch200Response**](CompaniesCompanyIdUsersUserIdPatch200Response.md)
 
 ### Authorization
 
@@ -363,5 +364,71 @@ end
 ### HTTP request headers
 
 - **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## me_get
+
+> <MeGet200Response> me_get
+
+Get current authenticated user's profile information.              Returns:                 JSON response with user profile data from database
+
+### Examples
+
+```ruby
+require 'time'
+require 'spartera_api_sdk'
+# setup authorization
+SparteraApiSdk.configure do |config|
+  # Configure API key authorization: ApiKeyAuth
+  config.api_key['x-api-key'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['x-api-key'] = 'Bearer'
+end
+
+api_instance = SparteraApiSdk::UsersApi.new
+
+begin
+  # Get current authenticated user's profile information.              Returns:                 JSON response with user profile data from database
+  result = api_instance.me_get
+  p result
+rescue SparteraApiSdk::ApiError => e
+  puts "Error when calling UsersApi->me_get: #{e}"
+end
+```
+
+#### Using the me_get_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<MeGet200Response>, Integer, Hash)> me_get_with_http_info
+
+```ruby
+begin
+  # Get current authenticated user's profile information.              Returns:                 JSON response with user profile data from database
+  data, status_code, headers = api_instance.me_get_with_http_info
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <MeGet200Response>
+rescue SparteraApiSdk::ApiError => e
+  puts "Error when calling UsersApi->me_get_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**MeGet200Response**](MeGet200Response.md)
+
+### Authorization
+
+[ApiKeyAuth](../README.md#ApiKeyAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
 - **Accept**: application/json
 

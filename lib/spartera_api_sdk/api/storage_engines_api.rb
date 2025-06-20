@@ -23,7 +23,7 @@ module SparteraApiSdk
     # @param provider_id [String] 
     # @param engine_id [String] 
     # @param [Hash] opts the optional parameters
-    # @return [Object]
+    # @return [CompaniesCompanyIdApiKeysGet200Response]
     def cloud_providers_provider_id_storage_engines_engine_id_get(provider_id, engine_id, opts = {})
       data, _status_code, _headers = cloud_providers_provider_id_storage_engines_engine_id_get_with_http_info(provider_id, engine_id, opts)
       data
@@ -33,7 +33,7 @@ module SparteraApiSdk
     # @param provider_id [String] 
     # @param engine_id [String] 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(Object, Integer, Hash)>] Object data, response status code and response headers
+    # @return [Array<(CompaniesCompanyIdApiKeysGet200Response, Integer, Hash)>] CompaniesCompanyIdApiKeysGet200Response data, response status code and response headers
     def cloud_providers_provider_id_storage_engines_engine_id_get_with_http_info(provider_id, engine_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: StorageEnginesApi.cloud_providers_provider_id_storage_engines_engine_id_get ...'
@@ -64,7 +64,7 @@ module SparteraApiSdk
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'Object'
+      return_type = opts[:debug_return_type] || 'CompaniesCompanyIdApiKeysGet200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['ApiKeyAuth']
@@ -89,7 +89,7 @@ module SparteraApiSdk
     # Get a list of all storage engines
     # @param provider_id [String] 
     # @param [Hash] opts the optional parameters
-    # @return [Object]
+    # @return [CompaniesCompanyIdApiKeysGet200Response]
     def cloud_providers_provider_id_storage_engines_get(provider_id, opts = {})
       data, _status_code, _headers = cloud_providers_provider_id_storage_engines_get_with_http_info(provider_id, opts)
       data
@@ -98,7 +98,7 @@ module SparteraApiSdk
     # Get a list of all storage engines
     # @param provider_id [String] 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(Object, Integer, Hash)>] Object data, response status code and response headers
+    # @return [Array<(CompaniesCompanyIdApiKeysGet200Response, Integer, Hash)>] CompaniesCompanyIdApiKeysGet200Response data, response status code and response headers
     def cloud_providers_provider_id_storage_engines_get_with_http_info(provider_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: StorageEnginesApi.cloud_providers_provider_id_storage_engines_get ...'
@@ -125,7 +125,7 @@ module SparteraApiSdk
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'Object'
+      return_type = opts[:debug_return_type] || 'CompaniesCompanyIdApiKeysGet200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['ApiKeyAuth']

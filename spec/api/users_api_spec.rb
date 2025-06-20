@@ -36,7 +36,7 @@ describe 'UsersApi' do
   # Get a list of all users in a company
   # @param company_id 
   # @param [Hash] opts the optional parameters
-  # @return [Object]
+  # @return [CompaniesCompanyIdUsersGet200Response]
   describe 'companies_company_id_users_get test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -48,7 +48,7 @@ describe 'UsersApi' do
   # @param company_id 
   # @param user 
   # @param [Hash] opts the optional parameters
-  # @return [Object]
+  # @return [CompaniesCompanyIdUsersPost200Response]
   describe 'companies_company_id_users_post test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -60,7 +60,7 @@ describe 'UsersApi' do
   # @param company_id 
   # @param user_id 
   # @param [Hash] opts the optional parameters
-  # @return [Object]
+  # @return [CompaniesCompanyIdUsersUserIdDelete200Response]
   describe 'companies_company_id_users_user_id_delete test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -72,7 +72,7 @@ describe 'UsersApi' do
   # @param company_id 
   # @param user_id 
   # @param [Hash] opts the optional parameters
-  # @return [Object]
+  # @return [CompaniesCompanyIdUsersUserIdGet200Response]
   describe 'companies_company_id_users_user_id_get test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -85,8 +85,18 @@ describe 'UsersApi' do
   # @param user_id 
   # @param user 
   # @param [Hash] opts the optional parameters
-  # @return [Object]
+  # @return [CompaniesCompanyIdUsersUserIdPatch200Response]
   describe 'companies_company_id_users_user_id_patch test' do
+    it 'should work' do
+      # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
+    end
+  end
+
+  # unit tests for me_get
+  # Get current authenticated user&#39;s profile information.              Returns:                 JSON response with user profile data from database
+  # @param [Hash] opts the optional parameters
+  # @return [MeGet200Response]
+  describe 'me_get test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
     end

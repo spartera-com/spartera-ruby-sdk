@@ -11,5 +11,5 @@ Generator version: 7.13.0
 =end
 
 module SparteraApiSdk
-  VERSION = '1.0.68'
+  VERSION = '1.0.69'
 end

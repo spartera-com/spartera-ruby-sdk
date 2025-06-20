@@ -36,7 +36,7 @@ describe 'CompaniesApi' do
   # Get asset performance analytics     Query params: start_date, end_date, limit, sort_by, include
   # @param company_id 
   # @param [Hash] opts the optional parameters
-  # @return [Object]
+  # @return [CompaniesCompanyIdApiKeysGet200Response]
   describe 'companies_company_id_analytics_assets_get test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -47,7 +47,7 @@ describe 'CompaniesApi' do
   # Get customer analytics including growth and segmentation     Query params: start_date, end_date, group_by, segment_by
   # @param company_id 
   # @param [Hash] opts the optional parameters
-  # @return [Object]
+  # @return [CompaniesCompanyIdApiKeysGet200Response]
   describe 'companies_company_id_analytics_customers_get test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -58,7 +58,7 @@ describe 'CompaniesApi' do
   # Get comprehensive dashboard analytics for seller dashboard     Includes all metrics needed for dashboard charts in one call     Query params: start_date, end_date, period (day/week/month/quarter)
   # @param company_id 
   # @param [Hash] opts the optional parameters
-  # @return [Object]
+  # @return [CompaniesCompanyIdApiKeysGet200Response]
   describe 'companies_company_id_analytics_dashboard_get test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -69,7 +69,7 @@ describe 'CompaniesApi' do
   # Get sales over time analytics     Query params: start_date, end_date, group_by (day/week/month/quarter), metrics
   # @param company_id 
   # @param [Hash] opts the optional parameters
-  # @return [Object]
+  # @return [CompaniesCompanyIdApiKeysGet200Response]
   describe 'companies_company_id_analytics_sales_get test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -80,7 +80,7 @@ describe 'CompaniesApi' do
   # Get details of the requestor&#39;s own company
   # @param company_id 
   # @param [Hash] opts the optional parameters
-  # @return [Object]
+  # @return [CompaniesCompanyIdApiKeysGet200Response]
   describe 'companies_company_id_get test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -91,7 +91,7 @@ describe 'CompaniesApi' do
   # Get all objects (connections, assets) of a single company
   # @param company_id 
   # @param [Hash] opts the optional parameters
-  # @return [Object]
+  # @return [CompaniesCompanyIdApiKeysGet200Response]
   describe 'companies_company_id_objects_get test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -102,7 +102,7 @@ describe 'CompaniesApi' do
   # Update an existing company by ID
   # @param company_id 
   # @param [Hash] opts the optional parameters
-  # @return [Object]
+  # @return [CompaniesCompanyIdApiKeysGet200Response]
   describe 'companies_company_id_patch test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -113,7 +113,7 @@ describe 'CompaniesApi' do
   # Get the total number of requests allocated in the company&#39;s current subscription plan.
   # @param company_id 
   # @param [Hash] opts the optional parameters
-  # @return [Object]
+  # @return [CompaniesCompanyIdApiKeysGet200Response]
   describe 'companies_company_id_requests_plan_get test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -124,7 +124,7 @@ describe 'CompaniesApi' do
   # Get company request usage data for a specific month. Returns JSON metrics by default or CSV logs when download parameter is included.
   # @param company_id 
   # @param [Hash] opts the optional parameters
-  # @return [Object]
+  # @return [CompaniesCompanyIdApiKeysGet200Response]
   describe 'companies_company_id_requests_usage_get test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/

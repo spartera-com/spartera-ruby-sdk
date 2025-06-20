@@ -16,7 +16,7 @@ All URIs are relative to *https://api.spartera.com*
 
 ## companies_company_id_users_user_id_favorites_category_category_get
 
-> Object companies_company_id_users_user_id_favorites_category_category_get(company_id, user_id, category)
+> <CompaniesCompanyIdUsersUserIdFavoritesFavoriteIdGet200Response> companies_company_id_users_user_id_favorites_category_category_get(company_id, user_id, category)
 
 Get all favorites for the specified user in a specific category
 
@@ -51,7 +51,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(Object, Integer, Hash)> companies_company_id_users_user_id_favorites_category_category_get_with_http_info(company_id, user_id, category)
+> <Array(<CompaniesCompanyIdUsersUserIdFavoritesFavoriteIdGet200Response>, Integer, Hash)> companies_company_id_users_user_id_favorites_category_category_get_with_http_info(company_id, user_id, category)
 
 ```ruby
 begin
@@ -59,7 +59,7 @@ begin
   data, status_code, headers = api_instance.companies_company_id_users_user_id_favorites_category_category_get_with_http_info(company_id, user_id, category)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => Object
+  p data # => <CompaniesCompanyIdUsersUserIdFavoritesFavoriteIdGet200Response>
 rescue SparteraApiSdk::ApiError => e
   puts "Error when calling FavoritesApi->companies_company_id_users_user_id_favorites_category_category_get_with_http_info: #{e}"
 end
@@ -75,7 +75,7 @@ end
 
 ### Return type
 
-**Object**
+[**CompaniesCompanyIdUsersUserIdFavoritesFavoriteIdGet200Response**](CompaniesCompanyIdUsersUserIdFavoritesFavoriteIdGet200Response.md)
 
 ### Authorization
 
@@ -89,7 +89,7 @@ end
 
 ## companies_company_id_users_user_id_favorites_check_asset_id_get
 
-> Object companies_company_id_users_user_id_favorites_check_asset_id_get(company_id, user_id, asset_id)
+> <CompaniesCompanyIdUsersUserIdFavoritesFavoriteIdGet200Response> companies_company_id_users_user_id_favorites_check_asset_id_get(company_id, user_id, asset_id)
 
 Check if the specified user has favorited a specific asset
 
@@ -124,7 +124,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(Object, Integer, Hash)> companies_company_id_users_user_id_favorites_check_asset_id_get_with_http_info(company_id, user_id, asset_id)
+> <Array(<CompaniesCompanyIdUsersUserIdFavoritesFavoriteIdGet200Response>, Integer, Hash)> companies_company_id_users_user_id_favorites_check_asset_id_get_with_http_info(company_id, user_id, asset_id)
 
 ```ruby
 begin
@@ -132,7 +132,7 @@ begin
   data, status_code, headers = api_instance.companies_company_id_users_user_id_favorites_check_asset_id_get_with_http_info(company_id, user_id, asset_id)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => Object
+  p data # => <CompaniesCompanyIdUsersUserIdFavoritesFavoriteIdGet200Response>
 rescue SparteraApiSdk::ApiError => e
   puts "Error when calling FavoritesApi->companies_company_id_users_user_id_favorites_check_asset_id_get_with_http_info: #{e}"
 end
@@ -148,7 +148,7 @@ end
 
 ### Return type
 
-**Object**
+[**CompaniesCompanyIdUsersUserIdFavoritesFavoriteIdGet200Response**](CompaniesCompanyIdUsersUserIdFavoritesFavoriteIdGet200Response.md)
 
 ### Authorization
 
@@ -162,7 +162,7 @@ end
 
 ## companies_company_id_users_user_id_favorites_favorite_id_delete
 
-> Object companies_company_id_users_user_id_favorites_favorite_id_delete(company_id, user_id, favorite_id)
+> <CompaniesCompanyIdUsersUserIdFavoritesFavoriteIdDelete200Response> companies_company_id_users_user_id_favorites_favorite_id_delete(company_id, user_id, favorite_id)
 
 Delete single favorite by ID (unfavorite an asset)
 
@@ -197,7 +197,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(Object, Integer, Hash)> companies_company_id_users_user_id_favorites_favorite_id_delete_with_http_info(company_id, user_id, favorite_id)
+> <Array(<CompaniesCompanyIdUsersUserIdFavoritesFavoriteIdDelete200Response>, Integer, Hash)> companies_company_id_users_user_id_favorites_favorite_id_delete_with_http_info(company_id, user_id, favorite_id)
 
 ```ruby
 begin
@@ -205,7 +205,7 @@ begin
   data, status_code, headers = api_instance.companies_company_id_users_user_id_favorites_favorite_id_delete_with_http_info(company_id, user_id, favorite_id)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => Object
+  p data # => <CompaniesCompanyIdUsersUserIdFavoritesFavoriteIdDelete200Response>
 rescue SparteraApiSdk::ApiError => e
   puts "Error when calling FavoritesApi->companies_company_id_users_user_id_favorites_favorite_id_delete_with_http_info: #{e}"
 end
@@ -221,7 +221,7 @@ end
 
 ### Return type
 
-**Object**
+[**CompaniesCompanyIdUsersUserIdFavoritesFavoriteIdDelete200Response**](CompaniesCompanyIdUsersUserIdFavoritesFavoriteIdDelete200Response.md)
 
 ### Authorization
 
@@ -235,7 +235,7 @@ end
 
 ## companies_company_id_users_user_id_favorites_favorite_id_get
 
-> Object companies_company_id_users_user_id_favorites_favorite_id_get(company_id, user_id, favorite_id)
+> <CompaniesCompanyIdUsersUserIdFavoritesFavoriteIdGet200Response> companies_company_id_users_user_id_favorites_favorite_id_get(company_id, user_id, favorite_id)
 
 Get single favorite by ID
 
@@ -270,7 +270,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(Object, Integer, Hash)> companies_company_id_users_user_id_favorites_favorite_id_get_with_http_info(company_id, user_id, favorite_id)
+> <Array(<CompaniesCompanyIdUsersUserIdFavoritesFavoriteIdGet200Response>, Integer, Hash)> companies_company_id_users_user_id_favorites_favorite_id_get_with_http_info(company_id, user_id, favorite_id)
 
 ```ruby
 begin
@@ -278,7 +278,7 @@ begin
   data, status_code, headers = api_instance.companies_company_id_users_user_id_favorites_favorite_id_get_with_http_info(company_id, user_id, favorite_id)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => Object
+  p data # => <CompaniesCompanyIdUsersUserIdFavoritesFavoriteIdGet200Response>
 rescue SparteraApiSdk::ApiError => e
   puts "Error when calling FavoritesApi->companies_company_id_users_user_id_favorites_favorite_id_get_with_http_info: #{e}"
 end
@@ -294,7 +294,7 @@ end
 
 ### Return type
 
-**Object**
+[**CompaniesCompanyIdUsersUserIdFavoritesFavoriteIdGet200Response**](CompaniesCompanyIdUsersUserIdFavoritesFavoriteIdGet200Response.md)
 
 ### Authorization
 
@@ -308,7 +308,7 @@ end
 
 ## companies_company_id_users_user_id_favorites_favorite_id_patch
 
-> Object companies_company_id_users_user_id_favorites_favorite_id_patch(company_id, user_id, favorite_id, favorite)
+> <CompaniesCompanyIdUsersUserIdFavoritesFavoriteIdPatch200Response> companies_company_id_users_user_id_favorites_favorite_id_patch(company_id, user_id, favorite_id, favorite)
 
 Update an existing favorite by ID
 
@@ -344,7 +344,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(Object, Integer, Hash)> companies_company_id_users_user_id_favorites_favorite_id_patch_with_http_info(company_id, user_id, favorite_id, favorite)
+> <Array(<CompaniesCompanyIdUsersUserIdFavoritesFavoriteIdPatch200Response>, Integer, Hash)> companies_company_id_users_user_id_favorites_favorite_id_patch_with_http_info(company_id, user_id, favorite_id, favorite)
 
 ```ruby
 begin
@@ -352,7 +352,7 @@ begin
   data, status_code, headers = api_instance.companies_company_id_users_user_id_favorites_favorite_id_patch_with_http_info(company_id, user_id, favorite_id, favorite)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => Object
+  p data # => <CompaniesCompanyIdUsersUserIdFavoritesFavoriteIdPatch200Response>
 rescue SparteraApiSdk::ApiError => e
   puts "Error when calling FavoritesApi->companies_company_id_users_user_id_favorites_favorite_id_patch_with_http_info: #{e}"
 end
@@ -369,7 +369,7 @@ end
 
 ### Return type
 
-**Object**
+[**CompaniesCompanyIdUsersUserIdFavoritesFavoriteIdPatch200Response**](CompaniesCompanyIdUsersUserIdFavoritesFavoriteIdPatch200Response.md)
 
 ### Authorization
 
@@ -383,7 +383,7 @@ end
 
 ## companies_company_id_users_user_id_favorites_get
 
-> Object companies_company_id_users_user_id_favorites_get(company_id, user_id)
+> <CompaniesCompanyIdUsersUserIdFavoritesGet200Response> companies_company_id_users_user_id_favorites_get(company_id, user_id)
 
 Get a list of all favorites for a specific user
 
@@ -417,7 +417,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(Object, Integer, Hash)> companies_company_id_users_user_id_favorites_get_with_http_info(company_id, user_id)
+> <Array(<CompaniesCompanyIdUsersUserIdFavoritesGet200Response>, Integer, Hash)> companies_company_id_users_user_id_favorites_get_with_http_info(company_id, user_id)
 
 ```ruby
 begin
@@ -425,7 +425,7 @@ begin
   data, status_code, headers = api_instance.companies_company_id_users_user_id_favorites_get_with_http_info(company_id, user_id)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => Object
+  p data # => <CompaniesCompanyIdUsersUserIdFavoritesGet200Response>
 rescue SparteraApiSdk::ApiError => e
   puts "Error when calling FavoritesApi->companies_company_id_users_user_id_favorites_get_with_http_info: #{e}"
 end
@@ -440,7 +440,7 @@ end
 
 ### Return type
 
-**Object**
+[**CompaniesCompanyIdUsersUserIdFavoritesGet200Response**](CompaniesCompanyIdUsersUserIdFavoritesGet200Response.md)
 
 ### Authorization
 
@@ -454,7 +454,7 @@ end
 
 ## companies_company_id_users_user_id_favorites_post
 
-> Object companies_company_id_users_user_id_favorites_post(company_id, user_id, favorite)
+> <CompaniesCompanyIdUsersUserIdFavoritesPost200Response> companies_company_id_users_user_id_favorites_post(company_id, user_id, favorite)
 
 POST /companies/{company_id}/users/{user_id}/favorites
 
@@ -489,7 +489,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(Object, Integer, Hash)> companies_company_id_users_user_id_favorites_post_with_http_info(company_id, user_id, favorite)
+> <Array(<CompaniesCompanyIdUsersUserIdFavoritesPost200Response>, Integer, Hash)> companies_company_id_users_user_id_favorites_post_with_http_info(company_id, user_id, favorite)
 
 ```ruby
 begin
@@ -497,7 +497,7 @@ begin
   data, status_code, headers = api_instance.companies_company_id_users_user_id_favorites_post_with_http_info(company_id, user_id, favorite)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => Object
+  p data # => <CompaniesCompanyIdUsersUserIdFavoritesPost200Response>
 rescue SparteraApiSdk::ApiError => e
   puts "Error when calling FavoritesApi->companies_company_id_users_user_id_favorites_post_with_http_info: #{e}"
 end
@@ -513,7 +513,7 @@ end
 
 ### Return type
 
-**Object**
+[**CompaniesCompanyIdUsersUserIdFavoritesPost200Response**](CompaniesCompanyIdUsersUserIdFavoritesPost200Response.md)
 
 ### Authorization
 
@@ -527,7 +527,7 @@ end
 
 ## companies_company_id_users_user_id_favorites_uncategorized_get
 
-> Object companies_company_id_users_user_id_favorites_uncategorized_get(company_id, user_id)
+> <CompaniesCompanyIdUsersUserIdFavoritesGet200Response> companies_company_id_users_user_id_favorites_uncategorized_get(company_id, user_id)
 
 Get all favorites for the specified user that don't have a category
 
@@ -561,7 +561,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(Object, Integer, Hash)> companies_company_id_users_user_id_favorites_uncategorized_get_with_http_info(company_id, user_id)
+> <Array(<CompaniesCompanyIdUsersUserIdFavoritesGet200Response>, Integer, Hash)> companies_company_id_users_user_id_favorites_uncategorized_get_with_http_info(company_id, user_id)
 
 ```ruby
 begin
@@ -569,7 +569,7 @@ begin
   data, status_code, headers = api_instance.companies_company_id_users_user_id_favorites_uncategorized_get_with_http_info(company_id, user_id)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => Object
+  p data # => <CompaniesCompanyIdUsersUserIdFavoritesGet200Response>
 rescue SparteraApiSdk::ApiError => e
   puts "Error when calling FavoritesApi->companies_company_id_users_user_id_favorites_uncategorized_get_with_http_info: #{e}"
 end
@@ -584,7 +584,7 @@ end
 
 ### Return type
 
-**Object**
+[**CompaniesCompanyIdUsersUserIdFavoritesGet200Response**](CompaniesCompanyIdUsersUserIdFavoritesGet200Response.md)
 
 ### Authorization
 

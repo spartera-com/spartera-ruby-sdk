@@ -37,7 +37,7 @@ describe 'AssetPriceHistoryApi' do
   # @param company_id 
   # @param asset_id 
   # @param [Hash] opts the optional parameters
-  # @return [Object]
+  # @return [CompaniesCompanyIdApiKeysGet200Response]
   describe 'companies_company_id_assets_asset_id_prices_active_get test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -50,7 +50,7 @@ describe 'AssetPriceHistoryApi' do
   # @param asset_id 
   # @param aph_id 
   # @param [Hash] opts the optional parameters
-  # @return [Object]
+  # @return [CompaniesCompanyIdApiKeysGet200Response]
   describe 'companies_company_id_assets_asset_id_prices_aph_id_delete test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -63,7 +63,7 @@ describe 'AssetPriceHistoryApi' do
   # @param asset_id 
   # @param aph_id 
   # @param [Hash] opts the optional parameters
-  # @return [Object]
+  # @return [CompaniesCompanyIdApiKeysGet200Response]
   describe 'companies_company_id_assets_asset_id_prices_aph_id_get test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -76,7 +76,7 @@ describe 'AssetPriceHistoryApi' do
   # @param asset_id 
   # @param aph_id 
   # @param [Hash] opts the optional parameters
-  # @return [Object]
+  # @return [CompaniesCompanyIdApiKeysGet200Response]
   describe 'companies_company_id_assets_asset_id_prices_aph_id_patch test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -88,7 +88,7 @@ describe 'AssetPriceHistoryApi' do
   # @param company_id 
   # @param asset_id 
   # @param [Hash] opts the optional parameters
-  # @return [Object]
+  # @return [CompaniesCompanyIdApiKeysGet200Response]
   describe 'companies_company_id_assets_asset_id_prices_calculate_credits_post test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -100,7 +100,7 @@ describe 'AssetPriceHistoryApi' do
   # @param company_id 
   # @param asset_id 
   # @param [Hash] opts the optional parameters
-  # @return [Object]
+  # @return [CompaniesCompanyIdApiKeysGet200Response]
   describe 'companies_company_id_assets_asset_id_prices_discount_post test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -112,7 +112,7 @@ describe 'AssetPriceHistoryApi' do
   # @param company_id 
   # @param asset_id 
   # @param [Hash] opts the optional parameters
-  # @return [Object]
+  # @return [CompaniesCompanyIdApiKeysGet200Response]
   describe 'companies_company_id_assets_asset_id_prices_get test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -124,7 +124,7 @@ describe 'AssetPriceHistoryApi' do
   # @param company_id 
   # @param asset_id 
   # @param [Hash] opts the optional parameters
-  # @return [Object]
+  # @return [CompaniesCompanyIdApiKeysGet200Response]
   describe 'companies_company_id_assets_asset_id_prices_post test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/

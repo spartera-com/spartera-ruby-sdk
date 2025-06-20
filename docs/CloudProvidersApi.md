@@ -10,7 +10,7 @@ All URIs are relative to *https://api.spartera.com*
 
 ## cloud_providers_get
 
-> Object cloud_providers_get
+> <CompaniesCompanyIdApiKeysGet200Response> cloud_providers_get
 
 Get a list of all cloud providers
 
@@ -42,7 +42,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(Object, Integer, Hash)> cloud_providers_get_with_http_info
+> <Array(<CompaniesCompanyIdApiKeysGet200Response>, Integer, Hash)> cloud_providers_get_with_http_info
 
 ```ruby
 begin
@@ -50,7 +50,7 @@ begin
   data, status_code, headers = api_instance.cloud_providers_get_with_http_info
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => Object
+  p data # => <CompaniesCompanyIdApiKeysGet200Response>
 rescue SparteraApiSdk::ApiError => e
   puts "Error when calling CloudProvidersApi->cloud_providers_get_with_http_info: #{e}"
 end
@@ -62,7 +62,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-**Object**
+[**CompaniesCompanyIdApiKeysGet200Response**](CompaniesCompanyIdApiKeysGet200Response.md)
 
 ### Authorization
 
@@ -76,7 +76,7 @@ This endpoint does not need any parameter.
 
 ## cloud_providers_provider_id_get
 
-> Object cloud_providers_provider_id_get(provider_id)
+> <CompaniesCompanyIdApiKeysGet200Response> cloud_providers_provider_id_get(provider_id)
 
 Get single cloud provider by ID
 
@@ -109,7 +109,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(Object, Integer, Hash)> cloud_providers_provider_id_get_with_http_info(provider_id)
+> <Array(<CompaniesCompanyIdApiKeysGet200Response>, Integer, Hash)> cloud_providers_provider_id_get_with_http_info(provider_id)
 
 ```ruby
 begin
@@ -117,7 +117,7 @@ begin
   data, status_code, headers = api_instance.cloud_providers_provider_id_get_with_http_info(provider_id)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => Object
+  p data # => <CompaniesCompanyIdApiKeysGet200Response>
 rescue SparteraApiSdk::ApiError => e
   puts "Error when calling CloudProvidersApi->cloud_providers_provider_id_get_with_http_info: #{e}"
 end
@@ -131,7 +131,7 @@ end
 
 ### Return type
 
-**Object**
+[**CompaniesCompanyIdApiKeysGet200Response**](CompaniesCompanyIdApiKeysGet200Response.md)
 
 ### Authorization
 
