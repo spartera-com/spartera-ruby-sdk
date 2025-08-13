@@ -228,7 +228,7 @@ end
 
 ## companies_company_id_connections_connection_id_patch
 
-> <CompaniesCompanyIdConnectionsConnectionIdPatch200Response> companies_company_id_connections_connection_id_patch(company_id, connection_id, connection)
+> <CompaniesCompanyIdConnectionsConnectionIdPatch200Response> companies_company_id_connections_connection_id_patch(company_id, connection_id, connections_update)
 
 Update an existing connection by ID
 
@@ -248,11 +248,11 @@ end
 api_instance = SparteraApiSdk::ConnectionsApi.new
 company_id = 'company_id_example' # String | 
 connection_id = 'connection_id_example' # String | 
-connection = SparteraApiSdk::Connection.new({engine_id: 'engine_id_example', company_id: 'company_id_example', visibility: 'visibility_example'}) # Connection | 
+connections_update = SparteraApiSdk::ConnectionsUpdate.new # ConnectionsUpdate | 
 
 begin
   # Update an existing connection by ID
-  result = api_instance.companies_company_id_connections_connection_id_patch(company_id, connection_id, connection)
+  result = api_instance.companies_company_id_connections_connection_id_patch(company_id, connection_id, connections_update)
   p result
 rescue SparteraApiSdk::ApiError => e
   puts "Error when calling ConnectionsApi->companies_company_id_connections_connection_id_patch: #{e}"
@@ -263,12 +263,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<CompaniesCompanyIdConnectionsConnectionIdPatch200Response>, Integer, Hash)> companies_company_id_connections_connection_id_patch_with_http_info(company_id, connection_id, connection)
+> <Array(<CompaniesCompanyIdConnectionsConnectionIdPatch200Response>, Integer, Hash)> companies_company_id_connections_connection_id_patch_with_http_info(company_id, connection_id, connections_update)
 
 ```ruby
 begin
   # Update an existing connection by ID
-  data, status_code, headers = api_instance.companies_company_id_connections_connection_id_patch_with_http_info(company_id, connection_id, connection)
+  data, status_code, headers = api_instance.companies_company_id_connections_connection_id_patch_with_http_info(company_id, connection_id, connections_update)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <CompaniesCompanyIdConnectionsConnectionIdPatch200Response>
@@ -283,7 +283,7 @@ end
 | ---- | ---- | ----------- | ----- |
 | **company_id** | **String** |  |  |
 | **connection_id** | **String** |  |  |
-| **connection** | [**Connection**](Connection.md) |  |  |
+| **connections_update** | [**ConnectionsUpdate**](ConnectionsUpdate.md) |  |  |
 
 ### Return type
 
@@ -441,7 +441,7 @@ end
 
 ## companies_company_id_connections_post
 
-> <CompaniesCompanyIdConnectionsPost200Response> companies_company_id_connections_post(company_id, connection)
+> <CompaniesCompanyIdConnectionsPost200Response> companies_company_id_connections_post(company_id, connections_input)
 
 Create a new connection by ID
 
@@ -460,11 +460,11 @@ end
 
 api_instance = SparteraApiSdk::ConnectionsApi.new
 company_id = 'company_id_example' # String | 
-connection = SparteraApiSdk::Connection.new({engine_id: 'engine_id_example', company_id: 'company_id_example', visibility: 'visibility_example'}) # Connection | 
+connections_input = SparteraApiSdk::ConnectionsInput.new({engine_id: 3.56, company_id: 'company_id_example'}) # ConnectionsInput | 
 
 begin
   # Create a new connection by ID
-  result = api_instance.companies_company_id_connections_post(company_id, connection)
+  result = api_instance.companies_company_id_connections_post(company_id, connections_input)
   p result
 rescue SparteraApiSdk::ApiError => e
   puts "Error when calling ConnectionsApi->companies_company_id_connections_post: #{e}"
@@ -475,12 +475,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<CompaniesCompanyIdConnectionsPost200Response>, Integer, Hash)> companies_company_id_connections_post_with_http_info(company_id, connection)
+> <Array(<CompaniesCompanyIdConnectionsPost200Response>, Integer, Hash)> companies_company_id_connections_post_with_http_info(company_id, connections_input)
 
 ```ruby
 begin
   # Create a new connection by ID
-  data, status_code, headers = api_instance.companies_company_id_connections_post_with_http_info(company_id, connection)
+  data, status_code, headers = api_instance.companies_company_id_connections_post_with_http_info(company_id, connections_input)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <CompaniesCompanyIdConnectionsPost200Response>
@@ -494,7 +494,7 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **company_id** | **String** |  |  |
-| **connection** | [**Connection**](Connection.md) |  |  |
+| **connections_input** | [**ConnectionsInput**](ConnectionsInput.md) |  |  |
 
 ### Return type
 

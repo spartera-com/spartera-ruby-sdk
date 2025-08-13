@@ -5,7 +5,7 @@
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **message** | **String** | Response status message |  |
-| **data** | [**Array&lt;Alert&gt;**](Alert.md) |  |  |
+| **data** | [**Array&lt;Alerts&gt;**](Alerts.md) |  |  |
 
 ## Example
 

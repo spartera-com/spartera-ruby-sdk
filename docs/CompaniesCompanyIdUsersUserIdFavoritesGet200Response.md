@@ -5,7 +5,7 @@
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **message** | **String** | Response status message |  |
-| **data** | [**Array&lt;Favorite&gt;**](Favorite.md) |  |  |
+| **data** | [**Array&lt;Favorites&gt;**](Favorites.md) |  |  |
 
 ## Example
 

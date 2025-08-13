@@ -17,7 +17,7 @@ All URIs are relative to *https://api.spartera.com*
 
 ## companies_company_id_analytics_assets_get
 
-> <CompaniesCompanyIdApiKeysGet200Response> companies_company_id_analytics_assets_get(company_id)
+> <CompaniesCompanyIdAnalyticsAssetsGet200Response> companies_company_id_analytics_assets_get(company_id)
 
 Get asset performance analytics     Query params: start_date, end_date, limit, sort_by, include
 
@@ -50,7 +50,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<CompaniesCompanyIdApiKeysGet200Response>, Integer, Hash)> companies_company_id_analytics_assets_get_with_http_info(company_id)
+> <Array(<CompaniesCompanyIdAnalyticsAssetsGet200Response>, Integer, Hash)> companies_company_id_analytics_assets_get_with_http_info(company_id)
 
 ```ruby
 begin
@@ -58,7 +58,7 @@ begin
   data, status_code, headers = api_instance.companies_company_id_analytics_assets_get_with_http_info(company_id)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <CompaniesCompanyIdApiKeysGet200Response>
+  p data # => <CompaniesCompanyIdAnalyticsAssetsGet200Response>
 rescue SparteraApiSdk::ApiError => e
   puts "Error when calling CompaniesApi->companies_company_id_analytics_assets_get_with_http_info: #{e}"
 end
@@ -72,7 +72,7 @@ end
 
 ### Return type
 
-[**CompaniesCompanyIdApiKeysGet200Response**](CompaniesCompanyIdApiKeysGet200Response.md)
+[**CompaniesCompanyIdAnalyticsAssetsGet200Response**](CompaniesCompanyIdAnalyticsAssetsGet200Response.md)
 
 ### Authorization
 
@@ -86,7 +86,7 @@ end
 
 ## companies_company_id_analytics_customers_get
 
-> <CompaniesCompanyIdApiKeysGet200Response> companies_company_id_analytics_customers_get(company_id)
+> <CompaniesCompanyIdAnalyticsAssetsGet200Response> companies_company_id_analytics_customers_get(company_id)
 
 Get customer analytics including growth and segmentation     Query params: start_date, end_date, group_by, segment_by
 
@@ -119,7 +119,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<CompaniesCompanyIdApiKeysGet200Response>, Integer, Hash)> companies_company_id_analytics_customers_get_with_http_info(company_id)
+> <Array(<CompaniesCompanyIdAnalyticsAssetsGet200Response>, Integer, Hash)> companies_company_id_analytics_customers_get_with_http_info(company_id)
 
 ```ruby
 begin
@@ -127,7 +127,7 @@ begin
   data, status_code, headers = api_instance.companies_company_id_analytics_customers_get_with_http_info(company_id)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <CompaniesCompanyIdApiKeysGet200Response>
+  p data # => <CompaniesCompanyIdAnalyticsAssetsGet200Response>
 rescue SparteraApiSdk::ApiError => e
   puts "Error when calling CompaniesApi->companies_company_id_analytics_customers_get_with_http_info: #{e}"
 end
@@ -141,7 +141,7 @@ end
 
 ### Return type
 
-[**CompaniesCompanyIdApiKeysGet200Response**](CompaniesCompanyIdApiKeysGet200Response.md)
+[**CompaniesCompanyIdAnalyticsAssetsGet200Response**](CompaniesCompanyIdAnalyticsAssetsGet200Response.md)
 
 ### Authorization
 
@@ -155,7 +155,7 @@ end
 
 ## companies_company_id_analytics_dashboard_get
 
-> <CompaniesCompanyIdApiKeysGet200Response> companies_company_id_analytics_dashboard_get(company_id)
+> <CompaniesCompanyIdAnalyticsAssetsGet200Response> companies_company_id_analytics_dashboard_get(company_id)
 
 Get comprehensive dashboard analytics for seller dashboard     Includes all metrics needed for dashboard charts in one call     Query params: start_date, end_date, period (day/week/month/quarter)
 
@@ -188,7 +188,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<CompaniesCompanyIdApiKeysGet200Response>, Integer, Hash)> companies_company_id_analytics_dashboard_get_with_http_info(company_id)
+> <Array(<CompaniesCompanyIdAnalyticsAssetsGet200Response>, Integer, Hash)> companies_company_id_analytics_dashboard_get_with_http_info(company_id)
 
 ```ruby
 begin
@@ -196,7 +196,7 @@ begin
   data, status_code, headers = api_instance.companies_company_id_analytics_dashboard_get_with_http_info(company_id)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <CompaniesCompanyIdApiKeysGet200Response>
+  p data # => <CompaniesCompanyIdAnalyticsAssetsGet200Response>
 rescue SparteraApiSdk::ApiError => e
   puts "Error when calling CompaniesApi->companies_company_id_analytics_dashboard_get_with_http_info: #{e}"
 end
@@ -210,7 +210,7 @@ end
 
 ### Return type
 
-[**CompaniesCompanyIdApiKeysGet200Response**](CompaniesCompanyIdApiKeysGet200Response.md)
+[**CompaniesCompanyIdAnalyticsAssetsGet200Response**](CompaniesCompanyIdAnalyticsAssetsGet200Response.md)
 
 ### Authorization
 
@@ -224,7 +224,7 @@ end
 
 ## companies_company_id_analytics_sales_get
 
-> <CompaniesCompanyIdApiKeysGet200Response> companies_company_id_analytics_sales_get(company_id)
+> <CompaniesCompanyIdAnalyticsAssetsGet200Response> companies_company_id_analytics_sales_get(company_id)
 
 Get sales over time analytics     Query params: start_date, end_date, group_by (day/week/month/quarter), metrics
 
@@ -257,7 +257,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<CompaniesCompanyIdApiKeysGet200Response>, Integer, Hash)> companies_company_id_analytics_sales_get_with_http_info(company_id)
+> <Array(<CompaniesCompanyIdAnalyticsAssetsGet200Response>, Integer, Hash)> companies_company_id_analytics_sales_get_with_http_info(company_id)
 
 ```ruby
 begin
@@ -265,7 +265,7 @@ begin
   data, status_code, headers = api_instance.companies_company_id_analytics_sales_get_with_http_info(company_id)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <CompaniesCompanyIdApiKeysGet200Response>
+  p data # => <CompaniesCompanyIdAnalyticsAssetsGet200Response>
 rescue SparteraApiSdk::ApiError => e
   puts "Error when calling CompaniesApi->companies_company_id_analytics_sales_get_with_http_info: #{e}"
 end
@@ -279,7 +279,7 @@ end
 
 ### Return type
 
-[**CompaniesCompanyIdApiKeysGet200Response**](CompaniesCompanyIdApiKeysGet200Response.md)
+[**CompaniesCompanyIdAnalyticsAssetsGet200Response**](CompaniesCompanyIdAnalyticsAssetsGet200Response.md)
 
 ### Authorization
 
@@ -293,7 +293,7 @@ end
 
 ## companies_company_id_get
 
-> <CompaniesCompanyIdApiKeysGet200Response> companies_company_id_get(company_id)
+> <CompaniesCompanyIdGet200Response> companies_company_id_get(company_id)
 
 Get details of the requestor's own company
 
@@ -326,7 +326,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<CompaniesCompanyIdApiKeysGet200Response>, Integer, Hash)> companies_company_id_get_with_http_info(company_id)
+> <Array(<CompaniesCompanyIdGet200Response>, Integer, Hash)> companies_company_id_get_with_http_info(company_id)
 
 ```ruby
 begin
@@ -334,7 +334,7 @@ begin
   data, status_code, headers = api_instance.companies_company_id_get_with_http_info(company_id)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <CompaniesCompanyIdApiKeysGet200Response>
+  p data # => <CompaniesCompanyIdGet200Response>
 rescue SparteraApiSdk::ApiError => e
   puts "Error when calling CompaniesApi->companies_company_id_get_with_http_info: #{e}"
 end
@@ -348,7 +348,7 @@ end
 
 ### Return type
 
-[**CompaniesCompanyIdApiKeysGet200Response**](CompaniesCompanyIdApiKeysGet200Response.md)
+[**CompaniesCompanyIdGet200Response**](CompaniesCompanyIdGet200Response.md)
 
 ### Authorization
 
@@ -362,7 +362,7 @@ end
 
 ## companies_company_id_objects_get
 
-> <CompaniesCompanyIdApiKeysGet200Response> companies_company_id_objects_get(company_id)
+> <CompaniesCompanyIdAnalyticsAssetsGet200Response> companies_company_id_objects_get(company_id)
 
 Get all objects (connections, assets) of a single company
 
@@ -395,7 +395,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<CompaniesCompanyIdApiKeysGet200Response>, Integer, Hash)> companies_company_id_objects_get_with_http_info(company_id)
+> <Array(<CompaniesCompanyIdAnalyticsAssetsGet200Response>, Integer, Hash)> companies_company_id_objects_get_with_http_info(company_id)
 
 ```ruby
 begin
@@ -403,7 +403,7 @@ begin
   data, status_code, headers = api_instance.companies_company_id_objects_get_with_http_info(company_id)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <CompaniesCompanyIdApiKeysGet200Response>
+  p data # => <CompaniesCompanyIdAnalyticsAssetsGet200Response>
 rescue SparteraApiSdk::ApiError => e
   puts "Error when calling CompaniesApi->companies_company_id_objects_get_with_http_info: #{e}"
 end
@@ -417,7 +417,7 @@ end
 
 ### Return type
 
-[**CompaniesCompanyIdApiKeysGet200Response**](CompaniesCompanyIdApiKeysGet200Response.md)
+[**CompaniesCompanyIdAnalyticsAssetsGet200Response**](CompaniesCompanyIdAnalyticsAssetsGet200Response.md)
 
 ### Authorization
 
@@ -431,7 +431,7 @@ end
 
 ## companies_company_id_patch
 
-> <CompaniesCompanyIdApiKeysGet200Response> companies_company_id_patch(company_id)
+> <CompaniesCompanyIdPatch200Response> companies_company_id_patch(company_id, companies_update)
 
 Update an existing company by ID
 
@@ -450,10 +450,11 @@ end
 
 api_instance = SparteraApiSdk::CompaniesApi.new
 company_id = 'company_id_example' # String | 
+companies_update = SparteraApiSdk::CompaniesUpdate.new # CompaniesUpdate | 
 
 begin
   # Update an existing company by ID
-  result = api_instance.companies_company_id_patch(company_id)
+  result = api_instance.companies_company_id_patch(company_id, companies_update)
   p result
 rescue SparteraApiSdk::ApiError => e
   puts "Error when calling CompaniesApi->companies_company_id_patch: #{e}"
@@ -464,15 +465,15 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<CompaniesCompanyIdApiKeysGet200Response>, Integer, Hash)> companies_company_id_patch_with_http_info(company_id)
+> <Array(<CompaniesCompanyIdPatch200Response>, Integer, Hash)> companies_company_id_patch_with_http_info(company_id, companies_update)
 
 ```ruby
 begin
   # Update an existing company by ID
-  data, status_code, headers = api_instance.companies_company_id_patch_with_http_info(company_id)
+  data, status_code, headers = api_instance.companies_company_id_patch_with_http_info(company_id, companies_update)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <CompaniesCompanyIdApiKeysGet200Response>
+  p data # => <CompaniesCompanyIdPatch200Response>
 rescue SparteraApiSdk::ApiError => e
   puts "Error when calling CompaniesApi->companies_company_id_patch_with_http_info: #{e}"
 end
@@ -483,10 +484,11 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **company_id** | **String** |  |  |
+| **companies_update** | [**CompaniesUpdate**](CompaniesUpdate.md) |  |  |
 
 ### Return type
 
-[**CompaniesCompanyIdApiKeysGet200Response**](CompaniesCompanyIdApiKeysGet200Response.md)
+[**CompaniesCompanyIdPatch200Response**](CompaniesCompanyIdPatch200Response.md)
 
 ### Authorization
 
@@ -494,13 +496,13 @@ end
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 
 ## companies_company_id_requests_plan_get
 
-> <CompaniesCompanyIdApiKeysGet200Response> companies_company_id_requests_plan_get(company_id)
+> <CompaniesCompanyIdAnalyticsAssetsGet200Response> companies_company_id_requests_plan_get(company_id)
 
 Get the total number of requests allocated in the company's current subscription plan.
 
@@ -533,7 +535,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<CompaniesCompanyIdApiKeysGet200Response>, Integer, Hash)> companies_company_id_requests_plan_get_with_http_info(company_id)
+> <Array(<CompaniesCompanyIdAnalyticsAssetsGet200Response>, Integer, Hash)> companies_company_id_requests_plan_get_with_http_info(company_id)
 
 ```ruby
 begin
@@ -541,7 +543,7 @@ begin
   data, status_code, headers = api_instance.companies_company_id_requests_plan_get_with_http_info(company_id)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <CompaniesCompanyIdApiKeysGet200Response>
+  p data # => <CompaniesCompanyIdAnalyticsAssetsGet200Response>
 rescue SparteraApiSdk::ApiError => e
   puts "Error when calling CompaniesApi->companies_company_id_requests_plan_get_with_http_info: #{e}"
 end
@@ -555,7 +557,7 @@ end
 
 ### Return type
 
-[**CompaniesCompanyIdApiKeysGet200Response**](CompaniesCompanyIdApiKeysGet200Response.md)
+[**CompaniesCompanyIdAnalyticsAssetsGet200Response**](CompaniesCompanyIdAnalyticsAssetsGet200Response.md)
 
 ### Authorization
 
@@ -569,7 +571,7 @@ end
 
 ## companies_company_id_requests_usage_get
 
-> <CompaniesCompanyIdApiKeysGet200Response> companies_company_id_requests_usage_get(company_id)
+> <CompaniesCompanyIdAnalyticsAssetsGet200Response> companies_company_id_requests_usage_get(company_id)
 
 Get company request usage data for a specific month. Returns JSON metrics by default or CSV logs when download parameter is included.
 
@@ -602,7 +604,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<CompaniesCompanyIdApiKeysGet200Response>, Integer, Hash)> companies_company_id_requests_usage_get_with_http_info(company_id)
+> <Array(<CompaniesCompanyIdAnalyticsAssetsGet200Response>, Integer, Hash)> companies_company_id_requests_usage_get_with_http_info(company_id)
 
 ```ruby
 begin
@@ -610,7 +612,7 @@ begin
   data, status_code, headers = api_instance.companies_company_id_requests_usage_get_with_http_info(company_id)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <CompaniesCompanyIdApiKeysGet200Response>
+  p data # => <CompaniesCompanyIdAnalyticsAssetsGet200Response>
 rescue SparteraApiSdk::ApiError => e
   puts "Error when calling CompaniesApi->companies_company_id_requests_usage_get_with_http_info: #{e}"
 end
@@ -624,7 +626,7 @@ end
 
 ### Return type
 
-[**CompaniesCompanyIdApiKeysGet200Response**](CompaniesCompanyIdApiKeysGet200Response.md)
+[**CompaniesCompanyIdAnalyticsAssetsGet200Response**](CompaniesCompanyIdAnalyticsAssetsGet200Response.md)
 
 ### Authorization
 

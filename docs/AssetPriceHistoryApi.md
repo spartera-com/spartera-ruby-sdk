@@ -8,7 +8,7 @@ All URIs are relative to *https://api.spartera.com*
 | [**companies_company_id_assets_asset_id_prices_aph_id_delete**](AssetPriceHistoryApi.md#companies_company_id_assets_asset_id_prices_aph_id_delete) | **DELETE** /companies/{company_id}/assets/{asset_id}/prices/{aph_id} | Delete single price history record by ID |
 | [**companies_company_id_assets_asset_id_prices_aph_id_get**](AssetPriceHistoryApi.md#companies_company_id_assets_asset_id_prices_aph_id_get) | **GET** /companies/{company_id}/assets/{asset_id}/prices/{aph_id} | Get single price history record by ID |
 | [**companies_company_id_assets_asset_id_prices_aph_id_patch**](AssetPriceHistoryApi.md#companies_company_id_assets_asset_id_prices_aph_id_patch) | **PATCH** /companies/{company_id}/assets/{asset_id}/prices/{aph_id} | Update an existing price history record by ID |
-| [**companies_company_id_assets_asset_id_prices_calculate_credits_post**](AssetPriceHistoryApi.md#companies_company_id_assets_asset_id_prices_calculate_credits_post) | **POST** /companies/{company_id}/assets/{asset_id}/prices/calculate_credits | POST /companies/{company_id}/assets/{asset_id}/prices/calculate_credits |
+| [**companies_company_id_assets_asset_id_prices_calculate_credits_post**](AssetPriceHistoryApi.md#companies_company_id_assets_asset_id_prices_calculate_credits_post) | **POST** /companies/{company_id}/assets/{asset_id}/prices/calculate_credits | Calculate the credit equivalent for a given USD price without saving |
 | [**companies_company_id_assets_asset_id_prices_discount_post**](AssetPriceHistoryApi.md#companies_company_id_assets_asset_id_prices_discount_post) | **POST** /companies/{company_id}/assets/{asset_id}/prices/discount | POST /companies/{company_id}/assets/{asset_id}/prices/discount |
 | [**companies_company_id_assets_asset_id_prices_get**](AssetPriceHistoryApi.md#companies_company_id_assets_asset_id_prices_get) | **GET** /companies/{company_id}/assets/{asset_id}/prices | Get all price history records for a specific asset |
 | [**companies_company_id_assets_asset_id_prices_post**](AssetPriceHistoryApi.md#companies_company_id_assets_asset_id_prices_post) | **POST** /companies/{company_id}/assets/{asset_id}/prices | Create a new price history record for an asset |
@@ -16,7 +16,7 @@ All URIs are relative to *https://api.spartera.com*
 
 ## companies_company_id_assets_asset_id_prices_active_get
 
-> <CompaniesCompanyIdApiKeysGet200Response> companies_company_id_assets_asset_id_prices_active_get(company_id, asset_id)
+> <CompaniesCompanyIdAssetsAssetIdPricesGet200Response> companies_company_id_assets_asset_id_prices_active_get(company_id, asset_id)
 
 Get the currently active price for an asset
 
@@ -50,7 +50,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<CompaniesCompanyIdApiKeysGet200Response>, Integer, Hash)> companies_company_id_assets_asset_id_prices_active_get_with_http_info(company_id, asset_id)
+> <Array(<CompaniesCompanyIdAssetsAssetIdPricesGet200Response>, Integer, Hash)> companies_company_id_assets_asset_id_prices_active_get_with_http_info(company_id, asset_id)
 
 ```ruby
 begin
@@ -58,7 +58,7 @@ begin
   data, status_code, headers = api_instance.companies_company_id_assets_asset_id_prices_active_get_with_http_info(company_id, asset_id)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <CompaniesCompanyIdApiKeysGet200Response>
+  p data # => <CompaniesCompanyIdAssetsAssetIdPricesGet200Response>
 rescue SparteraApiSdk::ApiError => e
   puts "Error when calling AssetPriceHistoryApi->companies_company_id_assets_asset_id_prices_active_get_with_http_info: #{e}"
 end
@@ -73,7 +73,7 @@ end
 
 ### Return type
 
-[**CompaniesCompanyIdApiKeysGet200Response**](CompaniesCompanyIdApiKeysGet200Response.md)
+[**CompaniesCompanyIdAssetsAssetIdPricesGet200Response**](CompaniesCompanyIdAssetsAssetIdPricesGet200Response.md)
 
 ### Authorization
 
@@ -87,7 +87,7 @@ end
 
 ## companies_company_id_assets_asset_id_prices_aph_id_delete
 
-> <CompaniesCompanyIdApiKeysGet200Response> companies_company_id_assets_asset_id_prices_aph_id_delete(company_id, asset_id, aph_id)
+> <CompaniesCompanyIdAssetsAssetIdPricesAphIdDelete200Response> companies_company_id_assets_asset_id_prices_aph_id_delete(company_id, asset_id, aph_id)
 
 Delete single price history record by ID
 
@@ -122,7 +122,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<CompaniesCompanyIdApiKeysGet200Response>, Integer, Hash)> companies_company_id_assets_asset_id_prices_aph_id_delete_with_http_info(company_id, asset_id, aph_id)
+> <Array(<CompaniesCompanyIdAssetsAssetIdPricesAphIdDelete200Response>, Integer, Hash)> companies_company_id_assets_asset_id_prices_aph_id_delete_with_http_info(company_id, asset_id, aph_id)
 
 ```ruby
 begin
@@ -130,7 +130,7 @@ begin
   data, status_code, headers = api_instance.companies_company_id_assets_asset_id_prices_aph_id_delete_with_http_info(company_id, asset_id, aph_id)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <CompaniesCompanyIdApiKeysGet200Response>
+  p data # => <CompaniesCompanyIdAssetsAssetIdPricesAphIdDelete200Response>
 rescue SparteraApiSdk::ApiError => e
   puts "Error when calling AssetPriceHistoryApi->companies_company_id_assets_asset_id_prices_aph_id_delete_with_http_info: #{e}"
 end
@@ -146,7 +146,7 @@ end
 
 ### Return type
 
-[**CompaniesCompanyIdApiKeysGet200Response**](CompaniesCompanyIdApiKeysGet200Response.md)
+[**CompaniesCompanyIdAssetsAssetIdPricesAphIdDelete200Response**](CompaniesCompanyIdAssetsAssetIdPricesAphIdDelete200Response.md)
 
 ### Authorization
 
@@ -160,7 +160,7 @@ end
 
 ## companies_company_id_assets_asset_id_prices_aph_id_get
 
-> <CompaniesCompanyIdApiKeysGet200Response> companies_company_id_assets_asset_id_prices_aph_id_get(company_id, asset_id, aph_id)
+> <CompaniesCompanyIdAssetsAssetIdPricesAphIdGet200Response> companies_company_id_assets_asset_id_prices_aph_id_get(company_id, asset_id, aph_id)
 
 Get single price history record by ID
 
@@ -195,7 +195,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<CompaniesCompanyIdApiKeysGet200Response>, Integer, Hash)> companies_company_id_assets_asset_id_prices_aph_id_get_with_http_info(company_id, asset_id, aph_id)
+> <Array(<CompaniesCompanyIdAssetsAssetIdPricesAphIdGet200Response>, Integer, Hash)> companies_company_id_assets_asset_id_prices_aph_id_get_with_http_info(company_id, asset_id, aph_id)
 
 ```ruby
 begin
@@ -203,7 +203,7 @@ begin
   data, status_code, headers = api_instance.companies_company_id_assets_asset_id_prices_aph_id_get_with_http_info(company_id, asset_id, aph_id)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <CompaniesCompanyIdApiKeysGet200Response>
+  p data # => <CompaniesCompanyIdAssetsAssetIdPricesAphIdGet200Response>
 rescue SparteraApiSdk::ApiError => e
   puts "Error when calling AssetPriceHistoryApi->companies_company_id_assets_asset_id_prices_aph_id_get_with_http_info: #{e}"
 end
@@ -219,7 +219,7 @@ end
 
 ### Return type
 
-[**CompaniesCompanyIdApiKeysGet200Response**](CompaniesCompanyIdApiKeysGet200Response.md)
+[**CompaniesCompanyIdAssetsAssetIdPricesAphIdGet200Response**](CompaniesCompanyIdAssetsAssetIdPricesAphIdGet200Response.md)
 
 ### Authorization
 
@@ -233,7 +233,7 @@ end
 
 ## companies_company_id_assets_asset_id_prices_aph_id_patch
 
-> <CompaniesCompanyIdApiKeysGet200Response> companies_company_id_assets_asset_id_prices_aph_id_patch(company_id, asset_id, aph_id)
+> <CompaniesCompanyIdAssetsAssetIdPricesAphIdPatch200Response> companies_company_id_assets_asset_id_prices_aph_id_patch(company_id, asset_id, aph_id, asset_price_history_update)
 
 Update an existing price history record by ID
 
@@ -254,10 +254,11 @@ api_instance = SparteraApiSdk::AssetPriceHistoryApi.new
 company_id = 'company_id_example' # String | 
 asset_id = 'asset_id_example' # String | 
 aph_id = 'aph_id_example' # String | 
+asset_price_history_update = SparteraApiSdk::AssetPriceHistoryUpdate.new # AssetPriceHistoryUpdate | 
 
 begin
   # Update an existing price history record by ID
-  result = api_instance.companies_company_id_assets_asset_id_prices_aph_id_patch(company_id, asset_id, aph_id)
+  result = api_instance.companies_company_id_assets_asset_id_prices_aph_id_patch(company_id, asset_id, aph_id, asset_price_history_update)
   p result
 rescue SparteraApiSdk::ApiError => e
   puts "Error when calling AssetPriceHistoryApi->companies_company_id_assets_asset_id_prices_aph_id_patch: #{e}"
@@ -268,15 +269,15 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<CompaniesCompanyIdApiKeysGet200Response>, Integer, Hash)> companies_company_id_assets_asset_id_prices_aph_id_patch_with_http_info(company_id, asset_id, aph_id)
+> <Array(<CompaniesCompanyIdAssetsAssetIdPricesAphIdPatch200Response>, Integer, Hash)> companies_company_id_assets_asset_id_prices_aph_id_patch_with_http_info(company_id, asset_id, aph_id, asset_price_history_update)
 
 ```ruby
 begin
   # Update an existing price history record by ID
-  data, status_code, headers = api_instance.companies_company_id_assets_asset_id_prices_aph_id_patch_with_http_info(company_id, asset_id, aph_id)
+  data, status_code, headers = api_instance.companies_company_id_assets_asset_id_prices_aph_id_patch_with_http_info(company_id, asset_id, aph_id, asset_price_history_update)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <CompaniesCompanyIdApiKeysGet200Response>
+  p data # => <CompaniesCompanyIdAssetsAssetIdPricesAphIdPatch200Response>
 rescue SparteraApiSdk::ApiError => e
   puts "Error when calling AssetPriceHistoryApi->companies_company_id_assets_asset_id_prices_aph_id_patch_with_http_info: #{e}"
 end
@@ -289,10 +290,11 @@ end
 | **company_id** | **String** |  |  |
 | **asset_id** | **String** |  |  |
 | **aph_id** | **String** |  |  |
+| **asset_price_history_update** | [**AssetPriceHistoryUpdate**](AssetPriceHistoryUpdate.md) |  |  |
 
 ### Return type
 
-[**CompaniesCompanyIdApiKeysGet200Response**](CompaniesCompanyIdApiKeysGet200Response.md)
+[**CompaniesCompanyIdAssetsAssetIdPricesAphIdPatch200Response**](CompaniesCompanyIdAssetsAssetIdPricesAphIdPatch200Response.md)
 
 ### Authorization
 
@@ -300,15 +302,15 @@ end
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 
 ## companies_company_id_assets_asset_id_prices_calculate_credits_post
 
-> <CompaniesCompanyIdApiKeysGet200Response> companies_company_id_assets_asset_id_prices_calculate_credits_post(company_id, asset_id)
+> <CompaniesCompanyIdAssetsAssetIdPricesPost200Response> companies_company_id_assets_asset_id_prices_calculate_credits_post(company_id, asset_id, asset_price_history_input)
 
-POST /companies/{company_id}/assets/{asset_id}/prices/calculate_credits
+Calculate the credit equivalent for a given USD price without saving
 
 ### Examples
 
@@ -326,10 +328,11 @@ end
 api_instance = SparteraApiSdk::AssetPriceHistoryApi.new
 company_id = 'company_id_example' # String | 
 asset_id = 'asset_id_example' # String | 
+asset_price_history_input = SparteraApiSdk::AssetPriceHistoryInput.new({asset_id: 'asset_id_example'}) # AssetPriceHistoryInput | 
 
 begin
-  # POST /companies/{company_id}/assets/{asset_id}/prices/calculate_credits
-  result = api_instance.companies_company_id_assets_asset_id_prices_calculate_credits_post(company_id, asset_id)
+  # Calculate the credit equivalent for a given USD price without saving
+  result = api_instance.companies_company_id_assets_asset_id_prices_calculate_credits_post(company_id, asset_id, asset_price_history_input)
   p result
 rescue SparteraApiSdk::ApiError => e
   puts "Error when calling AssetPriceHistoryApi->companies_company_id_assets_asset_id_prices_calculate_credits_post: #{e}"
@@ -340,15 +343,15 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<CompaniesCompanyIdApiKeysGet200Response>, Integer, Hash)> companies_company_id_assets_asset_id_prices_calculate_credits_post_with_http_info(company_id, asset_id)
+> <Array(<CompaniesCompanyIdAssetsAssetIdPricesPost200Response>, Integer, Hash)> companies_company_id_assets_asset_id_prices_calculate_credits_post_with_http_info(company_id, asset_id, asset_price_history_input)
 
 ```ruby
 begin
-  # POST /companies/{company_id}/assets/{asset_id}/prices/calculate_credits
-  data, status_code, headers = api_instance.companies_company_id_assets_asset_id_prices_calculate_credits_post_with_http_info(company_id, asset_id)
+  # Calculate the credit equivalent for a given USD price without saving
+  data, status_code, headers = api_instance.companies_company_id_assets_asset_id_prices_calculate_credits_post_with_http_info(company_id, asset_id, asset_price_history_input)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <CompaniesCompanyIdApiKeysGet200Response>
+  p data # => <CompaniesCompanyIdAssetsAssetIdPricesPost200Response>
 rescue SparteraApiSdk::ApiError => e
   puts "Error when calling AssetPriceHistoryApi->companies_company_id_assets_asset_id_prices_calculate_credits_post_with_http_info: #{e}"
 end
@@ -360,10 +363,11 @@ end
 | ---- | ---- | ----------- | ----- |
 | **company_id** | **String** |  |  |
 | **asset_id** | **String** |  |  |
+| **asset_price_history_input** | [**AssetPriceHistoryInput**](AssetPriceHistoryInput.md) |  |  |
 
 ### Return type
 
-[**CompaniesCompanyIdApiKeysGet200Response**](CompaniesCompanyIdApiKeysGet200Response.md)
+[**CompaniesCompanyIdAssetsAssetIdPricesPost200Response**](CompaniesCompanyIdAssetsAssetIdPricesPost200Response.md)
 
 ### Authorization
 
@@ -371,13 +375,13 @@ end
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 
 ## companies_company_id_assets_asset_id_prices_discount_post
 
-> <CompaniesCompanyIdApiKeysGet200Response> companies_company_id_assets_asset_id_prices_discount_post(company_id, asset_id)
+> <CompaniesCompanyIdAssetsAssetIdPricesPost200Response> companies_company_id_assets_asset_id_prices_discount_post(company_id, asset_id, asset_price_history_input)
 
 POST /companies/{company_id}/assets/{asset_id}/prices/discount
 
@@ -397,10 +401,11 @@ end
 api_instance = SparteraApiSdk::AssetPriceHistoryApi.new
 company_id = 'company_id_example' # String | 
 asset_id = 'asset_id_example' # String | 
+asset_price_history_input = SparteraApiSdk::AssetPriceHistoryInput.new({asset_id: 'asset_id_example'}) # AssetPriceHistoryInput | 
 
 begin
   # POST /companies/{company_id}/assets/{asset_id}/prices/discount
-  result = api_instance.companies_company_id_assets_asset_id_prices_discount_post(company_id, asset_id)
+  result = api_instance.companies_company_id_assets_asset_id_prices_discount_post(company_id, asset_id, asset_price_history_input)
   p result
 rescue SparteraApiSdk::ApiError => e
   puts "Error when calling AssetPriceHistoryApi->companies_company_id_assets_asset_id_prices_discount_post: #{e}"
@@ -411,15 +416,15 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<CompaniesCompanyIdApiKeysGet200Response>, Integer, Hash)> companies_company_id_assets_asset_id_prices_discount_post_with_http_info(company_id, asset_id)
+> <Array(<CompaniesCompanyIdAssetsAssetIdPricesPost200Response>, Integer, Hash)> companies_company_id_assets_asset_id_prices_discount_post_with_http_info(company_id, asset_id, asset_price_history_input)
 
 ```ruby
 begin
   # POST /companies/{company_id}/assets/{asset_id}/prices/discount
-  data, status_code, headers = api_instance.companies_company_id_assets_asset_id_prices_discount_post_with_http_info(company_id, asset_id)
+  data, status_code, headers = api_instance.companies_company_id_assets_asset_id_prices_discount_post_with_http_info(company_id, asset_id, asset_price_history_input)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <CompaniesCompanyIdApiKeysGet200Response>
+  p data # => <CompaniesCompanyIdAssetsAssetIdPricesPost200Response>
 rescue SparteraApiSdk::ApiError => e
   puts "Error when calling AssetPriceHistoryApi->companies_company_id_assets_asset_id_prices_discount_post_with_http_info: #{e}"
 end
@@ -431,10 +436,11 @@ end
 | ---- | ---- | ----------- | ----- |
 | **company_id** | **String** |  |  |
 | **asset_id** | **String** |  |  |
+| **asset_price_history_input** | [**AssetPriceHistoryInput**](AssetPriceHistoryInput.md) |  |  |
 
 ### Return type
 
-[**CompaniesCompanyIdApiKeysGet200Response**](CompaniesCompanyIdApiKeysGet200Response.md)
+[**CompaniesCompanyIdAssetsAssetIdPricesPost200Response**](CompaniesCompanyIdAssetsAssetIdPricesPost200Response.md)
 
 ### Authorization
 
@@ -442,13 +448,13 @@ end
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 
 ## companies_company_id_assets_asset_id_prices_get
 
-> <CompaniesCompanyIdApiKeysGet200Response> companies_company_id_assets_asset_id_prices_get(company_id, asset_id)
+> <CompaniesCompanyIdAssetsAssetIdPricesGet200Response> companies_company_id_assets_asset_id_prices_get(company_id, asset_id)
 
 Get all price history records for a specific asset
 
@@ -482,7 +488,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<CompaniesCompanyIdApiKeysGet200Response>, Integer, Hash)> companies_company_id_assets_asset_id_prices_get_with_http_info(company_id, asset_id)
+> <Array(<CompaniesCompanyIdAssetsAssetIdPricesGet200Response>, Integer, Hash)> companies_company_id_assets_asset_id_prices_get_with_http_info(company_id, asset_id)
 
 ```ruby
 begin
@@ -490,7 +496,7 @@ begin
   data, status_code, headers = api_instance.companies_company_id_assets_asset_id_prices_get_with_http_info(company_id, asset_id)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <CompaniesCompanyIdApiKeysGet200Response>
+  p data # => <CompaniesCompanyIdAssetsAssetIdPricesGet200Response>
 rescue SparteraApiSdk::ApiError => e
   puts "Error when calling AssetPriceHistoryApi->companies_company_id_assets_asset_id_prices_get_with_http_info: #{e}"
 end
@@ -505,7 +511,7 @@ end
 
 ### Return type
 
-[**CompaniesCompanyIdApiKeysGet200Response**](CompaniesCompanyIdApiKeysGet200Response.md)
+[**CompaniesCompanyIdAssetsAssetIdPricesGet200Response**](CompaniesCompanyIdAssetsAssetIdPricesGet200Response.md)
 
 ### Authorization
 
@@ -519,7 +525,7 @@ end
 
 ## companies_company_id_assets_asset_id_prices_post
 
-> <CompaniesCompanyIdApiKeysGet200Response> companies_company_id_assets_asset_id_prices_post(company_id, asset_id)
+> <CompaniesCompanyIdAssetsAssetIdPricesPost200Response> companies_company_id_assets_asset_id_prices_post(company_id, asset_id, asset_price_history_input)
 
 Create a new price history record for an asset
 
@@ -539,10 +545,11 @@ end
 api_instance = SparteraApiSdk::AssetPriceHistoryApi.new
 company_id = 'company_id_example' # String | 
 asset_id = 'asset_id_example' # String | 
+asset_price_history_input = SparteraApiSdk::AssetPriceHistoryInput.new({asset_id: 'asset_id_example'}) # AssetPriceHistoryInput | 
 
 begin
   # Create a new price history record for an asset
-  result = api_instance.companies_company_id_assets_asset_id_prices_post(company_id, asset_id)
+  result = api_instance.companies_company_id_assets_asset_id_prices_post(company_id, asset_id, asset_price_history_input)
   p result
 rescue SparteraApiSdk::ApiError => e
   puts "Error when calling AssetPriceHistoryApi->companies_company_id_assets_asset_id_prices_post: #{e}"
@@ -553,15 +560,15 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<CompaniesCompanyIdApiKeysGet200Response>, Integer, Hash)> companies_company_id_assets_asset_id_prices_post_with_http_info(company_id, asset_id)
+> <Array(<CompaniesCompanyIdAssetsAssetIdPricesPost200Response>, Integer, Hash)> companies_company_id_assets_asset_id_prices_post_with_http_info(company_id, asset_id, asset_price_history_input)
 
 ```ruby
 begin
   # Create a new price history record for an asset
-  data, status_code, headers = api_instance.companies_company_id_assets_asset_id_prices_post_with_http_info(company_id, asset_id)
+  data, status_code, headers = api_instance.companies_company_id_assets_asset_id_prices_post_with_http_info(company_id, asset_id, asset_price_history_input)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <CompaniesCompanyIdApiKeysGet200Response>
+  p data # => <CompaniesCompanyIdAssetsAssetIdPricesPost200Response>
 rescue SparteraApiSdk::ApiError => e
   puts "Error when calling AssetPriceHistoryApi->companies_company_id_assets_asset_id_prices_post_with_http_info: #{e}"
 end
@@ -573,10 +580,11 @@ end
 | ---- | ---- | ----------- | ----- |
 | **company_id** | **String** |  |  |
 | **asset_id** | **String** |  |  |
+| **asset_price_history_input** | [**AssetPriceHistoryInput**](AssetPriceHistoryInput.md) |  |  |
 
 ### Return type
 
-[**CompaniesCompanyIdApiKeysGet200Response**](CompaniesCompanyIdApiKeysGet200Response.md)
+[**CompaniesCompanyIdAssetsAssetIdPricesPost200Response**](CompaniesCompanyIdAssetsAssetIdPricesPost200Response.md)
 
 ### Authorization
 
@@ -584,6 +592,6 @@ end
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json
 - **Accept**: application/json
 

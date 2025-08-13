@@ -4,7 +4,7 @@ All URIs are relative to *https://api.spartera.com*
 
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
-| [**analyze_company_handle_assets_asset_slug_get**](AssetsApi.md#analyze_company_handle_assets_asset_slug_get) | **GET** /analyze/{company_handle}/assets/{asset_slug} | Process (analyze) an asset. Attempt to process an analytic on a backend warehouse/AI model. |
+| [**analyze_company_handle_assets_asset_slug_get**](AssetsApi.md#analyze_company_handle_assets_asset_slug_get) | **GET** /analyze/{company_handle}/assets/{asset_slug} | Process (analyze) an asset. |
 | [**companies_company_id_assets_asset_id_delete**](AssetsApi.md#companies_company_id_assets_asset_id_delete) | **DELETE** /companies/{company_id}/assets/{asset_id} | Delete single asset by ID |
 | [**companies_company_id_assets_asset_id_get**](AssetsApi.md#companies_company_id_assets_asset_id_get) | **GET** /companies/{company_id}/assets/{asset_id} | Get single asset by ID |
 | [**companies_company_id_assets_asset_id_infoschema_get**](AssetsApi.md#companies_company_id_assets_asset_id_infoschema_get) | **GET** /companies/{company_id}/assets/{asset_id}/infoschema | Get the information schema for a specific asset&#39;s table |
@@ -20,9 +20,9 @@ All URIs are relative to *https://api.spartera.com*
 
 ## analyze_company_handle_assets_asset_slug_get
 
-> <CompaniesCompanyIdAssetsAssetIdGet200Response> analyze_company_handle_assets_asset_slug_get(company_handle, asset_slug)
+> <AnalyzeCompanyHandleAssetsAssetSlugGet200Response> analyze_company_handle_assets_asset_slug_get(asset_slug, company_handle)
 
-Process (analyze) an asset. Attempt to process an analytic on a backend warehouse/AI model.
+Process (analyze) an asset.
 
 ### Examples
 
@@ -38,12 +38,12 @@ SparteraApiSdk.configure do |config|
 end
 
 api_instance = SparteraApiSdk::AssetsApi.new
-company_handle = 'company_handle_example' # String | 
 asset_slug = 'asset_slug_example' # String | 
+company_handle = 'company_handle_example' # String | 
 
 begin
-  # Process (analyze) an asset. Attempt to process an analytic on a backend warehouse/AI model.
-  result = api_instance.analyze_company_handle_assets_asset_slug_get(company_handle, asset_slug)
+  # Process (analyze) an asset.
+  result = api_instance.analyze_company_handle_assets_asset_slug_get(asset_slug, company_handle)
   p result
 rescue SparteraApiSdk::ApiError => e
   puts "Error when calling AssetsApi->analyze_company_handle_assets_asset_slug_get: #{e}"
@@ -54,15 +54,15 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<CompaniesCompanyIdAssetsAssetIdGet200Response>, Integer, Hash)> analyze_company_handle_assets_asset_slug_get_with_http_info(company_handle, asset_slug)
+> <Array(<AnalyzeCompanyHandleAssetsAssetSlugGet200Response>, Integer, Hash)> analyze_company_handle_assets_asset_slug_get_with_http_info(asset_slug, company_handle)
 
 ```ruby
 begin
-  # Process (analyze) an asset. Attempt to process an analytic on a backend warehouse/AI model.
-  data, status_code, headers = api_instance.analyze_company_handle_assets_asset_slug_get_with_http_info(company_handle, asset_slug)
+  # Process (analyze) an asset.
+  data, status_code, headers = api_instance.analyze_company_handle_assets_asset_slug_get_with_http_info(asset_slug, company_handle)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <CompaniesCompanyIdAssetsAssetIdGet200Response>
+  p data # => <AnalyzeCompanyHandleAssetsAssetSlugGet200Response>
 rescue SparteraApiSdk::ApiError => e
   puts "Error when calling AssetsApi->analyze_company_handle_assets_asset_slug_get_with_http_info: #{e}"
 end
@@ -72,12 +72,12 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **company_handle** | **String** |  |  |
 | **asset_slug** | **String** |  |  |
+| **company_handle** | **String** |  |  |
 
 ### Return type
 
-[**CompaniesCompanyIdAssetsAssetIdGet200Response**](CompaniesCompanyIdAssetsAssetIdGet200Response.md)
+[**AnalyzeCompanyHandleAssetsAssetSlugGet200Response**](AnalyzeCompanyHandleAssetsAssetSlugGet200Response.md)
 
 ### Authorization
 
@@ -162,7 +162,7 @@ end
 
 ## companies_company_id_assets_asset_id_get
 
-> <CompaniesCompanyIdAssetsAssetIdGet200Response> companies_company_id_assets_asset_id_get(company_id, asset_id)
+> <AnalyzeCompanyHandleAssetsAssetSlugGet200Response> companies_company_id_assets_asset_id_get(company_id, asset_id)
 
 Get single asset by ID
 
@@ -196,7 +196,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<CompaniesCompanyIdAssetsAssetIdGet200Response>, Integer, Hash)> companies_company_id_assets_asset_id_get_with_http_info(company_id, asset_id)
+> <Array(<AnalyzeCompanyHandleAssetsAssetSlugGet200Response>, Integer, Hash)> companies_company_id_assets_asset_id_get_with_http_info(company_id, asset_id)
 
 ```ruby
 begin
@@ -204,7 +204,7 @@ begin
   data, status_code, headers = api_instance.companies_company_id_assets_asset_id_get_with_http_info(company_id, asset_id)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <CompaniesCompanyIdAssetsAssetIdGet200Response>
+  p data # => <AnalyzeCompanyHandleAssetsAssetSlugGet200Response>
 rescue SparteraApiSdk::ApiError => e
   puts "Error when calling AssetsApi->companies_company_id_assets_asset_id_get_with_http_info: #{e}"
 end
@@ -219,7 +219,7 @@ end
 
 ### Return type
 
-[**CompaniesCompanyIdAssetsAssetIdGet200Response**](CompaniesCompanyIdAssetsAssetIdGet200Response.md)
+[**AnalyzeCompanyHandleAssetsAssetSlugGet200Response**](AnalyzeCompanyHandleAssetsAssetSlugGet200Response.md)
 
 ### Authorization
 
@@ -375,7 +375,7 @@ end
 
 ## companies_company_id_assets_asset_id_patch
 
-> <CompaniesCompanyIdAssetsAssetIdPatch200Response> companies_company_id_assets_asset_id_patch(company_id, asset_id, asset)
+> <CompaniesCompanyIdAssetsAssetIdPatch200Response> companies_company_id_assets_asset_id_patch(company_id, asset_id, assets_update)
 
 Update an existing asset by ID
 
@@ -395,11 +395,11 @@ end
 api_instance = SparteraApiSdk::AssetsApi.new
 company_id = 'company_id_example' # String | 
 asset_id = 'asset_id_example' # String | 
-asset = SparteraApiSdk::Asset.new({company_id: 'company_id_example', name: 'name_example', source: 'source_example'}) # Asset | 
+assets_update = SparteraApiSdk::AssetsUpdate.new # AssetsUpdate | 
 
 begin
   # Update an existing asset by ID
-  result = api_instance.companies_company_id_assets_asset_id_patch(company_id, asset_id, asset)
+  result = api_instance.companies_company_id_assets_asset_id_patch(company_id, asset_id, assets_update)
   p result
 rescue SparteraApiSdk::ApiError => e
   puts "Error when calling AssetsApi->companies_company_id_assets_asset_id_patch: #{e}"
@@ -410,12 +410,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<CompaniesCompanyIdAssetsAssetIdPatch200Response>, Integer, Hash)> companies_company_id_assets_asset_id_patch_with_http_info(company_id, asset_id, asset)
+> <Array(<CompaniesCompanyIdAssetsAssetIdPatch200Response>, Integer, Hash)> companies_company_id_assets_asset_id_patch_with_http_info(company_id, asset_id, assets_update)
 
 ```ruby
 begin
   # Update an existing asset by ID
-  data, status_code, headers = api_instance.companies_company_id_assets_asset_id_patch_with_http_info(company_id, asset_id, asset)
+  data, status_code, headers = api_instance.companies_company_id_assets_asset_id_patch_with_http_info(company_id, asset_id, assets_update)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <CompaniesCompanyIdAssetsAssetIdPatch200Response>
@@ -430,7 +430,7 @@ end
 | ---- | ---- | ----------- | ----- |
 | **company_id** | **String** |  |  |
 | **asset_id** | **String** |  |  |
-| **asset** | [**Asset**](Asset.md) |  |  |
+| **assets_update** | [**AssetsUpdate**](AssetsUpdate.md) |  |  |
 
 ### Return type
 
@@ -730,7 +730,7 @@ end
 
 ## companies_company_id_assets_post
 
-> <CompaniesCompanyIdAssetsPost200Response> companies_company_id_assets_post(company_id, asset)
+> <CompaniesCompanyIdAssetsPost200Response> companies_company_id_assets_post(company_id, assets_input)
 
 Create a new asset
 
@@ -749,11 +749,11 @@ end
 
 api_instance = SparteraApiSdk::AssetsApi.new
 company_id = 'company_id_example' # String | 
-asset = SparteraApiSdk::Asset.new({company_id: 'company_id_example', name: 'name_example', source: 'source_example'}) # Asset | 
+assets_input = SparteraApiSdk::AssetsInput.new({company_id: 'company_id_example', name: 'name_example', source: 'MANUAL'}) # AssetsInput | 
 
 begin
   # Create a new asset
-  result = api_instance.companies_company_id_assets_post(company_id, asset)
+  result = api_instance.companies_company_id_assets_post(company_id, assets_input)
   p result
 rescue SparteraApiSdk::ApiError => e
   puts "Error when calling AssetsApi->companies_company_id_assets_post: #{e}"
@@ -764,12 +764,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<CompaniesCompanyIdAssetsPost200Response>, Integer, Hash)> companies_company_id_assets_post_with_http_info(company_id, asset)
+> <Array(<CompaniesCompanyIdAssetsPost200Response>, Integer, Hash)> companies_company_id_assets_post_with_http_info(company_id, assets_input)
 
 ```ruby
 begin
   # Create a new asset
-  data, status_code, headers = api_instance.companies_company_id_assets_post_with_http_info(company_id, asset)
+  data, status_code, headers = api_instance.companies_company_id_assets_post_with_http_info(company_id, assets_input)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <CompaniesCompanyIdAssetsPost200Response>
@@ -783,7 +783,7 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **company_id** | **String** |  |  |
-| **asset** | [**Asset**](Asset.md) |  |  |
+| **assets_input** | [**AssetsInput**](AssetsInput.md) |  |  |
 
 ### Return type
 

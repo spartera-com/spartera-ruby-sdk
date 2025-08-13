@@ -5,7 +5,7 @@
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **message** | **String** | Response status message |  |
-| **data** | [**Array&lt;User&gt;**](User.md) |  |  |
+| **data** | [**Array&lt;Users&gt;**](Users.md) |  |  |
 
 ## Example
 

@@ -5,7 +5,7 @@
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **message** | **String** | Response status message |  |
-| **data** | [**Array&lt;Asset&gt;**](Asset.md) |  |  |
+| **data** | [**Array&lt;Assets&gt;**](Assets.md) |  |  |
 
 ## Example
 

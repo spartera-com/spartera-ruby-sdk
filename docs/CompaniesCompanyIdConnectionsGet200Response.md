@@ -5,7 +5,7 @@
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **message** | **String** | Response status message |  |
-| **data** | [**Array&lt;Connection&gt;**](Connection.md) |  |  |
+| **data** | [**Array&lt;Connections&gt;**](Connections.md) |  |  |
 
 ## Example
 
