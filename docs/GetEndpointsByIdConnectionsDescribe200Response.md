@@ -1,4 +1,4 @@
-# OpenapiClient::GetEndpointsByIdConnectionsDescribe200Response
+# SparteraApiSdk::GetEndpointsByIdConnectionsDescribe200Response
 
 ## Properties
 
@@ -10,9 +10,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'spartera_api_sdk'
 
-instance = OpenapiClient::GetEndpointsByIdConnectionsDescribe200Response.new(
+instance = SparteraApiSdk::GetEndpointsByIdConnectionsDescribe200Response.new(
   message: success,
   data: null
 )

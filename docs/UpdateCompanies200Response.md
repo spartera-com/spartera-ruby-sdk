@@ -1,4 +1,4 @@
-# OpenapiClient::UpdateCompanies200Response
+# SparteraApiSdk::UpdateCompanies200Response
 
 ## Properties
 
@@ -10,9 +10,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'spartera_api_sdk'
 
-instance = OpenapiClient::UpdateCompanies200Response.new(
+instance = SparteraApiSdk::UpdateCompanies200Response.new(
   message: success,
   data: null
 )

@@ -1,4 +1,4 @@
-# OpenapiClient::GetStorageEnginesById200Response
+# SparteraApiSdk::GetStorageEnginesById200Response
 
 ## Properties
 
@@ -10,9 +10,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'spartera_api_sdk'
 
-instance = OpenapiClient::GetStorageEnginesById200Response.new(
+instance = SparteraApiSdk::GetStorageEnginesById200Response.new(
   message: success,
   data: null
 )

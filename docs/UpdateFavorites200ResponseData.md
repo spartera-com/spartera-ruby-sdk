@@ -1,4 +1,4 @@
-# OpenapiClient::UpdateFavorites200ResponseData
+# SparteraApiSdk::UpdateFavorites200ResponseData
 
 ## Properties
 
@@ -9,9 +9,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'spartera_api_sdk'
 
-instance = OpenapiClient::UpdateFavorites200ResponseData.new(
+instance = SparteraApiSdk::UpdateFavorites200ResponseData.new(
   favorite_id: null
 )
 ```

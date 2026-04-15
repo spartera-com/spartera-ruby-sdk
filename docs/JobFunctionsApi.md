@@ -1,4 +1,4 @@
-# OpenapiClient::JobFunctionsApi
+# SparteraApiSdk::JobFunctionsApi
 
 All URIs are relative to *https://api.spartera.com*
 
@@ -18,23 +18,23 @@ Get single job function by ID
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'spartera_api_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+SparteraApiSdk.configure do |config|
   # Configure API key authorization: ApiKeyAuth
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
-api_instance = OpenapiClient::JobFunctionsApi.new
+api_instance = SparteraApiSdk::JobFunctionsApi.new
 function_id = 'function_id_example' # String | Unique identifier for the Function
 
 begin
   # Get single job function by ID
   result = api_instance.get_job_functions_by_id(function_id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling JobFunctionsApi->get_job_functions_by_id: #{e}"
 end
 ```
@@ -52,7 +52,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <GetJobFunctionsById200Response>
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling JobFunctionsApi->get_job_functions_by_id_with_http_info: #{e}"
 end
 ```
@@ -87,16 +87,16 @@ Get a list of all job functions
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'spartera_api_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+SparteraApiSdk.configure do |config|
   # Configure API key authorization: ApiKeyAuth
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
-api_instance = OpenapiClient::JobFunctionsApi.new
+api_instance = SparteraApiSdk::JobFunctionsApi.new
 opts = {
   page: 56, # Integer | Page number for pagination
   limit: 56, # Integer | Number of items per page
@@ -109,7 +109,7 @@ begin
   # Get a list of all job functions
   result = api_instance.list_job_functions(opts)
   p result
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling JobFunctionsApi->list_job_functions: #{e}"
 end
 ```
@@ -127,7 +127,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <ListJobFunctions200Response>
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling JobFunctionsApi->list_job_functions_with_http_info: #{e}"
 end
 ```

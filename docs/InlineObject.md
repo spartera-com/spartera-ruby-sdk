@@ -1,4 +1,4 @@
-# OpenapiClient::InlineObject
+# SparteraApiSdk::InlineObject
 
 ## Properties
 
@@ -11,9 +11,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'spartera_api_sdk'
 
-instance = OpenapiClient::InlineObject.new(
+instance = SparteraApiSdk::InlineObject.new(
   code: 400,
   message: null,
   errors: null

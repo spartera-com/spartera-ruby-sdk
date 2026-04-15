@@ -1,4 +1,4 @@
-# OpenapiClient::UsersApi
+# SparteraApiSdk::UsersApi
 
 All URIs are relative to *https://api.spartera.com*
 
@@ -24,18 +24,18 @@ Create a new user
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'spartera_api_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+SparteraApiSdk.configure do |config|
   # Configure API key authorization: ApiKeyAuth
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
-api_instance = OpenapiClient::UsersApi.new
+api_instance = SparteraApiSdk::UsersApi.new
 company_id = 'company_id_example' # String | Unique identifier for the Company
-users_input = OpenapiClient::UsersInput.new({company_id: 'company_id_abc123'}) # UsersInput | 
+users_input = SparteraApiSdk::UsersInput.new({company_id: 'company_id_abc123'}) # UsersInput | 
 opts = {
   page: 56, # Integer | Page number for pagination
   limit: 56, # Integer | Number of items per page
@@ -48,7 +48,7 @@ begin
   # Create a new user
   result = api_instance.create_users(company_id, users_input, opts)
   p result
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling UsersApi->create_users: #{e}"
 end
 ```
@@ -66,7 +66,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <CreateUsers200Response>
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling UsersApi->create_users_with_http_info: #{e}"
 end
 ```
@@ -107,18 +107,18 @@ POST /companies/{company_id}/users/google-oauth
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'spartera_api_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+SparteraApiSdk.configure do |config|
   # Configure API key authorization: ApiKeyAuth
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
-api_instance = OpenapiClient::UsersApi.new
+api_instance = SparteraApiSdk::UsersApi.new
 company_id = 'company_id_example' # String | Unique identifier for the Company
-users_input = OpenapiClient::UsersInput.new({company_id: 'company_id_abc123'}) # UsersInput | 
+users_input = SparteraApiSdk::UsersInput.new({company_id: 'company_id_abc123'}) # UsersInput | 
 opts = {
   page: 56, # Integer | Page number for pagination
   limit: 56, # Integer | Number of items per page
@@ -131,7 +131,7 @@ begin
   # POST /companies/{company_id}/users/google-oauth
   result = api_instance.create_users_google_oauth(company_id, users_input, opts)
   p result
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling UsersApi->create_users_google_oauth: #{e}"
 end
 ```
@@ -149,7 +149,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <CreateUsers200Response>
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling UsersApi->create_users_google_oauth_with_http_info: #{e}"
 end
 ```
@@ -190,18 +190,18 @@ Logout current user by revoking their sessions
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'spartera_api_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+SparteraApiSdk.configure do |config|
   # Configure API key authorization: ApiKeyAuth
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
-api_instance = OpenapiClient::UsersApi.new
+api_instance = SparteraApiSdk::UsersApi.new
 company_id = 'company_id_example' # String | Unique identifier for the Company
-users_input = OpenapiClient::UsersInput.new({company_id: 'company_id_abc123'}) # UsersInput | 
+users_input = SparteraApiSdk::UsersInput.new({company_id: 'company_id_abc123'}) # UsersInput | 
 opts = {
   page: 56, # Integer | Page number for pagination
   limit: 56, # Integer | Number of items per page
@@ -214,7 +214,7 @@ begin
   # Logout current user by revoking their sessions
   result = api_instance.create_users_logout(company_id, users_input, opts)
   p result
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling UsersApi->create_users_logout: #{e}"
 end
 ```
@@ -232,7 +232,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <CreateUsers200Response>
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling UsersApi->create_users_logout_with_http_info: #{e}"
 end
 ```
@@ -273,16 +273,16 @@ Delete single user by ID
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'spartera_api_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+SparteraApiSdk.configure do |config|
   # Configure API key authorization: ApiKeyAuth
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
-api_instance = OpenapiClient::UsersApi.new
+api_instance = SparteraApiSdk::UsersApi.new
 company_id = 'company_id_example' # String | Unique identifier for the Company
 user_id = 'user_id_example' # String | Unique identifier for the User
 
@@ -290,7 +290,7 @@ begin
   # Delete single user by ID
   result = api_instance.delete_users(company_id, user_id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling UsersApi->delete_users: #{e}"
 end
 ```
@@ -308,7 +308,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <DeleteUsers200Response>
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling UsersApi->delete_users_with_http_info: #{e}"
 end
 ```
@@ -344,16 +344,16 @@ Get single user by ID
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'spartera_api_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+SparteraApiSdk.configure do |config|
   # Configure API key authorization: ApiKeyAuth
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
-api_instance = OpenapiClient::UsersApi.new
+api_instance = SparteraApiSdk::UsersApi.new
 company_id = 'company_id_example' # String | Unique identifier for the Company
 user_id = 'user_id_example' # String | Unique identifier for the User
 
@@ -361,7 +361,7 @@ begin
   # Get single user by ID
   result = api_instance.get_users_by_id(company_id, user_id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling UsersApi->get_users_by_id: #{e}"
 end
 ```
@@ -379,7 +379,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <GetUsersById200Response>
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling UsersApi->get_users_by_id_with_http_info: #{e}"
 end
 ```
@@ -415,16 +415,16 @@ Get a list of all users in a company
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'spartera_api_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+SparteraApiSdk.configure do |config|
   # Configure API key authorization: ApiKeyAuth
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
-api_instance = OpenapiClient::UsersApi.new
+api_instance = SparteraApiSdk::UsersApi.new
 company_id = 'company_id_example' # String | Unique identifier for the Company
 opts = {
   page: 56, # Integer | Page number for pagination
@@ -438,7 +438,7 @@ begin
   # Get a list of all users in a company
   result = api_instance.list_users(company_id, opts)
   p result
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling UsersApi->list_users: #{e}"
 end
 ```
@@ -456,7 +456,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <ListUsers200Response>
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling UsersApi->list_users_with_http_info: #{e}"
 end
 ```
@@ -496,16 +496,16 @@ Get current authenticated user's profile.
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'spartera_api_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+SparteraApiSdk.configure do |config|
   # Configure API key authorization: ApiKeyAuth
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
-api_instance = OpenapiClient::UsersApi.new
+api_instance = SparteraApiSdk::UsersApi.new
 opts = {
   page: 56, # Integer | Page number for pagination
   limit: 56, # Integer | Number of items per page
@@ -518,7 +518,7 @@ begin
   # Get current authenticated user's profile.
   result = api_instance.list_users_me(opts)
   p result
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling UsersApi->list_users_me: #{e}"
 end
 ```
@@ -536,7 +536,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <ListUsers200Response>
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling UsersApi->list_users_me_with_http_info: #{e}"
 end
 ```
@@ -575,25 +575,25 @@ Update an existing user by ID
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'spartera_api_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+SparteraApiSdk.configure do |config|
   # Configure API key authorization: ApiKeyAuth
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
-api_instance = OpenapiClient::UsersApi.new
+api_instance = SparteraApiSdk::UsersApi.new
 company_id = 'company_id_example' # String | Unique identifier for the Company
 user_id = 'user_id_example' # String | Unique identifier for the User
-users_update = OpenapiClient::UsersUpdate.new # UsersUpdate | 
+users_update = SparteraApiSdk::UsersUpdate.new # UsersUpdate | 
 
 begin
   # Update an existing user by ID
   result = api_instance.update_users(company_id, user_id, users_update)
   p result
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling UsersApi->update_users: #{e}"
 end
 ```
@@ -611,7 +611,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <UpdateUsers200Response>
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling UsersApi->update_users_with_http_info: #{e}"
 end
 ```

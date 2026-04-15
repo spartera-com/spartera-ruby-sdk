@@ -1,4 +1,4 @@
-# OpenapiClient::FavoritesApi
+# SparteraApiSdk::FavoritesApi
 
 All URIs are relative to *https://api.spartera.com*
 
@@ -24,25 +24,25 @@ POST /companies/{company_id}/users/{user_id}/favorites
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'spartera_api_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+SparteraApiSdk.configure do |config|
   # Configure API key authorization: ApiKeyAuth
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
-api_instance = OpenapiClient::FavoritesApi.new
+api_instance = SparteraApiSdk::FavoritesApi.new
 company_id = 'company_id_example' # String | Unique identifier for the Company
 user_id = 'user_id_example' # String | Unique identifier for the User
-favorites_input = OpenapiClient::FavoritesInput.new({asset_id: 'asset_id_abc123', company_id: 'company_id_abc123'}) # FavoritesInput | 
+favorites_input = SparteraApiSdk::FavoritesInput.new({asset_id: 'asset_id_abc123', company_id: 'company_id_abc123'}) # FavoritesInput | 
 
 begin
   # POST /companies/{company_id}/users/{user_id}/favorites
   result = api_instance.create_favorites(company_id, user_id, favorites_input)
   p result
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling FavoritesApi->create_favorites: #{e}"
 end
 ```
@@ -60,7 +60,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <CreateFavorites200Response>
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling FavoritesApi->create_favorites_with_http_info: #{e}"
 end
 ```
@@ -97,16 +97,16 @@ Delete single favorite by ID (unfavorite an asset)
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'spartera_api_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+SparteraApiSdk.configure do |config|
   # Configure API key authorization: ApiKeyAuth
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
-api_instance = OpenapiClient::FavoritesApi.new
+api_instance = SparteraApiSdk::FavoritesApi.new
 company_id = 'company_id_example' # String | Unique identifier for the Company
 user_id = 'user_id_example' # String | Unique identifier for the User
 favorite_id = 'favorite_id_example' # String | Unique identifier for the Favorite
@@ -115,7 +115,7 @@ begin
   # Delete single favorite by ID (unfavorite an asset)
   result = api_instance.delete_favorites(company_id, user_id, favorite_id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling FavoritesApi->delete_favorites: #{e}"
 end
 ```
@@ -133,7 +133,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <DeleteFavorites200Response>
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling FavoritesApi->delete_favorites_with_http_info: #{e}"
 end
 ```
@@ -170,16 +170,16 @@ Get a list of all favorites for a specific user
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'spartera_api_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+SparteraApiSdk.configure do |config|
   # Configure API key authorization: ApiKeyAuth
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
-api_instance = OpenapiClient::FavoritesApi.new
+api_instance = SparteraApiSdk::FavoritesApi.new
 company_id = 'company_id_example' # String | Unique identifier for the Company
 user_id = 'user_id_example' # String | Unique identifier for the User
 
@@ -187,7 +187,7 @@ begin
   # Get a list of all favorites for a specific user
   result = api_instance.get_favorites_by_id(company_id, user_id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling FavoritesApi->get_favorites_by_id: #{e}"
 end
 ```
@@ -205,7 +205,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <GetFavoritesById200Response>
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling FavoritesApi->get_favorites_by_id_with_http_info: #{e}"
 end
 ```
@@ -241,16 +241,16 @@ Get single favorite by ID
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'spartera_api_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+SparteraApiSdk.configure do |config|
   # Configure API key authorization: ApiKeyAuth
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
-api_instance = OpenapiClient::FavoritesApi.new
+api_instance = SparteraApiSdk::FavoritesApi.new
 company_id = 'company_id_example' # String | Unique identifier for the Company
 user_id = 'user_id_example' # String | Unique identifier for the User
 favorite_id = 'favorite_id_example' # String | Unique identifier for the Favorite
@@ -259,7 +259,7 @@ begin
   # Get single favorite by ID
   result = api_instance.get_favorites_by_id_users(company_id, user_id, favorite_id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling FavoritesApi->get_favorites_by_id_users: #{e}"
 end
 ```
@@ -277,7 +277,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <GetFavoritesById200Response>
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling FavoritesApi->get_favorites_by_id_users_with_http_info: #{e}"
 end
 ```
@@ -314,16 +314,16 @@ Get all favorites for the specified user in a specific category
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'spartera_api_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+SparteraApiSdk.configure do |config|
   # Configure API key authorization: ApiKeyAuth
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
-api_instance = OpenapiClient::FavoritesApi.new
+api_instance = SparteraApiSdk::FavoritesApi.new
 company_id = 'company_id_example' # String | Unique identifier for the Company
 user_id = 'user_id_example' # String | Unique identifier for the User
 category = 'category_example' # String | Parameter for category
@@ -332,7 +332,7 @@ begin
   # Get all favorites for the specified user in a specific category
   result = api_instance.get_favorites_by_id_users_category(company_id, user_id, category)
   p result
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling FavoritesApi->get_favorites_by_id_users_category: #{e}"
 end
 ```
@@ -350,7 +350,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <GetFavoritesById200Response>
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling FavoritesApi->get_favorites_by_id_users_category_with_http_info: #{e}"
 end
 ```
@@ -387,16 +387,16 @@ Check if the specified user has favorited a specific asset
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'spartera_api_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+SparteraApiSdk.configure do |config|
   # Configure API key authorization: ApiKeyAuth
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
-api_instance = OpenapiClient::FavoritesApi.new
+api_instance = SparteraApiSdk::FavoritesApi.new
 company_id = 'company_id_example' # String | Unique identifier for the Company
 user_id = 'user_id_example' # String | Unique identifier for the User
 asset_id = 'asset_id_example' # String | Unique identifier for the Asset
@@ -405,7 +405,7 @@ begin
   # Check if the specified user has favorited a specific asset
   result = api_instance.get_favorites_by_id_users_check(company_id, user_id, asset_id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling FavoritesApi->get_favorites_by_id_users_check: #{e}"
 end
 ```
@@ -423,7 +423,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <GetFavoritesById200Response>
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling FavoritesApi->get_favorites_by_id_users_check_with_http_info: #{e}"
 end
 ```
@@ -460,16 +460,16 @@ Get all favorites for the specified user that don't have a category
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'spartera_api_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+SparteraApiSdk.configure do |config|
   # Configure API key authorization: ApiKeyAuth
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
-api_instance = OpenapiClient::FavoritesApi.new
+api_instance = SparteraApiSdk::FavoritesApi.new
 company_id = 'company_id_example' # String | Unique identifier for the Company
 user_id = 'user_id_example' # String | Unique identifier for the User
 
@@ -477,7 +477,7 @@ begin
   # Get all favorites for the specified user that don't have a category
   result = api_instance.get_favorites_by_id_users_uncategorized(company_id, user_id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling FavoritesApi->get_favorites_by_id_users_uncategorized: #{e}"
 end
 ```
@@ -495,7 +495,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <GetFavoritesById200Response>
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling FavoritesApi->get_favorites_by_id_users_uncategorized_with_http_info: #{e}"
 end
 ```
@@ -531,26 +531,26 @@ Update an existing favorite by ID
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'spartera_api_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+SparteraApiSdk.configure do |config|
   # Configure API key authorization: ApiKeyAuth
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
-api_instance = OpenapiClient::FavoritesApi.new
+api_instance = SparteraApiSdk::FavoritesApi.new
 company_id = 'company_id_example' # String | Unique identifier for the Company
 user_id = 'user_id_example' # String | Unique identifier for the User
 favorite_id = 'favorite_id_example' # String | Unique identifier for the Favorite
-favorites_update = OpenapiClient::FavoritesUpdate.new # FavoritesUpdate | 
+favorites_update = SparteraApiSdk::FavoritesUpdate.new # FavoritesUpdate | 
 
 begin
   # Update an existing favorite by ID
   result = api_instance.update_favorites(company_id, user_id, favorite_id, favorites_update)
   p result
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling FavoritesApi->update_favorites: #{e}"
 end
 ```
@@ -568,7 +568,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <UpdateFavorites200Response>
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling FavoritesApi->update_favorites_with_http_info: #{e}"
 end
 ```

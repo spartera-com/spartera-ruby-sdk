@@ -1,4 +1,4 @@
-# OpenapiClient::PostgenIntegrationsInput
+# SparteraApiSdk::PostgenIntegrationsInput
 
 ## Properties
 
@@ -15,9 +15,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'spartera_api_sdk'
 
-instance = OpenapiClient::PostgenIntegrationsInput.new(
+instance = SparteraApiSdk::PostgenIntegrationsInput.new(
   company_id: company_id_abc123,
   user_id: user_id_abc123,
   platform: example_value,

@@ -1,4 +1,4 @@
-# OpenapiClient::CompaniesInput
+# SparteraApiSdk::CompaniesInput
 
 ## Properties
 
@@ -20,9 +20,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'spartera_api_sdk'
 
-instance = OpenapiClient::CompaniesInput.new(
+instance = SparteraApiSdk::CompaniesInput.new(
   industry_id: 1,
   country_id: US,
   company_name: Example Name,

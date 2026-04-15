@@ -1,4 +1,4 @@
-# OpenapiClient::GetAssetUsecasesById200Response
+# SparteraApiSdk::GetAssetUsecasesById200Response
 
 ## Properties
 
@@ -10,9 +10,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'spartera_api_sdk'
 
-instance = OpenapiClient::GetAssetUsecasesById200Response.new(
+instance = SparteraApiSdk::GetAssetUsecasesById200Response.new(
   message: success,
   data: null
 )

@@ -1,4 +1,4 @@
-# OpenapiClient::DeletePostgenIntegrations200ResponseData
+# SparteraApiSdk::DeletePostgenIntegrations200ResponseData
 
 ## Properties
 
@@ -9,9 +9,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'spartera_api_sdk'
 
-instance = OpenapiClient::DeletePostgenIntegrations200ResponseData.new(
+instance = SparteraApiSdk::DeletePostgenIntegrations200ResponseData.new(
   integration_id: null
 )
 ```

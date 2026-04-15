@@ -1,4 +1,4 @@
-# OpenapiClient::PostPublicationsUpdate
+# SparteraApiSdk::PostPublicationsUpdate
 
 ## Properties
 
@@ -17,9 +17,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'spartera_api_sdk'
 
-instance = OpenapiClient::PostPublicationsUpdate.new(
+instance = SparteraApiSdk::PostPublicationsUpdate.new(
   post_id: post_id_abc123,
   company_id: company_id_abc123,
   integration_id: integration_id_abc123,

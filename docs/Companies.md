@@ -1,4 +1,4 @@
-# OpenapiClient::Companies
+# SparteraApiSdk::Companies
 
 ## Properties
 
@@ -23,9 +23,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'spartera_api_sdk'
 
-instance = OpenapiClient::Companies.new(
+instance = SparteraApiSdk::Companies.new(
   date_created: 2025-04-01T00:00:00Z,
   last_updated: 2025-04-01T00:00:00Z,
   company_id: company_id_abc123,

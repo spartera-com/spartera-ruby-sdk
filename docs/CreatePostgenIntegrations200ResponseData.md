@@ -1,4 +1,4 @@
-# OpenapiClient::CreatePostgenIntegrations200ResponseData
+# SparteraApiSdk::CreatePostgenIntegrations200ResponseData
 
 ## Properties
 
@@ -9,9 +9,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'spartera_api_sdk'
 
-instance = OpenapiClient::CreatePostgenIntegrations200ResponseData.new(
+instance = SparteraApiSdk::CreatePostgenIntegrations200ResponseData.new(
   integration_id: null
 )
 ```

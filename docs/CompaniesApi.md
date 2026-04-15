@@ -1,4 +1,4 @@
-# OpenapiClient::CompaniesApi
+# SparteraApiSdk::CompaniesApi
 
 All URIs are relative to *https://api.spartera.com*
 
@@ -26,23 +26,23 @@ Get details of the requestor's own company
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'spartera_api_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+SparteraApiSdk.configure do |config|
   # Configure API key authorization: ApiKeyAuth
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
-api_instance = OpenapiClient::CompaniesApi.new
+api_instance = SparteraApiSdk::CompaniesApi.new
 company_id = 'company_id_example' # String | Unique identifier for the Company
 
 begin
   # Get details of the requestor's own company
   result = api_instance.get_companies_by_id(company_id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling CompaniesApi->get_companies_by_id: #{e}"
 end
 ```
@@ -60,7 +60,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <GetCompaniesById200Response>
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling CompaniesApi->get_companies_by_id_with_http_info: #{e}"
 end
 ```
@@ -95,16 +95,16 @@ Get the total number of requests allocated in the company's current subscription
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'spartera_api_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+SparteraApiSdk.configure do |config|
   # Configure API key authorization: ApiKeyAuth
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
-api_instance = OpenapiClient::CompaniesApi.new
+api_instance = SparteraApiSdk::CompaniesApi.new
 company_id = 'company_id_example' # String | Unique identifier for the Company
 opts = {
   page: 56, # Integer | Page number for pagination
@@ -118,7 +118,7 @@ begin
   # Get the total number of requests allocated in the company's current subscription plan.
   result = api_instance.list_companies(company_id, opts)
   p result
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling CompaniesApi->list_companies: #{e}"
 end
 ```
@@ -136,7 +136,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <ListCompaniesAnalyticsAssets200Response>
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling CompaniesApi->list_companies_with_http_info: #{e}"
 end
 ```
@@ -176,16 +176,16 @@ Get asset performance analytics.     Query params: start_date, end_date, limit, 
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'spartera_api_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+SparteraApiSdk.configure do |config|
   # Configure API key authorization: ApiKeyAuth
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
-api_instance = OpenapiClient::CompaniesApi.new
+api_instance = SparteraApiSdk::CompaniesApi.new
 company_id = 'company_id_example' # String | Unique identifier for the Company
 opts = {
   page: 56, # Integer | Page number for pagination
@@ -199,7 +199,7 @@ begin
   # Get asset performance analytics.     Query params: start_date, end_date, limit, sort_by, include
   result = api_instance.list_companies_analytics_assets(company_id, opts)
   p result
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling CompaniesApi->list_companies_analytics_assets: #{e}"
 end
 ```
@@ -217,7 +217,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <ListCompaniesAnalyticsAssets200Response>
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling CompaniesApi->list_companies_analytics_assets_with_http_info: #{e}"
 end
 ```
@@ -257,16 +257,16 @@ Get customer analytics including growth and segmentation.     Query params: star
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'spartera_api_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+SparteraApiSdk.configure do |config|
   # Configure API key authorization: ApiKeyAuth
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
-api_instance = OpenapiClient::CompaniesApi.new
+api_instance = SparteraApiSdk::CompaniesApi.new
 company_id = 'company_id_example' # String | Unique identifier for the Company
 opts = {
   page: 56, # Integer | Page number for pagination
@@ -280,7 +280,7 @@ begin
   # Get customer analytics including growth and segmentation.     Query params: start_date, end_date, group_by, segment_by
   result = api_instance.list_companies_analytics_customers(company_id, opts)
   p result
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling CompaniesApi->list_companies_analytics_customers: #{e}"
 end
 ```
@@ -298,7 +298,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <ListCompaniesAnalyticsAssets200Response>
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling CompaniesApi->list_companies_analytics_customers_with_http_info: #{e}"
 end
 ```
@@ -338,16 +338,16 @@ Get comprehensive dashboard analytics for seller dashboard.     Query params: st
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'spartera_api_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+SparteraApiSdk.configure do |config|
   # Configure API key authorization: ApiKeyAuth
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
-api_instance = OpenapiClient::CompaniesApi.new
+api_instance = SparteraApiSdk::CompaniesApi.new
 company_id = 'company_id_example' # String | Unique identifier for the Company
 opts = {
   page: 56, # Integer | Page number for pagination
@@ -361,7 +361,7 @@ begin
   # Get comprehensive dashboard analytics for seller dashboard.     Query params: start_date, end_date, period (day/week/month/quarter)
   result = api_instance.list_companies_analytics_dashboard(company_id, opts)
   p result
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling CompaniesApi->list_companies_analytics_dashboard: #{e}"
 end
 ```
@@ -379,7 +379,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <ListCompaniesAnalyticsAssets200Response>
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling CompaniesApi->list_companies_analytics_dashboard_with_http_info: #{e}"
 end
 ```
@@ -419,16 +419,16 @@ Get summary metrics (counts only). No date params needed — returns all-time to
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'spartera_api_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+SparteraApiSdk.configure do |config|
   # Configure API key authorization: ApiKeyAuth
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
-api_instance = OpenapiClient::CompaniesApi.new
+api_instance = SparteraApiSdk::CompaniesApi.new
 company_id = 'company_id_example' # String | Unique identifier for the Company
 opts = {
   page: 56, # Integer | Page number for pagination
@@ -442,7 +442,7 @@ begin
   # Get summary metrics (counts only). No date params needed — returns all-time totals.     Performance: < 0.1s
   result = api_instance.list_companies_analytics_metrics(company_id, opts)
   p result
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling CompaniesApi->list_companies_analytics_metrics: #{e}"
 end
 ```
@@ -460,7 +460,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <ListCompaniesAnalyticsAssets200Response>
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling CompaniesApi->list_companies_analytics_metrics_with_http_info: #{e}"
 end
 ```
@@ -500,16 +500,16 @@ Get sales over time analytics.     Query params: start_date, end_date, group_by 
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'spartera_api_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+SparteraApiSdk.configure do |config|
   # Configure API key authorization: ApiKeyAuth
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
-api_instance = OpenapiClient::CompaniesApi.new
+api_instance = SparteraApiSdk::CompaniesApi.new
 company_id = 'company_id_example' # String | Unique identifier for the Company
 opts = {
   page: 56, # Integer | Page number for pagination
@@ -523,7 +523,7 @@ begin
   # Get sales over time analytics.     Query params: start_date, end_date, group_by (day/week/month/quarter), metrics
   result = api_instance.list_companies_analytics_sales(company_id, opts)
   p result
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling CompaniesApi->list_companies_analytics_sales: #{e}"
 end
 ```
@@ -541,7 +541,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <ListCompaniesAnalyticsAssets200Response>
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling CompaniesApi->list_companies_analytics_sales_with_http_info: #{e}"
 end
 ```
@@ -581,16 +581,16 @@ Get all objects (connections, assets) of a single company
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'spartera_api_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+SparteraApiSdk.configure do |config|
   # Configure API key authorization: ApiKeyAuth
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
-api_instance = OpenapiClient::CompaniesApi.new
+api_instance = SparteraApiSdk::CompaniesApi.new
 company_id = 'company_id_example' # String | Unique identifier for the Company
 opts = {
   page: 56, # Integer | Page number for pagination
@@ -604,7 +604,7 @@ begin
   # Get all objects (connections, assets) of a single company
   result = api_instance.list_companies_objects(company_id, opts)
   p result
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling CompaniesApi->list_companies_objects: #{e}"
 end
 ```
@@ -622,7 +622,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <ListCompaniesAnalyticsAssets200Response>
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling CompaniesApi->list_companies_objects_with_http_info: #{e}"
 end
 ```
@@ -662,16 +662,16 @@ Get company request usage data for a specific month.
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'spartera_api_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+SparteraApiSdk.configure do |config|
   # Configure API key authorization: ApiKeyAuth
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
-api_instance = OpenapiClient::CompaniesApi.new
+api_instance = SparteraApiSdk::CompaniesApi.new
 company_id = 'company_id_example' # String | Unique identifier for the Company
 opts = {
   page: 56, # Integer | Page number for pagination
@@ -685,7 +685,7 @@ begin
   # Get company request usage data for a specific month.
   result = api_instance.list_companies_requests_usage(company_id, opts)
   p result
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling CompaniesApi->list_companies_requests_usage: #{e}"
 end
 ```
@@ -703,7 +703,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <ListCompaniesAnalyticsAssets200Response>
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling CompaniesApi->list_companies_requests_usage_with_http_info: #{e}"
 end
 ```
@@ -743,24 +743,24 @@ Update an existing company by ID
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'spartera_api_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+SparteraApiSdk.configure do |config|
   # Configure API key authorization: ApiKeyAuth
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
-api_instance = OpenapiClient::CompaniesApi.new
+api_instance = SparteraApiSdk::CompaniesApi.new
 company_id = 'company_id_example' # String | Unique identifier for the Company
-companies_update = OpenapiClient::CompaniesUpdate.new # CompaniesUpdate | 
+companies_update = SparteraApiSdk::CompaniesUpdate.new # CompaniesUpdate | 
 
 begin
   # Update an existing company by ID
   result = api_instance.update_companies(company_id, companies_update)
   p result
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling CompaniesApi->update_companies: #{e}"
 end
 ```
@@ -778,7 +778,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <UpdateCompanies200Response>
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling CompaniesApi->update_companies_with_http_info: #{e}"
 end
 ```

@@ -1,4 +1,4 @@
-# OpenapiClient::AssetUsecasesApi
+# SparteraApiSdk::AssetUsecasesApi
 
 All URIs are relative to *https://api.spartera.com*
 
@@ -18,23 +18,23 @@ Get single asset use case by ID
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'spartera_api_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+SparteraApiSdk.configure do |config|
   # Configure API key authorization: ApiKeyAuth
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
-api_instance = OpenapiClient::AssetUsecasesApi.new
+api_instance = SparteraApiSdk::AssetUsecasesApi.new
 auc_id = 'auc_id_example' # String | Unique identifier for the Auc
 
 begin
   # Get single asset use case by ID
   result = api_instance.get_asset_usecases_by_id(auc_id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling AssetUsecasesApi->get_asset_usecases_by_id: #{e}"
 end
 ```
@@ -52,7 +52,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <GetAssetUsecasesById200Response>
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling AssetUsecasesApi->get_asset_usecases_by_id_with_http_info: #{e}"
 end
 ```
@@ -87,16 +87,16 @@ Get a list of all asset use cases
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'spartera_api_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+SparteraApiSdk.configure do |config|
   # Configure API key authorization: ApiKeyAuth
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
-api_instance = OpenapiClient::AssetUsecasesApi.new
+api_instance = SparteraApiSdk::AssetUsecasesApi.new
 opts = {
   page: 56, # Integer | Page number for pagination
   limit: 56, # Integer | Number of items per page
@@ -109,7 +109,7 @@ begin
   # Get a list of all asset use cases
   result = api_instance.list_asset_usecases(opts)
   p result
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling AssetUsecasesApi->list_asset_usecases: #{e}"
 end
 ```
@@ -127,7 +127,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <ListAssetUsecases200Response>
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling AssetUsecasesApi->list_asset_usecases_with_http_info: #{e}"
 end
 ```

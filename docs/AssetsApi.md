@@ -1,4 +1,4 @@
-# OpenapiClient::AssetsApi
+# SparteraApiSdk::AssetsApi
 
 All URIs are relative to *https://api.spartera.com*
 
@@ -32,18 +32,18 @@ Create a new asset
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'spartera_api_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+SparteraApiSdk.configure do |config|
   # Configure API key authorization: ApiKeyAuth
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
-api_instance = OpenapiClient::AssetsApi.new
+api_instance = SparteraApiSdk::AssetsApi.new
 company_id = 'company_id_example' # String | Unique identifier for the Company
-assets_input = OpenapiClient::AssetsInput.new({company_id: 'company_id_abc123', name: 'Example Name', source: 'MANUAL'}) # AssetsInput | 
+assets_input = SparteraApiSdk::AssetsInput.new({company_id: 'company_id_abc123', name: 'Example Name', source: 'MANUAL'}) # AssetsInput | 
 opts = {
   page: 56, # Integer | Page number for pagination
   limit: 56, # Integer | Number of items per page
@@ -56,7 +56,7 @@ begin
   # Create a new asset
   result = api_instance.create_assets(company_id, assets_input, opts)
   p result
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling AssetsApi->create_assets: #{e}"
 end
 ```
@@ -74,7 +74,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <CreateAssetsAnalyze200Response>
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling AssetsApi->create_assets_with_http_info: #{e}"
 end
 ```
@@ -115,25 +115,25 @@ Process (analyze) an asset with dynamic rate limiting applied via decorator.
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'spartera_api_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+SparteraApiSdk.configure do |config|
   # Configure API key authorization: ApiKeyAuth
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
-api_instance = OpenapiClient::AssetsApi.new
+api_instance = SparteraApiSdk::AssetsApi.new
 asset_slug = 'asset_slug_example' # String | URL-friendly slug for the Asset
 company_handle = 'company_handle_example' # String | Human-readable handle for the Company
-assets_input = OpenapiClient::AssetsInput.new({company_id: 'company_id_abc123', name: 'Example Name', source: 'MANUAL'}) # AssetsInput | 
+assets_input = SparteraApiSdk::AssetsInput.new({company_id: 'company_id_abc123', name: 'Example Name', source: 'MANUAL'}) # AssetsInput | 
 
 begin
   # Process (analyze) an asset with dynamic rate limiting applied via decorator.
   result = api_instance.create_assets_analyze(asset_slug, company_handle, assets_input)
   p result
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling AssetsApi->create_assets_analyze: #{e}"
 end
 ```
@@ -151,7 +151,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <CreateAssetsAnalyze200Response>
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling AssetsApi->create_assets_analyze_with_http_info: #{e}"
 end
 ```
@@ -188,25 +188,25 @@ Scan a column in the asset's table to retrieve distinct values      Request Body
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'spartera_api_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+SparteraApiSdk.configure do |config|
   # Configure API key authorization: ApiKeyAuth
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
-api_instance = OpenapiClient::AssetsApi.new
+api_instance = SparteraApiSdk::AssetsApi.new
 company_id = 'company_id_example' # String | Unique identifier for the Company
 asset_id = 'asset_id_example' # String | Unique identifier for the Asset
-assets_input = OpenapiClient::AssetsInput.new({company_id: 'company_id_abc123', name: 'Example Name', source: 'MANUAL'}) # AssetsInput | 
+assets_input = SparteraApiSdk::AssetsInput.new({company_id: 'company_id_abc123', name: 'Example Name', source: 'MANUAL'}) # AssetsInput | 
 
 begin
   # Scan a column in the asset's table to retrieve distinct values      Request Body:         column (str): Column name to scan         limit (int, optional): Maximum distinct values to return (default 1000, max 5000)      Returns:         Flask Response with scan results
   result = api_instance.create_assets_scan_column(company_id, asset_id, assets_input)
   p result
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling AssetsApi->create_assets_scan_column: #{e}"
 end
 ```
@@ -224,7 +224,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <CreateAssetsAnalyze200Response>
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling AssetsApi->create_assets_scan_column_with_http_info: #{e}"
 end
 ```
@@ -261,25 +261,25 @@ POST /companies/{company_id}/assets/{asset_id}/test
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'spartera_api_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+SparteraApiSdk.configure do |config|
   # Configure API key authorization: ApiKeyAuth
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
-api_instance = OpenapiClient::AssetsApi.new
+api_instance = SparteraApiSdk::AssetsApi.new
 company_id = 'company_id_example' # String | Unique identifier for the Company
 asset_id = 'asset_id_example' # String | Unique identifier for the Asset
-assets_input = OpenapiClient::AssetsInput.new({company_id: 'company_id_abc123', name: 'Example Name', source: 'MANUAL'}) # AssetsInput | 
+assets_input = SparteraApiSdk::AssetsInput.new({company_id: 'company_id_abc123', name: 'Example Name', source: 'MANUAL'}) # AssetsInput | 
 
 begin
   # POST /companies/{company_id}/assets/{asset_id}/test
   result = api_instance.create_assets_test(company_id, asset_id, assets_input)
   p result
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling AssetsApi->create_assets_test: #{e}"
 end
 ```
@@ -297,7 +297,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <CreateAssetsAnalyze200Response>
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling AssetsApi->create_assets_test_with_http_info: #{e}"
 end
 ```
@@ -334,16 +334,16 @@ Delete single asset by ID
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'spartera_api_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+SparteraApiSdk.configure do |config|
   # Configure API key authorization: ApiKeyAuth
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
-api_instance = OpenapiClient::AssetsApi.new
+api_instance = SparteraApiSdk::AssetsApi.new
 company_id = 'company_id_example' # String | Unique identifier for the Company
 asset_id = 'asset_id_example' # String | Unique identifier for the Asset
 
@@ -351,7 +351,7 @@ begin
   # Delete single asset by ID
   result = api_instance.delete_assets(company_id, asset_id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling AssetsApi->delete_assets: #{e}"
 end
 ```
@@ -369,7 +369,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <DeleteAssets200Response>
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling AssetsApi->delete_assets_with_http_info: #{e}"
 end
 ```
@@ -405,16 +405,16 @@ Get single asset by ID
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'spartera_api_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+SparteraApiSdk.configure do |config|
   # Configure API key authorization: ApiKeyAuth
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
-api_instance = OpenapiClient::AssetsApi.new
+api_instance = SparteraApiSdk::AssetsApi.new
 company_id = 'company_id_example' # String | Unique identifier for the Company
 asset_id = 'asset_id_example' # String | Unique identifier for the Asset
 
@@ -422,7 +422,7 @@ begin
   # Get single asset by ID
   result = api_instance.get_assets_by_id(company_id, asset_id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling AssetsApi->get_assets_by_id: #{e}"
 end
 ```
@@ -440,7 +440,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <GetAssetsByIdAnalyze200Response>
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling AssetsApi->get_assets_by_id_with_http_info: #{e}"
 end
 ```
@@ -476,16 +476,16 @@ Get statistics for a specific asset (public endpoint)
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'spartera_api_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+SparteraApiSdk.configure do |config|
   # Configure API key authorization: ApiKeyAuth
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
-api_instance = OpenapiClient::AssetsApi.new
+api_instance = SparteraApiSdk::AssetsApi.new
 company_id = 'company_id_example' # String | Unique identifier for the Company
 asset_id = 'asset_id_example' # String | Unique identifier for the Asset
 
@@ -493,7 +493,7 @@ begin
   # Get statistics for a specific asset (public endpoint)
   result = api_instance.get_assets_by_id2(company_id, asset_id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling AssetsApi->get_assets_by_id2: #{e}"
 end
 ```
@@ -511,7 +511,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <GetAssetsByIdAnalyze200Response>
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling AssetsApi->get_assets_by_id2_with_http_info: #{e}"
 end
 ```
@@ -547,16 +547,16 @@ Process (analyze) an asset with dynamic rate limiting applied via decorator.
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'spartera_api_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+SparteraApiSdk.configure do |config|
   # Configure API key authorization: ApiKeyAuth
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
-api_instance = OpenapiClient::AssetsApi.new
+api_instance = SparteraApiSdk::AssetsApi.new
 asset_slug = 'asset_slug_example' # String | URL-friendly slug for the Asset
 company_handle = 'company_handle_example' # String | Human-readable handle for the Company
 
@@ -564,7 +564,7 @@ begin
   # Process (analyze) an asset with dynamic rate limiting applied via decorator.
   result = api_instance.get_assets_by_id_analyze(asset_slug, company_handle)
   p result
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling AssetsApi->get_assets_by_id_analyze: #{e}"
 end
 ```
@@ -582,7 +582,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <GetAssetsByIdAnalyze200Response>
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling AssetsApi->get_assets_by_id_analyze_with_http_info: #{e}"
 end
 ```
@@ -618,16 +618,16 @@ Get the information schema for a specific asset's table
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'spartera_api_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+SparteraApiSdk.configure do |config|
   # Configure API key authorization: ApiKeyAuth
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
-api_instance = OpenapiClient::AssetsApi.new
+api_instance = SparteraApiSdk::AssetsApi.new
 company_id = 'company_id_example' # String | Unique identifier for the Company
 asset_id = 'asset_id_example' # String | Unique identifier for the Asset
 
@@ -635,7 +635,7 @@ begin
   # Get the information schema for a specific asset's table
   result = api_instance.get_assets_by_id_infoschema(company_id, asset_id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling AssetsApi->get_assets_by_id_infoschema: #{e}"
 end
 ```
@@ -653,7 +653,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <GetAssetsByIdAnalyze200Response>
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling AssetsApi->get_assets_by_id_infoschema_with_http_info: #{e}"
 end
 ```
@@ -689,16 +689,16 @@ Retrieve and save an asset's information schema
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'spartera_api_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+SparteraApiSdk.configure do |config|
   # Configure API key authorization: ApiKeyAuth
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
-api_instance = OpenapiClient::AssetsApi.new
+api_instance = SparteraApiSdk::AssetsApi.new
 company_id = 'company_id_example' # String | Unique identifier for the Company
 asset_id = 'asset_id_example' # String | Unique identifier for the Asset
 
@@ -706,7 +706,7 @@ begin
   # Retrieve and save an asset's information schema
   result = api_instance.get_assets_by_id_infoschema_save(company_id, asset_id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling AssetsApi->get_assets_by_id_infoschema_save: #{e}"
 end
 ```
@@ -724,7 +724,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <GetAssetsByIdAnalyze200Response>
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling AssetsApi->get_assets_by_id_infoschema_save_with_http_info: #{e}"
 end
 ```
@@ -760,16 +760,16 @@ Get AI-predicted pricing for a specific asset
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'spartera_api_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+SparteraApiSdk.configure do |config|
   # Configure API key authorization: ApiKeyAuth
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
-api_instance = OpenapiClient::AssetsApi.new
+api_instance = SparteraApiSdk::AssetsApi.new
 company_id = 'company_id_example' # String | Unique identifier for the Company
 asset_id = 'asset_id_example' # String | Unique identifier for the Asset
 
@@ -777,7 +777,7 @@ begin
   # Get AI-predicted pricing for a specific asset
   result = api_instance.get_assets_by_id_predicted_price(company_id, asset_id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling AssetsApi->get_assets_by_id_predicted_price: #{e}"
 end
 ```
@@ -795,7 +795,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <GetAssetsByIdAnalyze200Response>
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling AssetsApi->get_assets_by_id_predicted_price_with_http_info: #{e}"
 end
 ```
@@ -831,23 +831,23 @@ Get statistics for all assets the user has access to
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'spartera_api_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+SparteraApiSdk.configure do |config|
   # Configure API key authorization: ApiKeyAuth
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
-api_instance = OpenapiClient::AssetsApi.new
+api_instance = SparteraApiSdk::AssetsApi.new
 company_id = 'company_id_example' # String | Unique identifier for the Company
 
 begin
   # Get statistics for all assets the user has access to
   result = api_instance.get_assets_by_id_statistics(company_id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling AssetsApi->get_assets_by_id_statistics: #{e}"
 end
 ```
@@ -865,7 +865,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <GetAssetsByIdAnalyze200Response>
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling AssetsApi->get_assets_by_id_statistics_with_http_info: #{e}"
 end
 ```
@@ -900,16 +900,16 @@ GET /companies/{company_id}/assets/{asset_id}/test
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'spartera_api_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+SparteraApiSdk.configure do |config|
   # Configure API key authorization: ApiKeyAuth
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
-api_instance = OpenapiClient::AssetsApi.new
+api_instance = SparteraApiSdk::AssetsApi.new
 company_id = 'company_id_example' # String | Unique identifier for the Company
 asset_id = 'asset_id_example' # String | Unique identifier for the Asset
 
@@ -917,7 +917,7 @@ begin
   # GET /companies/{company_id}/assets/{asset_id}/test
   result = api_instance.get_assets_by_id_test(company_id, asset_id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling AssetsApi->get_assets_by_id_test: #{e}"
 end
 ```
@@ -935,7 +935,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <GetAssetsByIdAnalyze200Response>
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling AssetsApi->get_assets_by_id_test_with_http_info: #{e}"
 end
 ```
@@ -971,16 +971,16 @@ Get all assets for a specific company
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'spartera_api_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+SparteraApiSdk.configure do |config|
   # Configure API key authorization: ApiKeyAuth
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
-api_instance = OpenapiClient::AssetsApi.new
+api_instance = SparteraApiSdk::AssetsApi.new
 company_id = 'company_id_example' # String | Unique identifier for the Company
 opts = {
   page: 56, # Integer | Page number for pagination
@@ -994,7 +994,7 @@ begin
   # Get all assets for a specific company
   result = api_instance.list_assets(company_id, opts)
   p result
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling AssetsApi->list_assets: #{e}"
 end
 ```
@@ -1012,7 +1012,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <ListAssets200Response>
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling AssetsApi->list_assets_with_http_info: #{e}"
 end
 ```
@@ -1052,16 +1052,16 @@ Search and filter assets with advanced options      Query Parameters:         q:
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'spartera_api_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+SparteraApiSdk.configure do |config|
   # Configure API key authorization: ApiKeyAuth
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
-api_instance = OpenapiClient::AssetsApi.new
+api_instance = SparteraApiSdk::AssetsApi.new
 company_id = 'company_id_example' # String | Unique identifier for the Company
 opts = {
   page: 56, # Integer | Page number for pagination
@@ -1075,7 +1075,7 @@ begin
   # Search and filter assets with advanced options      Query Parameters:         q: Search query string         category: Filter by category         sport: Filter by sport tag         sort_by: Sort field (name|recent|popular|trending)         limit: Number of results (default 20, max 100)         offset: Offset for pagination         include_recommended: Include recommendations (true/false)         include_schema: Include asset_schema in response (true/false, default false)
   result = api_instance.list_assets_search(company_id, opts)
   p result
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling AssetsApi->list_assets_search: #{e}"
 end
 ```
@@ -1093,7 +1093,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <ListAssets200Response>
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling AssetsApi->list_assets_search_with_http_info: #{e}"
 end
 ```
@@ -1133,25 +1133,25 @@ Update an existing asset by ID
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'spartera_api_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+SparteraApiSdk.configure do |config|
   # Configure API key authorization: ApiKeyAuth
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
-api_instance = OpenapiClient::AssetsApi.new
+api_instance = SparteraApiSdk::AssetsApi.new
 company_id = 'company_id_example' # String | Unique identifier for the Company
 asset_id = 'asset_id_example' # String | Unique identifier for the Asset
-assets_update = OpenapiClient::AssetsUpdate.new # AssetsUpdate | 
+assets_update = SparteraApiSdk::AssetsUpdate.new # AssetsUpdate | 
 
 begin
   # Update an existing asset by ID
   result = api_instance.update_assets(company_id, asset_id, assets_update)
   p result
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling AssetsApi->update_assets: #{e}"
 end
 ```
@@ -1169,7 +1169,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <UpdateAssets200Response>
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling AssetsApi->update_assets_with_http_info: #{e}"
 end
 ```

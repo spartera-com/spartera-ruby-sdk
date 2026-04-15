@@ -1,4 +1,4 @@
-# OpenapiClient::ListStorageEngines200Response
+# SparteraApiSdk::ListStorageEngines200Response
 
 ## Properties
 
@@ -10,9 +10,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'spartera_api_sdk'
 
-instance = OpenapiClient::ListStorageEngines200Response.new(
+instance = SparteraApiSdk::ListStorageEngines200Response.new(
   message: success,
   data: null
 )

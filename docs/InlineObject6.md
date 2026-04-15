@@ -1,4 +1,4 @@
-# OpenapiClient::InlineObject6
+# SparteraApiSdk::InlineObject6
 
 ## Properties
 
@@ -11,9 +11,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'spartera_api_sdk'
 
-instance = OpenapiClient::InlineObject6.new(
+instance = SparteraApiSdk::InlineObject6.new(
   code: 429,
   message: Rate limit exceeded,
   retry_after: 60

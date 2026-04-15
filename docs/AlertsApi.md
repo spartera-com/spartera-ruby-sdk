@@ -1,4 +1,4 @@
-# OpenapiClient::AlertsApi
+# SparteraApiSdk::AlertsApi
 
 All URIs are relative to *https://api.spartera.com*
 
@@ -23,25 +23,25 @@ POST /companies/{company_id}/users/{user_id}/alerts
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'spartera_api_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+SparteraApiSdk.configure do |config|
   # Configure API key authorization: ApiKeyAuth
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
-api_instance = OpenapiClient::AlertsApi.new
+api_instance = SparteraApiSdk::AlertsApi.new
 company_id = 'company_id_example' # String | Unique identifier for the Company
 user_id = 'user_id_example' # String | Unique identifier for the User
-alerts_input = OpenapiClient::AlertsInput.new({asset_id: 'asset_id_abc123', company_id: 'company_id_abc123'}) # AlertsInput | 
+alerts_input = SparteraApiSdk::AlertsInput.new({asset_id: 'asset_id_abc123', company_id: 'company_id_abc123'}) # AlertsInput | 
 
 begin
   # POST /companies/{company_id}/users/{user_id}/alerts
   result = api_instance.create_alerts(company_id, user_id, alerts_input)
   p result
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling AlertsApi->create_alerts: #{e}"
 end
 ```
@@ -59,7 +59,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <CreateAlerts200Response>
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling AlertsApi->create_alerts_with_http_info: #{e}"
 end
 ```
@@ -96,16 +96,16 @@ Delete single alert by ID
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'spartera_api_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+SparteraApiSdk.configure do |config|
   # Configure API key authorization: ApiKeyAuth
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
-api_instance = OpenapiClient::AlertsApi.new
+api_instance = SparteraApiSdk::AlertsApi.new
 company_id = 'company_id_example' # String | Unique identifier for the Company
 user_id = 'user_id_example' # String | Unique identifier for the User
 alert_id = 'alert_id_example' # String | Unique identifier for the Alert
@@ -114,7 +114,7 @@ begin
   # Delete single alert by ID
   result = api_instance.delete_alerts(company_id, user_id, alert_id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling AlertsApi->delete_alerts: #{e}"
 end
 ```
@@ -132,7 +132,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <DeleteAlerts200Response>
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling AlertsApi->delete_alerts_with_http_info: #{e}"
 end
 ```
@@ -169,16 +169,16 @@ Get a list of all alerts for a specific user
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'spartera_api_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+SparteraApiSdk.configure do |config|
   # Configure API key authorization: ApiKeyAuth
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
-api_instance = OpenapiClient::AlertsApi.new
+api_instance = SparteraApiSdk::AlertsApi.new
 company_id = 'company_id_example' # String | Unique identifier for the Company
 user_id = 'user_id_example' # String | Unique identifier for the User
 
@@ -186,7 +186,7 @@ begin
   # Get a list of all alerts for a specific user
   result = api_instance.get_alerts_by_id(company_id, user_id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling AlertsApi->get_alerts_by_id: #{e}"
 end
 ```
@@ -204,7 +204,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <GetAlertsById200Response>
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling AlertsApi->get_alerts_by_id_with_http_info: #{e}"
 end
 ```
@@ -240,16 +240,16 @@ Get all alerts for a specific asset
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'spartera_api_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+SparteraApiSdk.configure do |config|
   # Configure API key authorization: ApiKeyAuth
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
-api_instance = OpenapiClient::AlertsApi.new
+api_instance = SparteraApiSdk::AlertsApi.new
 company_id = 'company_id_example' # String | Unique identifier for the Company
 user_id = 'user_id_example' # String | Unique identifier for the User
 asset_id = 'asset_id_example' # String | Unique identifier for the Asset
@@ -258,7 +258,7 @@ begin
   # Get all alerts for a specific asset
   result = api_instance.get_alerts_by_id_asset_all(company_id, user_id, asset_id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling AlertsApi->get_alerts_by_id_asset_all: #{e}"
 end
 ```
@@ -276,7 +276,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <GetAlertsById200Response>
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling AlertsApi->get_alerts_by_id_asset_all_with_http_info: #{e}"
 end
 ```
@@ -313,16 +313,16 @@ Get single alert by ID
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'spartera_api_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+SparteraApiSdk.configure do |config|
   # Configure API key authorization: ApiKeyAuth
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
-api_instance = OpenapiClient::AlertsApi.new
+api_instance = SparteraApiSdk::AlertsApi.new
 company_id = 'company_id_example' # String | Unique identifier for the Company
 user_id = 'user_id_example' # String | Unique identifier for the User
 alert_id = 'alert_id_example' # String | Unique identifier for the Alert
@@ -331,7 +331,7 @@ begin
   # Get single alert by ID
   result = api_instance.get_alerts_by_id_users(company_id, user_id, alert_id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling AlertsApi->get_alerts_by_id_users: #{e}"
 end
 ```
@@ -349,7 +349,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <GetAlertsById200Response>
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling AlertsApi->get_alerts_by_id_users_with_http_info: #{e}"
 end
 ```
@@ -386,16 +386,16 @@ Get all alerts for a specific asset (by user)
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'spartera_api_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+SparteraApiSdk.configure do |config|
   # Configure API key authorization: ApiKeyAuth
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
-api_instance = OpenapiClient::AlertsApi.new
+api_instance = SparteraApiSdk::AlertsApi.new
 company_id = 'company_id_example' # String | Unique identifier for the Company
 user_id = 'user_id_example' # String | Unique identifier for the User
 asset_id = 'asset_id_example' # String | Unique identifier for the Asset
@@ -404,7 +404,7 @@ begin
   # Get all alerts for a specific asset (by user)
   result = api_instance.get_alerts_by_id_users_asset(company_id, user_id, asset_id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling AlertsApi->get_alerts_by_id_users_asset: #{e}"
 end
 ```
@@ -422,7 +422,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <GetAlertsById200Response>
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling AlertsApi->get_alerts_by_id_users_asset_with_http_info: #{e}"
 end
 ```
@@ -459,26 +459,26 @@ Update an existing alert by ID
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'spartera_api_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+SparteraApiSdk.configure do |config|
   # Configure API key authorization: ApiKeyAuth
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
-api_instance = OpenapiClient::AlertsApi.new
+api_instance = SparteraApiSdk::AlertsApi.new
 company_id = 'company_id_example' # String | Unique identifier for the Company
 user_id = 'user_id_example' # String | Unique identifier for the User
 alert_id = 'alert_id_example' # String | Unique identifier for the Alert
-alerts_update = OpenapiClient::AlertsUpdate.new # AlertsUpdate | 
+alerts_update = SparteraApiSdk::AlertsUpdate.new # AlertsUpdate | 
 
 begin
   # Update an existing alert by ID
   result = api_instance.update_alerts(company_id, user_id, alert_id, alerts_update)
   p result
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling AlertsApi->update_alerts: #{e}"
 end
 ```
@@ -496,7 +496,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <UpdateAlerts200Response>
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling AlertsApi->update_alerts_with_http_info: #{e}"
 end
 ```

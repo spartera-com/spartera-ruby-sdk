@@ -1,4 +1,4 @@
-# OpenapiClient::CreateAlerts200ResponseData
+# SparteraApiSdk::CreateAlerts200ResponseData
 
 ## Properties
 
@@ -9,9 +9,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'spartera_api_sdk'
 
-instance = OpenapiClient::CreateAlerts200ResponseData.new(
+instance = SparteraApiSdk::CreateAlerts200ResponseData.new(
   alert_id: null
 )
 ```

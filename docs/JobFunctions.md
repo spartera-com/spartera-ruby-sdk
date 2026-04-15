@@ -1,4 +1,4 @@
-# OpenapiClient::JobFunctions
+# SparteraApiSdk::JobFunctions
 
 ## Properties
 
@@ -12,9 +12,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'spartera_api_sdk'
 
-instance = OpenapiClient::JobFunctions.new(
+instance = SparteraApiSdk::JobFunctions.new(
   date_created: 2025-04-01T00:00:00Z,
   last_updated: 2025-04-01T00:00:00Z,
   function_id: 1,

@@ -1,4 +1,4 @@
-# OpenapiClient::AssetsInput
+# SparteraApiSdk::AssetsInput
 
 ## Properties
 
@@ -62,9 +62,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'spartera_api_sdk'
 
-instance = OpenapiClient::AssetsInput.new(
+instance = SparteraApiSdk::AssetsInput.new(
   user_id: user_id_abc123,
   company_id: company_id_abc123,
   connection_id: connection_id_abc123,

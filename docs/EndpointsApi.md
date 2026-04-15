@@ -1,4 +1,4 @@
-# OpenapiClient::EndpointsApi
+# SparteraApiSdk::EndpointsApi
 
 All URIs are relative to *https://api.spartera.com*
 
@@ -30,18 +30,18 @@ Create a new endpoint
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'spartera_api_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+SparteraApiSdk.configure do |config|
   # Configure API key authorization: ApiKeyAuth
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
-api_instance = OpenapiClient::EndpointsApi.new
+api_instance = SparteraApiSdk::EndpointsApi.new
 company_id = 'company_id_example' # String | Unique identifier for the Company
-endpoints_input = OpenapiClient::EndpointsInput.new({company_id: 'company_id_abc123', connection_id: 'connection_id_abc123', name: 'Example Name'}) # EndpointsInput | 
+endpoints_input = SparteraApiSdk::EndpointsInput.new({company_id: 'company_id_abc123', connection_id: 'connection_id_abc123', name: 'Example Name'}) # EndpointsInput | 
 opts = {
   page: 56, # Integer | Page number for pagination
   limit: 56, # Integer | Number of items per page
@@ -54,7 +54,7 @@ begin
   # Create a new endpoint
   result = api_instance.create_endpoints(company_id, endpoints_input, opts)
   p result
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling EndpointsApi->create_endpoints: #{e}"
 end
 ```
@@ -72,7 +72,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <CreateEndpoints200Response>
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling EndpointsApi->create_endpoints_with_http_info: #{e}"
 end
 ```
@@ -113,25 +113,25 @@ POST /companies/{company_id}/endpoints/{endpoint_id}/keys
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'spartera_api_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+SparteraApiSdk.configure do |config|
   # Configure API key authorization: ApiKeyAuth
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
-api_instance = OpenapiClient::EndpointsApi.new
+api_instance = SparteraApiSdk::EndpointsApi.new
 company_id = 'company_id_example' # String | Unique identifier for the Company
 endpoint_id = 'endpoint_id_example' # String | Unique identifier for the Endpoint
-endpoints_input = OpenapiClient::EndpointsInput.new({company_id: 'company_id_abc123', connection_id: 'connection_id_abc123', name: 'Example Name'}) # EndpointsInput | 
+endpoints_input = SparteraApiSdk::EndpointsInput.new({company_id: 'company_id_abc123', connection_id: 'connection_id_abc123', name: 'Example Name'}) # EndpointsInput | 
 
 begin
   # POST /companies/{company_id}/endpoints/{endpoint_id}/keys
   result = api_instance.create_endpoints_keys(company_id, endpoint_id, endpoints_input)
   p result
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling EndpointsApi->create_endpoints_keys: #{e}"
 end
 ```
@@ -149,7 +149,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <CreateEndpoints200Response>
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling EndpointsApi->create_endpoints_keys_with_http_info: #{e}"
 end
 ```
@@ -186,16 +186,16 @@ Delete single endpoint by ID
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'spartera_api_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+SparteraApiSdk.configure do |config|
   # Configure API key authorization: ApiKeyAuth
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
-api_instance = OpenapiClient::EndpointsApi.new
+api_instance = SparteraApiSdk::EndpointsApi.new
 company_id = 'company_id_example' # String | Unique identifier for the Company
 endpoint_id = 'endpoint_id_example' # String | Unique identifier for the Endpoint
 
@@ -203,7 +203,7 @@ begin
   # Delete single endpoint by ID
   result = api_instance.delete_endpoints(company_id, endpoint_id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling EndpointsApi->delete_endpoints: #{e}"
 end
 ```
@@ -221,7 +221,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <DeleteEndpoints200Response>
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling EndpointsApi->delete_endpoints_with_http_info: #{e}"
 end
 ```
@@ -257,16 +257,16 @@ DELETE /companies/{company_id}/endpoints/{endpoint_id}/keys/{api_key_id}
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'spartera_api_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+SparteraApiSdk.configure do |config|
   # Configure API key authorization: ApiKeyAuth
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
-api_instance = OpenapiClient::EndpointsApi.new
+api_instance = SparteraApiSdk::EndpointsApi.new
 company_id = 'company_id_example' # String | Unique identifier for the Company
 endpoint_id = 'endpoint_id_example' # String | Unique identifier for the Endpoint
 api_key_id = 'api_key_id_example' # String | Unique identifier for the Api Key
@@ -275,7 +275,7 @@ begin
   # DELETE /companies/{company_id}/endpoints/{endpoint_id}/keys/{api_key_id}
   result = api_instance.delete_endpoints_keys(company_id, endpoint_id, api_key_id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling EndpointsApi->delete_endpoints_keys: #{e}"
 end
 ```
@@ -293,7 +293,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <DeleteEndpoints200Response>
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling EndpointsApi->delete_endpoints_keys_with_http_info: #{e}"
 end
 ```
@@ -330,16 +330,16 @@ Get single endpoint by ID
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'spartera_api_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+SparteraApiSdk.configure do |config|
   # Configure API key authorization: ApiKeyAuth
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
-api_instance = OpenapiClient::EndpointsApi.new
+api_instance = SparteraApiSdk::EndpointsApi.new
 company_id = 'company_id_example' # String | Unique identifier for the Company
 endpoint_id = 'endpoint_id_example' # String | Unique identifier for the Endpoint
 
@@ -347,7 +347,7 @@ begin
   # Get single endpoint by ID
   result = api_instance.get_endpoints_by_id(company_id, endpoint_id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling EndpointsApi->get_endpoints_by_id: #{e}"
 end
 ```
@@ -365,7 +365,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <GetEndpointsByIdConnectionsDescribe200Response>
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling EndpointsApi->get_endpoints_by_id_with_http_info: #{e}"
 end
 ```
@@ -401,16 +401,16 @@ GET /companies/{company_id}/endpoints/{endpoint_id}/available-endpoints
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'spartera_api_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+SparteraApiSdk.configure do |config|
   # Configure API key authorization: ApiKeyAuth
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
-api_instance = OpenapiClient::EndpointsApi.new
+api_instance = SparteraApiSdk::EndpointsApi.new
 company_id = 'company_id_example' # String | Unique identifier for the Company
 endpoint_id = 'endpoint_id_example' # String | Unique identifier for the Endpoint
 
@@ -418,7 +418,7 @@ begin
   # GET /companies/{company_id}/endpoints/{endpoint_id}/available-endpoints
   result = api_instance.get_endpoints_by_id_available_endpoints(company_id, endpoint_id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling EndpointsApi->get_endpoints_by_id_available_endpoints: #{e}"
 end
 ```
@@ -436,7 +436,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <GetEndpointsByIdConnectionsDescribe200Response>
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling EndpointsApi->get_endpoints_by_id_available_endpoints_with_http_info: #{e}"
 end
 ```
@@ -472,16 +472,16 @@ Get schema information for a connection      Query parameters:         include_f
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'spartera_api_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+SparteraApiSdk.configure do |config|
   # Configure API key authorization: ApiKeyAuth
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
-api_instance = OpenapiClient::EndpointsApi.new
+api_instance = SparteraApiSdk::EndpointsApi.new
 company_id = 'company_id_example' # String | Unique identifier for the Company
 connection_id = 'connection_id_example' # String | Unique identifier for the Connection
 
@@ -489,7 +489,7 @@ begin
   # Get schema information for a connection      Query parameters:         include_fields: Whether to include field information (default: true)         schemas: Optional comma-separated schemas to include         tables: Optional comma-separated tables to include
   result = api_instance.get_endpoints_by_id_connections_describe(company_id, connection_id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling EndpointsApi->get_endpoints_by_id_connections_describe: #{e}"
 end
 ```
@@ -507,7 +507,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <GetEndpointsByIdConnectionsDescribe200Response>
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling EndpointsApi->get_endpoints_by_id_connections_describe_with_http_info: #{e}"
 end
 ```
@@ -543,16 +543,16 @@ Execute an endpoint with pagination support.      Customer-facing route that ret
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'spartera_api_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+SparteraApiSdk.configure do |config|
   # Configure API key authorization: ApiKeyAuth
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
-api_instance = OpenapiClient::EndpointsApi.new
+api_instance = SparteraApiSdk::EndpointsApi.new
 company_id = 'company_id_example' # String | Unique identifier for the Company
 endpoint_id = 'endpoint_id_example' # String | Unique identifier for the Endpoint
 
@@ -560,7 +560,7 @@ begin
   # Execute an endpoint with pagination support.      Customer-facing route that returns paginated data.     Query params: ?start=0&limit=100
   result = api_instance.get_endpoints_by_id_execute(company_id, endpoint_id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling EndpointsApi->get_endpoints_by_id_execute: #{e}"
 end
 ```
@@ -578,7 +578,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <GetEndpointsByIdConnectionsDescribe200Response>
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling EndpointsApi->get_endpoints_by_id_execute_with_http_info: #{e}"
 end
 ```
@@ -614,16 +614,16 @@ GET /companies/{company_id}/endpoints/{endpoint_id}/keys
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'spartera_api_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+SparteraApiSdk.configure do |config|
   # Configure API key authorization: ApiKeyAuth
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
-api_instance = OpenapiClient::EndpointsApi.new
+api_instance = SparteraApiSdk::EndpointsApi.new
 company_id = 'company_id_example' # String | Unique identifier for the Company
 endpoint_id = 'endpoint_id_example' # String | Unique identifier for the Endpoint
 
@@ -631,7 +631,7 @@ begin
   # GET /companies/{company_id}/endpoints/{endpoint_id}/keys
   result = api_instance.get_endpoints_by_id_keys(company_id, endpoint_id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling EndpointsApi->get_endpoints_by_id_keys: #{e}"
 end
 ```
@@ -649,7 +649,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <GetEndpointsByIdConnectionsDescribe200Response>
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling EndpointsApi->get_endpoints_by_id_keys_with_http_info: #{e}"
 end
 ```
@@ -685,16 +685,16 @@ Get usage statistics for an endpoint      Query parameters:         days: Number
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'spartera_api_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+SparteraApiSdk.configure do |config|
   # Configure API key authorization: ApiKeyAuth
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
-api_instance = OpenapiClient::EndpointsApi.new
+api_instance = SparteraApiSdk::EndpointsApi.new
 company_id = 'company_id_example' # String | Unique identifier for the Company
 endpoint_id = 'endpoint_id_example' # String | Unique identifier for the Endpoint
 
@@ -702,7 +702,7 @@ begin
   # Get usage statistics for an endpoint      Query parameters:         days: Number of days to analyze (default: 30)
   result = api_instance.get_endpoints_by_id_stats(company_id, endpoint_id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling EndpointsApi->get_endpoints_by_id_stats: #{e}"
 end
 ```
@@ -720,7 +720,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <GetEndpointsByIdConnectionsDescribe200Response>
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling EndpointsApi->get_endpoints_by_id_stats_with_http_info: #{e}"
 end
 ```
@@ -756,16 +756,16 @@ Test an endpoint with sample data      Request body (optional):         limit: N
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'spartera_api_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+SparteraApiSdk.configure do |config|
   # Configure API key authorization: ApiKeyAuth
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
-api_instance = OpenapiClient::EndpointsApi.new
+api_instance = SparteraApiSdk::EndpointsApi.new
 company_id = 'company_id_example' # String | Unique identifier for the Company
 endpoint_id = 'endpoint_id_example' # String | Unique identifier for the Endpoint
 
@@ -773,7 +773,7 @@ begin
   # Test an endpoint with sample data      Request body (optional):         limit: Number of sample rows to return (default: 10)
   result = api_instance.get_endpoints_by_id_test(company_id, endpoint_id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling EndpointsApi->get_endpoints_by_id_test: #{e}"
 end
 ```
@@ -791,7 +791,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <GetEndpointsByIdConnectionsDescribe200Response>
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling EndpointsApi->get_endpoints_by_id_test_with_http_info: #{e}"
 end
 ```
@@ -827,16 +827,16 @@ GET /companies/{company_id}/endpoints/{endpoint_id}/url
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'spartera_api_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+SparteraApiSdk.configure do |config|
   # Configure API key authorization: ApiKeyAuth
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
-api_instance = OpenapiClient::EndpointsApi.new
+api_instance = SparteraApiSdk::EndpointsApi.new
 company_id = 'company_id_example' # String | Unique identifier for the Company
 endpoint_id = 'endpoint_id_example' # String | Unique identifier for the Endpoint
 
@@ -844,7 +844,7 @@ begin
   # GET /companies/{company_id}/endpoints/{endpoint_id}/url
   result = api_instance.get_endpoints_by_id_url(company_id, endpoint_id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling EndpointsApi->get_endpoints_by_id_url: #{e}"
 end
 ```
@@ -862,7 +862,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <GetEndpointsByIdConnectionsDescribe200Response>
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling EndpointsApi->get_endpoints_by_id_url_with_http_info: #{e}"
 end
 ```
@@ -898,16 +898,16 @@ Get all endpoints for a specific company with pagination, filtering, and sorting
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'spartera_api_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+SparteraApiSdk.configure do |config|
   # Configure API key authorization: ApiKeyAuth
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
-api_instance = OpenapiClient::EndpointsApi.new
+api_instance = SparteraApiSdk::EndpointsApi.new
 company_id = 'company_id_example' # String | Unique identifier for the Company
 opts = {
   page: 56, # Integer | Page number for pagination
@@ -921,7 +921,7 @@ begin
   # Get all endpoints for a specific company with pagination, filtering, and sorting
   result = api_instance.list_endpoints(company_id, opts)
   p result
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling EndpointsApi->list_endpoints: #{e}"
 end
 ```
@@ -939,7 +939,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <ListEndpoints200Response>
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling EndpointsApi->list_endpoints_with_http_info: #{e}"
 end
 ```
@@ -979,25 +979,25 @@ Update an existing endpoint by ID
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'spartera_api_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+SparteraApiSdk.configure do |config|
   # Configure API key authorization: ApiKeyAuth
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
-api_instance = OpenapiClient::EndpointsApi.new
+api_instance = SparteraApiSdk::EndpointsApi.new
 company_id = 'company_id_example' # String | Unique identifier for the Company
 endpoint_id = 'endpoint_id_example' # String | Unique identifier for the Endpoint
-endpoints_update = OpenapiClient::EndpointsUpdate.new # EndpointsUpdate | 
+endpoints_update = SparteraApiSdk::EndpointsUpdate.new # EndpointsUpdate | 
 
 begin
   # Update an existing endpoint by ID
   result = api_instance.update_endpoints(company_id, endpoint_id, endpoints_update)
   p result
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling EndpointsApi->update_endpoints: #{e}"
 end
 ```
@@ -1015,7 +1015,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <UpdateEndpoints200Response>
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling EndpointsApi->update_endpoints_with_http_info: #{e}"
 end
 ```

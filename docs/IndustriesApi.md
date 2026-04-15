@@ -1,4 +1,4 @@
-# OpenapiClient::IndustriesApi
+# SparteraApiSdk::IndustriesApi
 
 All URIs are relative to *https://api.spartera.com*
 
@@ -19,23 +19,23 @@ Get single industry by ID
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'spartera_api_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+SparteraApiSdk.configure do |config|
   # Configure API key authorization: ApiKeyAuth
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
-api_instance = OpenapiClient::IndustriesApi.new
+api_instance = SparteraApiSdk::IndustriesApi.new
 industry_id = 'industry_id_example' # String | Unique identifier for the Industry
 
 begin
   # Get single industry by ID
   result = api_instance.get_industries_by_id(industry_id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling IndustriesApi->get_industries_by_id: #{e}"
 end
 ```
@@ -53,7 +53,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <GetIndustriesById200Response>
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling IndustriesApi->get_industries_by_id_with_http_info: #{e}"
 end
 ```
@@ -88,16 +88,16 @@ Get a list of all industries
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'spartera_api_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+SparteraApiSdk.configure do |config|
   # Configure API key authorization: ApiKeyAuth
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
-api_instance = OpenapiClient::IndustriesApi.new
+api_instance = SparteraApiSdk::IndustriesApi.new
 opts = {
   page: 56, # Integer | Page number for pagination
   limit: 56, # Integer | Number of items per page
@@ -110,7 +110,7 @@ begin
   # Get a list of all industries
   result = api_instance.list_industries(opts)
   p result
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling IndustriesApi->list_industries: #{e}"
 end
 ```
@@ -128,7 +128,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <ListIndustries200Response>
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling IndustriesApi->list_industries_with_http_info: #{e}"
 end
 ```
@@ -167,16 +167,16 @@ Get a list of industries that have active marketplace products
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'spartera_api_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+SparteraApiSdk.configure do |config|
   # Configure API key authorization: ApiKeyAuth
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
-api_instance = OpenapiClient::IndustriesApi.new
+api_instance = SparteraApiSdk::IndustriesApi.new
 opts = {
   page: 56, # Integer | Page number for pagination
   limit: 56, # Integer | Number of items per page
@@ -189,7 +189,7 @@ begin
   # Get a list of industries that have active marketplace products
   result = api_instance.list_industries_active(opts)
   p result
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling IndustriesApi->list_industries_active: #{e}"
 end
 ```
@@ -207,7 +207,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <ListIndustries200Response>
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling IndustriesApi->list_industries_active_with_http_info: #{e}"
 end
 ```

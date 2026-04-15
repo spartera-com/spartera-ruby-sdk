@@ -1,4 +1,4 @@
-# OpenapiClient::APIKeysApi
+# SparteraApiSdk::APIKeysApi
 
 All URIs are relative to *https://api.spartera.com*
 
@@ -23,18 +23,18 @@ Create single API key.     Returns the actual sk_ key (only time it's exposed) a
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'spartera_api_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+SparteraApiSdk.configure do |config|
   # Configure API key authorization: ApiKeyAuth
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
-api_instance = OpenapiClient::APIKeysApi.new
+api_instance = SparteraApiSdk::APIKeysApi.new
 company_id = 'company_id_example' # String | Unique identifier for the Company
-api_keys_input = OpenapiClient::ApiKeysInput.new({company_id: 'company_id_abc123', role_id: 1}) # ApiKeysInput | 
+api_keys_input = SparteraApiSdk::ApiKeysInput.new({company_id: 'company_id_abc123', role_id: 1}) # ApiKeysInput | 
 opts = {
   page: 56, # Integer | Page number for pagination
   limit: 56, # Integer | Number of items per page
@@ -47,7 +47,7 @@ begin
   # Create single API key.     Returns the actual sk_ key (only time it's exposed) and api_key_id for future operations.
   result = api_instance.create_api_keys(company_id, api_keys_input, opts)
   p result
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling APIKeysApi->create_api_keys: #{e}"
 end
 ```
@@ -65,7 +65,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <CreateApiKeys200Response>
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling APIKeysApi->create_api_keys_with_http_info: #{e}"
 end
 ```
@@ -106,25 +106,25 @@ Explicitly revoke an API key with reason tracking.     This is different from de
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'spartera_api_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+SparteraApiSdk.configure do |config|
   # Configure API key authorization: ApiKeyAuth
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
-api_instance = OpenapiClient::APIKeysApi.new
+api_instance = SparteraApiSdk::APIKeysApi.new
 company_id = 'company_id_example' # String | Unique identifier for the Company
 api_key_id = 'api_key_id_example' # String | Unique identifier for the Api Key
-api_keys_input = OpenapiClient::ApiKeysInput.new({company_id: 'company_id_abc123', role_id: 1}) # ApiKeysInput | 
+api_keys_input = SparteraApiSdk::ApiKeysInput.new({company_id: 'company_id_abc123', role_id: 1}) # ApiKeysInput | 
 
 begin
   # Explicitly revoke an API key with reason tracking.     This is different from delete as it includes revocation metadata.
   result = api_instance.create_api_keys_api_keys_revoke(company_id, api_key_id, api_keys_input)
   p result
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling APIKeysApi->create_api_keys_api_keys_revoke: #{e}"
 end
 ```
@@ -142,7 +142,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <CreateApiKeys200Response>
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling APIKeysApi->create_api_keys_api_keys_revoke_with_http_info: #{e}"
 end
 ```
@@ -179,16 +179,16 @@ Delete (deactivate) single API key by api_key_id.     Uses the api_key_id return
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'spartera_api_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+SparteraApiSdk.configure do |config|
   # Configure API key authorization: ApiKeyAuth
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
-api_instance = OpenapiClient::APIKeysApi.new
+api_instance = SparteraApiSdk::APIKeysApi.new
 company_id = 'company_id_example' # String | Unique identifier for the Company
 api_key_id = 'api_key_id_example' # String | Unique identifier for the Api Key
 
@@ -196,7 +196,7 @@ begin
   # Delete (deactivate) single API key by api_key_id.     Uses the api_key_id returned during creation for clean identification.     Fixed to use correct primary key lookup.
   result = api_instance.delete_api_keys(company_id, api_key_id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling APIKeysApi->delete_api_keys: #{e}"
 end
 ```
@@ -214,7 +214,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <DeleteApiKeys200Response>
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling APIKeysApi->delete_api_keys_with_http_info: #{e}"
 end
 ```
@@ -250,16 +250,16 @@ Get single API key by ID.     Returns masked API key for security (sk_****1234).
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'spartera_api_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+SparteraApiSdk.configure do |config|
   # Configure API key authorization: ApiKeyAuth
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
-api_instance = OpenapiClient::APIKeysApi.new
+api_instance = SparteraApiSdk::APIKeysApi.new
 company_id = 'company_id_example' # String | Unique identifier for the Company
 api_key_id = 'api_key_id_example' # String | Unique identifier for the Api Key
 
@@ -267,7 +267,7 @@ begin
   # Get single API key by ID.     Returns masked API key for security (sk_****1234).
   result = api_instance.get_api_keys_by_id(company_id, api_key_id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling APIKeysApi->get_api_keys_by_id: #{e}"
 end
 ```
@@ -285,7 +285,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <GetApiKeysById200Response>
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling APIKeysApi->get_api_keys_by_id_with_http_info: #{e}"
 end
 ```
@@ -321,16 +321,16 @@ Get usage statistics for a specific API key.     Returns usage count, last used 
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'spartera_api_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+SparteraApiSdk.configure do |config|
   # Configure API key authorization: ApiKeyAuth
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
-api_instance = OpenapiClient::APIKeysApi.new
+api_instance = SparteraApiSdk::APIKeysApi.new
 company_id = 'company_id_example' # String | Unique identifier for the Company
 api_key_id = 'api_key_id_example' # String | Unique identifier for the Api Key
 
@@ -338,7 +338,7 @@ begin
   # Get usage statistics for a specific API key.     Returns usage count, last used date, failed attempts, etc.
   result = api_instance.get_api_keys_by_id_api_keys_stats(company_id, api_key_id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling APIKeysApi->get_api_keys_by_id_api_keys_stats: #{e}"
 end
 ```
@@ -356,7 +356,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <GetApiKeysById200Response>
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling APIKeysApi->get_api_keys_by_id_api_keys_stats_with_http_info: #{e}"
 end
 ```
@@ -392,16 +392,16 @@ Get all API keys for a company.     Returns masked API keys for security (sk_***
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'spartera_api_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+SparteraApiSdk.configure do |config|
   # Configure API key authorization: ApiKeyAuth
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
-api_instance = OpenapiClient::APIKeysApi.new
+api_instance = SparteraApiSdk::APIKeysApi.new
 company_id = 'company_id_example' # String | Unique identifier for the Company
 opts = {
   page: 56, # Integer | Page number for pagination
@@ -415,7 +415,7 @@ begin
   # Get all API keys for a company.     Returns masked API keys for security (sk_****1234).
   result = api_instance.list_api_keys(company_id, opts)
   p result
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling APIKeysApi->list_api_keys: #{e}"
 end
 ```
@@ -433,7 +433,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <ListApiKeys200Response>
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling APIKeysApi->list_api_keys_with_http_info: #{e}"
 end
 ```
@@ -473,25 +473,25 @@ Update an existing API key by ID.     Can update metadata like name, expiration,
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'spartera_api_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+SparteraApiSdk.configure do |config|
   # Configure API key authorization: ApiKeyAuth
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
-api_instance = OpenapiClient::APIKeysApi.new
+api_instance = SparteraApiSdk::APIKeysApi.new
 company_id = 'company_id_example' # String | Unique identifier for the Company
 api_key_id = 'api_key_id_example' # String | Unique identifier for the Api Key
-api_keys_update = OpenapiClient::ApiKeysUpdate.new # ApiKeysUpdate | 
+api_keys_update = SparteraApiSdk::ApiKeysUpdate.new # ApiKeysUpdate | 
 
 begin
   # Update an existing API key by ID.     Can update metadata like name, expiration, rate limits, etc.     Cannot update the actual key value (for security).
   result = api_instance.update_api_keys(company_id, api_key_id, api_keys_update)
   p result
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling APIKeysApi->update_api_keys: #{e}"
 end
 ```
@@ -509,7 +509,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <UpdateApiKeys200Response>
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling APIKeysApi->update_api_keys_with_http_info: #{e}"
 end
 ```

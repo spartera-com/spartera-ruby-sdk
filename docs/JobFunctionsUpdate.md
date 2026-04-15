@@ -1,4 +1,4 @@
-# OpenapiClient::JobFunctionsUpdate
+# SparteraApiSdk::JobFunctionsUpdate
 
 ## Properties
 
@@ -9,9 +9,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'spartera_api_sdk'
 
-instance = OpenapiClient::JobFunctionsUpdate.new(
+instance = SparteraApiSdk::JobFunctionsUpdate.new(
   name: Example Name
 )
 ```

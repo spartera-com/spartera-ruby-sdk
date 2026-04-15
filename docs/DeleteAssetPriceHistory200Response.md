@@ -1,4 +1,4 @@
-# OpenapiClient::DeleteAssetPriceHistory200Response
+# SparteraApiSdk::DeleteAssetPriceHistory200Response
 
 ## Properties
 
@@ -10,9 +10,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'spartera_api_sdk'
 
-instance = OpenapiClient::DeleteAssetPriceHistory200Response.new(
+instance = SparteraApiSdk::DeleteAssetPriceHistory200Response.new(
   message: success,
   data: null
 )

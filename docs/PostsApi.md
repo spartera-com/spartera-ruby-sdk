@@ -1,4 +1,4 @@
-# OpenapiClient::PostsApi
+# SparteraApiSdk::PostsApi
 
 All URIs are relative to *https://api.spartera.com*
 
@@ -27,18 +27,18 @@ POST /companies/{company_id}/posts
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'spartera_api_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+SparteraApiSdk.configure do |config|
   # Configure API key authorization: ApiKeyAuth
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
-api_instance = OpenapiClient::PostsApi.new
+api_instance = SparteraApiSdk::PostsApi.new
 company_id = 'company_id_example' # String | Unique identifier for the Company
-posts_input = OpenapiClient::PostsInput.new({user_id: 'user_id_abc123', company_id: 'company_id_abc123', title: 'example_value', content_html: 'example_value'}) # PostsInput | 
+posts_input = SparteraApiSdk::PostsInput.new({user_id: 'user_id_abc123', company_id: 'company_id_abc123', title: 'example_value', content_html: 'example_value'}) # PostsInput | 
 opts = {
   page: 56, # Integer | Page number for pagination
   limit: 56, # Integer | Number of items per page
@@ -51,7 +51,7 @@ begin
   # POST /companies/{company_id}/posts
   result = api_instance.create_posts(company_id, posts_input, opts)
   p result
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling PostsApi->create_posts: #{e}"
 end
 ```
@@ -69,7 +69,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <CreatePosts200Response>
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling PostsApi->create_posts_with_http_info: #{e}"
 end
 ```
@@ -110,26 +110,26 @@ Publish a post to an external platform via an integration.      Args:         po
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'spartera_api_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+SparteraApiSdk.configure do |config|
   # Configure API key authorization: ApiKeyAuth
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
-api_instance = OpenapiClient::PostsApi.new
+api_instance = SparteraApiSdk::PostsApi.new
 company_id = 'company_id_example' # String | Unique identifier for the Company
 post_id = 'post_id_example' # String | Unique identifier for the Post
 integration_id = 'integration_id_example' # String | Unique identifier for the Integration
-posts_input = OpenapiClient::PostsInput.new({user_id: 'user_id_abc123', company_id: 'company_id_abc123', title: 'example_value', content_html: 'example_value'}) # PostsInput | 
+posts_input = SparteraApiSdk::PostsInput.new({user_id: 'user_id_abc123', company_id: 'company_id_abc123', title: 'example_value', content_html: 'example_value'}) # PostsInput | 
 
 begin
   # Publish a post to an external platform via an integration.      Args:         post_id: ID of the post to publish         integration_id: ID of the integration to use (from postgen_integrations)      Returns:         Publication record with external_url and external_post_id
   result = api_instance.create_posts2(company_id, post_id, integration_id, posts_input)
   p result
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling PostsApi->create_posts2: #{e}"
 end
 ```
@@ -147,7 +147,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <CreatePosts200Response>
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling PostsApi->create_posts2_with_http_info: #{e}"
 end
 ```
@@ -185,25 +185,25 @@ Publish a post (make it publicly visible).
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'spartera_api_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+SparteraApiSdk.configure do |config|
   # Configure API key authorization: ApiKeyAuth
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
-api_instance = OpenapiClient::PostsApi.new
+api_instance = SparteraApiSdk::PostsApi.new
 company_id = 'company_id_example' # String | Unique identifier for the Company
 post_id = 'post_id_example' # String | Unique identifier for the Post
-posts_input = OpenapiClient::PostsInput.new({user_id: 'user_id_abc123', company_id: 'company_id_abc123', title: 'example_value', content_html: 'example_value'}) # PostsInput | 
+posts_input = SparteraApiSdk::PostsInput.new({user_id: 'user_id_abc123', company_id: 'company_id_abc123', title: 'example_value', content_html: 'example_value'}) # PostsInput | 
 
 begin
   # Publish a post (make it publicly visible).
   result = api_instance.create_posts_publish(company_id, post_id, posts_input)
   p result
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling PostsApi->create_posts_publish: #{e}"
 end
 ```
@@ -221,7 +221,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <CreatePosts200Response>
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling PostsApi->create_posts_publish_with_http_info: #{e}"
 end
 ```
@@ -258,25 +258,25 @@ Unpublish a post (make it private/draft again).
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'spartera_api_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+SparteraApiSdk.configure do |config|
   # Configure API key authorization: ApiKeyAuth
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
-api_instance = OpenapiClient::PostsApi.new
+api_instance = SparteraApiSdk::PostsApi.new
 company_id = 'company_id_example' # String | Unique identifier for the Company
 post_id = 'post_id_example' # String | Unique identifier for the Post
-posts_input = OpenapiClient::PostsInput.new({user_id: 'user_id_abc123', company_id: 'company_id_abc123', title: 'example_value', content_html: 'example_value'}) # PostsInput | 
+posts_input = SparteraApiSdk::PostsInput.new({user_id: 'user_id_abc123', company_id: 'company_id_abc123', title: 'example_value', content_html: 'example_value'}) # PostsInput | 
 
 begin
   # Unpublish a post (make it private/draft again).
   result = api_instance.create_posts_unpublish(company_id, post_id, posts_input)
   p result
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling PostsApi->create_posts_unpublish: #{e}"
 end
 ```
@@ -294,7 +294,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <CreatePosts200Response>
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling PostsApi->create_posts_unpublish_with_http_info: #{e}"
 end
 ```
@@ -331,25 +331,25 @@ Increment view count for a post.     Public endpoint (no authentication required
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'spartera_api_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+SparteraApiSdk.configure do |config|
   # Configure API key authorization: ApiKeyAuth
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
-api_instance = OpenapiClient::PostsApi.new
+api_instance = SparteraApiSdk::PostsApi.new
 company_id = 'company_id_example' # String | Unique identifier for the Company
 post_id = 'post_id_example' # String | Unique identifier for the Post
-posts_input = OpenapiClient::PostsInput.new({user_id: 'user_id_abc123', company_id: 'company_id_abc123', title: 'example_value', content_html: 'example_value'}) # PostsInput | 
+posts_input = SparteraApiSdk::PostsInput.new({user_id: 'user_id_abc123', company_id: 'company_id_abc123', title: 'example_value', content_html: 'example_value'}) # PostsInput | 
 
 begin
   # Increment view count for a post.     Public endpoint (no authentication required).
   result = api_instance.create_posts_view(company_id, post_id, posts_input)
   p result
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling PostsApi->create_posts_view: #{e}"
 end
 ```
@@ -367,7 +367,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <CreatePosts200Response>
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling PostsApi->create_posts_view_with_http_info: #{e}"
 end
 ```
@@ -404,16 +404,16 @@ Delete single post by ID.
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'spartera_api_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+SparteraApiSdk.configure do |config|
   # Configure API key authorization: ApiKeyAuth
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
-api_instance = OpenapiClient::PostsApi.new
+api_instance = SparteraApiSdk::PostsApi.new
 company_id = 'company_id_example' # String | Unique identifier for the Company
 post_id = 'post_id_example' # String | Unique identifier for the Post
 
@@ -421,7 +421,7 @@ begin
   # Delete single post by ID.
   result = api_instance.delete_posts(company_id, post_id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling PostsApi->delete_posts: #{e}"
 end
 ```
@@ -439,7 +439,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <DeletePosts200Response>
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling PostsApi->delete_posts_with_http_info: #{e}"
 end
 ```
@@ -475,16 +475,16 @@ Get single post by ID.
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'spartera_api_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+SparteraApiSdk.configure do |config|
   # Configure API key authorization: ApiKeyAuth
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
-api_instance = OpenapiClient::PostsApi.new
+api_instance = SparteraApiSdk::PostsApi.new
 company_id = 'company_id_example' # String | Unique identifier for the Company
 post_id = 'post_id_example' # String | Unique identifier for the Post
 
@@ -492,7 +492,7 @@ begin
   # Get single post by ID.
   result = api_instance.get_posts_by_id(company_id, post_id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling PostsApi->get_posts_by_id: #{e}"
 end
 ```
@@ -510,7 +510,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <GetPostsById200Response>
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling PostsApi->get_posts_by_id_with_http_info: #{e}"
 end
 ```
@@ -546,16 +546,16 @@ Get all publications for a post.     Shows where this post has been published to
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'spartera_api_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+SparteraApiSdk.configure do |config|
   # Configure API key authorization: ApiKeyAuth
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
-api_instance = OpenapiClient::PostsApi.new
+api_instance = SparteraApiSdk::PostsApi.new
 company_id = 'company_id_example' # String | Unique identifier for the Company
 post_id = 'post_id_example' # String | Unique identifier for the Post
 
@@ -563,7 +563,7 @@ begin
   # Get all publications for a post.     Shows where this post has been published to external platforms.      Returns:         Array of publication records with platform, URL, status
   result = api_instance.get_posts_by_id_publications(company_id, post_id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling PostsApi->get_posts_by_id_publications: #{e}"
 end
 ```
@@ -581,7 +581,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <GetPostsById200Response>
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling PostsApi->get_posts_by_id_publications_with_http_info: #{e}"
 end
 ```
@@ -617,16 +617,16 @@ Get a list of all posts for the user's company.     Supports filtering, sorting,
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'spartera_api_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+SparteraApiSdk.configure do |config|
   # Configure API key authorization: ApiKeyAuth
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
-api_instance = OpenapiClient::PostsApi.new
+api_instance = SparteraApiSdk::PostsApi.new
 company_id = 'company_id_example' # String | Unique identifier for the Company
 opts = {
   page: 56, # Integer | Page number for pagination
@@ -640,7 +640,7 @@ begin
   # Get a list of all posts for the user's company.     Supports filtering, sorting, pagination.
   result = api_instance.list_posts(company_id, opts)
   p result
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling PostsApi->list_posts: #{e}"
 end
 ```
@@ -658,7 +658,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <ListPosts200Response>
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling PostsApi->list_posts_with_http_info: #{e}"
 end
 ```
@@ -698,16 +698,16 @@ GET /companies/{company_id}/posts/summary
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'spartera_api_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+SparteraApiSdk.configure do |config|
   # Configure API key authorization: ApiKeyAuth
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
-api_instance = OpenapiClient::PostsApi.new
+api_instance = SparteraApiSdk::PostsApi.new
 company_id = 'company_id_example' # String | Unique identifier for the Company
 opts = {
   page: 56, # Integer | Page number for pagination
@@ -721,7 +721,7 @@ begin
   # GET /companies/{company_id}/posts/summary
   result = api_instance.list_posts_summary(company_id, opts)
   p result
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling PostsApi->list_posts_summary: #{e}"
 end
 ```
@@ -739,7 +739,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <ListPosts200Response>
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling PostsApi->list_posts_summary_with_http_info: #{e}"
 end
 ```
@@ -779,25 +779,25 @@ Update an existing post by ID.      Note: last_edited_at is automatically update
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'spartera_api_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+SparteraApiSdk.configure do |config|
   # Configure API key authorization: ApiKeyAuth
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
-api_instance = OpenapiClient::PostsApi.new
+api_instance = SparteraApiSdk::PostsApi.new
 company_id = 'company_id_example' # String | Unique identifier for the Company
 post_id = 'post_id_example' # String | Unique identifier for the Post
-posts_update = OpenapiClient::PostsUpdate.new # PostsUpdate | 
+posts_update = SparteraApiSdk::PostsUpdate.new # PostsUpdate | 
 
 begin
   # Update an existing post by ID.      Note: last_edited_at is automatically updated.
   result = api_instance.update_posts(company_id, post_id, posts_update)
   p result
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling PostsApi->update_posts: #{e}"
 end
 ```
@@ -815,7 +815,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <UpdatePosts200Response>
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling PostsApi->update_posts_with_http_info: #{e}"
 end
 ```

@@ -1,4 +1,4 @@
-# OpenapiClient::ApiKeys
+# SparteraApiSdk::ApiKeys
 
 ## Properties
 
@@ -20,9 +20,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'spartera_api_sdk'
 
-instance = OpenapiClient::ApiKeys.new(
+instance = SparteraApiSdk::ApiKeys.new(
   date_created: 2025-04-01T00:00:00Z,
   last_updated: 2025-04-01T00:00:00Z,
   api_key_id: key_abc123,

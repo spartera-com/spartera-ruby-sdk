@@ -1,4 +1,4 @@
-# OpenapiClient::GetJobFunctionsById200Response
+# SparteraApiSdk::GetJobFunctionsById200Response
 
 ## Properties
 
@@ -10,9 +10,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'spartera_api_sdk'
 
-instance = OpenapiClient::GetJobFunctionsById200Response.new(
+instance = SparteraApiSdk::GetJobFunctionsById200Response.new(
   message: success,
   data: null
 )

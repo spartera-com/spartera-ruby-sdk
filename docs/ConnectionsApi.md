@@ -1,4 +1,4 @@
-# OpenapiClient::ConnectionsApi
+# SparteraApiSdk::ConnectionsApi
 
 All URIs are relative to *https://api.spartera.com*
 
@@ -23,18 +23,18 @@ Create a new connection by ID
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'spartera_api_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+SparteraApiSdk.configure do |config|
   # Configure API key authorization: ApiKeyAuth
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
-api_instance = OpenapiClient::ConnectionsApi.new
+api_instance = SparteraApiSdk::ConnectionsApi.new
 company_id = 'company_id_example' # String | Unique identifier for the Company
-connections_input = OpenapiClient::ConnectionsInput.new({engine_id: 1, company_id: 'company_id_abc123'}) # ConnectionsInput | 
+connections_input = SparteraApiSdk::ConnectionsInput.new({engine_id: 1, company_id: 'company_id_abc123'}) # ConnectionsInput | 
 opts = {
   page: 56, # Integer | Page number for pagination
   limit: 56, # Integer | Number of items per page
@@ -47,7 +47,7 @@ begin
   # Create a new connection by ID
   result = api_instance.create_connections(company_id, connections_input, opts)
   p result
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling ConnectionsApi->create_connections: #{e}"
 end
 ```
@@ -65,7 +65,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <CreateConnections200Response>
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling ConnectionsApi->create_connections_with_http_info: #{e}"
 end
 ```
@@ -106,16 +106,16 @@ Delete single connection by ID
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'spartera_api_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+SparteraApiSdk.configure do |config|
   # Configure API key authorization: ApiKeyAuth
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
-api_instance = OpenapiClient::ConnectionsApi.new
+api_instance = SparteraApiSdk::ConnectionsApi.new
 company_id = 'company_id_example' # String | Unique identifier for the Company
 connection_id = 'connection_id_example' # String | Unique identifier for the Connection
 
@@ -123,7 +123,7 @@ begin
   # Delete single connection by ID
   result = api_instance.delete_connections(company_id, connection_id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling ConnectionsApi->delete_connections: #{e}"
 end
 ```
@@ -141,7 +141,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <DeleteConnections200Response>
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling ConnectionsApi->delete_connections_with_http_info: #{e}"
 end
 ```
@@ -177,16 +177,16 @@ Get single connection by ID
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'spartera_api_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+SparteraApiSdk.configure do |config|
   # Configure API key authorization: ApiKeyAuth
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
-api_instance = OpenapiClient::ConnectionsApi.new
+api_instance = SparteraApiSdk::ConnectionsApi.new
 company_id = 'company_id_example' # String | Unique identifier for the Company
 connection_id = 'connection_id_example' # String | Unique identifier for the Connection
 
@@ -194,7 +194,7 @@ begin
   # Get single connection by ID
   result = api_instance.get_connections_by_id(company_id, connection_id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling ConnectionsApi->get_connections_by_id: #{e}"
 end
 ```
@@ -212,7 +212,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <GetConnectionsById200Response>
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling ConnectionsApi->get_connections_by_id_with_http_info: #{e}"
 end
 ```
@@ -248,16 +248,16 @@ Test the specified connection
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'spartera_api_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+SparteraApiSdk.configure do |config|
   # Configure API key authorization: ApiKeyAuth
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
-api_instance = OpenapiClient::ConnectionsApi.new
+api_instance = SparteraApiSdk::ConnectionsApi.new
 company_id = 'company_id_example' # String | Unique identifier for the Company
 connection_id = 'connection_id_example' # String | Unique identifier for the Connection
 
@@ -265,7 +265,7 @@ begin
   # Test the specified connection
   result = api_instance.get_connections_by_id2(company_id, connection_id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling ConnectionsApi->get_connections_by_id2: #{e}"
 end
 ```
@@ -283,7 +283,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <GetConnectionsById200Response>
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling ConnectionsApi->get_connections_by_id2_with_http_info: #{e}"
 end
 ```
@@ -319,16 +319,16 @@ Retrieve the information schema for the specified connection
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'spartera_api_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+SparteraApiSdk.configure do |config|
   # Configure API key authorization: ApiKeyAuth
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
-api_instance = OpenapiClient::ConnectionsApi.new
+api_instance = SparteraApiSdk::ConnectionsApi.new
 company_id = 'company_id_example' # String | Unique identifier for the Company
 connection_id = 'connection_id_example' # String | Unique identifier for the Connection
 
@@ -336,7 +336,7 @@ begin
   # Retrieve the information schema for the specified connection
   result = api_instance.get_connections_by_id_infoschema(company_id, connection_id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling ConnectionsApi->get_connections_by_id_infoschema: #{e}"
 end
 ```
@@ -354,7 +354,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <GetConnectionsById200Response>
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling ConnectionsApi->get_connections_by_id_infoschema_with_http_info: #{e}"
 end
 ```
@@ -390,16 +390,16 @@ Get all connections for a specific company
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'spartera_api_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+SparteraApiSdk.configure do |config|
   # Configure API key authorization: ApiKeyAuth
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
-api_instance = OpenapiClient::ConnectionsApi.new
+api_instance = SparteraApiSdk::ConnectionsApi.new
 company_id = 'company_id_example' # String | Unique identifier for the Company
 opts = {
   page: 56, # Integer | Page number for pagination
@@ -413,7 +413,7 @@ begin
   # Get all connections for a specific company
   result = api_instance.list_connections(company_id, opts)
   p result
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling ConnectionsApi->list_connections: #{e}"
 end
 ```
@@ -431,7 +431,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <ListConnections200Response>
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling ConnectionsApi->list_connections_with_http_info: #{e}"
 end
 ```
@@ -471,25 +471,25 @@ Update an existing connection by ID
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'spartera_api_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+SparteraApiSdk.configure do |config|
   # Configure API key authorization: ApiKeyAuth
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
-api_instance = OpenapiClient::ConnectionsApi.new
+api_instance = SparteraApiSdk::ConnectionsApi.new
 company_id = 'company_id_example' # String | Unique identifier for the Company
 connection_id = 'connection_id_example' # String | Unique identifier for the Connection
-connections_update = OpenapiClient::ConnectionsUpdate.new # ConnectionsUpdate | 
+connections_update = SparteraApiSdk::ConnectionsUpdate.new # ConnectionsUpdate | 
 
 begin
   # Update an existing connection by ID
   result = api_instance.update_connections(company_id, connection_id, connections_update)
   p result
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling ConnectionsApi->update_connections: #{e}"
 end
 ```
@@ -507,7 +507,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <UpdateConnections200Response>
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling ConnectionsApi->update_connections_with_http_info: #{e}"
 end
 ```

@@ -1,4 +1,4 @@
-# OpenapiClient::StorageEnginesApi
+# SparteraApiSdk::StorageEnginesApi
 
 All URIs are relative to *https://api.spartera.com*
 
@@ -18,16 +18,16 @@ Get single storage engine by ID
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'spartera_api_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+SparteraApiSdk.configure do |config|
   # Configure API key authorization: ApiKeyAuth
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
-api_instance = OpenapiClient::StorageEnginesApi.new
+api_instance = SparteraApiSdk::StorageEnginesApi.new
 provider_id = 'provider_id_example' # String | Unique identifier for the Provider
 engine_id = 'engine_id_example' # String | Unique identifier for the Engine
 
@@ -35,7 +35,7 @@ begin
   # Get single storage engine by ID
   result = api_instance.get_storage_engines_by_id(provider_id, engine_id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling StorageEnginesApi->get_storage_engines_by_id: #{e}"
 end
 ```
@@ -53,7 +53,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <GetStorageEnginesById200Response>
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling StorageEnginesApi->get_storage_engines_by_id_with_http_info: #{e}"
 end
 ```
@@ -89,16 +89,16 @@ Get a list of all storage engines
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'spartera_api_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+SparteraApiSdk.configure do |config|
   # Configure API key authorization: ApiKeyAuth
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
-api_instance = OpenapiClient::StorageEnginesApi.new
+api_instance = SparteraApiSdk::StorageEnginesApi.new
 provider_id = 'provider_id_example' # String | Unique identifier for the Provider
 opts = {
   page: 56, # Integer | Page number for pagination
@@ -112,7 +112,7 @@ begin
   # Get a list of all storage engines
   result = api_instance.list_storage_engines(provider_id, opts)
   p result
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling StorageEnginesApi->list_storage_engines: #{e}"
 end
 ```
@@ -130,7 +130,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <ListStorageEngines200Response>
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling StorageEnginesApi->list_storage_engines_with_http_info: #{e}"
 end
 ```

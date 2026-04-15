@@ -1,4 +1,4 @@
-# OpenapiClient::DeleteUsers200ResponseData
+# SparteraApiSdk::DeleteUsers200ResponseData
 
 ## Properties
 
@@ -9,9 +9,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'spartera_api_sdk'
 
-instance = OpenapiClient::DeleteUsers200ResponseData.new(
+instance = SparteraApiSdk::DeleteUsers200ResponseData.new(
   user_id: null
 )
 ```

@@ -1,4 +1,4 @@
-# OpenapiClient::AssetPriceHistoryInput
+# SparteraApiSdk::AssetPriceHistoryInput
 
 ## Properties
 
@@ -12,9 +12,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'spartera_api_sdk'
 
-instance = OpenapiClient::AssetPriceHistoryInput.new(
+instance = SparteraApiSdk::AssetPriceHistoryInput.new(
   asset_id: asset_id_abc123,
   endpoint_id: endpoint_id_abc123,
   price_usd: 5.0,

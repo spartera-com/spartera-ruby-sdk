@@ -1,4 +1,4 @@
-# OpenapiClient::DeleteConnections200Response
+# SparteraApiSdk::DeleteConnections200Response
 
 ## Properties
 
@@ -10,9 +10,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'spartera_api_sdk'
 
-instance = OpenapiClient::DeleteConnections200Response.new(
+instance = SparteraApiSdk::DeleteConnections200Response.new(
   message: success,
   data: null
 )

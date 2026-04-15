@@ -1,4 +1,4 @@
-# OpenapiClient::ListCloudProviders200Response
+# SparteraApiSdk::ListCloudProviders200Response
 
 ## Properties
 
@@ -10,9 +10,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'spartera_api_sdk'
 
-instance = OpenapiClient::ListCloudProviders200Response.new(
+instance = SparteraApiSdk::ListCloudProviders200Response.new(
   message: success,
   data: null
 )

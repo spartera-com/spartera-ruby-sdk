@@ -1,4 +1,4 @@
-# OpenapiClient::InlineObject5
+# SparteraApiSdk::InlineObject5
 
 ## Properties
 
@@ -10,9 +10,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'spartera_api_sdk'
 
-instance = OpenapiClient::InlineObject5.new(
+instance = SparteraApiSdk::InlineObject5.new(
   code: 422,
   message: Cannot process request
 )

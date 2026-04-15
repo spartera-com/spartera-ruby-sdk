@@ -1,4 +1,4 @@
-# OpenapiClient::PostgenIntegrationsApi
+# SparteraApiSdk::PostgenIntegrationsApi
 
 All URIs are relative to *https://api.spartera.com*
 
@@ -22,18 +22,18 @@ POST /companies/{company_id}/postgen_integrations
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'spartera_api_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+SparteraApiSdk.configure do |config|
   # Configure API key authorization: ApiKeyAuth
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
-api_instance = OpenapiClient::PostgenIntegrationsApi.new
+api_instance = SparteraApiSdk::PostgenIntegrationsApi.new
 company_id = 'company_id_example' # String | Unique identifier for the Company
-postgen_integrations_input = OpenapiClient::PostgenIntegrationsInput.new({company_id: 'company_id_abc123', user_id: 'user_id_abc123', platform: 'example_value', platform_name: 'Example Name', credentials_secret_name: 'Example Name'}) # PostgenIntegrationsInput | 
+postgen_integrations_input = SparteraApiSdk::PostgenIntegrationsInput.new({company_id: 'company_id_abc123', user_id: 'user_id_abc123', platform: 'example_value', platform_name: 'Example Name', credentials_secret_name: 'Example Name'}) # PostgenIntegrationsInput | 
 opts = {
   page: 56, # Integer | Page number for pagination
   limit: 56, # Integer | Number of items per page
@@ -46,7 +46,7 @@ begin
   # POST /companies/{company_id}/postgen_integrations
   result = api_instance.create_postgen_integrations(company_id, postgen_integrations_input, opts)
   p result
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling PostgenIntegrationsApi->create_postgen_integrations: #{e}"
 end
 ```
@@ -64,7 +64,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <CreatePostgenIntegrations200Response>
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling PostgenIntegrationsApi->create_postgen_integrations_with_http_info: #{e}"
 end
 ```
@@ -105,24 +105,24 @@ POST /companies/{company_id}/postgen_integrations/test
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'spartera_api_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+SparteraApiSdk.configure do |config|
   # Configure API key authorization: ApiKeyAuth
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
-api_instance = OpenapiClient::PostgenIntegrationsApi.new
+api_instance = SparteraApiSdk::PostgenIntegrationsApi.new
 company_id = 'company_id_example' # String | Unique identifier for the Company
-postgen_integrations_input = OpenapiClient::PostgenIntegrationsInput.new({company_id: 'company_id_abc123', user_id: 'user_id_abc123', platform: 'example_value', platform_name: 'Example Name', credentials_secret_name: 'Example Name'}) # PostgenIntegrationsInput | 
+postgen_integrations_input = SparteraApiSdk::PostgenIntegrationsInput.new({company_id: 'company_id_abc123', user_id: 'user_id_abc123', platform: 'example_value', platform_name: 'Example Name', credentials_secret_name: 'Example Name'}) # PostgenIntegrationsInput | 
 
 begin
   # POST /companies/{company_id}/postgen_integrations/test
   result = api_instance.create_postgen_integrations_test(company_id, postgen_integrations_input)
   p result
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling PostgenIntegrationsApi->create_postgen_integrations_test: #{e}"
 end
 ```
@@ -140,7 +140,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <CreatePostgenIntegrations200Response>
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling PostgenIntegrationsApi->create_postgen_integrations_test_with_http_info: #{e}"
 end
 ```
@@ -176,16 +176,16 @@ Delete single integration by ID.     Also deletes credentials from GCP Secret Ma
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'spartera_api_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+SparteraApiSdk.configure do |config|
   # Configure API key authorization: ApiKeyAuth
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
-api_instance = OpenapiClient::PostgenIntegrationsApi.new
+api_instance = SparteraApiSdk::PostgenIntegrationsApi.new
 company_id = 'company_id_example' # String | Unique identifier for the Company
 integration_id = 'integration_id_example' # String | Unique identifier for the Integration
 
@@ -193,7 +193,7 @@ begin
   # Delete single integration by ID.     Also deletes credentials from GCP Secret Manager.
   result = api_instance.delete_postgen_integrations(company_id, integration_id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling PostgenIntegrationsApi->delete_postgen_integrations: #{e}"
 end
 ```
@@ -211,7 +211,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <DeletePostgenIntegrations200Response>
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling PostgenIntegrationsApi->delete_postgen_integrations_with_http_info: #{e}"
 end
 ```
@@ -247,16 +247,16 @@ Get single integration by ID.
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'spartera_api_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+SparteraApiSdk.configure do |config|
   # Configure API key authorization: ApiKeyAuth
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
-api_instance = OpenapiClient::PostgenIntegrationsApi.new
+api_instance = SparteraApiSdk::PostgenIntegrationsApi.new
 company_id = 'company_id_example' # String | Unique identifier for the Company
 integration_id = 'integration_id_example' # String | Unique identifier for the Integration
 
@@ -264,7 +264,7 @@ begin
   # Get single integration by ID.
   result = api_instance.get_postgen_integrations_by_id(company_id, integration_id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling PostgenIntegrationsApi->get_postgen_integrations_by_id: #{e}"
 end
 ```
@@ -282,7 +282,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <GetPostgenIntegrationsById200Response>
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling PostgenIntegrationsApi->get_postgen_integrations_by_id_with_http_info: #{e}"
 end
 ```
@@ -318,16 +318,16 @@ Get a list of all postgen integrations for the company.     All company users ca
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'spartera_api_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+SparteraApiSdk.configure do |config|
   # Configure API key authorization: ApiKeyAuth
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
-api_instance = OpenapiClient::PostgenIntegrationsApi.new
+api_instance = SparteraApiSdk::PostgenIntegrationsApi.new
 company_id = 'company_id_example' # String | Unique identifier for the Company
 opts = {
   page: 56, # Integer | Page number for pagination
@@ -341,7 +341,7 @@ begin
   # Get a list of all postgen integrations for the company.     All company users can view integrations.
   result = api_instance.list_postgen_integrations(company_id, opts)
   p result
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling PostgenIntegrationsApi->list_postgen_integrations: #{e}"
 end
 ```
@@ -359,7 +359,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <ListPostgenIntegrations200Response>
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling PostgenIntegrationsApi->list_postgen_integrations_with_http_info: #{e}"
 end
 ```
@@ -399,25 +399,25 @@ Update an existing integration by ID.      Can update credentials, is_active sta
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'spartera_api_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+SparteraApiSdk.configure do |config|
   # Configure API key authorization: ApiKeyAuth
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
-api_instance = OpenapiClient::PostgenIntegrationsApi.new
+api_instance = SparteraApiSdk::PostgenIntegrationsApi.new
 company_id = 'company_id_example' # String | Unique identifier for the Company
 integration_id = 'integration_id_example' # String | Unique identifier for the Integration
-postgen_integrations_update = OpenapiClient::PostgenIntegrationsUpdate.new # PostgenIntegrationsUpdate | 
+postgen_integrations_update = SparteraApiSdk::PostgenIntegrationsUpdate.new # PostgenIntegrationsUpdate | 
 
 begin
   # Update an existing integration by ID.      Can update credentials, is_active status, etc.
   result = api_instance.update_postgen_integrations(company_id, integration_id, postgen_integrations_update)
   p result
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling PostgenIntegrationsApi->update_postgen_integrations: #{e}"
 end
 ```
@@ -435,7 +435,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <UpdatePostgenIntegrations200Response>
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling PostgenIntegrationsApi->update_postgen_integrations_with_http_info: #{e}"
 end
 ```

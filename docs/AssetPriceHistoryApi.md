@@ -1,4 +1,4 @@
-# OpenapiClient::AssetPriceHistoryApi
+# SparteraApiSdk::AssetPriceHistoryApi
 
 All URIs are relative to *https://api.spartera.com*
 
@@ -24,25 +24,25 @@ Create a new price history record for an asset
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'spartera_api_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+SparteraApiSdk.configure do |config|
   # Configure API key authorization: ApiKeyAuth
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
-api_instance = OpenapiClient::AssetPriceHistoryApi.new
+api_instance = SparteraApiSdk::AssetPriceHistoryApi.new
 company_id = 'company_id_example' # String | Unique identifier for the Company
 asset_id = 'asset_id_example' # String | Unique identifier for the Asset
-asset_price_history_input = OpenapiClient::AssetPriceHistoryInput.new # AssetPriceHistoryInput | 
+asset_price_history_input = SparteraApiSdk::AssetPriceHistoryInput.new # AssetPriceHistoryInput | 
 
 begin
   # Create a new price history record for an asset
   result = api_instance.create_asset_price_history(company_id, asset_id, asset_price_history_input)
   p result
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling AssetPriceHistoryApi->create_asset_price_history: #{e}"
 end
 ```
@@ -60,7 +60,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <CreateAssetPriceHistory200Response>
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling AssetPriceHistoryApi->create_asset_price_history_with_http_info: #{e}"
 end
 ```
@@ -97,25 +97,25 @@ Calculate the credit equivalent for a given USD price without saving
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'spartera_api_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+SparteraApiSdk.configure do |config|
   # Configure API key authorization: ApiKeyAuth
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
-api_instance = OpenapiClient::AssetPriceHistoryApi.new
+api_instance = SparteraApiSdk::AssetPriceHistoryApi.new
 company_id = 'company_id_example' # String | Unique identifier for the Company
 asset_id = 'asset_id_example' # String | Unique identifier for the Asset
-asset_price_history_input = OpenapiClient::AssetPriceHistoryInput.new # AssetPriceHistoryInput | 
+asset_price_history_input = SparteraApiSdk::AssetPriceHistoryInput.new # AssetPriceHistoryInput | 
 
 begin
   # Calculate the credit equivalent for a given USD price without saving
   result = api_instance.create_asset_price_history_prices_calculate_credits(company_id, asset_id, asset_price_history_input)
   p result
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling AssetPriceHistoryApi->create_asset_price_history_prices_calculate_credits: #{e}"
 end
 ```
@@ -133,7 +133,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <CreateAssetPriceHistory200Response>
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling AssetPriceHistoryApi->create_asset_price_history_prices_calculate_credits_with_http_info: #{e}"
 end
 ```
@@ -170,25 +170,25 @@ POST /companies/{company_id}/assets/{asset_id}/prices/discount
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'spartera_api_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+SparteraApiSdk.configure do |config|
   # Configure API key authorization: ApiKeyAuth
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
-api_instance = OpenapiClient::AssetPriceHistoryApi.new
+api_instance = SparteraApiSdk::AssetPriceHistoryApi.new
 company_id = 'company_id_example' # String | Unique identifier for the Company
 asset_id = 'asset_id_example' # String | Unique identifier for the Asset
-asset_price_history_input = OpenapiClient::AssetPriceHistoryInput.new # AssetPriceHistoryInput | 
+asset_price_history_input = SparteraApiSdk::AssetPriceHistoryInput.new # AssetPriceHistoryInput | 
 
 begin
   # POST /companies/{company_id}/assets/{asset_id}/prices/discount
   result = api_instance.create_asset_price_history_prices_discount(company_id, asset_id, asset_price_history_input)
   p result
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling AssetPriceHistoryApi->create_asset_price_history_prices_discount: #{e}"
 end
 ```
@@ -206,7 +206,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <CreateAssetPriceHistory200Response>
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling AssetPriceHistoryApi->create_asset_price_history_prices_discount_with_http_info: #{e}"
 end
 ```
@@ -243,16 +243,16 @@ Delete single price history record by ID
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'spartera_api_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+SparteraApiSdk.configure do |config|
   # Configure API key authorization: ApiKeyAuth
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
-api_instance = OpenapiClient::AssetPriceHistoryApi.new
+api_instance = SparteraApiSdk::AssetPriceHistoryApi.new
 company_id = 'company_id_example' # String | Unique identifier for the Company
 asset_id = 'asset_id_example' # String | Unique identifier for the Asset
 aph_id = 'aph_id_example' # String | Unique identifier for the Aph
@@ -261,7 +261,7 @@ begin
   # Delete single price history record by ID
   result = api_instance.delete_asset_price_history(company_id, asset_id, aph_id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling AssetPriceHistoryApi->delete_asset_price_history: #{e}"
 end
 ```
@@ -279,7 +279,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <DeleteAssetPriceHistory200Response>
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling AssetPriceHistoryApi->delete_asset_price_history_with_http_info: #{e}"
 end
 ```
@@ -316,16 +316,16 @@ Get all price history records for a specific asset
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'spartera_api_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+SparteraApiSdk.configure do |config|
   # Configure API key authorization: ApiKeyAuth
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
-api_instance = OpenapiClient::AssetPriceHistoryApi.new
+api_instance = SparteraApiSdk::AssetPriceHistoryApi.new
 company_id = 'company_id_example' # String | Unique identifier for the Company
 asset_id = 'asset_id_example' # String | Unique identifier for the Asset
 
@@ -333,7 +333,7 @@ begin
   # Get all price history records for a specific asset
   result = api_instance.get_asset_price_history_by_id(company_id, asset_id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling AssetPriceHistoryApi->get_asset_price_history_by_id: #{e}"
 end
 ```
@@ -351,7 +351,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <GetAssetPriceHistoryById200Response>
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling AssetPriceHistoryApi->get_asset_price_history_by_id_with_http_info: #{e}"
 end
 ```
@@ -387,16 +387,16 @@ Get single price history record by ID
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'spartera_api_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+SparteraApiSdk.configure do |config|
   # Configure API key authorization: ApiKeyAuth
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
-api_instance = OpenapiClient::AssetPriceHistoryApi.new
+api_instance = SparteraApiSdk::AssetPriceHistoryApi.new
 company_id = 'company_id_example' # String | Unique identifier for the Company
 asset_id = 'asset_id_example' # String | Unique identifier for the Asset
 aph_id = 'aph_id_example' # String | Unique identifier for the Aph
@@ -405,7 +405,7 @@ begin
   # Get single price history record by ID
   result = api_instance.get_asset_price_history_by_id_assets_prices(company_id, asset_id, aph_id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling AssetPriceHistoryApi->get_asset_price_history_by_id_assets_prices: #{e}"
 end
 ```
@@ -423,7 +423,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <GetAssetPriceHistoryById200Response>
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling AssetPriceHistoryApi->get_asset_price_history_by_id_assets_prices_with_http_info: #{e}"
 end
 ```
@@ -460,16 +460,16 @@ Get the currently active price for an asset
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'spartera_api_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+SparteraApiSdk.configure do |config|
   # Configure API key authorization: ApiKeyAuth
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
-api_instance = OpenapiClient::AssetPriceHistoryApi.new
+api_instance = SparteraApiSdk::AssetPriceHistoryApi.new
 company_id = 'company_id_example' # String | Unique identifier for the Company
 asset_id = 'asset_id_example' # String | Unique identifier for the Asset
 
@@ -477,7 +477,7 @@ begin
   # Get the currently active price for an asset
   result = api_instance.get_asset_price_history_by_id_prices_active(company_id, asset_id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling AssetPriceHistoryApi->get_asset_price_history_by_id_prices_active: #{e}"
 end
 ```
@@ -495,7 +495,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <GetAssetPriceHistoryById200Response>
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling AssetPriceHistoryApi->get_asset_price_history_by_id_prices_active_with_http_info: #{e}"
 end
 ```
@@ -531,26 +531,26 @@ Update an existing price history record by ID
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'spartera_api_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+SparteraApiSdk.configure do |config|
   # Configure API key authorization: ApiKeyAuth
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
-api_instance = OpenapiClient::AssetPriceHistoryApi.new
+api_instance = SparteraApiSdk::AssetPriceHistoryApi.new
 company_id = 'company_id_example' # String | Unique identifier for the Company
 asset_id = 'asset_id_example' # String | Unique identifier for the Asset
 aph_id = 'aph_id_example' # String | Unique identifier for the Aph
-asset_price_history_update = OpenapiClient::AssetPriceHistoryUpdate.new # AssetPriceHistoryUpdate | 
+asset_price_history_update = SparteraApiSdk::AssetPriceHistoryUpdate.new # AssetPriceHistoryUpdate | 
 
 begin
   # Update an existing price history record by ID
   result = api_instance.update_asset_price_history(company_id, asset_id, aph_id, asset_price_history_update)
   p result
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling AssetPriceHistoryApi->update_asset_price_history: #{e}"
 end
 ```
@@ -568,7 +568,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <UpdateAssetPriceHistory200Response>
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling AssetPriceHistoryApi->update_asset_price_history_with_http_info: #{e}"
 end
 ```

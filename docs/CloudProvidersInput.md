@@ -1,4 +1,4 @@
-# OpenapiClient::CloudProvidersInput
+# SparteraApiSdk::CloudProvidersInput
 
 ## Properties
 
@@ -11,9 +11,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'spartera_api_sdk'
 
-instance = OpenapiClient::CloudProvidersInput.new(
+instance = SparteraApiSdk::CloudProvidersInput.new(
   name: Example Name,
   parent_company: example_value,
   marketing_homepage_url: https://example.com

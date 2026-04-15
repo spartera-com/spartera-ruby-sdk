@@ -1,4 +1,4 @@
-# OpenapiClient::InlineObject3
+# SparteraApiSdk::InlineObject3
 
 ## Properties
 
@@ -10,9 +10,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'spartera_api_sdk'
 
-instance = OpenapiClient::InlineObject3.new(
+instance = SparteraApiSdk::InlineObject3.new(
   code: 404,
   message: Resource not found
 )

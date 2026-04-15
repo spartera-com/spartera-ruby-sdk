@@ -1,4 +1,4 @@
-# OpenapiClient::AlertsInput
+# SparteraApiSdk::AlertsInput
 
 ## Properties
 
@@ -12,9 +12,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'spartera_api_sdk'
 
-instance = OpenapiClient::AlertsInput.new(
+instance = SparteraApiSdk::AlertsInput.new(
   asset_id: asset_id_abc123,
   user_id: user_id_abc123,
   company_id: company_id_abc123,

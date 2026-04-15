@@ -1,4 +1,4 @@
-# OpenapiClient::Connections
+# SparteraApiSdk::Connections
 
 ## Properties
 
@@ -19,9 +19,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'spartera_api_sdk'
 
-instance = OpenapiClient::Connections.new(
+instance = SparteraApiSdk::Connections.new(
   date_created: 2025-04-01T00:00:00Z,
   last_updated: 2025-04-01T00:00:00Z,
   connection_id: connection_id_abc123,

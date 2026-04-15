@@ -1,4 +1,4 @@
-# OpenapiClient::CloudProvidersApi
+# SparteraApiSdk::CloudProvidersApi
 
 All URIs are relative to *https://api.spartera.com*
 
@@ -18,23 +18,23 @@ Get single cloud provider by ID
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'spartera_api_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+SparteraApiSdk.configure do |config|
   # Configure API key authorization: ApiKeyAuth
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
-api_instance = OpenapiClient::CloudProvidersApi.new
+api_instance = SparteraApiSdk::CloudProvidersApi.new
 provider_id = 'provider_id_example' # String | Unique identifier for the Provider
 
 begin
   # Get single cloud provider by ID
   result = api_instance.get_cloud_providers_by_id(provider_id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling CloudProvidersApi->get_cloud_providers_by_id: #{e}"
 end
 ```
@@ -52,7 +52,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <GetCloudProvidersById200Response>
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling CloudProvidersApi->get_cloud_providers_by_id_with_http_info: #{e}"
 end
 ```
@@ -87,16 +87,16 @@ Get a list of all cloud providers
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'spartera_api_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+SparteraApiSdk.configure do |config|
   # Configure API key authorization: ApiKeyAuth
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
-api_instance = OpenapiClient::CloudProvidersApi.new
+api_instance = SparteraApiSdk::CloudProvidersApi.new
 opts = {
   page: 56, # Integer | Page number for pagination
   limit: 56, # Integer | Number of items per page
@@ -109,7 +109,7 @@ begin
   # Get a list of all cloud providers
   result = api_instance.list_cloud_providers(opts)
   p result
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling CloudProvidersApi->list_cloud_providers: #{e}"
 end
 ```
@@ -127,7 +127,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <ListCloudProviders200Response>
-rescue OpenapiClient::ApiError => e
+rescue SparteraApiSdk::ApiError => e
   puts "Error when calling CloudProvidersApi->list_cloud_providers_with_http_info: #{e}"
 end
 ```
