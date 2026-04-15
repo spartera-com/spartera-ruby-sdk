@@ -1,4 +1,4 @@
-# SparteraApiSdk::InlineObject2
+# OpenapiClient::InlineObject2
 
 ## Properties
 
@@ -10,9 +10,9 @@
 ## Example
 
 ```ruby
-require 'spartera_api_sdk'
+require 'openapi_client'
 
-instance = SparteraApiSdk::InlineObject2.new(
+instance = OpenapiClient::InlineObject2.new(
   code: 403,
   message: Insufficient permissions
 )

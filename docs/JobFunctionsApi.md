@@ -1,16 +1,16 @@
-# SparteraApiSdk::JobFunctionsApi
+# OpenapiClient::JobFunctionsApi
 
 All URIs are relative to *https://api.spartera.com*
 
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
-| [**job_functions_function_id_get**](JobFunctionsApi.md#job_functions_function_id_get) | **GET** /job-functions/{function_id} | Get single job function by ID |
-| [**job_functions_get**](JobFunctionsApi.md#job_functions_get) | **GET** /job-functions | Get a list of all job functions |
+| [**get_job_functions_by_id**](JobFunctionsApi.md#get_job_functions_by_id) | **GET** /job-functions/{function_id} | Get single job function by ID |
+| [**list_job_functions**](JobFunctionsApi.md#list_job_functions) | **GET** /job-functions | Get a list of all job functions |
 
 
-## job_functions_function_id_get
+## get_job_functions_by_id
 
-> <JobFunctionsFunctionIdGet200Response> job_functions_function_id_get(function_id)
+> <GetJobFunctionsById200Response> get_job_functions_by_id(function_id)
 
 Get single job function by ID
 
@@ -18,42 +18,42 @@ Get single job function by ID
 
 ```ruby
 require 'time'
-require 'spartera_api_sdk'
+require 'openapi_client'
 # setup authorization
-SparteraApiSdk.configure do |config|
+OpenapiClient.configure do |config|
   # Configure API key authorization: ApiKeyAuth
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
-api_instance = SparteraApiSdk::JobFunctionsApi.new
-function_id = 'function_id_example' # String | 
+api_instance = OpenapiClient::JobFunctionsApi.new
+function_id = 'function_id_example' # String | Unique identifier for the Function
 
 begin
   # Get single job function by ID
-  result = api_instance.job_functions_function_id_get(function_id)
+  result = api_instance.get_job_functions_by_id(function_id)
   p result
-rescue SparteraApiSdk::ApiError => e
-  puts "Error when calling JobFunctionsApi->job_functions_function_id_get: #{e}"
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling JobFunctionsApi->get_job_functions_by_id: #{e}"
 end
 ```
 
-#### Using the job_functions_function_id_get_with_http_info variant
+#### Using the get_job_functions_by_id_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<JobFunctionsFunctionIdGet200Response>, Integer, Hash)> job_functions_function_id_get_with_http_info(function_id)
+> <Array(<GetJobFunctionsById200Response>, Integer, Hash)> get_job_functions_by_id_with_http_info(function_id)
 
 ```ruby
 begin
   # Get single job function by ID
-  data, status_code, headers = api_instance.job_functions_function_id_get_with_http_info(function_id)
+  data, status_code, headers = api_instance.get_job_functions_by_id_with_http_info(function_id)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <JobFunctionsFunctionIdGet200Response>
-rescue SparteraApiSdk::ApiError => e
-  puts "Error when calling JobFunctionsApi->job_functions_function_id_get_with_http_info: #{e}"
+  p data # => <GetJobFunctionsById200Response>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling JobFunctionsApi->get_job_functions_by_id_with_http_info: #{e}"
 end
 ```
 
@@ -61,11 +61,11 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **function_id** | **String** |  |  |
+| **function_id** | **String** | Unique identifier for the Function |  |
 
 ### Return type
 
-[**JobFunctionsFunctionIdGet200Response**](JobFunctionsFunctionIdGet200Response.md)
+[**GetJobFunctionsById200Response**](GetJobFunctionsById200Response.md)
 
 ### Authorization
 
@@ -77,9 +77,9 @@ end
 - **Accept**: application/json
 
 
-## job_functions_get
+## list_job_functions
 
-> <JobFunctionsGet200Response> job_functions_get
+> <ListJobFunctions200Response> list_job_functions(opts)
 
 Get a list of all job functions
 
@@ -87,51 +87,64 @@ Get a list of all job functions
 
 ```ruby
 require 'time'
-require 'spartera_api_sdk'
+require 'openapi_client'
 # setup authorization
-SparteraApiSdk.configure do |config|
+OpenapiClient.configure do |config|
   # Configure API key authorization: ApiKeyAuth
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
-api_instance = SparteraApiSdk::JobFunctionsApi.new
+api_instance = OpenapiClient::JobFunctionsApi.new
+opts = {
+  page: 56, # Integer | Page number for pagination
+  limit: 56, # Integer | Number of items per page
+  sort_by: 'sort_by_example', # String | Field to sort by
+  sort_order: 'asc', # String | Sort order (ascending or descending)
+  search: 'search_example' # String | Search term to filter results
+}
 
 begin
   # Get a list of all job functions
-  result = api_instance.job_functions_get
+  result = api_instance.list_job_functions(opts)
   p result
-rescue SparteraApiSdk::ApiError => e
-  puts "Error when calling JobFunctionsApi->job_functions_get: #{e}"
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling JobFunctionsApi->list_job_functions: #{e}"
 end
 ```
 
-#### Using the job_functions_get_with_http_info variant
+#### Using the list_job_functions_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<JobFunctionsGet200Response>, Integer, Hash)> job_functions_get_with_http_info
+> <Array(<ListJobFunctions200Response>, Integer, Hash)> list_job_functions_with_http_info(opts)
 
 ```ruby
 begin
   # Get a list of all job functions
-  data, status_code, headers = api_instance.job_functions_get_with_http_info
+  data, status_code, headers = api_instance.list_job_functions_with_http_info(opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <JobFunctionsGet200Response>
-rescue SparteraApiSdk::ApiError => e
-  puts "Error when calling JobFunctionsApi->job_functions_get_with_http_info: #{e}"
+  p data # => <ListJobFunctions200Response>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling JobFunctionsApi->list_job_functions_with_http_info: #{e}"
 end
 ```
 
 ### Parameters
 
-This endpoint does not need any parameter.
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **page** | **Integer** | Page number for pagination | [optional][default to 1] |
+| **limit** | **Integer** | Number of items per page | [optional][default to 20] |
+| **sort_by** | **String** | Field to sort by | [optional] |
+| **sort_order** | **String** | Sort order (ascending or descending) | [optional][default to &#39;desc&#39;] |
+| **search** | **String** | Search term to filter results | [optional] |
 
 ### Return type
 
-[**JobFunctionsGet200Response**](JobFunctionsGet200Response.md)
+[**ListJobFunctions200Response**](ListJobFunctions200Response.md)
 
 ### Authorization
 

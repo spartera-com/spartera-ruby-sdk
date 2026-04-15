@@ -1,22 +1,22 @@
-# SparteraApiSdk::CloudProvidersUpdate
+# OpenapiClient::CloudProvidersUpdate
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **name** | **String** |  | [optional] |
-| **parent_company** | **String** |  | [optional] |
-| **marketing_homepage_url** | **String** |  | [optional] |
+| **name** | **String** | Required. | [optional] |
+| **parent_company** | **String** | Optional. | [optional] |
+| **marketing_homepage_url** | **String** | Optional. | [optional] |
 
 ## Example
 
 ```ruby
-require 'spartera_api_sdk'
+require 'openapi_client'
 
-instance = SparteraApiSdk::CloudProvidersUpdate.new(
-  name: null,
-  parent_company: null,
-  marketing_homepage_url: null
+instance = OpenapiClient::CloudProvidersUpdate.new(
+  name: Example Name,
+  parent_company: example_value,
+  marketing_homepage_url: https://example.com
 )
 ```
 

@@ -1,18 +1,18 @@
-# SparteraApiSdk::JobFunctionsUpdate
+# OpenapiClient::JobFunctionsUpdate
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **name** | **String** |  | [optional] |
+| **name** | **String** | Required. Must be unique. | [optional] |
 
 ## Example
 
 ```ruby
-require 'spartera_api_sdk'
+require 'openapi_client'
 
-instance = SparteraApiSdk::JobFunctionsUpdate.new(
-  name: null
+instance = OpenapiClient::JobFunctionsUpdate.new(
+  name: Example Name
 )
 ```
 

@@ -1,22 +1,24 @@
-# SparteraApiSdk::AssetPriceHistoryUpdate
+# OpenapiClient::AssetPriceHistoryUpdate
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **asset_id** | **String** |  | [optional] |
-| **price_usd** | **Float** |  | [optional] |
-| **date_ended** | **Time** | When did the price end (Datetime) | [optional] |
+| **asset_id** | **String** | FK to assets. NULL when this record belongs to an endpoint. | [optional] |
+| **endpoint_id** | **String** | FK to endpoints. NULL when this record belongs to an asset. | [optional] |
+| **price_usd** | **Float** | Optional. | [optional] |
+| **date_ended** | **Time** | SCD Type 2 — when this price record was superseded | [optional] |
 
 ## Example
 
 ```ruby
-require 'spartera_api_sdk'
+require 'openapi_client'
 
-instance = SparteraApiSdk::AssetPriceHistoryUpdate.new(
-  asset_id: null,
-  price_usd: null,
-  date_ended: null
+instance = OpenapiClient::AssetPriceHistoryUpdate.new(
+  asset_id: asset_id_abc123,
+  endpoint_id: endpoint_id_abc123,
+  price_usd: 5.0,
+  date_ended: 2025-04-01T00:00:00Z
 )
 ```
 

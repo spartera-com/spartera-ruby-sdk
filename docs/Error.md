@@ -1,4 +1,4 @@
-# SparteraApiSdk::Error
+# OpenapiClient::Error
 
 ## Properties
 
@@ -12,9 +12,9 @@
 ## Example
 
 ```ruby
-require 'spartera_api_sdk'
+require 'openapi_client'
 
-instance = SparteraApiSdk::Error.new(
+instance = OpenapiClient::Error.new(
   code: null,
   message: null,
   details: null,

@@ -1,15 +1,15 @@
-# SparteraApiSdk::Favorites
+# OpenapiClient::Favorites
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **date_created** | **Time** |  | [optional] |
-| **last_updated** | **Time** |  | [optional] |
-| **favorite_id** | **Integer** |  | [optional] |
-| **asset_id** | **String** |  |  |
-| **user_id** | **String** |  | [optional] |
-| **company_id** | **String** |  |  |
+| **date_created** | **Time** | Optional. | [optional] |
+| **last_updated** | **Time** | Optional. | [optional] |
+| **favorite_id** | **Integer** | Auto-generated unique identifier. | [optional] |
+| **asset_id** | **String** | References assets.asset_id — A published analytics asset — a calculation or visualization built on a data connection. See GET /assets for valid values. Required. |  |
+| **user_id** | **String** | References users.user_id — An individual user account within a company. See GET /users for valid values. Optional. | [optional] |
+| **company_id** | **String** | References companies.company_id — A Spartera seller or buyer company account. See GET /companies for valid values. Required. |  |
 | **notes** | **String** | Optional user notes about this favorite | [optional] |
 | **category** | **String** | Optional category for organizing favorites (e.g., &#39;Work&#39;, &#39;Research&#39;) | [optional] |
 | **priority** | **Integer** | User-defined priority for sorting (higher &#x3D; more important) |  |
@@ -17,18 +17,18 @@
 ## Example
 
 ```ruby
-require 'spartera_api_sdk'
+require 'openapi_client'
 
-instance = SparteraApiSdk::Favorites.new(
-  date_created: null,
-  last_updated: null,
-  favorite_id: null,
-  asset_id: null,
-  user_id: null,
-  company_id: null,
-  notes: null,
-  category: null,
-  priority: null
+instance = OpenapiClient::Favorites.new(
+  date_created: 2025-04-01T00:00:00Z,
+  last_updated: 2025-04-01T00:00:00Z,
+  favorite_id: 1,
+  asset_id: asset_id_abc123,
+  user_id: user_id_abc123,
+  company_id: company_id_abc123,
+  notes: example_value,
+  category: example_value,
+  priority: 1
 )
 ```
 

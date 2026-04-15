@@ -1,24 +1,24 @@
-# SparteraApiSdk::AlertsInput
+# OpenapiClient::AlertsInput
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **asset_id** | **String** |  |  |
-| **user_id** | **String** |  | [optional] |
-| **company_id** | **String** |  |  |
+| **asset_id** | **String** | References assets.asset_id — A published analytics asset — a calculation or visualization built on a data connection. See GET /assets for valid values. Required. |  |
+| **user_id** | **String** | References users.user_id — An individual user account within a company. See GET /users for valid values. Optional. | [optional] |
+| **company_id** | **String** | References companies.company_id — A Spartera seller or buyer company account. See GET /companies for valid values. Required. |  |
 | **is_active** | **Boolean** | Whether this alert is currently active | [optional] |
 
 ## Example
 
 ```ruby
-require 'spartera_api_sdk'
+require 'openapi_client'
 
-instance = SparteraApiSdk::AlertsInput.new(
-  asset_id: null,
-  user_id: null,
-  company_id: null,
-  is_active: null
+instance = OpenapiClient::AlertsInput.new(
+  asset_id: asset_id_abc123,
+  user_id: user_id_abc123,
+  company_id: company_id_abc123,
+  is_active: true
 )
 ```
 

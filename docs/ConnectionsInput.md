@@ -1,32 +1,32 @@
-# SparteraApiSdk::ConnectionsInput
+# OpenapiClient::ConnectionsInput
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **user_id** | **String** |  | [optional] |
-| **engine_id** | **Integer** |  |  |
-| **company_id** | **String** |  |  |
-| **credential_type** | **String** | Enum type: CredentialType | [optional] |
-| **name** | **String** |  | [optional] |
-| **description** | **String** |  | [optional] |
-| **provider_domain** | **String** |  | [optional] |
-| **verified_usage_ability** | **Boolean** |  | [optional] |
+| **user_id** | **String** | References users.user_id — An individual user account within a company. See GET /users for valid values. Optional. | [optional] |
+| **engine_id** | **Integer** | References storage_engines.engine_id — Fact table of all the different storage engines we support. See GET /storage_engines for valid values. Required. |  |
+| **company_id** | **String** | References companies.company_id — A Spartera seller or buyer company account. See GET /companies for valid values. Required. |  |
+| **credential_type** | **String** | Optional. One of: SERVICE_ACCOUNT, USERNAME_PASSWORD, API_KEY, SERVICE_IDENTITY, ACCESS_KEY, … (8 total). | [optional] |
+| **name** | **String** | Optional. | [optional] |
+| **description** | **String** | Optional. | [optional] |
+| **provider_domain** | **String** | Domain of the external API provider (e.g., &#39;api.weather.com&#39;) | [optional] |
+| **verified_usage_ability** | **Boolean** | Optional. | [optional] |
 
 ## Example
 
 ```ruby
-require 'spartera_api_sdk'
+require 'openapi_client'
 
-instance = SparteraApiSdk::ConnectionsInput.new(
-  user_id: null,
-  engine_id: null,
-  company_id: null,
-  credential_type: null,
-  name: null,
-  description: null,
-  provider_domain: null,
-  verified_usage_ability: null
+instance = OpenapiClient::ConnectionsInput.new(
+  user_id: user_id_abc123,
+  engine_id: 1,
+  company_id: company_id_abc123,
+  credential_type: SERVICE_ACCOUNT,
+  name: Example Name,
+  description: Example description.,
+  provider_domain: example.com,
+  verified_usage_ability: true
 )
 ```
 

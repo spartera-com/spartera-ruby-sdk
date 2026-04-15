@@ -1,4 +1,4 @@
-# SparteraApiSdk::InlineObject1
+# OpenapiClient::InlineObject1
 
 ## Properties
 
@@ -10,9 +10,9 @@
 ## Example
 
 ```ruby
-require 'spartera_api_sdk'
+require 'openapi_client'
 
-instance = SparteraApiSdk::InlineObject1.new(
+instance = OpenapiClient::InlineObject1.new(
   code: 401,
   message: Authentication required
 )

@@ -1,94 +1,124 @@
-# SparteraApiSdk::AssetsInput
+# OpenapiClient::AssetsInput
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **user_id** | **String** |  | [optional] |
-| **company_id** | **String** |  |  |
-| **connection_id** | **String** |  | [optional] |
-| **industry_id** | **Integer** |  | [optional] |
+| **user_id** | **String** | References users.user_id — An individual user account within a company. See GET /users for valid values. Optional. | [optional] |
+| **company_id** | **String** | References companies.company_id — A Spartera seller or buyer company account. See GET /companies for valid values. Required. |  |
+| **connection_id** | **String** | Optional. | [optional] |
+| **industry_id** | **Integer** | References industries.industry_id — Available industry categories for asset classification. Based on US NAISC codes.. See GET /industries for valid values. Optional. | [optional] |
+| **auc_id** | **Integer** | Primary use case for this asset, from clustering analysis | [optional] |
+| **function_id** | **String** | Optional identifier for routing to specific functions/models at seller endpoint. For GET: appended to URL path. For POST: included in JSON body. | [optional] |
 | **approval_status** | **String** | Approval status for AI-generated assets | [optional] |
 | **approved_by_user_id** | **String** | User who approved this asset for marketplace | [optional] |
 | **approved_at** | **Time** | When this asset was approved for marketplace | [optional] |
-| **name** | **String** |  |  |
-| **slug** | **String** |  | [optional] |
-| **description** | **String** |  | [optional] |
-| **source** | **String** | Enum type: Source |  |
-| **asset_type** | **String** | Enum type: AssetType | [optional] |
+| **name** | **String** | Required. |  |
+| **slug** | **String** | Optional. | [optional] |
+| **description** | **String** | Optional. | [optional] |
+| **detailed_description** | **String** | Long-form HTML description for product pages and SEO | [optional] |
+| **source** | **String** | Required. One of: MANUAL, AUTOMATIC. |  |
+| **asset_type** | **String** | Optional. One of: CALCULATION, VISUALIZATION, DATA. | [optional] |
 | **asset_schema** | **Object** | Stores database table schema data including columns, types, and metadata | [optional] |
-| **tags** | **String** |  | [optional] |
-| **sql_logic** | **String** |  | [optional] |
-| **source_schema_name** | **String** |  | [optional] |
-| **source_table_name** | **String** |  | [optional] |
-| **sell_in_marketplace** | **Boolean** |  | [optional] |
-| **viz_chart_library** | **String** | Enum type: PlottingLibrary | [optional] |
-| **viz_chart_type** | **String** | Enum type: ChartType | [optional] |
-| **viz_dep_var_col_name** | **String** |  | [optional] |
-| **viz_indep_var_col_name** | **String** |  | [optional] |
-| **viz_size_col_name** | **String** |  | [optional] |
-| **viz_color_col_name** | **String** |  | [optional] |
-| **viz_data_aggregation** | **String** | Enum type: AggregationType | [optional] |
-| **viz_sort_direction** | **String** | Enum type: SortDirection | [optional] |
-| **viz_data_limit** | **Integer** |  | [optional] |
-| **viz_color_scheme** | **String** | Enum type: ColorScheme | [optional] |
-| **allow_params** | **Boolean** |  | [optional] |
-| **accept_terms** | **Boolean** |  | [optional] |
-| **cached** | **Boolean** |  | [optional] |
-| **schedule** | **String** |  | [optional] |
-| **next_run** | **Time** |  | [optional] |
+| **tags** | **String** | Optional. | [optional] |
+| **short_code** | **String** | Short code for tera.ac URL shortener (e.g., &#39;f78zq1&#39;) | [optional] |
+| **restricted_domains** | **String** | Semicolon or comma-separated list of domains restricted from accessing this asset | [optional] |
+| **sql_logic** | **String** | Optional. | [optional] |
+| **source_schema_name** | **String** | Optional. | [optional] |
+| **source_table_name** | **String** | Optional. | [optional] |
+| **sell_in_marketplace** | **Boolean** | Required. | [optional] |
+| **require_customization** | **Boolean** | Whether this asset requires customization before use | [optional] |
+| **viz_chart_library** | **String** | Optional. One of: PLOTLY, MATPLOTLIB, SEABORN. | [optional] |
+| **viz_chart_type** | **String** | Optional. One of: LINE, BAR, PIE, DOUGHNUT, POLAR, … (8 total). | [optional] |
+| **viz_dep_var_col_name** | **String** | Optional. | [optional] |
+| **viz_indep_var_col_name** | **String** | Optional. | [optional] |
+| **viz_size_col_name** | **String** | Optional. | [optional] |
+| **viz_color_col_name** | **String** | Optional. | [optional] |
+| **viz_data_aggregation** | **String** | Optional. One of: No Aggregation, Sum, Average, Count, Minimum, … (6 total). | [optional] |
+| **viz_sort_direction** | **String** | Optional. One of: No Sorting, Ascending, Descending. | [optional] |
+| **viz_data_limit** | **Integer** | Optional. | [optional] |
+| **viz_color_scheme** | **String** | Optional. One of: Default, Sequential, Diverging, Categorical, Monochrome, … (8 total). | [optional] |
+| **viz_show_legend** | **Boolean** | Show/hide chart legend | [optional] |
+| **viz_show_grid** | **Boolean** | Show/hide grid lines | [optional] |
+| **viz_show_trendline** | **Boolean** | Show trendline for scatter/line charts | [optional] |
+| **viz_line_smoothing** | **Boolean** | Enable smoothing for line charts | [optional] |
+| **viz_bar_stacked** | **Boolean** | Stack bars instead of grouping | [optional] |
+| **viz_filter_direction** | **String** | Whether data_limit shows TOP or BOTTOM N | [optional] |
+| **allow_params** | **Boolean** | Required. | [optional] |
+| **accept_terms** | **Boolean** | Required. | [optional] |
+| **cached** | **Boolean** | Optional. | [optional] |
+| **schedule** | **String** | Optional. | [optional] |
+| **next_run** | **Time** | Optional. | [optional] |
 | **data_time_period_start** | **Time** | Start date of the data time period covered | [optional] |
 | **data_time_period_end** | **Time** | End date of the data time period covered | [optional] |
-| **geographic_coverage_type** | **String** | Type of geographic coverage (Enum type: GeographicCoverage) | [optional] |
+| **geographic_coverage_type** | **String** | Type of geographic coverage | [optional] |
 | **geographic_coverage_details** | **String** | Specific regions/countries covered (e.g., &#39;United States, Canada, Mexico&#39;) | [optional] |
-| **data_source_refresh_frequency** | **String** | How often the source data is refreshed (Enum type: DataRefreshFrequency) | [optional] |
+| **data_source_refresh_frequency** | **String** | How often the source data is refreshed | [optional] |
 | **data_source_last_refreshed** | **Time** | When the source data was last refreshed | [optional] |
+| **rate_limit_number** | **Integer** | Number of requests allowed per period (e.g., 100) | [optional] |
+| **rate_limit_period** | **String** | Time period for rate limiting (second, minute, hour, day) | [optional] |
+| **rate_limit_granularity** | **String** | Granularity level for rate limiting (USER, COMPANY, IP) | [optional] |
 
 ## Example
 
 ```ruby
-require 'spartera_api_sdk'
+require 'openapi_client'
 
-instance = SparteraApiSdk::AssetsInput.new(
-  user_id: null,
-  company_id: null,
-  connection_id: null,
-  industry_id: null,
-  approval_status: null,
-  approved_by_user_id: null,
-  approved_at: null,
-  name: null,
-  slug: null,
-  description: null,
-  source: null,
-  asset_type: null,
-  asset_schema: null,
-  tags: null,
-  sql_logic: null,
-  source_schema_name: null,
-  source_table_name: null,
-  sell_in_marketplace: null,
-  viz_chart_library: null,
-  viz_chart_type: null,
-  viz_dep_var_col_name: null,
-  viz_indep_var_col_name: null,
-  viz_size_col_name: null,
-  viz_color_col_name: null,
-  viz_data_aggregation: null,
-  viz_sort_direction: null,
-  viz_data_limit: null,
-  viz_color_scheme: null,
-  allow_params: null,
-  accept_terms: null,
-  cached: null,
-  schedule: null,
-  next_run: null,
-  data_time_period_start: null,
-  data_time_period_end: null,
-  geographic_coverage_type: null,
-  geographic_coverage_details: null,
-  data_source_refresh_frequency: null,
-  data_source_last_refreshed: null
+instance = OpenapiClient::AssetsInput.new(
+  user_id: user_id_abc123,
+  company_id: company_id_abc123,
+  connection_id: connection_id_abc123,
+  industry_id: 1,
+  auc_id: 1,
+  function_id: function_id_abc123,
+  approval_status: PENDING,
+  approved_by_user_id: approved_by_user_id_abc123,
+  approved_at: 2025-04-01T00:00:00Z,
+  name: Example Name,
+  slug: example-slug,
+  description: Example description.,
+  detailed_description: Example description.,
+  source: MANUAL,
+  asset_type: CALCULATION,
+  asset_schema: {},
+  tags: example_value,
+  short_code: ABC123,
+  restricted_domains: example.com,
+  sql_logic: example_value,
+  source_schema_name: Example Name,
+  source_table_name: Example Name,
+  sell_in_marketplace: true,
+  require_customization: true,
+  viz_chart_library: PLOTLY,
+  viz_chart_type: LINE,
+  viz_dep_var_col_name: Example Name,
+  viz_indep_var_col_name: Example Name,
+  viz_size_col_name: Example Name,
+  viz_color_col_name: Example Name,
+  viz_data_aggregation: No Aggregation,
+  viz_sort_direction: No Sorting,
+  viz_data_limit: 1,
+  viz_color_scheme: Default,
+  viz_show_legend: true,
+  viz_show_grid: true,
+  viz_show_trendline: true,
+  viz_line_smoothing: true,
+  viz_bar_stacked: true,
+  viz_filter_direction: TOP,
+  allow_params: true,
+  accept_terms: true,
+  cached: true,
+  schedule: example_value,
+  next_run: 2025-04-01T00:00:00Z,
+  data_time_period_start: 2025-04-01T00:00:00Z,
+  data_time_period_end: 2025-04-01T00:00:00Z,
+  geographic_coverage_type: GLOBAL,
+  geographic_coverage_details: example_value,
+  data_source_refresh_frequency: REAL_TIME,
+  data_source_last_refreshed: 2025-04-01T00:00:00Z,
+  rate_limit_number: 0.15,
+  rate_limit_period: SECOND,
+  rate_limit_granularity: USER
 )
 ```
 

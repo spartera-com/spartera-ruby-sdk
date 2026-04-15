@@ -1,89 +1,22 @@
-# SparteraApiSdk::UsersApi
+# OpenapiClient::UsersApi
 
 All URIs are relative to *https://api.spartera.com*
 
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
-| [**companies_company_id_users_get**](UsersApi.md#companies_company_id_users_get) | **GET** /companies/{company_id}/users | Get a list of all users in a company |
-| [**companies_company_id_users_post**](UsersApi.md#companies_company_id_users_post) | **POST** /companies/{company_id}/users | Create a new user |
-| [**companies_company_id_users_user_id_delete**](UsersApi.md#companies_company_id_users_user_id_delete) | **DELETE** /companies/{company_id}/users/{user_id} | Delete single user by ID |
-| [**companies_company_id_users_user_id_get**](UsersApi.md#companies_company_id_users_user_id_get) | **GET** /companies/{company_id}/users/{user_id} | Get single user by ID |
-| [**companies_company_id_users_user_id_patch**](UsersApi.md#companies_company_id_users_user_id_patch) | **PATCH** /companies/{company_id}/users/{user_id} | Update an existing user by ID |
-| [**me_get**](UsersApi.md#me_get) | **GET** /me | Get current authenticated user&#39;s profile. |
+| [**create_users**](UsersApi.md#create_users) | **POST** /companies/{company_id}/users | Create a new user |
+| [**create_users_google_oauth**](UsersApi.md#create_users_google_oauth) | **POST** /companies/{company_id}/users/google-oauth | POST /companies/{company_id}/users/google-oauth |
+| [**create_users_logout**](UsersApi.md#create_users_logout) | **POST** /companies/{company_id}/users/logout | Logout current user by revoking their sessions |
+| [**delete_users**](UsersApi.md#delete_users) | **DELETE** /companies/{company_id}/users/{user_id} | Delete single user by ID |
+| [**get_users_by_id**](UsersApi.md#get_users_by_id) | **GET** /companies/{company_id}/users/{user_id} | Get single user by ID |
+| [**list_users**](UsersApi.md#list_users) | **GET** /companies/{company_id}/users | Get a list of all users in a company |
+| [**list_users_me**](UsersApi.md#list_users_me) | **GET** /me | Get current authenticated user&#39;s profile. |
+| [**update_users**](UsersApi.md#update_users) | **PATCH** /companies/{company_id}/users/{user_id} | Update an existing user by ID |
 
 
-## companies_company_id_users_get
+## create_users
 
-> <CompaniesCompanyIdUsersGet200Response> companies_company_id_users_get(company_id)
-
-Get a list of all users in a company
-
-### Examples
-
-```ruby
-require 'time'
-require 'spartera_api_sdk'
-# setup authorization
-SparteraApiSdk.configure do |config|
-  # Configure API key authorization: ApiKeyAuth
-  config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['x-api-key'] = 'Bearer'
-end
-
-api_instance = SparteraApiSdk::UsersApi.new
-company_id = 'company_id_example' # String | 
-
-begin
-  # Get a list of all users in a company
-  result = api_instance.companies_company_id_users_get(company_id)
-  p result
-rescue SparteraApiSdk::ApiError => e
-  puts "Error when calling UsersApi->companies_company_id_users_get: #{e}"
-end
-```
-
-#### Using the companies_company_id_users_get_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<CompaniesCompanyIdUsersGet200Response>, Integer, Hash)> companies_company_id_users_get_with_http_info(company_id)
-
-```ruby
-begin
-  # Get a list of all users in a company
-  data, status_code, headers = api_instance.companies_company_id_users_get_with_http_info(company_id)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <CompaniesCompanyIdUsersGet200Response>
-rescue SparteraApiSdk::ApiError => e
-  puts "Error when calling UsersApi->companies_company_id_users_get_with_http_info: #{e}"
-end
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **company_id** | **String** |  |  |
-
-### Return type
-
-[**CompaniesCompanyIdUsersGet200Response**](CompaniesCompanyIdUsersGet200Response.md)
-
-### Authorization
-
-[ApiKeyAuth](../README.md#ApiKeyAuth)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-
-## companies_company_id_users_post
-
-> <CompaniesCompanyIdUsersPost200Response> companies_company_id_users_post(company_id, users_input)
+> <CreateUsers200Response> create_users(company_id, users_input, opts)
 
 Create a new user
 
@@ -91,43 +24,50 @@ Create a new user
 
 ```ruby
 require 'time'
-require 'spartera_api_sdk'
+require 'openapi_client'
 # setup authorization
-SparteraApiSdk.configure do |config|
+OpenapiClient.configure do |config|
   # Configure API key authorization: ApiKeyAuth
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
-api_instance = SparteraApiSdk::UsersApi.new
-company_id = 'company_id_example' # String | 
-users_input = SparteraApiSdk::UsersInput.new({company_id: 'company_id_example'}) # UsersInput | 
+api_instance = OpenapiClient::UsersApi.new
+company_id = 'company_id_example' # String | Unique identifier for the Company
+users_input = OpenapiClient::UsersInput.new({company_id: 'company_id_abc123'}) # UsersInput | 
+opts = {
+  page: 56, # Integer | Page number for pagination
+  limit: 56, # Integer | Number of items per page
+  sort_by: 'sort_by_example', # String | Field to sort by
+  sort_order: 'asc', # String | Sort order (ascending or descending)
+  search: 'search_example' # String | Search term to filter results
+}
 
 begin
   # Create a new user
-  result = api_instance.companies_company_id_users_post(company_id, users_input)
+  result = api_instance.create_users(company_id, users_input, opts)
   p result
-rescue SparteraApiSdk::ApiError => e
-  puts "Error when calling UsersApi->companies_company_id_users_post: #{e}"
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling UsersApi->create_users: #{e}"
 end
 ```
 
-#### Using the companies_company_id_users_post_with_http_info variant
+#### Using the create_users_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<CompaniesCompanyIdUsersPost200Response>, Integer, Hash)> companies_company_id_users_post_with_http_info(company_id, users_input)
+> <Array(<CreateUsers200Response>, Integer, Hash)> create_users_with_http_info(company_id, users_input, opts)
 
 ```ruby
 begin
   # Create a new user
-  data, status_code, headers = api_instance.companies_company_id_users_post_with_http_info(company_id, users_input)
+  data, status_code, headers = api_instance.create_users_with_http_info(company_id, users_input, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <CompaniesCompanyIdUsersPost200Response>
-rescue SparteraApiSdk::ApiError => e
-  puts "Error when calling UsersApi->companies_company_id_users_post_with_http_info: #{e}"
+  p data # => <CreateUsers200Response>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling UsersApi->create_users_with_http_info: #{e}"
 end
 ```
 
@@ -135,12 +75,17 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **company_id** | **String** |  |  |
+| **company_id** | **String** | Unique identifier for the Company |  |
 | **users_input** | [**UsersInput**](UsersInput.md) |  |  |
+| **page** | **Integer** | Page number for pagination | [optional][default to 1] |
+| **limit** | **Integer** | Number of items per page | [optional][default to 20] |
+| **sort_by** | **String** | Field to sort by | [optional] |
+| **sort_order** | **String** | Sort order (ascending or descending) | [optional][default to &#39;desc&#39;] |
+| **search** | **String** | Search term to filter results | [optional] |
 
 ### Return type
 
-[**CompaniesCompanyIdUsersPost200Response**](CompaniesCompanyIdUsersPost200Response.md)
+[**CreateUsers200Response**](CreateUsers200Response.md)
 
 ### Authorization
 
@@ -152,9 +97,175 @@ end
 - **Accept**: application/json
 
 
-## companies_company_id_users_user_id_delete
+## create_users_google_oauth
 
-> <CompaniesCompanyIdUsersUserIdDelete200Response> companies_company_id_users_user_id_delete(company_id, user_id)
+> <CreateUsers200Response> create_users_google_oauth(company_id, users_input, opts)
+
+POST /companies/{company_id}/users/google-oauth
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+# setup authorization
+OpenapiClient.configure do |config|
+  # Configure API key authorization: ApiKeyAuth
+  config.api_key['x-api-key'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['x-api-key'] = 'Bearer'
+end
+
+api_instance = OpenapiClient::UsersApi.new
+company_id = 'company_id_example' # String | Unique identifier for the Company
+users_input = OpenapiClient::UsersInput.new({company_id: 'company_id_abc123'}) # UsersInput | 
+opts = {
+  page: 56, # Integer | Page number for pagination
+  limit: 56, # Integer | Number of items per page
+  sort_by: 'sort_by_example', # String | Field to sort by
+  sort_order: 'asc', # String | Sort order (ascending or descending)
+  search: 'search_example' # String | Search term to filter results
+}
+
+begin
+  # POST /companies/{company_id}/users/google-oauth
+  result = api_instance.create_users_google_oauth(company_id, users_input, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling UsersApi->create_users_google_oauth: #{e}"
+end
+```
+
+#### Using the create_users_google_oauth_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<CreateUsers200Response>, Integer, Hash)> create_users_google_oauth_with_http_info(company_id, users_input, opts)
+
+```ruby
+begin
+  # POST /companies/{company_id}/users/google-oauth
+  data, status_code, headers = api_instance.create_users_google_oauth_with_http_info(company_id, users_input, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <CreateUsers200Response>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling UsersApi->create_users_google_oauth_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **company_id** | **String** | Unique identifier for the Company |  |
+| **users_input** | [**UsersInput**](UsersInput.md) |  |  |
+| **page** | **Integer** | Page number for pagination | [optional][default to 1] |
+| **limit** | **Integer** | Number of items per page | [optional][default to 20] |
+| **sort_by** | **String** | Field to sort by | [optional] |
+| **sort_order** | **String** | Sort order (ascending or descending) | [optional][default to &#39;desc&#39;] |
+| **search** | **String** | Search term to filter results | [optional] |
+
+### Return type
+
+[**CreateUsers200Response**](CreateUsers200Response.md)
+
+### Authorization
+
+[ApiKeyAuth](../README.md#ApiKeyAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## create_users_logout
+
+> <CreateUsers200Response> create_users_logout(company_id, users_input, opts)
+
+Logout current user by revoking their sessions
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+# setup authorization
+OpenapiClient.configure do |config|
+  # Configure API key authorization: ApiKeyAuth
+  config.api_key['x-api-key'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['x-api-key'] = 'Bearer'
+end
+
+api_instance = OpenapiClient::UsersApi.new
+company_id = 'company_id_example' # String | Unique identifier for the Company
+users_input = OpenapiClient::UsersInput.new({company_id: 'company_id_abc123'}) # UsersInput | 
+opts = {
+  page: 56, # Integer | Page number for pagination
+  limit: 56, # Integer | Number of items per page
+  sort_by: 'sort_by_example', # String | Field to sort by
+  sort_order: 'asc', # String | Sort order (ascending or descending)
+  search: 'search_example' # String | Search term to filter results
+}
+
+begin
+  # Logout current user by revoking their sessions
+  result = api_instance.create_users_logout(company_id, users_input, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling UsersApi->create_users_logout: #{e}"
+end
+```
+
+#### Using the create_users_logout_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<CreateUsers200Response>, Integer, Hash)> create_users_logout_with_http_info(company_id, users_input, opts)
+
+```ruby
+begin
+  # Logout current user by revoking their sessions
+  data, status_code, headers = api_instance.create_users_logout_with_http_info(company_id, users_input, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <CreateUsers200Response>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling UsersApi->create_users_logout_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **company_id** | **String** | Unique identifier for the Company |  |
+| **users_input** | [**UsersInput**](UsersInput.md) |  |  |
+| **page** | **Integer** | Page number for pagination | [optional][default to 1] |
+| **limit** | **Integer** | Number of items per page | [optional][default to 20] |
+| **sort_by** | **String** | Field to sort by | [optional] |
+| **sort_order** | **String** | Sort order (ascending or descending) | [optional][default to &#39;desc&#39;] |
+| **search** | **String** | Search term to filter results | [optional] |
+
+### Return type
+
+[**CreateUsers200Response**](CreateUsers200Response.md)
+
+### Authorization
+
+[ApiKeyAuth](../README.md#ApiKeyAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## delete_users
+
+> <DeleteUsers200Response> delete_users(company_id, user_id)
 
 Delete single user by ID
 
@@ -162,43 +273,43 @@ Delete single user by ID
 
 ```ruby
 require 'time'
-require 'spartera_api_sdk'
+require 'openapi_client'
 # setup authorization
-SparteraApiSdk.configure do |config|
+OpenapiClient.configure do |config|
   # Configure API key authorization: ApiKeyAuth
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
-api_instance = SparteraApiSdk::UsersApi.new
-company_id = 'company_id_example' # String | 
-user_id = 'user_id_example' # String | 
+api_instance = OpenapiClient::UsersApi.new
+company_id = 'company_id_example' # String | Unique identifier for the Company
+user_id = 'user_id_example' # String | Unique identifier for the User
 
 begin
   # Delete single user by ID
-  result = api_instance.companies_company_id_users_user_id_delete(company_id, user_id)
+  result = api_instance.delete_users(company_id, user_id)
   p result
-rescue SparteraApiSdk::ApiError => e
-  puts "Error when calling UsersApi->companies_company_id_users_user_id_delete: #{e}"
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling UsersApi->delete_users: #{e}"
 end
 ```
 
-#### Using the companies_company_id_users_user_id_delete_with_http_info variant
+#### Using the delete_users_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<CompaniesCompanyIdUsersUserIdDelete200Response>, Integer, Hash)> companies_company_id_users_user_id_delete_with_http_info(company_id, user_id)
+> <Array(<DeleteUsers200Response>, Integer, Hash)> delete_users_with_http_info(company_id, user_id)
 
 ```ruby
 begin
   # Delete single user by ID
-  data, status_code, headers = api_instance.companies_company_id_users_user_id_delete_with_http_info(company_id, user_id)
+  data, status_code, headers = api_instance.delete_users_with_http_info(company_id, user_id)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <CompaniesCompanyIdUsersUserIdDelete200Response>
-rescue SparteraApiSdk::ApiError => e
-  puts "Error when calling UsersApi->companies_company_id_users_user_id_delete_with_http_info: #{e}"
+  p data # => <DeleteUsers200Response>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling UsersApi->delete_users_with_http_info: #{e}"
 end
 ```
 
@@ -206,12 +317,12 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **company_id** | **String** |  |  |
-| **user_id** | **String** |  |  |
+| **company_id** | **String** | Unique identifier for the Company |  |
+| **user_id** | **String** | Unique identifier for the User |  |
 
 ### Return type
 
-[**CompaniesCompanyIdUsersUserIdDelete200Response**](CompaniesCompanyIdUsersUserIdDelete200Response.md)
+[**DeleteUsers200Response**](DeleteUsers200Response.md)
 
 ### Authorization
 
@@ -223,9 +334,9 @@ end
 - **Accept**: application/json
 
 
-## companies_company_id_users_user_id_get
+## get_users_by_id
 
-> <CompaniesCompanyIdUsersUserIdGet200Response> companies_company_id_users_user_id_get(company_id, user_id)
+> <GetUsersById200Response> get_users_by_id(company_id, user_id)
 
 Get single user by ID
 
@@ -233,43 +344,43 @@ Get single user by ID
 
 ```ruby
 require 'time'
-require 'spartera_api_sdk'
+require 'openapi_client'
 # setup authorization
-SparteraApiSdk.configure do |config|
+OpenapiClient.configure do |config|
   # Configure API key authorization: ApiKeyAuth
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
-api_instance = SparteraApiSdk::UsersApi.new
-company_id = 'company_id_example' # String | 
-user_id = 'user_id_example' # String | 
+api_instance = OpenapiClient::UsersApi.new
+company_id = 'company_id_example' # String | Unique identifier for the Company
+user_id = 'user_id_example' # String | Unique identifier for the User
 
 begin
   # Get single user by ID
-  result = api_instance.companies_company_id_users_user_id_get(company_id, user_id)
+  result = api_instance.get_users_by_id(company_id, user_id)
   p result
-rescue SparteraApiSdk::ApiError => e
-  puts "Error when calling UsersApi->companies_company_id_users_user_id_get: #{e}"
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling UsersApi->get_users_by_id: #{e}"
 end
 ```
 
-#### Using the companies_company_id_users_user_id_get_with_http_info variant
+#### Using the get_users_by_id_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<CompaniesCompanyIdUsersUserIdGet200Response>, Integer, Hash)> companies_company_id_users_user_id_get_with_http_info(company_id, user_id)
+> <Array(<GetUsersById200Response>, Integer, Hash)> get_users_by_id_with_http_info(company_id, user_id)
 
 ```ruby
 begin
   # Get single user by ID
-  data, status_code, headers = api_instance.companies_company_id_users_user_id_get_with_http_info(company_id, user_id)
+  data, status_code, headers = api_instance.get_users_by_id_with_http_info(company_id, user_id)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <CompaniesCompanyIdUsersUserIdGet200Response>
-rescue SparteraApiSdk::ApiError => e
-  puts "Error when calling UsersApi->companies_company_id_users_user_id_get_with_http_info: #{e}"
+  p data # => <GetUsersById200Response>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling UsersApi->get_users_by_id_with_http_info: #{e}"
 end
 ```
 
@@ -277,12 +388,12 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **company_id** | **String** |  |  |
-| **user_id** | **String** |  |  |
+| **company_id** | **String** | Unique identifier for the Company |  |
+| **user_id** | **String** | Unique identifier for the User |  |
 
 ### Return type
 
-[**CompaniesCompanyIdUsersUserIdGet200Response**](CompaniesCompanyIdUsersUserIdGet200Response.md)
+[**GetUsersById200Response**](GetUsersById200Response.md)
 
 ### Authorization
 
@@ -294,54 +405,59 @@ end
 - **Accept**: application/json
 
 
-## companies_company_id_users_user_id_patch
+## list_users
 
-> <CompaniesCompanyIdUsersUserIdPatch200Response> companies_company_id_users_user_id_patch(company_id, user_id, users_update)
+> <ListUsers200Response> list_users(company_id, opts)
 
-Update an existing user by ID
+Get a list of all users in a company
 
 ### Examples
 
 ```ruby
 require 'time'
-require 'spartera_api_sdk'
+require 'openapi_client'
 # setup authorization
-SparteraApiSdk.configure do |config|
+OpenapiClient.configure do |config|
   # Configure API key authorization: ApiKeyAuth
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
-api_instance = SparteraApiSdk::UsersApi.new
-company_id = 'company_id_example' # String | 
-user_id = 'user_id_example' # String | 
-users_update = SparteraApiSdk::UsersUpdate.new # UsersUpdate | 
+api_instance = OpenapiClient::UsersApi.new
+company_id = 'company_id_example' # String | Unique identifier for the Company
+opts = {
+  page: 56, # Integer | Page number for pagination
+  limit: 56, # Integer | Number of items per page
+  sort_by: 'sort_by_example', # String | Field to sort by
+  sort_order: 'asc', # String | Sort order (ascending or descending)
+  search: 'search_example' # String | Search term to filter results
+}
 
 begin
-  # Update an existing user by ID
-  result = api_instance.companies_company_id_users_user_id_patch(company_id, user_id, users_update)
+  # Get a list of all users in a company
+  result = api_instance.list_users(company_id, opts)
   p result
-rescue SparteraApiSdk::ApiError => e
-  puts "Error when calling UsersApi->companies_company_id_users_user_id_patch: #{e}"
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling UsersApi->list_users: #{e}"
 end
 ```
 
-#### Using the companies_company_id_users_user_id_patch_with_http_info variant
+#### Using the list_users_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<CompaniesCompanyIdUsersUserIdPatch200Response>, Integer, Hash)> companies_company_id_users_user_id_patch_with_http_info(company_id, user_id, users_update)
+> <Array(<ListUsers200Response>, Integer, Hash)> list_users_with_http_info(company_id, opts)
 
 ```ruby
 begin
-  # Update an existing user by ID
-  data, status_code, headers = api_instance.companies_company_id_users_user_id_patch_with_http_info(company_id, user_id, users_update)
+  # Get a list of all users in a company
+  data, status_code, headers = api_instance.list_users_with_http_info(company_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <CompaniesCompanyIdUsersUserIdPatch200Response>
-rescue SparteraApiSdk::ApiError => e
-  puts "Error when calling UsersApi->companies_company_id_users_user_id_patch_with_http_info: #{e}"
+  p data # => <ListUsers200Response>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling UsersApi->list_users_with_http_info: #{e}"
 end
 ```
 
@@ -349,13 +465,168 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **company_id** | **String** |  |  |
-| **user_id** | **String** |  |  |
+| **company_id** | **String** | Unique identifier for the Company |  |
+| **page** | **Integer** | Page number for pagination | [optional][default to 1] |
+| **limit** | **Integer** | Number of items per page | [optional][default to 20] |
+| **sort_by** | **String** | Field to sort by | [optional] |
+| **sort_order** | **String** | Sort order (ascending or descending) | [optional][default to &#39;desc&#39;] |
+| **search** | **String** | Search term to filter results | [optional] |
+
+### Return type
+
+[**ListUsers200Response**](ListUsers200Response.md)
+
+### Authorization
+
+[ApiKeyAuth](../README.md#ApiKeyAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## list_users_me
+
+> <ListUsers200Response> list_users_me(opts)
+
+Get current authenticated user's profile.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+# setup authorization
+OpenapiClient.configure do |config|
+  # Configure API key authorization: ApiKeyAuth
+  config.api_key['x-api-key'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['x-api-key'] = 'Bearer'
+end
+
+api_instance = OpenapiClient::UsersApi.new
+opts = {
+  page: 56, # Integer | Page number for pagination
+  limit: 56, # Integer | Number of items per page
+  sort_by: 'sort_by_example', # String | Field to sort by
+  sort_order: 'asc', # String | Sort order (ascending or descending)
+  search: 'search_example' # String | Search term to filter results
+}
+
+begin
+  # Get current authenticated user's profile.
+  result = api_instance.list_users_me(opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling UsersApi->list_users_me: #{e}"
+end
+```
+
+#### Using the list_users_me_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<ListUsers200Response>, Integer, Hash)> list_users_me_with_http_info(opts)
+
+```ruby
+begin
+  # Get current authenticated user's profile.
+  data, status_code, headers = api_instance.list_users_me_with_http_info(opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <ListUsers200Response>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling UsersApi->list_users_me_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **page** | **Integer** | Page number for pagination | [optional][default to 1] |
+| **limit** | **Integer** | Number of items per page | [optional][default to 20] |
+| **sort_by** | **String** | Field to sort by | [optional] |
+| **sort_order** | **String** | Sort order (ascending or descending) | [optional][default to &#39;desc&#39;] |
+| **search** | **String** | Search term to filter results | [optional] |
+
+### Return type
+
+[**ListUsers200Response**](ListUsers200Response.md)
+
+### Authorization
+
+[ApiKeyAuth](../README.md#ApiKeyAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## update_users
+
+> <UpdateUsers200Response> update_users(company_id, user_id, users_update)
+
+Update an existing user by ID
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+# setup authorization
+OpenapiClient.configure do |config|
+  # Configure API key authorization: ApiKeyAuth
+  config.api_key['x-api-key'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['x-api-key'] = 'Bearer'
+end
+
+api_instance = OpenapiClient::UsersApi.new
+company_id = 'company_id_example' # String | Unique identifier for the Company
+user_id = 'user_id_example' # String | Unique identifier for the User
+users_update = OpenapiClient::UsersUpdate.new # UsersUpdate | 
+
+begin
+  # Update an existing user by ID
+  result = api_instance.update_users(company_id, user_id, users_update)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling UsersApi->update_users: #{e}"
+end
+```
+
+#### Using the update_users_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<UpdateUsers200Response>, Integer, Hash)> update_users_with_http_info(company_id, user_id, users_update)
+
+```ruby
+begin
+  # Update an existing user by ID
+  data, status_code, headers = api_instance.update_users_with_http_info(company_id, user_id, users_update)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <UpdateUsers200Response>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling UsersApi->update_users_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **company_id** | **String** | Unique identifier for the Company |  |
+| **user_id** | **String** | Unique identifier for the User |  |
 | **users_update** | [**UsersUpdate**](UsersUpdate.md) |  |  |
 
 ### Return type
 
-[**CompaniesCompanyIdUsersUserIdPatch200Response**](CompaniesCompanyIdUsersUserIdPatch200Response.md)
+[**UpdateUsers200Response**](UpdateUsers200Response.md)
 
 ### Authorization
 
@@ -364,71 +635,5 @@ end
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: application/json
-
-
-## me_get
-
-> <CompaniesCompanyIdUsersGet200Response> me_get
-
-Get current authenticated user's profile.
-
-### Examples
-
-```ruby
-require 'time'
-require 'spartera_api_sdk'
-# setup authorization
-SparteraApiSdk.configure do |config|
-  # Configure API key authorization: ApiKeyAuth
-  config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['x-api-key'] = 'Bearer'
-end
-
-api_instance = SparteraApiSdk::UsersApi.new
-
-begin
-  # Get current authenticated user's profile.
-  result = api_instance.me_get
-  p result
-rescue SparteraApiSdk::ApiError => e
-  puts "Error when calling UsersApi->me_get: #{e}"
-end
-```
-
-#### Using the me_get_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<CompaniesCompanyIdUsersGet200Response>, Integer, Hash)> me_get_with_http_info
-
-```ruby
-begin
-  # Get current authenticated user's profile.
-  data, status_code, headers = api_instance.me_get_with_http_info
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <CompaniesCompanyIdUsersGet200Response>
-rescue SparteraApiSdk::ApiError => e
-  puts "Error when calling UsersApi->me_get_with_http_info: #{e}"
-end
-```
-
-### Parameters
-
-This endpoint does not need any parameter.
-
-### Return type
-
-[**CompaniesCompanyIdUsersGet200Response**](CompaniesCompanyIdUsersGet200Response.md)
-
-### Authorization
-
-[ApiKeyAuth](../README.md#ApiKeyAuth)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
 - **Accept**: application/json
 

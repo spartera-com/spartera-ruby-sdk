@@ -1,68 +1,71 @@
-# SparteraApiSdk::CloudProvidersApi
+# OpenapiClient::CloudProvidersApi
 
 All URIs are relative to *https://api.spartera.com*
 
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
-| [**cloud_providers_get**](CloudProvidersApi.md#cloud_providers_get) | **GET** /cloud-providers | Get a list of all cloud providers |
-| [**cloud_providers_provider_id_get**](CloudProvidersApi.md#cloud_providers_provider_id_get) | **GET** /cloud-providers/{provider_id} | Get single cloud provider by ID |
+| [**get_cloud_providers_by_id**](CloudProvidersApi.md#get_cloud_providers_by_id) | **GET** /cloud-providers/{provider_id} | Get single cloud provider by ID |
+| [**list_cloud_providers**](CloudProvidersApi.md#list_cloud_providers) | **GET** /cloud-providers | Get a list of all cloud providers |
 
 
-## cloud_providers_get
+## get_cloud_providers_by_id
 
-> <CloudProvidersGet200Response> cloud_providers_get
+> <GetCloudProvidersById200Response> get_cloud_providers_by_id(provider_id)
 
-Get a list of all cloud providers
+Get single cloud provider by ID
 
 ### Examples
 
 ```ruby
 require 'time'
-require 'spartera_api_sdk'
+require 'openapi_client'
 # setup authorization
-SparteraApiSdk.configure do |config|
+OpenapiClient.configure do |config|
   # Configure API key authorization: ApiKeyAuth
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
-api_instance = SparteraApiSdk::CloudProvidersApi.new
+api_instance = OpenapiClient::CloudProvidersApi.new
+provider_id = 'provider_id_example' # String | Unique identifier for the Provider
 
 begin
-  # Get a list of all cloud providers
-  result = api_instance.cloud_providers_get
+  # Get single cloud provider by ID
+  result = api_instance.get_cloud_providers_by_id(provider_id)
   p result
-rescue SparteraApiSdk::ApiError => e
-  puts "Error when calling CloudProvidersApi->cloud_providers_get: #{e}"
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling CloudProvidersApi->get_cloud_providers_by_id: #{e}"
 end
 ```
 
-#### Using the cloud_providers_get_with_http_info variant
+#### Using the get_cloud_providers_by_id_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<CloudProvidersGet200Response>, Integer, Hash)> cloud_providers_get_with_http_info
+> <Array(<GetCloudProvidersById200Response>, Integer, Hash)> get_cloud_providers_by_id_with_http_info(provider_id)
 
 ```ruby
 begin
-  # Get a list of all cloud providers
-  data, status_code, headers = api_instance.cloud_providers_get_with_http_info
+  # Get single cloud provider by ID
+  data, status_code, headers = api_instance.get_cloud_providers_by_id_with_http_info(provider_id)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <CloudProvidersGet200Response>
-rescue SparteraApiSdk::ApiError => e
-  puts "Error when calling CloudProvidersApi->cloud_providers_get_with_http_info: #{e}"
+  p data # => <GetCloudProvidersById200Response>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling CloudProvidersApi->get_cloud_providers_by_id_with_http_info: #{e}"
 end
 ```
 
 ### Parameters
 
-This endpoint does not need any parameter.
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **provider_id** | **String** | Unique identifier for the Provider |  |
 
 ### Return type
 
-[**CloudProvidersGet200Response**](CloudProvidersGet200Response.md)
+[**GetCloudProvidersById200Response**](GetCloudProvidersById200Response.md)
 
 ### Authorization
 
@@ -74,52 +77,58 @@ This endpoint does not need any parameter.
 - **Accept**: application/json
 
 
-## cloud_providers_provider_id_get
+## list_cloud_providers
 
-> <CloudProvidersProviderIdGet200Response> cloud_providers_provider_id_get(provider_id)
+> <ListCloudProviders200Response> list_cloud_providers(opts)
 
-Get single cloud provider by ID
+Get a list of all cloud providers
 
 ### Examples
 
 ```ruby
 require 'time'
-require 'spartera_api_sdk'
+require 'openapi_client'
 # setup authorization
-SparteraApiSdk.configure do |config|
+OpenapiClient.configure do |config|
   # Configure API key authorization: ApiKeyAuth
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
-api_instance = SparteraApiSdk::CloudProvidersApi.new
-provider_id = 'provider_id_example' # String | 
+api_instance = OpenapiClient::CloudProvidersApi.new
+opts = {
+  page: 56, # Integer | Page number for pagination
+  limit: 56, # Integer | Number of items per page
+  sort_by: 'sort_by_example', # String | Field to sort by
+  sort_order: 'asc', # String | Sort order (ascending or descending)
+  search: 'search_example' # String | Search term to filter results
+}
 
 begin
-  # Get single cloud provider by ID
-  result = api_instance.cloud_providers_provider_id_get(provider_id)
+  # Get a list of all cloud providers
+  result = api_instance.list_cloud_providers(opts)
   p result
-rescue SparteraApiSdk::ApiError => e
-  puts "Error when calling CloudProvidersApi->cloud_providers_provider_id_get: #{e}"
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling CloudProvidersApi->list_cloud_providers: #{e}"
 end
 ```
 
-#### Using the cloud_providers_provider_id_get_with_http_info variant
+#### Using the list_cloud_providers_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<CloudProvidersProviderIdGet200Response>, Integer, Hash)> cloud_providers_provider_id_get_with_http_info(provider_id)
+> <Array(<ListCloudProviders200Response>, Integer, Hash)> list_cloud_providers_with_http_info(opts)
 
 ```ruby
 begin
-  # Get single cloud provider by ID
-  data, status_code, headers = api_instance.cloud_providers_provider_id_get_with_http_info(provider_id)
+  # Get a list of all cloud providers
+  data, status_code, headers = api_instance.list_cloud_providers_with_http_info(opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <CloudProvidersProviderIdGet200Response>
-rescue SparteraApiSdk::ApiError => e
-  puts "Error when calling CloudProvidersApi->cloud_providers_provider_id_get_with_http_info: #{e}"
+  p data # => <ListCloudProviders200Response>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling CloudProvidersApi->list_cloud_providers_with_http_info: #{e}"
 end
 ```
 
@@ -127,11 +136,15 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **provider_id** | **String** |  |  |
+| **page** | **Integer** | Page number for pagination | [optional][default to 1] |
+| **limit** | **Integer** | Number of items per page | [optional][default to 20] |
+| **sort_by** | **String** | Field to sort by | [optional] |
+| **sort_order** | **String** | Sort order (ascending or descending) | [optional][default to &#39;desc&#39;] |
+| **search** | **String** | Search term to filter results | [optional] |
 
 ### Return type
 
-[**CloudProvidersProviderIdGet200Response**](CloudProvidersProviderIdGet200Response.md)
+[**ListCloudProviders200Response**](ListCloudProviders200Response.md)
 
 ### Authorization
 

@@ -1,65 +1,72 @@
-# SparteraApiSdk::ConnectionsApi
+# OpenapiClient::ConnectionsApi
 
 All URIs are relative to *https://api.spartera.com*
 
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
-| [**companies_company_id_connections_connection_id_delete**](ConnectionsApi.md#companies_company_id_connections_connection_id_delete) | **DELETE** /companies/{company_id}/connections/{connection_id} | Delete single connection by ID |
-| [**companies_company_id_connections_connection_id_get**](ConnectionsApi.md#companies_company_id_connections_connection_id_get) | **GET** /companies/{company_id}/connections/{connection_id} | Get single connection by ID |
-| [**companies_company_id_connections_connection_id_infoschema_get**](ConnectionsApi.md#companies_company_id_connections_connection_id_infoschema_get) | **GET** /companies/{company_id}/connections/{connection_id}/infoschema | Retrieve the information schema for the specified connection |
-| [**companies_company_id_connections_connection_id_patch**](ConnectionsApi.md#companies_company_id_connections_connection_id_patch) | **PATCH** /companies/{company_id}/connections/{connection_id} | Update an existing connection by ID |
-| [**companies_company_id_connections_connection_id_test_get**](ConnectionsApi.md#companies_company_id_connections_connection_id_test_get) | **GET** /companies/{company_id}/connections/{connection_id}/test | Test the specified connection |
-| [**companies_company_id_connections_get**](ConnectionsApi.md#companies_company_id_connections_get) | **GET** /companies/{company_id}/connections | Get all connections for a specific company |
-| [**companies_company_id_connections_post**](ConnectionsApi.md#companies_company_id_connections_post) | **POST** /companies/{company_id}/connections | Create a new connection by ID |
+| [**create_connections**](ConnectionsApi.md#create_connections) | **POST** /companies/{company_id}/connections | Create a new connection by ID |
+| [**delete_connections**](ConnectionsApi.md#delete_connections) | **DELETE** /companies/{company_id}/connections/{connection_id} | Delete single connection by ID |
+| [**get_connections_by_id**](ConnectionsApi.md#get_connections_by_id) | **GET** /companies/{company_id}/connections/{connection_id} | Get single connection by ID |
+| [**get_connections_by_id2**](ConnectionsApi.md#get_connections_by_id2) | **GET** /companies/{company_id}/connections/{connection_id}/test | Test the specified connection |
+| [**get_connections_by_id_infoschema**](ConnectionsApi.md#get_connections_by_id_infoschema) | **GET** /companies/{company_id}/connections/{connection_id}/infoschema | Retrieve the information schema for the specified connection |
+| [**list_connections**](ConnectionsApi.md#list_connections) | **GET** /companies/{company_id}/connections | Get all connections for a specific company |
+| [**update_connections**](ConnectionsApi.md#update_connections) | **PATCH** /companies/{company_id}/connections/{connection_id} | Update an existing connection by ID |
 
 
-## companies_company_id_connections_connection_id_delete
+## create_connections
 
-> <CompaniesCompanyIdConnectionsConnectionIdDelete200Response> companies_company_id_connections_connection_id_delete(company_id, connection_id)
+> <CreateConnections200Response> create_connections(company_id, connections_input, opts)
 
-Delete single connection by ID
+Create a new connection by ID
 
 ### Examples
 
 ```ruby
 require 'time'
-require 'spartera_api_sdk'
+require 'openapi_client'
 # setup authorization
-SparteraApiSdk.configure do |config|
+OpenapiClient.configure do |config|
   # Configure API key authorization: ApiKeyAuth
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
-api_instance = SparteraApiSdk::ConnectionsApi.new
-company_id = 'company_id_example' # String | 
-connection_id = 'connection_id_example' # String | 
+api_instance = OpenapiClient::ConnectionsApi.new
+company_id = 'company_id_example' # String | Unique identifier for the Company
+connections_input = OpenapiClient::ConnectionsInput.new({engine_id: 1, company_id: 'company_id_abc123'}) # ConnectionsInput | 
+opts = {
+  page: 56, # Integer | Page number for pagination
+  limit: 56, # Integer | Number of items per page
+  sort_by: 'sort_by_example', # String | Field to sort by
+  sort_order: 'asc', # String | Sort order (ascending or descending)
+  search: 'search_example' # String | Search term to filter results
+}
 
 begin
-  # Delete single connection by ID
-  result = api_instance.companies_company_id_connections_connection_id_delete(company_id, connection_id)
+  # Create a new connection by ID
+  result = api_instance.create_connections(company_id, connections_input, opts)
   p result
-rescue SparteraApiSdk::ApiError => e
-  puts "Error when calling ConnectionsApi->companies_company_id_connections_connection_id_delete: #{e}"
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling ConnectionsApi->create_connections: #{e}"
 end
 ```
 
-#### Using the companies_company_id_connections_connection_id_delete_with_http_info variant
+#### Using the create_connections_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<CompaniesCompanyIdConnectionsConnectionIdDelete200Response>, Integer, Hash)> companies_company_id_connections_connection_id_delete_with_http_info(company_id, connection_id)
+> <Array(<CreateConnections200Response>, Integer, Hash)> create_connections_with_http_info(company_id, connections_input, opts)
 
 ```ruby
 begin
-  # Delete single connection by ID
-  data, status_code, headers = api_instance.companies_company_id_connections_connection_id_delete_with_http_info(company_id, connection_id)
+  # Create a new connection by ID
+  data, status_code, headers = api_instance.create_connections_with_http_info(company_id, connections_input, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <CompaniesCompanyIdConnectionsConnectionIdDelete200Response>
-rescue SparteraApiSdk::ApiError => e
-  puts "Error when calling ConnectionsApi->companies_company_id_connections_connection_id_delete_with_http_info: #{e}"
+  p data # => <CreateConnections200Response>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling ConnectionsApi->create_connections_with_http_info: #{e}"
 end
 ```
 
@@ -67,227 +74,17 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **company_id** | **String** |  |  |
-| **connection_id** | **String** |  |  |
+| **company_id** | **String** | Unique identifier for the Company |  |
+| **connections_input** | [**ConnectionsInput**](ConnectionsInput.md) |  |  |
+| **page** | **Integer** | Page number for pagination | [optional][default to 1] |
+| **limit** | **Integer** | Number of items per page | [optional][default to 20] |
+| **sort_by** | **String** | Field to sort by | [optional] |
+| **sort_order** | **String** | Sort order (ascending or descending) | [optional][default to &#39;desc&#39;] |
+| **search** | **String** | Search term to filter results | [optional] |
 
 ### Return type
 
-[**CompaniesCompanyIdConnectionsConnectionIdDelete200Response**](CompaniesCompanyIdConnectionsConnectionIdDelete200Response.md)
-
-### Authorization
-
-[ApiKeyAuth](../README.md#ApiKeyAuth)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-
-## companies_company_id_connections_connection_id_get
-
-> <CompaniesCompanyIdConnectionsConnectionIdGet200Response> companies_company_id_connections_connection_id_get(company_id, connection_id)
-
-Get single connection by ID
-
-### Examples
-
-```ruby
-require 'time'
-require 'spartera_api_sdk'
-# setup authorization
-SparteraApiSdk.configure do |config|
-  # Configure API key authorization: ApiKeyAuth
-  config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['x-api-key'] = 'Bearer'
-end
-
-api_instance = SparteraApiSdk::ConnectionsApi.new
-company_id = 'company_id_example' # String | 
-connection_id = 'connection_id_example' # String | 
-
-begin
-  # Get single connection by ID
-  result = api_instance.companies_company_id_connections_connection_id_get(company_id, connection_id)
-  p result
-rescue SparteraApiSdk::ApiError => e
-  puts "Error when calling ConnectionsApi->companies_company_id_connections_connection_id_get: #{e}"
-end
-```
-
-#### Using the companies_company_id_connections_connection_id_get_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<CompaniesCompanyIdConnectionsConnectionIdGet200Response>, Integer, Hash)> companies_company_id_connections_connection_id_get_with_http_info(company_id, connection_id)
-
-```ruby
-begin
-  # Get single connection by ID
-  data, status_code, headers = api_instance.companies_company_id_connections_connection_id_get_with_http_info(company_id, connection_id)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <CompaniesCompanyIdConnectionsConnectionIdGet200Response>
-rescue SparteraApiSdk::ApiError => e
-  puts "Error when calling ConnectionsApi->companies_company_id_connections_connection_id_get_with_http_info: #{e}"
-end
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **company_id** | **String** |  |  |
-| **connection_id** | **String** |  |  |
-
-### Return type
-
-[**CompaniesCompanyIdConnectionsConnectionIdGet200Response**](CompaniesCompanyIdConnectionsConnectionIdGet200Response.md)
-
-### Authorization
-
-[ApiKeyAuth](../README.md#ApiKeyAuth)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-
-## companies_company_id_connections_connection_id_infoschema_get
-
-> <CompaniesCompanyIdConnectionsGet200Response> companies_company_id_connections_connection_id_infoschema_get(company_id, connection_id)
-
-Retrieve the information schema for the specified connection
-
-### Examples
-
-```ruby
-require 'time'
-require 'spartera_api_sdk'
-# setup authorization
-SparteraApiSdk.configure do |config|
-  # Configure API key authorization: ApiKeyAuth
-  config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['x-api-key'] = 'Bearer'
-end
-
-api_instance = SparteraApiSdk::ConnectionsApi.new
-company_id = 'company_id_example' # String | 
-connection_id = 'connection_id_example' # String | 
-
-begin
-  # Retrieve the information schema for the specified connection
-  result = api_instance.companies_company_id_connections_connection_id_infoschema_get(company_id, connection_id)
-  p result
-rescue SparteraApiSdk::ApiError => e
-  puts "Error when calling ConnectionsApi->companies_company_id_connections_connection_id_infoschema_get: #{e}"
-end
-```
-
-#### Using the companies_company_id_connections_connection_id_infoschema_get_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<CompaniesCompanyIdConnectionsGet200Response>, Integer, Hash)> companies_company_id_connections_connection_id_infoschema_get_with_http_info(company_id, connection_id)
-
-```ruby
-begin
-  # Retrieve the information schema for the specified connection
-  data, status_code, headers = api_instance.companies_company_id_connections_connection_id_infoschema_get_with_http_info(company_id, connection_id)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <CompaniesCompanyIdConnectionsGet200Response>
-rescue SparteraApiSdk::ApiError => e
-  puts "Error when calling ConnectionsApi->companies_company_id_connections_connection_id_infoschema_get_with_http_info: #{e}"
-end
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **company_id** | **String** |  |  |
-| **connection_id** | **String** |  |  |
-
-### Return type
-
-[**CompaniesCompanyIdConnectionsGet200Response**](CompaniesCompanyIdConnectionsGet200Response.md)
-
-### Authorization
-
-[ApiKeyAuth](../README.md#ApiKeyAuth)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-
-## companies_company_id_connections_connection_id_patch
-
-> <CompaniesCompanyIdConnectionsConnectionIdPatch200Response> companies_company_id_connections_connection_id_patch(company_id, connection_id, connections_update)
-
-Update an existing connection by ID
-
-### Examples
-
-```ruby
-require 'time'
-require 'spartera_api_sdk'
-# setup authorization
-SparteraApiSdk.configure do |config|
-  # Configure API key authorization: ApiKeyAuth
-  config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['x-api-key'] = 'Bearer'
-end
-
-api_instance = SparteraApiSdk::ConnectionsApi.new
-company_id = 'company_id_example' # String | 
-connection_id = 'connection_id_example' # String | 
-connections_update = SparteraApiSdk::ConnectionsUpdate.new # ConnectionsUpdate | 
-
-begin
-  # Update an existing connection by ID
-  result = api_instance.companies_company_id_connections_connection_id_patch(company_id, connection_id, connections_update)
-  p result
-rescue SparteraApiSdk::ApiError => e
-  puts "Error when calling ConnectionsApi->companies_company_id_connections_connection_id_patch: #{e}"
-end
-```
-
-#### Using the companies_company_id_connections_connection_id_patch_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<CompaniesCompanyIdConnectionsConnectionIdPatch200Response>, Integer, Hash)> companies_company_id_connections_connection_id_patch_with_http_info(company_id, connection_id, connections_update)
-
-```ruby
-begin
-  # Update an existing connection by ID
-  data, status_code, headers = api_instance.companies_company_id_connections_connection_id_patch_with_http_info(company_id, connection_id, connections_update)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <CompaniesCompanyIdConnectionsConnectionIdPatch200Response>
-rescue SparteraApiSdk::ApiError => e
-  puts "Error when calling ConnectionsApi->companies_company_id_connections_connection_id_patch_with_http_info: #{e}"
-end
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **company_id** | **String** |  |  |
-| **connection_id** | **String** |  |  |
-| **connections_update** | [**ConnectionsUpdate**](ConnectionsUpdate.md) |  |  |
-
-### Return type
-
-[**CompaniesCompanyIdConnectionsConnectionIdPatch200Response**](CompaniesCompanyIdConnectionsConnectionIdPatch200Response.md)
+[**CreateConnections200Response**](CreateConnections200Response.md)
 
 ### Authorization
 
@@ -299,9 +96,151 @@ end
 - **Accept**: application/json
 
 
-## companies_company_id_connections_connection_id_test_get
+## delete_connections
 
-> <CompaniesCompanyIdConnectionsGet200Response> companies_company_id_connections_connection_id_test_get(company_id, connection_id)
+> <DeleteConnections200Response> delete_connections(company_id, connection_id)
+
+Delete single connection by ID
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+# setup authorization
+OpenapiClient.configure do |config|
+  # Configure API key authorization: ApiKeyAuth
+  config.api_key['x-api-key'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['x-api-key'] = 'Bearer'
+end
+
+api_instance = OpenapiClient::ConnectionsApi.new
+company_id = 'company_id_example' # String | Unique identifier for the Company
+connection_id = 'connection_id_example' # String | Unique identifier for the Connection
+
+begin
+  # Delete single connection by ID
+  result = api_instance.delete_connections(company_id, connection_id)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling ConnectionsApi->delete_connections: #{e}"
+end
+```
+
+#### Using the delete_connections_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<DeleteConnections200Response>, Integer, Hash)> delete_connections_with_http_info(company_id, connection_id)
+
+```ruby
+begin
+  # Delete single connection by ID
+  data, status_code, headers = api_instance.delete_connections_with_http_info(company_id, connection_id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <DeleteConnections200Response>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling ConnectionsApi->delete_connections_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **company_id** | **String** | Unique identifier for the Company |  |
+| **connection_id** | **String** | Unique identifier for the Connection |  |
+
+### Return type
+
+[**DeleteConnections200Response**](DeleteConnections200Response.md)
+
+### Authorization
+
+[ApiKeyAuth](../README.md#ApiKeyAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## get_connections_by_id
+
+> <GetConnectionsById200Response> get_connections_by_id(company_id, connection_id)
+
+Get single connection by ID
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+# setup authorization
+OpenapiClient.configure do |config|
+  # Configure API key authorization: ApiKeyAuth
+  config.api_key['x-api-key'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['x-api-key'] = 'Bearer'
+end
+
+api_instance = OpenapiClient::ConnectionsApi.new
+company_id = 'company_id_example' # String | Unique identifier for the Company
+connection_id = 'connection_id_example' # String | Unique identifier for the Connection
+
+begin
+  # Get single connection by ID
+  result = api_instance.get_connections_by_id(company_id, connection_id)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling ConnectionsApi->get_connections_by_id: #{e}"
+end
+```
+
+#### Using the get_connections_by_id_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<GetConnectionsById200Response>, Integer, Hash)> get_connections_by_id_with_http_info(company_id, connection_id)
+
+```ruby
+begin
+  # Get single connection by ID
+  data, status_code, headers = api_instance.get_connections_by_id_with_http_info(company_id, connection_id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <GetConnectionsById200Response>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling ConnectionsApi->get_connections_by_id_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **company_id** | **String** | Unique identifier for the Company |  |
+| **connection_id** | **String** | Unique identifier for the Connection |  |
+
+### Return type
+
+[**GetConnectionsById200Response**](GetConnectionsById200Response.md)
+
+### Authorization
+
+[ApiKeyAuth](../README.md#ApiKeyAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## get_connections_by_id2
+
+> <GetConnectionsById200Response> get_connections_by_id2(company_id, connection_id)
 
 Test the specified connection
 
@@ -309,43 +248,43 @@ Test the specified connection
 
 ```ruby
 require 'time'
-require 'spartera_api_sdk'
+require 'openapi_client'
 # setup authorization
-SparteraApiSdk.configure do |config|
+OpenapiClient.configure do |config|
   # Configure API key authorization: ApiKeyAuth
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
-api_instance = SparteraApiSdk::ConnectionsApi.new
-company_id = 'company_id_example' # String | 
-connection_id = 'connection_id_example' # String | 
+api_instance = OpenapiClient::ConnectionsApi.new
+company_id = 'company_id_example' # String | Unique identifier for the Company
+connection_id = 'connection_id_example' # String | Unique identifier for the Connection
 
 begin
   # Test the specified connection
-  result = api_instance.companies_company_id_connections_connection_id_test_get(company_id, connection_id)
+  result = api_instance.get_connections_by_id2(company_id, connection_id)
   p result
-rescue SparteraApiSdk::ApiError => e
-  puts "Error when calling ConnectionsApi->companies_company_id_connections_connection_id_test_get: #{e}"
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling ConnectionsApi->get_connections_by_id2: #{e}"
 end
 ```
 
-#### Using the companies_company_id_connections_connection_id_test_get_with_http_info variant
+#### Using the get_connections_by_id2_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<CompaniesCompanyIdConnectionsGet200Response>, Integer, Hash)> companies_company_id_connections_connection_id_test_get_with_http_info(company_id, connection_id)
+> <Array(<GetConnectionsById200Response>, Integer, Hash)> get_connections_by_id2_with_http_info(company_id, connection_id)
 
 ```ruby
 begin
   # Test the specified connection
-  data, status_code, headers = api_instance.companies_company_id_connections_connection_id_test_get_with_http_info(company_id, connection_id)
+  data, status_code, headers = api_instance.get_connections_by_id2_with_http_info(company_id, connection_id)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <CompaniesCompanyIdConnectionsGet200Response>
-rescue SparteraApiSdk::ApiError => e
-  puts "Error when calling ConnectionsApi->companies_company_id_connections_connection_id_test_get_with_http_info: #{e}"
+  p data # => <GetConnectionsById200Response>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling ConnectionsApi->get_connections_by_id2_with_http_info: #{e}"
 end
 ```
 
@@ -353,12 +292,12 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **company_id** | **String** |  |  |
-| **connection_id** | **String** |  |  |
+| **company_id** | **String** | Unique identifier for the Company |  |
+| **connection_id** | **String** | Unique identifier for the Connection |  |
 
 ### Return type
 
-[**CompaniesCompanyIdConnectionsGet200Response**](CompaniesCompanyIdConnectionsGet200Response.md)
+[**GetConnectionsById200Response**](GetConnectionsById200Response.md)
 
 ### Authorization
 
@@ -370,9 +309,80 @@ end
 - **Accept**: application/json
 
 
-## companies_company_id_connections_get
+## get_connections_by_id_infoschema
 
-> <CompaniesCompanyIdConnectionsGet200Response> companies_company_id_connections_get(company_id)
+> <GetConnectionsById200Response> get_connections_by_id_infoschema(company_id, connection_id)
+
+Retrieve the information schema for the specified connection
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+# setup authorization
+OpenapiClient.configure do |config|
+  # Configure API key authorization: ApiKeyAuth
+  config.api_key['x-api-key'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['x-api-key'] = 'Bearer'
+end
+
+api_instance = OpenapiClient::ConnectionsApi.new
+company_id = 'company_id_example' # String | Unique identifier for the Company
+connection_id = 'connection_id_example' # String | Unique identifier for the Connection
+
+begin
+  # Retrieve the information schema for the specified connection
+  result = api_instance.get_connections_by_id_infoschema(company_id, connection_id)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling ConnectionsApi->get_connections_by_id_infoschema: #{e}"
+end
+```
+
+#### Using the get_connections_by_id_infoschema_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<GetConnectionsById200Response>, Integer, Hash)> get_connections_by_id_infoschema_with_http_info(company_id, connection_id)
+
+```ruby
+begin
+  # Retrieve the information schema for the specified connection
+  data, status_code, headers = api_instance.get_connections_by_id_infoschema_with_http_info(company_id, connection_id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <GetConnectionsById200Response>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling ConnectionsApi->get_connections_by_id_infoschema_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **company_id** | **String** | Unique identifier for the Company |  |
+| **connection_id** | **String** | Unique identifier for the Connection |  |
+
+### Return type
+
+[**GetConnectionsById200Response**](GetConnectionsById200Response.md)
+
+### Authorization
+
+[ApiKeyAuth](../README.md#ApiKeyAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## list_connections
+
+> <ListConnections200Response> list_connections(company_id, opts)
 
 Get all connections for a specific company
 
@@ -380,42 +390,49 @@ Get all connections for a specific company
 
 ```ruby
 require 'time'
-require 'spartera_api_sdk'
+require 'openapi_client'
 # setup authorization
-SparteraApiSdk.configure do |config|
+OpenapiClient.configure do |config|
   # Configure API key authorization: ApiKeyAuth
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
-api_instance = SparteraApiSdk::ConnectionsApi.new
-company_id = 'company_id_example' # String | 
+api_instance = OpenapiClient::ConnectionsApi.new
+company_id = 'company_id_example' # String | Unique identifier for the Company
+opts = {
+  page: 56, # Integer | Page number for pagination
+  limit: 56, # Integer | Number of items per page
+  sort_by: 'sort_by_example', # String | Field to sort by
+  sort_order: 'asc', # String | Sort order (ascending or descending)
+  search: 'search_example' # String | Search term to filter results
+}
 
 begin
   # Get all connections for a specific company
-  result = api_instance.companies_company_id_connections_get(company_id)
+  result = api_instance.list_connections(company_id, opts)
   p result
-rescue SparteraApiSdk::ApiError => e
-  puts "Error when calling ConnectionsApi->companies_company_id_connections_get: #{e}"
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling ConnectionsApi->list_connections: #{e}"
 end
 ```
 
-#### Using the companies_company_id_connections_get_with_http_info variant
+#### Using the list_connections_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<CompaniesCompanyIdConnectionsGet200Response>, Integer, Hash)> companies_company_id_connections_get_with_http_info(company_id)
+> <Array(<ListConnections200Response>, Integer, Hash)> list_connections_with_http_info(company_id, opts)
 
 ```ruby
 begin
   # Get all connections for a specific company
-  data, status_code, headers = api_instance.companies_company_id_connections_get_with_http_info(company_id)
+  data, status_code, headers = api_instance.list_connections_with_http_info(company_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <CompaniesCompanyIdConnectionsGet200Response>
-rescue SparteraApiSdk::ApiError => e
-  puts "Error when calling ConnectionsApi->companies_company_id_connections_get_with_http_info: #{e}"
+  p data # => <ListConnections200Response>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling ConnectionsApi->list_connections_with_http_info: #{e}"
 end
 ```
 
@@ -423,11 +440,16 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **company_id** | **String** |  |  |
+| **company_id** | **String** | Unique identifier for the Company |  |
+| **page** | **Integer** | Page number for pagination | [optional][default to 1] |
+| **limit** | **Integer** | Number of items per page | [optional][default to 20] |
+| **sort_by** | **String** | Field to sort by | [optional] |
+| **sort_order** | **String** | Sort order (ascending or descending) | [optional][default to &#39;desc&#39;] |
+| **search** | **String** | Search term to filter results | [optional] |
 
 ### Return type
 
-[**CompaniesCompanyIdConnectionsGet200Response**](CompaniesCompanyIdConnectionsGet200Response.md)
+[**ListConnections200Response**](ListConnections200Response.md)
 
 ### Authorization
 
@@ -439,53 +461,54 @@ end
 - **Accept**: application/json
 
 
-## companies_company_id_connections_post
+## update_connections
 
-> <CompaniesCompanyIdConnectionsPost200Response> companies_company_id_connections_post(company_id, connections_input)
+> <UpdateConnections200Response> update_connections(company_id, connection_id, connections_update)
 
-Create a new connection by ID
+Update an existing connection by ID
 
 ### Examples
 
 ```ruby
 require 'time'
-require 'spartera_api_sdk'
+require 'openapi_client'
 # setup authorization
-SparteraApiSdk.configure do |config|
+OpenapiClient.configure do |config|
   # Configure API key authorization: ApiKeyAuth
   config.api_key['x-api-key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
-api_instance = SparteraApiSdk::ConnectionsApi.new
-company_id = 'company_id_example' # String | 
-connections_input = SparteraApiSdk::ConnectionsInput.new({engine_id: 3.56, company_id: 'company_id_example'}) # ConnectionsInput | 
+api_instance = OpenapiClient::ConnectionsApi.new
+company_id = 'company_id_example' # String | Unique identifier for the Company
+connection_id = 'connection_id_example' # String | Unique identifier for the Connection
+connections_update = OpenapiClient::ConnectionsUpdate.new # ConnectionsUpdate | 
 
 begin
-  # Create a new connection by ID
-  result = api_instance.companies_company_id_connections_post(company_id, connections_input)
+  # Update an existing connection by ID
+  result = api_instance.update_connections(company_id, connection_id, connections_update)
   p result
-rescue SparteraApiSdk::ApiError => e
-  puts "Error when calling ConnectionsApi->companies_company_id_connections_post: #{e}"
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling ConnectionsApi->update_connections: #{e}"
 end
 ```
 
-#### Using the companies_company_id_connections_post_with_http_info variant
+#### Using the update_connections_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<CompaniesCompanyIdConnectionsPost200Response>, Integer, Hash)> companies_company_id_connections_post_with_http_info(company_id, connections_input)
+> <Array(<UpdateConnections200Response>, Integer, Hash)> update_connections_with_http_info(company_id, connection_id, connections_update)
 
 ```ruby
 begin
-  # Create a new connection by ID
-  data, status_code, headers = api_instance.companies_company_id_connections_post_with_http_info(company_id, connections_input)
+  # Update an existing connection by ID
+  data, status_code, headers = api_instance.update_connections_with_http_info(company_id, connection_id, connections_update)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <CompaniesCompanyIdConnectionsPost200Response>
-rescue SparteraApiSdk::ApiError => e
-  puts "Error when calling ConnectionsApi->companies_company_id_connections_post_with_http_info: #{e}"
+  p data # => <UpdateConnections200Response>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling ConnectionsApi->update_connections_with_http_info: #{e}"
 end
 ```
 
@@ -493,12 +516,13 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **company_id** | **String** |  |  |
-| **connections_input** | [**ConnectionsInput**](ConnectionsInput.md) |  |  |
+| **company_id** | **String** | Unique identifier for the Company |  |
+| **connection_id** | **String** | Unique identifier for the Connection |  |
+| **connections_update** | [**ConnectionsUpdate**](ConnectionsUpdate.md) |  |  |
 
 ### Return type
 
-[**CompaniesCompanyIdConnectionsPost200Response**](CompaniesCompanyIdConnectionsPost200Response.md)
+[**UpdateConnections200Response**](UpdateConnections200Response.md)
 
 ### Authorization
 
