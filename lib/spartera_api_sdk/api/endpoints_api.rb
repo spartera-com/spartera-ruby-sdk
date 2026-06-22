@@ -247,6 +247,110 @@ module SparteraApiSdk
       return data, status_code, headers
     end
 
+    # POST /companies/{company_id}/endpoints/{endpoint_id}/scan_column
+    # @param company_id [String] Unique identifier for the Company
+    # @param endpoint_id [String] Unique identifier for the Endpoint
+    # @param endpoints_input [EndpointsInput] 
+    # @param [Hash] opts the optional parameters
+    # @return [CreateEndpoints200Response]
+    def create_endpoints_scan_column(company_id, endpoint_id, endpoints_input, opts = {})
+      data, _status_code, _headers = create_endpoints_scan_column_with_http_info(company_id, endpoint_id, endpoints_input, opts)
+      data
+    end
+
+    # POST /companies/{company_id}/endpoints/{endpoint_id}/scan_column
+    # @param company_id [String] Unique identifier for the Company
+    # @param endpoint_id [String] Unique identifier for the Endpoint
+    # @param endpoints_input [EndpointsInput] 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(CreateEndpoints200Response, Integer, Hash)>] CreateEndpoints200Response data, response status code and response headers
+    def create_endpoints_scan_column_with_http_info(company_id, endpoint_id, endpoints_input, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: EndpointsApi.create_endpoints_scan_column ...'
+      end
+      # verify the required parameter 'company_id' is set
+      if @api_client.config.client_side_validation && company_id.nil?
+        fail ArgumentError, "Missing the required parameter 'company_id' when calling EndpointsApi.create_endpoints_scan_column"
+      end
+      if @api_client.config.client_side_validation && company_id.to_s.length > 255
+        fail ArgumentError, 'invalid value for "company_id" when calling EndpointsApi.create_endpoints_scan_column, the character length must be smaller than or equal to 255.'
+      end
+
+      if @api_client.config.client_side_validation && company_id.to_s.length < 1
+        fail ArgumentError, 'invalid value for "company_id" when calling EndpointsApi.create_endpoints_scan_column, the character length must be greater than or equal to 1.'
+      end
+
+      pattern = Regexp.new(/^[a-zA-Z0-9_-]+$/)
+      if @api_client.config.client_side_validation && company_id !~ pattern
+        fail ArgumentError, "invalid value for 'company_id' when calling EndpointsApi.create_endpoints_scan_column, must conform to the pattern #{pattern}."
+      end
+
+      # verify the required parameter 'endpoint_id' is set
+      if @api_client.config.client_side_validation && endpoint_id.nil?
+        fail ArgumentError, "Missing the required parameter 'endpoint_id' when calling EndpointsApi.create_endpoints_scan_column"
+      end
+      if @api_client.config.client_side_validation && endpoint_id.to_s.length > 255
+        fail ArgumentError, 'invalid value for "endpoint_id" when calling EndpointsApi.create_endpoints_scan_column, the character length must be smaller than or equal to 255.'
+      end
+
+      if @api_client.config.client_side_validation && endpoint_id.to_s.length < 1
+        fail ArgumentError, 'invalid value for "endpoint_id" when calling EndpointsApi.create_endpoints_scan_column, the character length must be greater than or equal to 1.'
+      end
+
+      pattern = Regexp.new(/^[a-zA-Z0-9_-]+$/)
+      if @api_client.config.client_side_validation && endpoint_id !~ pattern
+        fail ArgumentError, "invalid value for 'endpoint_id' when calling EndpointsApi.create_endpoints_scan_column, must conform to the pattern #{pattern}."
+      end
+
+      # verify the required parameter 'endpoints_input' is set
+      if @api_client.config.client_side_validation && endpoints_input.nil?
+        fail ArgumentError, "Missing the required parameter 'endpoints_input' when calling EndpointsApi.create_endpoints_scan_column"
+      end
+      # resource path
+      local_var_path = '/companies/{company_id}/endpoints/{endpoint_id}/scan_column'.sub('{' + 'company_id' + '}', CGI.escape(company_id.to_s)).sub('{' + 'endpoint_id' + '}', CGI.escape(endpoint_id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(endpoints_input)
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'CreateEndpoints200Response'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['ApiKeyAuth']
+
+      new_options = opts.merge(
+        :operation => :"EndpointsApi.create_endpoints_scan_column",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: EndpointsApi#create_endpoints_scan_column\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
     # Delete single endpoint by ID
     # @param company_id [String] Unique identifier for the Company
     # @param endpoint_id [String] Unique identifier for the Endpoint
@@ -913,6 +1017,99 @@ module SparteraApiSdk
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: EndpointsApi#get_endpoints_by_id_keys\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # GET /companies/{company_id}/endpoints/{endpoint_id}/recommendations
+    # @param company_id [String] Unique identifier for the Company
+    # @param endpoint_id [String] Unique identifier for the Endpoint
+    # @param [Hash] opts the optional parameters
+    # @return [GetEndpointsByIdConnectionsDescribe200Response]
+    def get_endpoints_by_id_recommendations(company_id, endpoint_id, opts = {})
+      data, _status_code, _headers = get_endpoints_by_id_recommendations_with_http_info(company_id, endpoint_id, opts)
+      data
+    end
+
+    # GET /companies/{company_id}/endpoints/{endpoint_id}/recommendations
+    # @param company_id [String] Unique identifier for the Company
+    # @param endpoint_id [String] Unique identifier for the Endpoint
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(GetEndpointsByIdConnectionsDescribe200Response, Integer, Hash)>] GetEndpointsByIdConnectionsDescribe200Response data, response status code and response headers
+    def get_endpoints_by_id_recommendations_with_http_info(company_id, endpoint_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: EndpointsApi.get_endpoints_by_id_recommendations ...'
+      end
+      # verify the required parameter 'company_id' is set
+      if @api_client.config.client_side_validation && company_id.nil?
+        fail ArgumentError, "Missing the required parameter 'company_id' when calling EndpointsApi.get_endpoints_by_id_recommendations"
+      end
+      if @api_client.config.client_side_validation && company_id.to_s.length > 255
+        fail ArgumentError, 'invalid value for "company_id" when calling EndpointsApi.get_endpoints_by_id_recommendations, the character length must be smaller than or equal to 255.'
+      end
+
+      if @api_client.config.client_side_validation && company_id.to_s.length < 1
+        fail ArgumentError, 'invalid value for "company_id" when calling EndpointsApi.get_endpoints_by_id_recommendations, the character length must be greater than or equal to 1.'
+      end
+
+      pattern = Regexp.new(/^[a-zA-Z0-9_-]+$/)
+      if @api_client.config.client_side_validation && company_id !~ pattern
+        fail ArgumentError, "invalid value for 'company_id' when calling EndpointsApi.get_endpoints_by_id_recommendations, must conform to the pattern #{pattern}."
+      end
+
+      # verify the required parameter 'endpoint_id' is set
+      if @api_client.config.client_side_validation && endpoint_id.nil?
+        fail ArgumentError, "Missing the required parameter 'endpoint_id' when calling EndpointsApi.get_endpoints_by_id_recommendations"
+      end
+      if @api_client.config.client_side_validation && endpoint_id.to_s.length > 255
+        fail ArgumentError, 'invalid value for "endpoint_id" when calling EndpointsApi.get_endpoints_by_id_recommendations, the character length must be smaller than or equal to 255.'
+      end
+
+      if @api_client.config.client_side_validation && endpoint_id.to_s.length < 1
+        fail ArgumentError, 'invalid value for "endpoint_id" when calling EndpointsApi.get_endpoints_by_id_recommendations, the character length must be greater than or equal to 1.'
+      end
+
+      pattern = Regexp.new(/^[a-zA-Z0-9_-]+$/)
+      if @api_client.config.client_side_validation && endpoint_id !~ pattern
+        fail ArgumentError, "invalid value for 'endpoint_id' when calling EndpointsApi.get_endpoints_by_id_recommendations, must conform to the pattern #{pattern}."
+      end
+
+      # resource path
+      local_var_path = '/companies/{company_id}/endpoints/{endpoint_id}/recommendations'.sub('{' + 'company_id' + '}', CGI.escape(company_id.to_s)).sub('{' + 'endpoint_id' + '}', CGI.escape(endpoint_id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'GetEndpointsByIdConnectionsDescribe200Response'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['ApiKeyAuth']
+
+      new_options = opts.merge(
+        :operation => :"EndpointsApi.get_endpoints_by_id_recommendations",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: EndpointsApi#get_endpoints_by_id_recommendations\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end

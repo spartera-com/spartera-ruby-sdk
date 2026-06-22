@@ -52,9 +52,6 @@ module SparteraApiSdk
     # Whether this endpoint appears in the public marketplace
     attr_accessor :sell_in_marketplace
 
-    # Credits deducted from the buyer's pool per successful (200 OK) request. Same credit pool as assets. price_usd kept for billing records / dashboards.
-    attr_accessor :price_credits
-
     # Human-readable name for the endpoint
     attr_accessor :name
 
@@ -64,23 +61,26 @@ module SparteraApiSdk
     # Description of what this endpoint provides
     attr_accessor :description
 
+    # Long-form HTML description for product pages and SEO
+    attr_accessor :detailed_description
+
+    # Top 3 questions this endpoint can help answer, in English. Stored as JSON array of strings (1-3 items, 15-200 chars each). Strongly encouraged for marketplace endpoints but not required — nudge via UI completeness score, not hard validation.
+    attr_accessor :top_questions
+
     # Schema/database name where the table resides
     attr_accessor :source_schema_name
 
     # Table name to query from
     attr_accessor :source_table_name
 
-    # Named customer for B2B deals (marketplace uses price_credits instead)
+    # Named customer for B2B deals (pricing handled via asset_price_history)
     attr_accessor :customer_name
-
-    # USD reference price for billing records and seller dashboards
-    attr_accessor :price_usd
 
     # Column configurations including aggregations, filters, and visibility. Format: {columns: [{name, type, aggregation, filter, is_hidden, alias, ...}]}. This is the source of truth — SQL is generated at runtime from this configuration.
     attr_accessor :endpoint_schema
 
     # Number of requests allowed per rate_limit_period
-    attr_accessor :rate_limit_requests
+    attr_accessor :rate_limit_number
 
     # Time period for rate limiting (HOUR, DAY, MONTH)
     attr_accessor :rate_limit_period
@@ -97,6 +97,24 @@ module SparteraApiSdk
     # Current status of the endpoint (ACTIVE, INACTIVE, DEPRECATED)
     attr_accessor :status
 
+    # Start date of the data time period covered
+    attr_accessor :data_time_period_start
+
+    # End date of the data time period covered
+    attr_accessor :data_time_period_end
+
+    # When the seller began actively collecting this data. Distinct from data_time_period_start, which describes when the records themselves begin. Backfilled historical data will have date_collection_start > data_time_period_start.
+    attr_accessor :date_collection_start
+
+    # Type of geographic coverage
+    attr_accessor :geographic_coverage_type
+
+    # Specific regions/countries covered (e.g., 'United States, Canada, Mexico')
+    attr_accessor :geographic_coverage_details
+
+    # How often the source data is refreshed
+    attr_accessor :data_source_refresh_frequency
+
     # Comma-separated tags for organizing endpoints
     attr_accessor :tags
 
@@ -105,6 +123,12 @@ module SparteraApiSdk
 
     # Seller-enforced row cap per request. Buyers cannot exceed this. Default 1000.
     attr_accessor :max_records_per_request
+
+    # Whether this endpoint supports bulk export to GCS. When True, buyers can request delivery=gcs with format=csv|parquet. Independent of max_records_per_request, which only governs inline JSON.
+    attr_accessor :export_enabled
+
+    # Hard ceiling on rows returned per GCS export. Separate from max_records_per_request so sellers can offer larger downloads via file delivery without expanding inline JSON responses.
+    attr_accessor :max_records_per_export
 
     # Last successful {spartera, request, response} envelope. Saved on each successful marketplace run. Displayed as preview on product page load.
     attr_accessor :sample_response
@@ -149,24 +173,32 @@ module SparteraApiSdk
         :'approved_by_user_id' => :'approved_by_user_id',
         :'approved_at' => :'approved_at',
         :'sell_in_marketplace' => :'sell_in_marketplace',
-        :'price_credits' => :'price_credits',
         :'name' => :'name',
         :'slug' => :'slug',
         :'description' => :'description',
+        :'detailed_description' => :'detailed_description',
+        :'top_questions' => :'top_questions',
         :'source_schema_name' => :'source_schema_name',
         :'source_table_name' => :'source_table_name',
         :'customer_name' => :'customer_name',
-        :'price_usd' => :'price_usd',
         :'endpoint_schema' => :'endpoint_schema',
-        :'rate_limit_requests' => :'rate_limit_requests',
+        :'rate_limit_number' => :'rate_limit_number',
         :'rate_limit_period' => :'rate_limit_period',
         :'rate_limit_granularity' => :'rate_limit_granularity',
         :'access_method' => :'access_method',
         :'access_whitelist' => :'access_whitelist',
         :'status' => :'status',
+        :'data_time_period_start' => :'data_time_period_start',
+        :'data_time_period_end' => :'data_time_period_end',
+        :'date_collection_start' => :'date_collection_start',
+        :'geographic_coverage_type' => :'geographic_coverage_type',
+        :'geographic_coverage_details' => :'geographic_coverage_details',
+        :'data_source_refresh_frequency' => :'data_source_refresh_frequency',
         :'tags' => :'tags',
         :'last_accessed' => :'last_accessed',
         :'max_records_per_request' => :'max_records_per_request',
+        :'export_enabled' => :'export_enabled',
+        :'max_records_per_export' => :'max_records_per_export',
         :'sample_response' => :'sample_response',
         :'active' => :'active'
       }
@@ -197,24 +229,32 @@ module SparteraApiSdk
         :'approved_by_user_id' => :'String',
         :'approved_at' => :'Time',
         :'sell_in_marketplace' => :'Boolean',
-        :'price_credits' => :'Integer',
         :'name' => :'String',
         :'slug' => :'String',
         :'description' => :'String',
+        :'detailed_description' => :'String',
+        :'top_questions' => :'String',
         :'source_schema_name' => :'String',
         :'source_table_name' => :'String',
         :'customer_name' => :'String',
-        :'price_usd' => :'Float',
         :'endpoint_schema' => :'Object',
-        :'rate_limit_requests' => :'Integer',
+        :'rate_limit_number' => :'Integer',
         :'rate_limit_period' => :'String',
         :'rate_limit_granularity' => :'String',
         :'access_method' => :'String',
         :'access_whitelist' => :'Object',
         :'status' => :'String',
+        :'data_time_period_start' => :'Time',
+        :'data_time_period_end' => :'Time',
+        :'date_collection_start' => :'Time',
+        :'geographic_coverage_type' => :'String',
+        :'geographic_coverage_details' => :'String',
+        :'data_source_refresh_frequency' => :'String',
         :'tags' => :'String',
         :'last_accessed' => :'Time',
         :'max_records_per_request' => :'Integer',
+        :'export_enabled' => :'Boolean',
+        :'max_records_per_export' => :'Integer',
         :'sample_response' => :'Object',
         :'active' => :'Boolean'
       }
@@ -300,12 +340,6 @@ module SparteraApiSdk
         self.sell_in_marketplace = nil
       end
 
-      if attributes.key?(:'price_credits')
-        self.price_credits = attributes[:'price_credits']
-      else
-        self.price_credits = nil
-      end
-
       if attributes.key?(:'name')
         self.name = attributes[:'name']
       else
@@ -320,6 +354,14 @@ module SparteraApiSdk
         self.description = attributes[:'description']
       end
 
+      if attributes.key?(:'detailed_description')
+        self.detailed_description = attributes[:'detailed_description']
+      end
+
+      if attributes.key?(:'top_questions')
+        self.top_questions = attributes[:'top_questions']
+      end
+
       if attributes.key?(:'source_schema_name')
         self.source_schema_name = attributes[:'source_schema_name']
       end
@@ -332,16 +374,12 @@ module SparteraApiSdk
         self.customer_name = attributes[:'customer_name']
       end
 
-      if attributes.key?(:'price_usd')
-        self.price_usd = attributes[:'price_usd']
-      end
-
       if attributes.key?(:'endpoint_schema')
         self.endpoint_schema = attributes[:'endpoint_schema']
       end
 
-      if attributes.key?(:'rate_limit_requests')
-        self.rate_limit_requests = attributes[:'rate_limit_requests']
+      if attributes.key?(:'rate_limit_number')
+        self.rate_limit_number = attributes[:'rate_limit_number']
       end
 
       if attributes.key?(:'rate_limit_period')
@@ -366,6 +404,30 @@ module SparteraApiSdk
         self.status = nil
       end
 
+      if attributes.key?(:'data_time_period_start')
+        self.data_time_period_start = attributes[:'data_time_period_start']
+      end
+
+      if attributes.key?(:'data_time_period_end')
+        self.data_time_period_end = attributes[:'data_time_period_end']
+      end
+
+      if attributes.key?(:'date_collection_start')
+        self.date_collection_start = attributes[:'date_collection_start']
+      end
+
+      if attributes.key?(:'geographic_coverage_type')
+        self.geographic_coverage_type = attributes[:'geographic_coverage_type']
+      end
+
+      if attributes.key?(:'geographic_coverage_details')
+        self.geographic_coverage_details = attributes[:'geographic_coverage_details']
+      end
+
+      if attributes.key?(:'data_source_refresh_frequency')
+        self.data_source_refresh_frequency = attributes[:'data_source_refresh_frequency']
+      end
+
       if attributes.key?(:'tags')
         self.tags = attributes[:'tags']
       end
@@ -376,6 +438,16 @@ module SparteraApiSdk
 
       if attributes.key?(:'max_records_per_request')
         self.max_records_per_request = attributes[:'max_records_per_request']
+      end
+
+      if attributes.key?(:'export_enabled')
+        self.export_enabled = attributes[:'export_enabled']
+      else
+        self.export_enabled = nil
+      end
+
+      if attributes.key?(:'max_records_per_export')
+        self.max_records_per_export = attributes[:'max_records_per_export']
       end
 
       if attributes.key?(:'sample_response')
@@ -414,16 +486,16 @@ module SparteraApiSdk
         invalid_properties.push('invalid value for "sell_in_marketplace", sell_in_marketplace cannot be nil.')
       end
 
-      if @price_credits.nil?
-        invalid_properties.push('invalid value for "price_credits", price_credits cannot be nil.')
-      end
-
       if @name.nil?
         invalid_properties.push('invalid value for "name", name cannot be nil.')
       end
 
       if @status.nil?
         invalid_properties.push('invalid value for "status", status cannot be nil.')
+      end
+
+      if @export_enabled.nil?
+        invalid_properties.push('invalid value for "export_enabled", export_enabled cannot be nil.')
       end
 
       if @active.nil?
@@ -444,7 +516,6 @@ module SparteraApiSdk
       approval_status_validator = EnumAttributeValidator.new('String', ["PENDING", "APPROVED", "REJECTED", "NEEDS_REVISION"])
       return false unless approval_status_validator.valid?(@approval_status)
       return false if @sell_in_marketplace.nil?
-      return false if @price_credits.nil?
       return false if @name.nil?
       rate_limit_period_validator = EnumAttributeValidator.new('String', ["SECOND", "MINUTE", "HOUR", "DAY"])
       return false unless rate_limit_period_validator.valid?(@rate_limit_period)
@@ -455,6 +526,11 @@ module SparteraApiSdk
       return false if @status.nil?
       status_validator = EnumAttributeValidator.new('String', ["ACTIVE", "INACTIVE", "DEPRECATED"])
       return false unless status_validator.valid?(@status)
+      geographic_coverage_type_validator = EnumAttributeValidator.new('String', ["GLOBAL", "CONTINENTAL", "REGIONAL", "NATIONAL", "STATE", "LOCAL", "CUSTOM", "UNKNOWN"])
+      return false unless geographic_coverage_type_validator.valid?(@geographic_coverage_type)
+      data_source_refresh_frequency_validator = EnumAttributeValidator.new('String', ["EVERY_SECOND", "EVERY_MINUTE", "EVERY_HOUR", "EVERY_DAY", "EVERY_WEEK", "EVERY_MONTH", "EVERY_QUARTER", "EVERY_YEAR", "NEVER", "UNKNOWN"])
+      return false unless data_source_refresh_frequency_validator.valid?(@data_source_refresh_frequency)
+      return false if @export_enabled.nil?
       return false if @active.nil?
       true
     end
@@ -520,16 +596,6 @@ module SparteraApiSdk
     end
 
     # Custom attribute writer method with validation
-    # @param [Object] price_credits Value to be assigned
-    def price_credits=(price_credits)
-      if price_credits.nil?
-        fail ArgumentError, 'price_credits cannot be nil'
-      end
-
-      @price_credits = price_credits
-    end
-
-    # Custom attribute writer method with validation
     # @param [Object] name Value to be assigned
     def name=(name)
       if name.nil?
@@ -579,6 +645,36 @@ module SparteraApiSdk
       @status = status
     end
 
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] geographic_coverage_type Object to be assigned
+    def geographic_coverage_type=(geographic_coverage_type)
+      validator = EnumAttributeValidator.new('String', ["GLOBAL", "CONTINENTAL", "REGIONAL", "NATIONAL", "STATE", "LOCAL", "CUSTOM", "UNKNOWN"])
+      unless validator.valid?(geographic_coverage_type)
+        fail ArgumentError, "invalid value for \"geographic_coverage_type\", must be one of #{validator.allowable_values}."
+      end
+      @geographic_coverage_type = geographic_coverage_type
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] data_source_refresh_frequency Object to be assigned
+    def data_source_refresh_frequency=(data_source_refresh_frequency)
+      validator = EnumAttributeValidator.new('String', ["EVERY_SECOND", "EVERY_MINUTE", "EVERY_HOUR", "EVERY_DAY", "EVERY_WEEK", "EVERY_MONTH", "EVERY_QUARTER", "EVERY_YEAR", "NEVER", "UNKNOWN"])
+      unless validator.valid?(data_source_refresh_frequency)
+        fail ArgumentError, "invalid value for \"data_source_refresh_frequency\", must be one of #{validator.allowable_values}."
+      end
+      @data_source_refresh_frequency = data_source_refresh_frequency
+    end
+
+    # Custom attribute writer method with validation
+    # @param [Object] export_enabled Value to be assigned
+    def export_enabled=(export_enabled)
+      if export_enabled.nil?
+        fail ArgumentError, 'export_enabled cannot be nil'
+      end
+
+      @export_enabled = export_enabled
+    end
+
     # Custom attribute writer method with validation
     # @param [Object] active Value to be assigned
     def active=(active)
@@ -606,24 +702,32 @@ module SparteraApiSdk
           approved_by_user_id == o.approved_by_user_id &&
           approved_at == o.approved_at &&
           sell_in_marketplace == o.sell_in_marketplace &&
-          price_credits == o.price_credits &&
           name == o.name &&
           slug == o.slug &&
           description == o.description &&
+          detailed_description == o.detailed_description &&
+          top_questions == o.top_questions &&
           source_schema_name == o.source_schema_name &&
           source_table_name == o.source_table_name &&
           customer_name == o.customer_name &&
-          price_usd == o.price_usd &&
           endpoint_schema == o.endpoint_schema &&
-          rate_limit_requests == o.rate_limit_requests &&
+          rate_limit_number == o.rate_limit_number &&
           rate_limit_period == o.rate_limit_period &&
           rate_limit_granularity == o.rate_limit_granularity &&
           access_method == o.access_method &&
           access_whitelist == o.access_whitelist &&
           status == o.status &&
+          data_time_period_start == o.data_time_period_start &&
+          data_time_period_end == o.data_time_period_end &&
+          date_collection_start == o.date_collection_start &&
+          geographic_coverage_type == o.geographic_coverage_type &&
+          geographic_coverage_details == o.geographic_coverage_details &&
+          data_source_refresh_frequency == o.data_source_refresh_frequency &&
           tags == o.tags &&
           last_accessed == o.last_accessed &&
           max_records_per_request == o.max_records_per_request &&
+          export_enabled == o.export_enabled &&
+          max_records_per_export == o.max_records_per_export &&
           sample_response == o.sample_response &&
           active == o.active
     end
@@ -637,7 +741,7 @@ module SparteraApiSdk
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [date_created, last_updated, endpoint_id, user_id, company_id, connection_id, industry_id, auc_id, approval_status, approved_by_user_id, approved_at, sell_in_marketplace, price_credits, name, slug, description, source_schema_name, source_table_name, customer_name, price_usd, endpoint_schema, rate_limit_requests, rate_limit_period, rate_limit_granularity, access_method, access_whitelist, status, tags, last_accessed, max_records_per_request, sample_response, active].hash
+      [date_created, last_updated, endpoint_id, user_id, company_id, connection_id, industry_id, auc_id, approval_status, approved_by_user_id, approved_at, sell_in_marketplace, name, slug, description, detailed_description, top_questions, source_schema_name, source_table_name, customer_name, endpoint_schema, rate_limit_number, rate_limit_period, rate_limit_granularity, access_method, access_whitelist, status, data_time_period_start, data_time_period_end, date_collection_start, geographic_coverage_type, geographic_coverage_details, data_source_refresh_frequency, tags, last_accessed, max_records_per_request, export_enabled, max_records_per_export, sample_response, active].hash
     end
 
     # Builds the object from hash

@@ -67,6 +67,9 @@ module SparteraApiSdk
     # Optional.
     attr_accessor :tags
 
+    # Top 3 questions this asset can help answer, in English. Stored as JSON array of strings (1-3 items, 15-200 chars each). Required for marketplace assets.
+    attr_accessor :top_questions
+
     # Short code for tera.ac URL shortener (e.g., 'f78zq1')
     attr_accessor :short_code
 
@@ -87,6 +90,9 @@ module SparteraApiSdk
 
     # Whether this asset requires customization before use
     attr_accessor :require_customization
+
+    # Plotly figure JSON describing the visualization. Authored via the visual editor or via API. When populated, takes precedence over the legacy viz_* fields. Shape follows Plotly's figure schema: {data: [{type: '...', xsrc: '...', ...}], layout: {...}}. Column references use *src keys (xsrc, ysrc, labelssrc, etc.) and are hydrated with actual data at render time.
+    attr_accessor :viz_spec
 
     # Optional. One of: PLOTLY, MATPLOTLIB, SEABORN.
     attr_accessor :viz_chart_library
@@ -157,6 +163,9 @@ module SparteraApiSdk
     # End date of the data time period covered
     attr_accessor :data_time_period_end
 
+    # When the seller began actively collecting this data. Distinct from data_time_period_start, which describes when the records themselves begin. Backfilled historical data will have date_collection_start > data_time_period_start.
+    attr_accessor :date_collection_start
+
     # Type of geographic coverage
     attr_accessor :geographic_coverage_type
 
@@ -165,9 +174,6 @@ module SparteraApiSdk
 
     # How often the source data is refreshed
     attr_accessor :data_source_refresh_frequency
-
-    # When the source data was last refreshed
-    attr_accessor :data_source_last_refreshed
 
     # Number of requests allowed per period (e.g., 100)
     attr_accessor :rate_limit_number
@@ -220,6 +226,7 @@ module SparteraApiSdk
         :'asset_type' => :'asset_type',
         :'asset_schema' => :'asset_schema',
         :'tags' => :'tags',
+        :'top_questions' => :'top_questions',
         :'short_code' => :'short_code',
         :'restricted_domains' => :'restricted_domains',
         :'sql_logic' => :'sql_logic',
@@ -227,6 +234,7 @@ module SparteraApiSdk
         :'source_table_name' => :'source_table_name',
         :'sell_in_marketplace' => :'sell_in_marketplace',
         :'require_customization' => :'require_customization',
+        :'viz_spec' => :'viz_spec',
         :'viz_chart_library' => :'viz_chart_library',
         :'viz_chart_type' => :'viz_chart_type',
         :'viz_dep_var_col_name' => :'viz_dep_var_col_name',
@@ -250,10 +258,10 @@ module SparteraApiSdk
         :'next_run' => :'next_run',
         :'data_time_period_start' => :'data_time_period_start',
         :'data_time_period_end' => :'data_time_period_end',
+        :'date_collection_start' => :'date_collection_start',
         :'geographic_coverage_type' => :'geographic_coverage_type',
         :'geographic_coverage_details' => :'geographic_coverage_details',
         :'data_source_refresh_frequency' => :'data_source_refresh_frequency',
-        :'data_source_last_refreshed' => :'data_source_last_refreshed',
         :'rate_limit_number' => :'rate_limit_number',
         :'rate_limit_period' => :'rate_limit_period',
         :'rate_limit_granularity' => :'rate_limit_granularity'
@@ -290,6 +298,7 @@ module SparteraApiSdk
         :'asset_type' => :'String',
         :'asset_schema' => :'Object',
         :'tags' => :'String',
+        :'top_questions' => :'String',
         :'short_code' => :'String',
         :'restricted_domains' => :'String',
         :'sql_logic' => :'String',
@@ -297,6 +306,7 @@ module SparteraApiSdk
         :'source_table_name' => :'String',
         :'sell_in_marketplace' => :'Boolean',
         :'require_customization' => :'Boolean',
+        :'viz_spec' => :'Object',
         :'viz_chart_library' => :'String',
         :'viz_chart_type' => :'String',
         :'viz_dep_var_col_name' => :'String',
@@ -320,10 +330,10 @@ module SparteraApiSdk
         :'next_run' => :'Time',
         :'data_time_period_start' => :'Time',
         :'data_time_period_end' => :'Time',
+        :'date_collection_start' => :'Time',
         :'geographic_coverage_type' => :'String',
         :'geographic_coverage_details' => :'String',
         :'data_source_refresh_frequency' => :'String',
-        :'data_source_last_refreshed' => :'Time',
         :'rate_limit_number' => :'Integer',
         :'rate_limit_period' => :'String',
         :'rate_limit_granularity' => :'String'
@@ -426,6 +436,10 @@ module SparteraApiSdk
         self.tags = attributes[:'tags']
       end
 
+      if attributes.key?(:'top_questions')
+        self.top_questions = attributes[:'top_questions']
+      end
+
       if attributes.key?(:'short_code')
         self.short_code = attributes[:'short_code']
       end
@@ -452,6 +466,10 @@ module SparteraApiSdk
 
       if attributes.key?(:'require_customization')
         self.require_customization = attributes[:'require_customization']
+      end
+
+      if attributes.key?(:'viz_spec')
+        self.viz_spec = attributes[:'viz_spec']
       end
 
       if attributes.key?(:'viz_chart_library')
@@ -546,6 +564,10 @@ module SparteraApiSdk
         self.data_time_period_end = attributes[:'data_time_period_end']
       end
 
+      if attributes.key?(:'date_collection_start')
+        self.date_collection_start = attributes[:'date_collection_start']
+      end
+
       if attributes.key?(:'geographic_coverage_type')
         self.geographic_coverage_type = attributes[:'geographic_coverage_type']
       end
@@ -556,10 +578,6 @@ module SparteraApiSdk
 
       if attributes.key?(:'data_source_refresh_frequency')
         self.data_source_refresh_frequency = attributes[:'data_source_refresh_frequency']
-      end
-
-      if attributes.key?(:'data_source_last_refreshed')
-        self.data_source_last_refreshed = attributes[:'data_source_last_refreshed']
       end
 
       if attributes.key?(:'rate_limit_number')
@@ -622,7 +640,7 @@ module SparteraApiSdk
       return false unless viz_filter_direction_validator.valid?(@viz_filter_direction)
       geographic_coverage_type_validator = EnumAttributeValidator.new('String', ["GLOBAL", "CONTINENTAL", "REGIONAL", "NATIONAL", "STATE", "LOCAL", "CUSTOM", "UNKNOWN"])
       return false unless geographic_coverage_type_validator.valid?(@geographic_coverage_type)
-      data_source_refresh_frequency_validator = EnumAttributeValidator.new('String', ["REAL_TIME", "HOURLY", "DAILY", "WEEKLY", "MONTHLY", "QUARTERLY", "ANNUAL", "ONE_TIME", "CUSTOM", "UNKNOWN"])
+      data_source_refresh_frequency_validator = EnumAttributeValidator.new('String', ["EVERY_SECOND", "EVERY_MINUTE", "EVERY_HOUR", "EVERY_DAY", "EVERY_WEEK", "EVERY_MONTH", "EVERY_QUARTER", "EVERY_YEAR", "NEVER", "UNKNOWN"])
       return false unless data_source_refresh_frequency_validator.valid?(@data_source_refresh_frequency)
       rate_limit_period_validator = EnumAttributeValidator.new('String', ["SECOND", "MINUTE", "HOUR", "DAY"])
       return false unless rate_limit_period_validator.valid?(@rate_limit_period)
@@ -754,7 +772,7 @@ module SparteraApiSdk
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] data_source_refresh_frequency Object to be assigned
     def data_source_refresh_frequency=(data_source_refresh_frequency)
-      validator = EnumAttributeValidator.new('String', ["REAL_TIME", "HOURLY", "DAILY", "WEEKLY", "MONTHLY", "QUARTERLY", "ANNUAL", "ONE_TIME", "CUSTOM", "UNKNOWN"])
+      validator = EnumAttributeValidator.new('String', ["EVERY_SECOND", "EVERY_MINUTE", "EVERY_HOUR", "EVERY_DAY", "EVERY_WEEK", "EVERY_MONTH", "EVERY_QUARTER", "EVERY_YEAR", "NEVER", "UNKNOWN"])
       unless validator.valid?(data_source_refresh_frequency)
         fail ArgumentError, "invalid value for \"data_source_refresh_frequency\", must be one of #{validator.allowable_values}."
       end
@@ -803,6 +821,7 @@ module SparteraApiSdk
           asset_type == o.asset_type &&
           asset_schema == o.asset_schema &&
           tags == o.tags &&
+          top_questions == o.top_questions &&
           short_code == o.short_code &&
           restricted_domains == o.restricted_domains &&
           sql_logic == o.sql_logic &&
@@ -810,6 +829,7 @@ module SparteraApiSdk
           source_table_name == o.source_table_name &&
           sell_in_marketplace == o.sell_in_marketplace &&
           require_customization == o.require_customization &&
+          viz_spec == o.viz_spec &&
           viz_chart_library == o.viz_chart_library &&
           viz_chart_type == o.viz_chart_type &&
           viz_dep_var_col_name == o.viz_dep_var_col_name &&
@@ -833,10 +853,10 @@ module SparteraApiSdk
           next_run == o.next_run &&
           data_time_period_start == o.data_time_period_start &&
           data_time_period_end == o.data_time_period_end &&
+          date_collection_start == o.date_collection_start &&
           geographic_coverage_type == o.geographic_coverage_type &&
           geographic_coverage_details == o.geographic_coverage_details &&
           data_source_refresh_frequency == o.data_source_refresh_frequency &&
-          data_source_last_refreshed == o.data_source_last_refreshed &&
           rate_limit_number == o.rate_limit_number &&
           rate_limit_period == o.rate_limit_period &&
           rate_limit_granularity == o.rate_limit_granularity
@@ -851,7 +871,7 @@ module SparteraApiSdk
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [user_id, company_id, connection_id, industry_id, auc_id, function_id, approval_status, approved_by_user_id, approved_at, name, slug, description, detailed_description, source, asset_type, asset_schema, tags, short_code, restricted_domains, sql_logic, source_schema_name, source_table_name, sell_in_marketplace, require_customization, viz_chart_library, viz_chart_type, viz_dep_var_col_name, viz_indep_var_col_name, viz_size_col_name, viz_color_col_name, viz_data_aggregation, viz_sort_direction, viz_data_limit, viz_color_scheme, viz_show_legend, viz_show_grid, viz_show_trendline, viz_line_smoothing, viz_bar_stacked, viz_filter_direction, allow_params, accept_terms, cached, schedule, next_run, data_time_period_start, data_time_period_end, geographic_coverage_type, geographic_coverage_details, data_source_refresh_frequency, data_source_last_refreshed, rate_limit_number, rate_limit_period, rate_limit_granularity].hash
+      [user_id, company_id, connection_id, industry_id, auc_id, function_id, approval_status, approved_by_user_id, approved_at, name, slug, description, detailed_description, source, asset_type, asset_schema, tags, top_questions, short_code, restricted_domains, sql_logic, source_schema_name, source_table_name, sell_in_marketplace, require_customization, viz_spec, viz_chart_library, viz_chart_type, viz_dep_var_col_name, viz_indep_var_col_name, viz_size_col_name, viz_color_col_name, viz_data_aggregation, viz_sort_direction, viz_data_limit, viz_color_scheme, viz_show_legend, viz_show_grid, viz_show_trendline, viz_line_smoothing, viz_bar_stacked, viz_filter_direction, allow_params, accept_terms, cached, schedule, next_run, data_time_period_start, data_time_period_end, date_collection_start, geographic_coverage_type, geographic_coverage_details, data_source_refresh_frequency, rate_limit_number, rate_limit_period, rate_limit_granularity].hash
     end
 
     # Builds the object from hash

@@ -515,6 +515,99 @@ module SparteraApiSdk
       return data, status_code, headers
     end
 
+    # Get a randomized sample of rows from a table on this connection.     Used by the visualization editor to give sellers data to author against.      Query Parameters:         schema_name (required): Schema/dataset name         table_name  (required): Table name         limit       (optional): Max rows to return (default 1000, max 10000)      Returns columnar data — {column_name: [values]} — ready for Plotly's     dataSources prop. The actual chart at render time will pull fresh data     via the asset's saved SQL; this is only for authoring preview.
+    # @param company_id [String] Unique identifier for the Company
+    # @param connection_id [String] Unique identifier for the Connection
+    # @param [Hash] opts the optional parameters
+    # @return [GetConnectionsById200Response]
+    def get_connections_by_id_sample_data(company_id, connection_id, opts = {})
+      data, _status_code, _headers = get_connections_by_id_sample_data_with_http_info(company_id, connection_id, opts)
+      data
+    end
+
+    # Get a randomized sample of rows from a table on this connection.     Used by the visualization editor to give sellers data to author against.      Query Parameters:         schema_name (required): Schema/dataset name         table_name  (required): Table name         limit       (optional): Max rows to return (default 1000, max 10000)      Returns columnar data — {column_name: [values]} — ready for Plotly&#39;s     dataSources prop. The actual chart at render time will pull fresh data     via the asset&#39;s saved SQL; this is only for authoring preview.
+    # @param company_id [String] Unique identifier for the Company
+    # @param connection_id [String] Unique identifier for the Connection
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(GetConnectionsById200Response, Integer, Hash)>] GetConnectionsById200Response data, response status code and response headers
+    def get_connections_by_id_sample_data_with_http_info(company_id, connection_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: ConnectionsApi.get_connections_by_id_sample_data ...'
+      end
+      # verify the required parameter 'company_id' is set
+      if @api_client.config.client_side_validation && company_id.nil?
+        fail ArgumentError, "Missing the required parameter 'company_id' when calling ConnectionsApi.get_connections_by_id_sample_data"
+      end
+      if @api_client.config.client_side_validation && company_id.to_s.length > 255
+        fail ArgumentError, 'invalid value for "company_id" when calling ConnectionsApi.get_connections_by_id_sample_data, the character length must be smaller than or equal to 255.'
+      end
+
+      if @api_client.config.client_side_validation && company_id.to_s.length < 1
+        fail ArgumentError, 'invalid value for "company_id" when calling ConnectionsApi.get_connections_by_id_sample_data, the character length must be greater than or equal to 1.'
+      end
+
+      pattern = Regexp.new(/^[a-zA-Z0-9_-]+$/)
+      if @api_client.config.client_side_validation && company_id !~ pattern
+        fail ArgumentError, "invalid value for 'company_id' when calling ConnectionsApi.get_connections_by_id_sample_data, must conform to the pattern #{pattern}."
+      end
+
+      # verify the required parameter 'connection_id' is set
+      if @api_client.config.client_side_validation && connection_id.nil?
+        fail ArgumentError, "Missing the required parameter 'connection_id' when calling ConnectionsApi.get_connections_by_id_sample_data"
+      end
+      if @api_client.config.client_side_validation && connection_id.to_s.length > 255
+        fail ArgumentError, 'invalid value for "connection_id" when calling ConnectionsApi.get_connections_by_id_sample_data, the character length must be smaller than or equal to 255.'
+      end
+
+      if @api_client.config.client_side_validation && connection_id.to_s.length < 1
+        fail ArgumentError, 'invalid value for "connection_id" when calling ConnectionsApi.get_connections_by_id_sample_data, the character length must be greater than or equal to 1.'
+      end
+
+      pattern = Regexp.new(/^[a-zA-Z0-9_-]+$/)
+      if @api_client.config.client_side_validation && connection_id !~ pattern
+        fail ArgumentError, "invalid value for 'connection_id' when calling ConnectionsApi.get_connections_by_id_sample_data, must conform to the pattern #{pattern}."
+      end
+
+      # resource path
+      local_var_path = '/companies/{company_id}/connections/{connection_id}/sample-data'.sub('{' + 'company_id' + '}', CGI.escape(company_id.to_s)).sub('{' + 'connection_id' + '}', CGI.escape(connection_id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'GetConnectionsById200Response'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['ApiKeyAuth']
+
+      new_options = opts.merge(
+        :operation => :"ConnectionsApi.get_connections_by_id_sample_data",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: ConnectionsApi#get_connections_by_id_sample_data\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
     # Get all connections for a specific company
     # @param company_id [String] Unique identifier for the Company
     # @param [Hash] opts the optional parameters

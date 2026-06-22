@@ -97,6 +97,18 @@ describe 'ConnectionsApi' do
     end
   end
 
+  # unit tests for get_connections_by_id_sample_data
+  # Get a randomized sample of rows from a table on this connection.     Used by the visualization editor to give sellers data to author against.      Query Parameters:         schema_name (required): Schema/dataset name         table_name  (required): Table name         limit       (optional): Max rows to return (default 1000, max 10000)      Returns columnar data — {column_name: [values]} — ready for Plotly&#39;s     dataSources prop. The actual chart at render time will pull fresh data     via the asset&#39;s saved SQL; this is only for authoring preview.
+  # @param company_id Unique identifier for the Company
+  # @param connection_id Unique identifier for the Connection
+  # @param [Hash] opts the optional parameters
+  # @return [GetConnectionsById200Response]
+  describe 'get_connections_by_id_sample_data test' do
+    it 'should work' do
+      # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
+    end
+  end
+
   # unit tests for list_connections
   # Get all connections for a specific company
   # @param company_id Unique identifier for the Company

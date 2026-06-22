@@ -187,6 +187,12 @@ describe SparteraApiSdk::Assets do
     end
   end
 
+  describe 'test attribute "top_questions"' do
+    it 'should work' do
+      # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
+    end
+  end
+
   describe 'test attribute "short_code"' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -224,6 +230,12 @@ describe SparteraApiSdk::Assets do
   end
 
   describe 'test attribute "require_customization"' do
+    it 'should work' do
+      # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
+    end
+  end
+
+  describe 'test attribute "viz_spec"' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
     end
@@ -391,6 +403,12 @@ describe SparteraApiSdk::Assets do
     end
   end
 
+  describe 'test attribute "date_collection_start"' do
+    it 'should work' do
+      # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
+    end
+  end
+
   describe 'test attribute "geographic_coverage_type"' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -410,16 +428,10 @@ describe SparteraApiSdk::Assets do
   describe 'test attribute "data_source_refresh_frequency"' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
-      # validator = Petstore::EnumTest::EnumAttributeValidator.new('String', ["REAL_TIME", "HOURLY", "DAILY", "WEEKLY", "MONTHLY", "QUARTERLY", "ANNUAL", "ONE_TIME", "CUSTOM", "UNKNOWN"])
+      # validator = Petstore::EnumTest::EnumAttributeValidator.new('String', ["EVERY_SECOND", "EVERY_MINUTE", "EVERY_HOUR", "EVERY_DAY", "EVERY_WEEK", "EVERY_MONTH", "EVERY_QUARTER", "EVERY_YEAR", "NEVER", "UNKNOWN"])
       # validator.allowable_values.each do |value|
       #   expect { instance.data_source_refresh_frequency = value }.not_to raise_error
       # end
-    end
-  end
-
-  describe 'test attribute "data_source_last_refreshed"' do
-    it 'should work' do
-      # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
     end
   end
 

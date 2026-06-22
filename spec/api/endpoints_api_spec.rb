@@ -62,6 +62,19 @@ describe 'EndpointsApi' do
     end
   end
 
+  # unit tests for create_endpoints_scan_column
+  # POST /companies/{company_id}/endpoints/{endpoint_id}/scan_column
+  # @param company_id Unique identifier for the Company
+  # @param endpoint_id Unique identifier for the Endpoint
+  # @param endpoints_input 
+  # @param [Hash] opts the optional parameters
+  # @return [CreateEndpoints200Response]
+  describe 'create_endpoints_scan_column test' do
+    it 'should work' do
+      # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
+    end
+  end
+
   # unit tests for delete_endpoints
   # Delete single endpoint by ID
   # @param company_id Unique identifier for the Company
@@ -142,6 +155,18 @@ describe 'EndpointsApi' do
   # @param [Hash] opts the optional parameters
   # @return [GetEndpointsByIdConnectionsDescribe200Response]
   describe 'get_endpoints_by_id_keys test' do
+    it 'should work' do
+      # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
+    end
+  end
+
+  # unit tests for get_endpoints_by_id_recommendations
+  # GET /companies/{company_id}/endpoints/{endpoint_id}/recommendations
+  # @param company_id Unique identifier for the Company
+  # @param endpoint_id Unique identifier for the Endpoint
+  # @param [Hash] opts the optional parameters
+  # @return [GetEndpointsByIdConnectionsDescribe200Response]
+  describe 'get_endpoints_by_id_recommendations test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
     end

@@ -144,40 +144,40 @@ module SparteraApiSdk
     end
 
     # Process (analyze) an asset with dynamic rate limiting applied via decorator.
-    # @param asset_slug [String] URL-friendly slug for the Asset
     # @param company_handle [String] Human-readable handle for the Company
+    # @param asset_slug [String] URL-friendly slug for the Asset
     # @param assets_input [AssetsInput] 
     # @param [Hash] opts the optional parameters
     # @return [CreateAssetsAnalyze200Response]
-    def create_assets_analyze(asset_slug, company_handle, assets_input, opts = {})
-      data, _status_code, _headers = create_assets_analyze_with_http_info(asset_slug, company_handle, assets_input, opts)
+    def create_assets_analyze(company_handle, asset_slug, assets_input, opts = {})
+      data, _status_code, _headers = create_assets_analyze_with_http_info(company_handle, asset_slug, assets_input, opts)
       data
     end
 
     # Process (analyze) an asset with dynamic rate limiting applied via decorator.
-    # @param asset_slug [String] URL-friendly slug for the Asset
     # @param company_handle [String] Human-readable handle for the Company
+    # @param asset_slug [String] URL-friendly slug for the Asset
     # @param assets_input [AssetsInput] 
     # @param [Hash] opts the optional parameters
     # @return [Array<(CreateAssetsAnalyze200Response, Integer, Hash)>] CreateAssetsAnalyze200Response data, response status code and response headers
-    def create_assets_analyze_with_http_info(asset_slug, company_handle, assets_input, opts = {})
+    def create_assets_analyze_with_http_info(company_handle, asset_slug, assets_input, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: AssetsApi.create_assets_analyze ...'
-      end
-      # verify the required parameter 'asset_slug' is set
-      if @api_client.config.client_side_validation && asset_slug.nil?
-        fail ArgumentError, "Missing the required parameter 'asset_slug' when calling AssetsApi.create_assets_analyze"
       end
       # verify the required parameter 'company_handle' is set
       if @api_client.config.client_side_validation && company_handle.nil?
         fail ArgumentError, "Missing the required parameter 'company_handle' when calling AssetsApi.create_assets_analyze"
+      end
+      # verify the required parameter 'asset_slug' is set
+      if @api_client.config.client_side_validation && asset_slug.nil?
+        fail ArgumentError, "Missing the required parameter 'asset_slug' when calling AssetsApi.create_assets_analyze"
       end
       # verify the required parameter 'assets_input' is set
       if @api_client.config.client_side_validation && assets_input.nil?
         fail ArgumentError, "Missing the required parameter 'assets_input' when calling AssetsApi.create_assets_analyze"
       end
       # resource path
-      local_var_path = '/analyze/{company_handle}/assets/{asset_slug}'.sub('{' + 'asset_slug' + '}', CGI.escape(asset_slug.to_s)).sub('{' + 'company_handle' + '}', CGI.escape(company_handle.to_s))
+      local_var_path = '/analyze/{company_handle}/assets/{asset_slug}'.sub('{' + 'company_handle' + '}', CGI.escape(company_handle.to_s)).sub('{' + 'asset_slug' + '}', CGI.escape(asset_slug.to_s))
 
       # query parameters
       query_params = opts[:query_params] || {}
@@ -709,34 +709,34 @@ module SparteraApiSdk
     end
 
     # Process (analyze) an asset with dynamic rate limiting applied via decorator.
-    # @param asset_slug [String] URL-friendly slug for the Asset
     # @param company_handle [String] Human-readable handle for the Company
+    # @param asset_slug [String] URL-friendly slug for the Asset
     # @param [Hash] opts the optional parameters
     # @return [GetAssetsByIdAnalyze200Response]
-    def get_assets_by_id_analyze(asset_slug, company_handle, opts = {})
-      data, _status_code, _headers = get_assets_by_id_analyze_with_http_info(asset_slug, company_handle, opts)
+    def get_assets_by_id_analyze(company_handle, asset_slug, opts = {})
+      data, _status_code, _headers = get_assets_by_id_analyze_with_http_info(company_handle, asset_slug, opts)
       data
     end
 
     # Process (analyze) an asset with dynamic rate limiting applied via decorator.
-    # @param asset_slug [String] URL-friendly slug for the Asset
     # @param company_handle [String] Human-readable handle for the Company
+    # @param asset_slug [String] URL-friendly slug for the Asset
     # @param [Hash] opts the optional parameters
     # @return [Array<(GetAssetsByIdAnalyze200Response, Integer, Hash)>] GetAssetsByIdAnalyze200Response data, response status code and response headers
-    def get_assets_by_id_analyze_with_http_info(asset_slug, company_handle, opts = {})
+    def get_assets_by_id_analyze_with_http_info(company_handle, asset_slug, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: AssetsApi.get_assets_by_id_analyze ...'
-      end
-      # verify the required parameter 'asset_slug' is set
-      if @api_client.config.client_side_validation && asset_slug.nil?
-        fail ArgumentError, "Missing the required parameter 'asset_slug' when calling AssetsApi.get_assets_by_id_analyze"
       end
       # verify the required parameter 'company_handle' is set
       if @api_client.config.client_side_validation && company_handle.nil?
         fail ArgumentError, "Missing the required parameter 'company_handle' when calling AssetsApi.get_assets_by_id_analyze"
       end
+      # verify the required parameter 'asset_slug' is set
+      if @api_client.config.client_side_validation && asset_slug.nil?
+        fail ArgumentError, "Missing the required parameter 'asset_slug' when calling AssetsApi.get_assets_by_id_analyze"
+      end
       # resource path
-      local_var_path = '/analyze/{company_handle}/assets/{asset_slug}'.sub('{' + 'asset_slug' + '}', CGI.escape(asset_slug.to_s)).sub('{' + 'company_handle' + '}', CGI.escape(company_handle.to_s))
+      local_var_path = '/analyze/{company_handle}/assets/{asset_slug}'.sub('{' + 'company_handle' + '}', CGI.escape(company_handle.to_s)).sub('{' + 'asset_slug' + '}', CGI.escape(asset_slug.to_s))
 
       # query parameters
       query_params = opts[:query_params] || {}

@@ -6,6 +6,7 @@ All URIs are relative to *https://api.spartera.com*
 | ------ | ------------ | ----------- |
 | [**create_endpoints**](EndpointsApi.md#create_endpoints) | **POST** /companies/{company_id}/endpoints | Create a new endpoint |
 | [**create_endpoints_keys**](EndpointsApi.md#create_endpoints_keys) | **POST** /companies/{company_id}/endpoints/{endpoint_id}/keys | POST /companies/{company_id}/endpoints/{endpoint_id}/keys |
+| [**create_endpoints_scan_column**](EndpointsApi.md#create_endpoints_scan_column) | **POST** /companies/{company_id}/endpoints/{endpoint_id}/scan_column | POST /companies/{company_id}/endpoints/{endpoint_id}/scan_column |
 | [**delete_endpoints**](EndpointsApi.md#delete_endpoints) | **DELETE** /companies/{company_id}/endpoints/{endpoint_id} | Delete single endpoint by ID |
 | [**delete_endpoints_keys**](EndpointsApi.md#delete_endpoints_keys) | **DELETE** /companies/{company_id}/endpoints/{endpoint_id}/keys/{api_key_id} | DELETE /companies/{company_id}/endpoints/{endpoint_id}/keys/{api_key_id} |
 | [**get_endpoints_by_id**](EndpointsApi.md#get_endpoints_by_id) | **GET** /companies/{company_id}/endpoints/{endpoint_id} | Get single endpoint by ID |
@@ -13,6 +14,7 @@ All URIs are relative to *https://api.spartera.com*
 | [**get_endpoints_by_id_connections_describe**](EndpointsApi.md#get_endpoints_by_id_connections_describe) | **GET** /companies/{company_id}/endpoints/../connections/{connection_id}/describe | Get schema information for a connection      Query parameters:         include_fields: Whether to include field information (default: true)         schemas: Optional comma-separated schemas to include         tables: Optional comma-separated tables to include |
 | [**get_endpoints_by_id_execute**](EndpointsApi.md#get_endpoints_by_id_execute) | **GET** /companies/{company_id}/endpoints/{endpoint_id}/execute | Execute an endpoint with pagination support.      Customer-facing route that returns paginated data.     Query params: ?start&#x3D;0&amp;limit&#x3D;100 |
 | [**get_endpoints_by_id_keys**](EndpointsApi.md#get_endpoints_by_id_keys) | **GET** /companies/{company_id}/endpoints/{endpoint_id}/keys | GET /companies/{company_id}/endpoints/{endpoint_id}/keys |
+| [**get_endpoints_by_id_recommendations**](EndpointsApi.md#get_endpoints_by_id_recommendations) | **GET** /companies/{company_id}/endpoints/{endpoint_id}/recommendations | GET /companies/{company_id}/endpoints/{endpoint_id}/recommendations |
 | [**get_endpoints_by_id_stats**](EndpointsApi.md#get_endpoints_by_id_stats) | **GET** /companies/{company_id}/endpoints/{endpoint_id}/stats | Get usage statistics for an endpoint      Query parameters:         days: Number of days to analyze (default: 30) |
 | [**get_endpoints_by_id_test**](EndpointsApi.md#get_endpoints_by_id_test) | **GET** /companies/{company_id}/endpoints/{endpoint_id}/test | Test an endpoint with sample data      Request body (optional):         limit: Number of sample rows to return (default: 10) |
 | [**get_endpoints_by_id_url**](EndpointsApi.md#get_endpoints_by_id_url) | **GET** /companies/{company_id}/endpoints/{endpoint_id}/url | GET /companies/{company_id}/endpoints/{endpoint_id}/url |
@@ -151,6 +153,79 @@ begin
   p data # => <CreateEndpoints200Response>
 rescue SparteraApiSdk::ApiError => e
   puts "Error when calling EndpointsApi->create_endpoints_keys_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **company_id** | **String** | Unique identifier for the Company |  |
+| **endpoint_id** | **String** | Unique identifier for the Endpoint |  |
+| **endpoints_input** | [**EndpointsInput**](EndpointsInput.md) |  |  |
+
+### Return type
+
+[**CreateEndpoints200Response**](CreateEndpoints200Response.md)
+
+### Authorization
+
+[ApiKeyAuth](../README.md#ApiKeyAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## create_endpoints_scan_column
+
+> <CreateEndpoints200Response> create_endpoints_scan_column(company_id, endpoint_id, endpoints_input)
+
+POST /companies/{company_id}/endpoints/{endpoint_id}/scan_column
+
+### Examples
+
+```ruby
+require 'time'
+require 'spartera_api_sdk'
+# setup authorization
+SparteraApiSdk.configure do |config|
+  # Configure API key authorization: ApiKeyAuth
+  config.api_key['x-api-key'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['x-api-key'] = 'Bearer'
+end
+
+api_instance = SparteraApiSdk::EndpointsApi.new
+company_id = 'company_id_example' # String | Unique identifier for the Company
+endpoint_id = 'endpoint_id_example' # String | Unique identifier for the Endpoint
+endpoints_input = SparteraApiSdk::EndpointsInput.new({company_id: 'company_id_abc123', connection_id: 'connection_id_abc123', name: 'Example Name'}) # EndpointsInput | 
+
+begin
+  # POST /companies/{company_id}/endpoints/{endpoint_id}/scan_column
+  result = api_instance.create_endpoints_scan_column(company_id, endpoint_id, endpoints_input)
+  p result
+rescue SparteraApiSdk::ApiError => e
+  puts "Error when calling EndpointsApi->create_endpoints_scan_column: #{e}"
+end
+```
+
+#### Using the create_endpoints_scan_column_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<CreateEndpoints200Response>, Integer, Hash)> create_endpoints_scan_column_with_http_info(company_id, endpoint_id, endpoints_input)
+
+```ruby
+begin
+  # POST /companies/{company_id}/endpoints/{endpoint_id}/scan_column
+  data, status_code, headers = api_instance.create_endpoints_scan_column_with_http_info(company_id, endpoint_id, endpoints_input)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <CreateEndpoints200Response>
+rescue SparteraApiSdk::ApiError => e
+  puts "Error when calling EndpointsApi->create_endpoints_scan_column_with_http_info: #{e}"
 end
 ```
 
@@ -651,6 +726,77 @@ begin
   p data # => <GetEndpointsByIdConnectionsDescribe200Response>
 rescue SparteraApiSdk::ApiError => e
   puts "Error when calling EndpointsApi->get_endpoints_by_id_keys_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **company_id** | **String** | Unique identifier for the Company |  |
+| **endpoint_id** | **String** | Unique identifier for the Endpoint |  |
+
+### Return type
+
+[**GetEndpointsByIdConnectionsDescribe200Response**](GetEndpointsByIdConnectionsDescribe200Response.md)
+
+### Authorization
+
+[ApiKeyAuth](../README.md#ApiKeyAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## get_endpoints_by_id_recommendations
+
+> <GetEndpointsByIdConnectionsDescribe200Response> get_endpoints_by_id_recommendations(company_id, endpoint_id)
+
+GET /companies/{company_id}/endpoints/{endpoint_id}/recommendations
+
+### Examples
+
+```ruby
+require 'time'
+require 'spartera_api_sdk'
+# setup authorization
+SparteraApiSdk.configure do |config|
+  # Configure API key authorization: ApiKeyAuth
+  config.api_key['x-api-key'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['x-api-key'] = 'Bearer'
+end
+
+api_instance = SparteraApiSdk::EndpointsApi.new
+company_id = 'company_id_example' # String | Unique identifier for the Company
+endpoint_id = 'endpoint_id_example' # String | Unique identifier for the Endpoint
+
+begin
+  # GET /companies/{company_id}/endpoints/{endpoint_id}/recommendations
+  result = api_instance.get_endpoints_by_id_recommendations(company_id, endpoint_id)
+  p result
+rescue SparteraApiSdk::ApiError => e
+  puts "Error when calling EndpointsApi->get_endpoints_by_id_recommendations: #{e}"
+end
+```
+
+#### Using the get_endpoints_by_id_recommendations_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<GetEndpointsByIdConnectionsDescribe200Response>, Integer, Hash)> get_endpoints_by_id_recommendations_with_http_info(company_id, endpoint_id)
+
+```ruby
+begin
+  # GET /companies/{company_id}/endpoints/{endpoint_id}/recommendations
+  data, status_code, headers = api_instance.get_endpoints_by_id_recommendations_with_http_info(company_id, endpoint_id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <GetEndpointsByIdConnectionsDescribe200Response>
+rescue SparteraApiSdk::ApiError => e
+  puts "Error when calling EndpointsApi->get_endpoints_by_id_recommendations_with_http_info: #{e}"
 end
 ```
 

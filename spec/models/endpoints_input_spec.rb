@@ -97,12 +97,6 @@ describe SparteraApiSdk::EndpointsInput do
     end
   end
 
-  describe 'test attribute "price_credits"' do
-    it 'should work' do
-      # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
-    end
-  end
-
   describe 'test attribute "name"' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -116,6 +110,18 @@ describe SparteraApiSdk::EndpointsInput do
   end
 
   describe 'test attribute "description"' do
+    it 'should work' do
+      # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
+    end
+  end
+
+  describe 'test attribute "detailed_description"' do
+    it 'should work' do
+      # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
+    end
+  end
+
+  describe 'test attribute "top_questions"' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
     end
@@ -139,19 +145,13 @@ describe SparteraApiSdk::EndpointsInput do
     end
   end
 
-  describe 'test attribute "price_usd"' do
-    it 'should work' do
-      # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
-    end
-  end
-
   describe 'test attribute "endpoint_schema"' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
     end
   end
 
-  describe 'test attribute "rate_limit_requests"' do
+  describe 'test attribute "rate_limit_number"' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
     end
@@ -203,6 +203,50 @@ describe SparteraApiSdk::EndpointsInput do
     end
   end
 
+  describe 'test attribute "data_time_period_start"' do
+    it 'should work' do
+      # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
+    end
+  end
+
+  describe 'test attribute "data_time_period_end"' do
+    it 'should work' do
+      # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
+    end
+  end
+
+  describe 'test attribute "date_collection_start"' do
+    it 'should work' do
+      # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
+    end
+  end
+
+  describe 'test attribute "geographic_coverage_type"' do
+    it 'should work' do
+      # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
+      # validator = Petstore::EnumTest::EnumAttributeValidator.new('String', ["GLOBAL", "CONTINENTAL", "REGIONAL", "NATIONAL", "STATE", "LOCAL", "CUSTOM", "UNKNOWN"])
+      # validator.allowable_values.each do |value|
+      #   expect { instance.geographic_coverage_type = value }.not_to raise_error
+      # end
+    end
+  end
+
+  describe 'test attribute "geographic_coverage_details"' do
+    it 'should work' do
+      # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
+    end
+  end
+
+  describe 'test attribute "data_source_refresh_frequency"' do
+    it 'should work' do
+      # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
+      # validator = Petstore::EnumTest::EnumAttributeValidator.new('String', ["EVERY_SECOND", "EVERY_MINUTE", "EVERY_HOUR", "EVERY_DAY", "EVERY_WEEK", "EVERY_MONTH", "EVERY_QUARTER", "EVERY_YEAR", "NEVER", "UNKNOWN"])
+      # validator.allowable_values.each do |value|
+      #   expect { instance.data_source_refresh_frequency = value }.not_to raise_error
+      # end
+    end
+  end
+
   describe 'test attribute "tags"' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -216,6 +260,18 @@ describe SparteraApiSdk::EndpointsInput do
   end
 
   describe 'test attribute "max_records_per_request"' do
+    it 'should work' do
+      # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
+    end
+  end
+
+  describe 'test attribute "export_enabled"' do
+    it 'should work' do
+      # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
+    end
+  end
+
+  describe 'test attribute "max_records_per_export"' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
     end

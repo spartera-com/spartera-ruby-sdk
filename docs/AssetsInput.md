@@ -21,6 +21,7 @@
 | **asset_type** | **String** | Optional. One of: CALCULATION, VISUALIZATION, DATA. | [optional] |
 | **asset_schema** | **Object** | Stores database table schema data including columns, types, and metadata | [optional] |
 | **tags** | **String** | Optional. | [optional] |
+| **top_questions** | **String** | Top 3 questions this asset can help answer, in English. Stored as JSON array of strings (1-3 items, 15-200 chars each). Required for marketplace assets. | [optional] |
 | **short_code** | **String** | Short code for tera.ac URL shortener (e.g., &#39;f78zq1&#39;) | [optional] |
 | **restricted_domains** | **String** | Semicolon or comma-separated list of domains restricted from accessing this asset | [optional] |
 | **sql_logic** | **String** | Optional. | [optional] |
@@ -28,6 +29,7 @@
 | **source_table_name** | **String** | Optional. | [optional] |
 | **sell_in_marketplace** | **Boolean** | Required. | [optional] |
 | **require_customization** | **Boolean** | Whether this asset requires customization before use | [optional] |
+| **viz_spec** | **Object** | Plotly figure JSON describing the visualization. Authored via the visual editor or via API. When populated, takes precedence over the legacy viz_* fields. Shape follows Plotly&#39;s figure schema: {data: [{type: &#39;...&#39;, xsrc: &#39;...&#39;, ...}], layout: {...}}. Column references use *src keys (xsrc, ysrc, labelssrc, etc.) and are hydrated with actual data at render time. | [optional] |
 | **viz_chart_library** | **String** | Optional. One of: PLOTLY, MATPLOTLIB, SEABORN. | [optional] |
 | **viz_chart_type** | **String** | Optional. One of: LINE, BAR, PIE, DOUGHNUT, POLAR, … (8 total). | [optional] |
 | **viz_dep_var_col_name** | **String** | Optional. | [optional] |
@@ -51,10 +53,10 @@
 | **next_run** | **Time** | Optional. | [optional] |
 | **data_time_period_start** | **Time** | Start date of the data time period covered | [optional] |
 | **data_time_period_end** | **Time** | End date of the data time period covered | [optional] |
+| **date_collection_start** | **Time** | When the seller began actively collecting this data. Distinct from data_time_period_start, which describes when the records themselves begin. Backfilled historical data will have date_collection_start &gt; data_time_period_start. | [optional] |
 | **geographic_coverage_type** | **String** | Type of geographic coverage | [optional] |
 | **geographic_coverage_details** | **String** | Specific regions/countries covered (e.g., &#39;United States, Canada, Mexico&#39;) | [optional] |
 | **data_source_refresh_frequency** | **String** | How often the source data is refreshed | [optional] |
-| **data_source_last_refreshed** | **Time** | When the source data was last refreshed | [optional] |
 | **rate_limit_number** | **Integer** | Number of requests allowed per period (e.g., 100) | [optional] |
 | **rate_limit_period** | **String** | Time period for rate limiting (second, minute, hour, day) | [optional] |
 | **rate_limit_granularity** | **String** | Granularity level for rate limiting (USER, COMPANY, IP) | [optional] |
@@ -82,6 +84,7 @@ instance = SparteraApiSdk::AssetsInput.new(
   asset_type: CALCULATION,
   asset_schema: {},
   tags: example_value,
+  top_questions: example_value,
   short_code: ABC123,
   restricted_domains: example.com,
   sql_logic: example_value,
@@ -89,6 +92,7 @@ instance = SparteraApiSdk::AssetsInput.new(
   source_table_name: Example Name,
   sell_in_marketplace: true,
   require_customization: true,
+  viz_spec: {},
   viz_chart_library: PLOTLY,
   viz_chart_type: LINE,
   viz_dep_var_col_name: Example Name,
@@ -112,10 +116,10 @@ instance = SparteraApiSdk::AssetsInput.new(
   next_run: 2025-04-01T00:00:00Z,
   data_time_period_start: 2025-04-01T00:00:00Z,
   data_time_period_end: 2025-04-01T00:00:00Z,
+  date_collection_start: 2025-04-01T00:00:00Z,
   geographic_coverage_type: GLOBAL,
   geographic_coverage_details: example_value,
-  data_source_refresh_frequency: REAL_TIME,
-  data_source_last_refreshed: 2025-04-01T00:00:00Z,
+  data_source_refresh_frequency: EVERY_SECOND,
   rate_limit_number: 0.15,
   rate_limit_period: SECOND,
   rate_limit_granularity: USER

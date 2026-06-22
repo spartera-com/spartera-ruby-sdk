@@ -7,7 +7,7 @@
 | **user_id** | **String** | References users.user_id — An individual user account within a company. See GET /users for valid values. Optional. | [optional] |
 | **engine_id** | **Integer** | References storage_engines.engine_id — Fact table of all the different storage engines we support. See GET /storage_engines for valid values. Required. |  |
 | **company_id** | **String** | References companies.company_id — A Spartera seller or buyer company account. See GET /companies for valid values. Required. |  |
-| **credential_type** | **String** | Optional. One of: SERVICE_ACCOUNT, USERNAME_PASSWORD, API_KEY, SERVICE_IDENTITY, ACCESS_KEY, … (8 total). | [optional] |
+| **credential_type** | **String** | Optional. One of: SERVICE_ACCOUNT, USERNAME_PASSWORD, API_KEY, SERVICE_IDENTITY, ACCESS_KEY, … (10 total). | [optional] |
 | **name** | **String** | Optional. | [optional] |
 | **description** | **String** | Optional. | [optional] |
 | **provider_domain** | **String** | Domain of the external API provider (e.g., &#39;api.weather.com&#39;) | [optional] |

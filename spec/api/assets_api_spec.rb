@@ -51,8 +51,8 @@ describe 'AssetsApi' do
 
   # unit tests for create_assets_analyze
   # Process (analyze) an asset with dynamic rate limiting applied via decorator.
-  # @param asset_slug URL-friendly slug for the Asset
   # @param company_handle Human-readable handle for the Company
+  # @param asset_slug URL-friendly slug for the Asset
   # @param assets_input 
   # @param [Hash] opts the optional parameters
   # @return [CreateAssetsAnalyze200Response]
@@ -126,8 +126,8 @@ describe 'AssetsApi' do
 
   # unit tests for get_assets_by_id_analyze
   # Process (analyze) an asset with dynamic rate limiting applied via decorator.
-  # @param asset_slug URL-friendly slug for the Asset
   # @param company_handle Human-readable handle for the Company
+  # @param asset_slug URL-friendly slug for the Asset
   # @param [Hash] opts the optional parameters
   # @return [GetAssetsByIdAnalyze200Response]
   describe 'get_assets_by_id_analyze test' do

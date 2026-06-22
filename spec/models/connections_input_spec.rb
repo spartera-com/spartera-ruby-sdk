@@ -48,7 +48,7 @@ describe SparteraApiSdk::ConnectionsInput do
   describe 'test attribute "credential_type"' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
-      # validator = Petstore::EnumTest::EnumAttributeValidator.new('String', ["SERVICE_ACCOUNT", "USERNAME_PASSWORD", "API_KEY", "SERVICE_IDENTITY", "ACCESS_KEY", "NONE", "OAUTH", "JSON"])
+      # validator = Petstore::EnumTest::EnumAttributeValidator.new('String', ["SERVICE_ACCOUNT", "USERNAME_PASSWORD", "API_KEY", "SERVICE_IDENTITY", "ACCESS_KEY", "NONE", "OAUTH", "JSON", "KEY_PAIR", "CLIENT_SECRET"])
       # validator.allowable_values.each do |value|
       #   expect { instance.credential_type = value }.not_to raise_error
       # end

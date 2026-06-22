@@ -107,7 +107,7 @@ end
 
 ## create_assets_analyze
 
-> <CreateAssetsAnalyze200Response> create_assets_analyze(asset_slug, company_handle, assets_input)
+> <CreateAssetsAnalyze200Response> create_assets_analyze(company_handle, asset_slug, assets_input)
 
 Process (analyze) an asset with dynamic rate limiting applied via decorator.
 
@@ -125,13 +125,13 @@ SparteraApiSdk.configure do |config|
 end
 
 api_instance = SparteraApiSdk::AssetsApi.new
-asset_slug = 'asset_slug_example' # String | URL-friendly slug for the Asset
 company_handle = 'company_handle_example' # String | Human-readable handle for the Company
+asset_slug = 'asset_slug_example' # String | URL-friendly slug for the Asset
 assets_input = SparteraApiSdk::AssetsInput.new({company_id: 'company_id_abc123', name: 'Example Name', source: 'MANUAL'}) # AssetsInput | 
 
 begin
   # Process (analyze) an asset with dynamic rate limiting applied via decorator.
-  result = api_instance.create_assets_analyze(asset_slug, company_handle, assets_input)
+  result = api_instance.create_assets_analyze(company_handle, asset_slug, assets_input)
   p result
 rescue SparteraApiSdk::ApiError => e
   puts "Error when calling AssetsApi->create_assets_analyze: #{e}"
@@ -142,12 +142,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<CreateAssetsAnalyze200Response>, Integer, Hash)> create_assets_analyze_with_http_info(asset_slug, company_handle, assets_input)
+> <Array(<CreateAssetsAnalyze200Response>, Integer, Hash)> create_assets_analyze_with_http_info(company_handle, asset_slug, assets_input)
 
 ```ruby
 begin
   # Process (analyze) an asset with dynamic rate limiting applied via decorator.
-  data, status_code, headers = api_instance.create_assets_analyze_with_http_info(asset_slug, company_handle, assets_input)
+  data, status_code, headers = api_instance.create_assets_analyze_with_http_info(company_handle, asset_slug, assets_input)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <CreateAssetsAnalyze200Response>
@@ -160,8 +160,8 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **asset_slug** | **String** | URL-friendly slug for the Asset |  |
 | **company_handle** | **String** | Human-readable handle for the Company |  |
+| **asset_slug** | **String** | URL-friendly slug for the Asset |  |
 | **assets_input** | [**AssetsInput**](AssetsInput.md) |  |  |
 
 ### Return type
@@ -539,7 +539,7 @@ end
 
 ## get_assets_by_id_analyze
 
-> <GetAssetsByIdAnalyze200Response> get_assets_by_id_analyze(asset_slug, company_handle)
+> <GetAssetsByIdAnalyze200Response> get_assets_by_id_analyze(company_handle, asset_slug)
 
 Process (analyze) an asset with dynamic rate limiting applied via decorator.
 
@@ -557,12 +557,12 @@ SparteraApiSdk.configure do |config|
 end
 
 api_instance = SparteraApiSdk::AssetsApi.new
-asset_slug = 'asset_slug_example' # String | URL-friendly slug for the Asset
 company_handle = 'company_handle_example' # String | Human-readable handle for the Company
+asset_slug = 'asset_slug_example' # String | URL-friendly slug for the Asset
 
 begin
   # Process (analyze) an asset with dynamic rate limiting applied via decorator.
-  result = api_instance.get_assets_by_id_analyze(asset_slug, company_handle)
+  result = api_instance.get_assets_by_id_analyze(company_handle, asset_slug)
   p result
 rescue SparteraApiSdk::ApiError => e
   puts "Error when calling AssetsApi->get_assets_by_id_analyze: #{e}"
@@ -573,12 +573,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<GetAssetsByIdAnalyze200Response>, Integer, Hash)> get_assets_by_id_analyze_with_http_info(asset_slug, company_handle)
+> <Array(<GetAssetsByIdAnalyze200Response>, Integer, Hash)> get_assets_by_id_analyze_with_http_info(company_handle, asset_slug)
 
 ```ruby
 begin
   # Process (analyze) an asset with dynamic rate limiting applied via decorator.
-  data, status_code, headers = api_instance.get_assets_by_id_analyze_with_http_info(asset_slug, company_handle)
+  data, status_code, headers = api_instance.get_assets_by_id_analyze_with_http_info(company_handle, asset_slug)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <GetAssetsByIdAnalyze200Response>
@@ -591,8 +591,8 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **asset_slug** | **String** | URL-friendly slug for the Asset |  |
 | **company_handle** | **String** | Human-readable handle for the Company |  |
+| **asset_slug** | **String** | URL-friendly slug for the Asset |  |
 
 ### Return type
 
