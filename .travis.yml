@@ -8,4 +8,4 @@ script:
   - bundle install --path vendor/bundle
   - bundle exec rspec
   - gem build spartera_api_sdk.gemspec
-  - gem install ./spartera_api_sdk-0.3.6.gem
+  - gem install ./spartera_api_sdk-0.3.7.gem
