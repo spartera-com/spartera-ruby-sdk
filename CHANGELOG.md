@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.5.0
+
+- Auto-generated release from spartera-com/backend@fde5fa4ff3719f084d54ce4eb607989679cd8913
+
 ## 0.4.2
 
 - Auto-generated release from spartera-com/backend@3b6293b6509f7b36b4e440c3a2946aefa9fb3434
